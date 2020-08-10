@@ -15,10 +15,10 @@ export default {
     }
   },
   async asyncData(context){
-    const assessmentQuestions = await context.$content('pre-assessment').only('questions').fetch()
+    const assessment = await context.$content('pre-assessment').only('questions').fetch()
 
     return {
-      assessmentQuestions: assessmentQuestions.questions
+      assessmentQuestions: assessment.questions
     }
   }
 };
