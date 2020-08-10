@@ -1,7 +1,6 @@
 <template>
   <full-page ref="fullpage" :options="options" id="fullpage">
-    <div class="section">First section ...</div>
-    <div class="section">Second section ...</div>
+    <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">{{question.question}}</div>
   </full-page>
 </template>
 
@@ -11,7 +10,15 @@ export default {
     return {
       options: {
         navigation: true,
-      }
+      },
+      
+    }
+  },
+  async asyncData(context){
+    const assessmentQuestions = await context.$content('pre-assessment').only('questions').fetch()
+
+    return {
+      assessmentQuestions: assessmentQuestions.questions
     }
   }
 };
