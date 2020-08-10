@@ -1,6 +1,11 @@
 <template>
   <full-page ref="fullpage" :options="options" id="fullpage">
-    <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">{{question.question}}</div>
+    <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
+      <h2>{{question.question}}</h2>
+      <ol>
+        <li v-for="(answer, index) in question.answers" v-bind:key="index">{{answer.answer}}</li>
+      </ol>
+    </div>
   </full-page>
 </template>
 
