@@ -1,6 +1,9 @@
 # DTES-nuxt
 https://dtes.netlify.app/
 
+## A Little Help From Our Friends
+https://github.com/alvarotrigo/vue-fullpage.js
+
 ## Build Setup
 
 ```bash
