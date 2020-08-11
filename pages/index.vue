@@ -1,4 +1,5 @@
 <template>
+<client-only placeholder="Loading...">
   <full-page ref="fullpage" :options="options" id="fullpage">
     <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
       <h2>{{question.question}}</h2>
@@ -7,6 +8,7 @@
       </ol>
     </div>
   </full-page>
+</client-only>
 </template>
 
 <script>
