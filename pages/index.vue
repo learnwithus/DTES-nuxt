@@ -13,10 +13,6 @@
 export default {
   data(){
     return {
-      options: {
-        navigation: true,
-        licenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
-      },
       
     }
   },
@@ -24,7 +20,11 @@ export default {
     const assessment = await context.$content('pre-assessment').only('questions').fetch()
 
     return {
-      assessmentQuestions: assessment.questions
+      assessmentQuestions: assessment.questions,
+      options: {
+        navigation: true,
+        licenseKey: context.env.fullscreenLicenseKey
+      },
     }
   }
 };

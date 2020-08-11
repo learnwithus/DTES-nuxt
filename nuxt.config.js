@@ -54,6 +54,9 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+  env: {
+    fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
+  },
   /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
