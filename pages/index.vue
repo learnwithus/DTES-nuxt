@@ -15,6 +15,7 @@ export default {
     return {
       options: {
         navigation: true,
+        licenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
       },
       
     }
