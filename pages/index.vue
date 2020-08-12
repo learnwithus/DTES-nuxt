@@ -2,7 +2,8 @@
   <client-only placeholder="Loading...">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
-        <div class="page-content">
+        <!-- Question Slide -->
+        <div class="slide">
           <h2 class="question">{{question.question}}</h2>
           <div class="answers">
             <vs-radio
@@ -12,7 +13,12 @@
               :val="index"
             >{{answer.answer}}</vs-radio>
           </div>
-          <vs-button flat :active="true" @click class="submit">Submit</vs-button>
+          <vs-button flat :active="true" @click="$refs.fullpage.api.moveSlideRight()" class="submit">Submit</vs-button>
+        </div>
+
+        <!-- Answer Slide -->
+        <div class="slide">
+          <h3>Here is the feedback / answer</h3>
         </div>
       </div>
     </full-page>
@@ -37,6 +43,8 @@ export default {
       options: {
         navigation: true,
         licenseKey: context.env.fullscreenLicenseKey,
+        slidesNavigation: false,
+        controlArrows: false,
       },
     };
   },
@@ -58,11 +66,10 @@ export default {
   margin-bottom: 2em;
 }
 
-.page-content {
+.slide {
   padding: 2em;
 }
 
 .submit {
-
 }
 </style>
