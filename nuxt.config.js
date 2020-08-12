@@ -35,7 +35,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/fullpage', mode: 'client' }
+    { src: '~/plugins/fullpage', mode: 'client' },
+    { src: '~/plugins/vuesax' },
   ],
   /*
   ** Auto import components
