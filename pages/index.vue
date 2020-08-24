@@ -1,8 +1,9 @@
 <template>
-  <client-only placeholder="Loading...">
+  <main>HOME</main>
+  <!-- <client-only placeholder="Loading...">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
-        <!-- Question Slide -->
+         Question Slide 
         <div class="slide">
           <h2 class="question">{{question.question}}</h2>
           <div class="answers">
@@ -16,13 +17,13 @@
           <vs-button flat :active="true" @click="$refs.fullpage.api.moveSlideRight()" class="submit">Submit</vs-button>
         </div>
 
-        <!-- Answer Slide -->
+         Answer Slide 
         <div class="slide">
           <h3>Here is the feedback / answer</h3>
         </div>
       </div>
     </full-page>
-  </client-only>
+  </client-only>-->
 </template>
 
 <script>
@@ -33,10 +34,7 @@ export default {
     };
   },
   async asyncData(context) {
-    const assessment = await context
-      .$content("pre-assessment")
-      .only("questions")
-      .fetch();
+    const assessment = [];
 
     return {
       assessmentQuestions: assessment.questions,
