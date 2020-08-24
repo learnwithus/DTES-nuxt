@@ -27,4 +27,14 @@ export default {
     color: green;
     opacity: 1 !important;
 }
+
+.answers {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 2em;
+}
 </style>
