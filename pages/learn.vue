@@ -81,4 +81,7 @@ export default {
 </script>
 
 <style>
+main {
+  padding: 2em;
+}
 </style>
