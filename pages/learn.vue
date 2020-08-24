@@ -4,20 +4,27 @@
     <div class="question" v-if="!showFeedback">
       <h2>{{currentSectionNumber}}/</h2>
       <question :question="currentQuestion.question" />
-      <learn-input :type="currentQuestion.type" :answers="currentQuestion.answers" />
+      <learn-input :type="currentQuestion.type" :answers="currentQuestion.answers" :reveal-answer="showAnswer"/>
 
-      <vs-button flat :active="true" @click="nextQuestion()" class="submit">Submit</vs-button>
+      <vs-button flat :active="true" @click="showAnswer = true" v-if="!showAnswer" >Submit</vs-button>
+      <vs-button flat :active="true" @click="nextQuestion" v-else >Next</vs-button>
     </div>
     <!-- Feedback View -->
     <div v-else>
       <h2>Feedback</h2>
       <feedback :feedback="currentSection.feedback" />
-      <vs-button flat :active="true" @click="nextQuestion()" class="submit" v-if="!isLastSection">Next Section</vs-button>
+      <vs-button
+        flat
+        :active="true"
+        @click="nextQuestion()"
+        class="submit"
+        v-if="!isLastSection"
+      >Next Section</vs-button>
       <div v-else>DONE QUIZ</div>
     </div>
     <!-- DEBUG DATA -->
-    <br />
-    {{currentSection}}
+    <!-- <br />
+    {{currentSection}} -->
   </main>
 </template>
 
@@ -35,6 +42,7 @@ export default {
         section: 0,
         question: 0,
       },
+      showAnswer: false,
     };
   },
   methods: {
@@ -44,7 +52,10 @@ export default {
       if (this.showFeedback) {
         this.currentIndex.question = 0;
         this.currentIndex.section++;
-      } else this.currentIndex.question++;
+      } else {
+        this.currentIndex.question++;
+        this.showAnswer = false;
+      }
     },
   },
   computed: {
@@ -60,7 +71,7 @@ export default {
     showFeedback() {
       return this.currentSection.questions.length <= this.currentIndex.question;
     },
-    isLastSection(){
+    isLastSection() {
       return this.sections.length - 1 <= this.currentIndex.section;
     },
   },

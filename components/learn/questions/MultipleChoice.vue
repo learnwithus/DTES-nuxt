@@ -4,6 +4,8 @@
       v-model="selectedAnswer"
       v-for="(answer, index) in answers"
       v-bind:key="index"
+      :class="{correct: revealAnswer && answer.correct}"
+      :disabled="revealAnswer"
       :val="index"
     >{{answer.answer}}</vs-radio>
   </div>
@@ -11,7 +13,7 @@
 
 <script>
 export default {
-    props: [ "answers" ],
+    props: [ "answers", "revealAnswer" ],
     data(){
         return {
             selectedAnswer: 0
@@ -20,5 +22,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.correct {
+    color: green;
+    opacity: 1 !important;
+}
 </style>
