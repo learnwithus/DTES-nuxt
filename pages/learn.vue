@@ -1,7 +1,8 @@
 <template>
   <main>
+    <transition name="slide-fade" mode="out-in">
     <!-- Question View -->
-    <div class="question" v-if="!showFeedback">
+    <div class="question" v-if="!showFeedback" :key="currentIndex.question">
       <h2>{{currentSectionNumber}}/</h2>
       <question :question="currentQuestion.question" />
       <learn-input :type="currentQuestion.type" :answers="currentQuestion.answers" :reveal-answer="showAnswer"/>
@@ -25,6 +26,7 @@
     <!-- DEBUG DATA -->
     <!-- <br />
     {{currentSection}} -->
+    </transition>
   </main>
 </template>
 
