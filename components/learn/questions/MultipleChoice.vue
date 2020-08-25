@@ -4,7 +4,7 @@
       v-model="selectedAnswer"
       v-for="(answer, index) in answers"
       v-bind:key="index"
-      :class="{correct: revealAnswer && answer.correct}"
+      :class="{correct: revealAnswer && answer.correct, incorrect: revealAnswer && !answer.correct}"
       :disabled="revealAnswer"
       :val="index"
     >{{answer.answer}}</vs-radio>
@@ -26,6 +26,11 @@ export default {
 .correct {
     color: green;
     opacity: 1 !important;
+    font-weight: bold;
+}
+
+.incorrect {
+    opacity: 0.25 !important;
 }
 
 .answers {
