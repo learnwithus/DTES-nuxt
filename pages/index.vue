@@ -1,5 +1,9 @@
 <template>
-  <main>HOME</main>
+  <main>
+    <h1>Home</h1>
+    <nuxt-link to="/learn">Learn</nuxt-link>
+  </main>
+  
   <!-- <client-only placeholder="Loading...">
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
