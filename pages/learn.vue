@@ -35,12 +35,14 @@
       </div>
     </transition>
 
-    <div class="learn-progress-wrapper">
-      <progress-dots
-        :sections="sections.length"
-        :current-section="currentSectionNumber"
-        :progress="sectionProgress"
-      />
+    <div class="learn-progress-container">
+      <div class="learn-progress-wrapper">
+        <progress-dots
+          :sections="sections.length"
+          :current-section="currentSectionNumber"
+          :progress="sectionProgress"
+        />
+      </div>
     </div>
 
     <!-- DEBUG DATA -->
@@ -103,14 +105,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 main {
   padding: 2em;
   overflow: hidden;
 }
-.learn-progress-wrapper {
+.learn-progress-container {
   position: absolute;
-  bottom: 50px;
-  width: 50%;
+  bottom: 2em;
+  left: 0;
+  width: 100%;
+
+  >.learn-progress-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 </style>

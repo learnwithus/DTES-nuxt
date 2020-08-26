@@ -38,7 +38,7 @@ export default {
   &:before,
   &:after {
     content: "";
-    height: 0.5em;
+    height: 0.25em;
     background-color: $colour-light;
     position: absolute;
     z-index: 1;
@@ -71,8 +71,8 @@ export default {
 
 .dot {
   margin: 0 auto;
-  width: 1.5em;
-  height: 1.5em;
+  width: 0.5em;
+  height: 0.5em;
   background-color: $colour-light;
   fill: $colour-light;
   border-radius: 50%;
