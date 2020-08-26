@@ -47,7 +47,7 @@
 
     <!-- DEBUG DATA -->
     <!-- <br />
-    {{currentSection}}-->
+    {{sections}} -->
   </main>
 </template>
 
@@ -56,6 +56,7 @@ export default {
   async asyncData(context) {
     const learnSections = await context
       .$content("learn")
+      .sortBy('slug')
       .only(["questions", "feedback"])
       .fetch();
 
