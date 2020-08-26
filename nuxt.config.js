@@ -22,7 +22,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/wgf8sbs.css'}
     ]
   },
   /*
@@ -31,6 +32,12 @@ export default {
   css: [
     '~/assets/scss/_base.scss'
   ],
+  styleResources: {
+    scss: [
+      './assets/scss/variables.scss',
+      './assets/scss/breakpoints.scss'
+    ],
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
@@ -55,6 +62,7 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
   ],
   env: {
     fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
