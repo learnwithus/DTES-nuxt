@@ -1,6 +1,6 @@
 <template>
   <main :class="{dark: showFeedback}">
-    <learn-background :accent="showFeedback"/>
+    <learn-background :accent="showFeedback" />
     <transition name="slide-fade" mode="out-in">
       <learn-title :key="currentIndex.section" class="space-2">{{currentSectionNumber}} /</learn-title>
     </transition>
@@ -9,7 +9,7 @@
       <div class="question" v-if="!showFeedback" key="1">
         <transition name="slide-fade" mode="out-in">
           <div class="actual-question" :key="currentIndex.question">
-            <learn-question :question="currentQuestion.question" class="space-1"/>
+            <learn-question :question="currentQuestion.question" class="space-1" />
             <learn-input
               :type="currentQuestion.type"
               :answers="currentQuestion.answers"
@@ -34,6 +34,15 @@
         <div v-else>DONE QUIZ</div>
       </div>
     </transition>
+
+    <div class="learn-progress-wrapper">
+      <progress-dots
+        :sections="sections.length"
+        :current-section="currentSectionNumber"
+        :progress="sectionProgress"
+      />
+    </div>
+
     <!-- DEBUG DATA -->
     <!-- <br />
     {{currentSection}}-->
@@ -84,6 +93,12 @@ export default {
     isLastSection() {
       return this.sections.length - 1 <= this.currentIndex.section;
     },
+    sectionProgress() {
+      const progress =
+        this.currentIndex.question / this.currentSection.questions.length;
+
+      return progress * 100;
+    },
   },
 };
 </script>
@@ -92,5 +107,10 @@ export default {
 main {
   padding: 2em;
   overflow: hidden;
+}
+.learn-progress-wrapper {
+  position: absolute;
+  bottom: 50px;
+  width: 50%;
 }
 </style>
