@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <main :class="{dark: showFeedback}">
+    <learn-background :accent="showFeedback"/>
     <transition name="slide-fade" mode="out-in">
       <learn-title :key="currentIndex.section">{{currentSectionNumber}} /</learn-title>
     </transition>
