@@ -2,14 +2,14 @@
   <main :class="{dark: showFeedback}">
     <learn-background :accent="showFeedback"/>
     <transition name="slide-fade" mode="out-in">
-      <learn-title :key="currentIndex.section">{{currentSectionNumber}} /</learn-title>
+      <learn-title :key="currentIndex.section" class="space-2">{{currentSectionNumber}} /</learn-title>
     </transition>
     <!-- Question View -->
     <transition name="slide-fade" mode="out-in">
       <div class="question" v-if="!showFeedback" key="1">
         <transition name="slide-fade" mode="out-in">
           <div class="actual-question" :key="currentIndex.question">
-            <learn-question :question="currentQuestion.question" />
+            <learn-question :question="currentQuestion.question" class="space-1"/>
             <learn-input
               :type="currentQuestion.type"
               :answers="currentQuestion.answers"
