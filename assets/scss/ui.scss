@@ -2,6 +2,11 @@ html {
     font-family: noto-sans, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
+
+    // Styles for dark background pages
+    .dark {
+        color: $text-colour-light;
+    }
 }
 
 h1 {
