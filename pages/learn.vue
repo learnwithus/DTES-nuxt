@@ -23,7 +23,7 @@
       <!-- Feedback View -->
       <div v-else key="2">
         <h2>Feedback</h2>
-        <feedback :feedback="currentSection.feedback" />
+        <feedback :feedback="currentSection" />
         <vs-button
           flat
           :active="true"
@@ -47,19 +47,22 @@
 
     <!-- DEBUG DATA -->
     <!-- <br />
-    {{sections}} -->
+    {{currentSection}} -->
   </main>
 </template>
 
 <script>
 export default {
   async asyncData(context) {
+
+    // Get content from flatfiles in ~/content/ folder
     const learnSections = await context
       .$content("learn")
       .sortBy('slug')
-      .only(["questions", "feedback"])
+      .only(["questions", "feedback", "body"])
       .fetch();
 
+    // Return data object complete with learning module sections
     return {
       sections: learnSections,
       currentIndex: {

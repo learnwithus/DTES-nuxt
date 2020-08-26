@@ -1,3 +1,4 @@
+---
 questions:
   - question: In what year was the Overdose Crisis declared a BC public health emergency?
     type: multiple-choice
@@ -27,4 +28,19 @@ questions:
       - answer: No
         correct: false
 
-feedback: Really great feedback [3]
+---
+<!--- This is where the rich feedback goes -->
+<markdown-container>
+  <markdown-column size="1">
+
+  - list
+  - list 2
+  - is this a list?
+
+
+  </markdown-column>
+  
+  <markdown-column size="1">
+  [ Picture ]
+  </markdown-column>
+</markdown-container>

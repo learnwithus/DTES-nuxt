@@ -1,5 +1,7 @@
 <template>
-  <div class="feedback">{{feedback}}</div>
+  <div class="feedback">
+      <nuxt-content :document="feedback" />
+  </div>
 </template>
 
 <script>

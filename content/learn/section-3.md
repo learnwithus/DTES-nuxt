@@ -1,3 +1,4 @@
+---
 questions:
   - question: In what year was the Overdose Crisis declared a BC public health emergency?
     type: multiple-choice
@@ -12,9 +13,6 @@ questions:
         correct: false
       - answer: No public health emergency has been announced
         correct: false
-  - question: Type anything you want
-    type: free-text
-    answers: Except that!
   - question: Another great question?
     type: multiple-choice
     answers:
@@ -30,4 +28,6 @@ questions:
       - answer: No
         correct: false
 
-feedback: Really great feedback [1]
+---
+<!--- This is where the rich feedback goes -->
+Really great feedback [3]

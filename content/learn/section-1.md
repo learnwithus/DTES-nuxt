@@ -1,3 +1,4 @@
+---
 questions:
   - question: In what year was the Overdose Crisis declared a BC public health emergency?
     type: multiple-choice
@@ -12,6 +13,9 @@ questions:
         correct: false
       - answer: No public health emergency has been announced
         correct: false
+  - question: Type anything you want
+    type: free-text
+    answers: Except that!
   - question: Another great question?
     type: multiple-choice
     answers:
@@ -26,5 +30,12 @@ questions:
         correct: true
       - answer: No
         correct: false
-
-feedback: Really great feedback [2]
+---
+<!--- This is where the rich feedback goes -->
+<markdown-container>
+  <markdown-column size="1">Overdose deaths in the province have become so pervasive that there has been a measured decrease in life expectancy at birth for all British Columbians.
+  </markdown-column>
+  <markdown-column size="1">
+  [ Picture ]
+  </markdown-column>
+</markdown-container>
