@@ -12,6 +12,9 @@ questions:
         correct: false
       - answer: No public health emergency has been announced
         correct: false
+  - question: Type anything you want
+    type: free-text
+    answers: Except that!
   - question: Another great question?
     type: multiple-choice
     answers:

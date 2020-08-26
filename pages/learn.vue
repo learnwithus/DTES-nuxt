@@ -1,20 +1,19 @@
 <template>
   <main>
     <transition name="slide-fade" mode="out-in">
-      <h2 :key="currentIndex.section">{{currentSectionNumber}}/</h2>
+      <learn-title :key="currentIndex.section">{{currentSectionNumber}} /</learn-title>
     </transition>
     <!-- Question View -->
     <transition name="slide-fade" mode="out-in">
       <div class="question" v-if="!showFeedback" key="1">
         <transition name="slide-fade" mode="out-in">
           <div class="actual-question" :key="currentIndex.question">
-            <question :question="currentQuestion.question" />
+            <learn-question :question="currentQuestion.question" />
             <learn-input
               :type="currentQuestion.type"
               :answers="currentQuestion.answers"
               :reveal-answer="showAnswer"
             />
-
             <vs-button flat :active="true" @click="showAnswer = true" v-if="!showAnswer">Submit</vs-button>
             <vs-button flat :active="true" @click="nextQuestion" v-else>Next</vs-button>
           </div>

@@ -1,6 +1,6 @@
 <template>
   <multiple-choice v-if="type == 'multiple-choice'" :answers="answers" :reveal-answer="revealAnswer" />
-  <multiple-choice v-else-if="type == 'free-text'" />
+  <free-text v-else-if="type == 'free-text'" :answers="answers" :reveal-answer="revealAnswer"/>
 </template>
 
 <script>
