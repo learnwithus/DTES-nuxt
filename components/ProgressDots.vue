@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
 .progress-bar {
   margin: 0 auto;
   padding: 2em 0 3em;
@@ -47,6 +45,11 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.25s ease-out;
+
+    // Dark Mode Colours
+    .dark & {
+      background-color: $colour-dark;
+    }
   }
 
   &:first-child:before,
@@ -57,6 +60,11 @@ export default {
   &:after {
     background-color: $colour-accent;
     width: 0%;
+
+    // Dark Mode Colours
+    .dark & {
+      background-color: $colour-light;
+    }
   }
 
   &.complete + &.current:after,
@@ -82,15 +90,30 @@ export default {
   position: relative;
   transition: all 0.25s ease-out;
 
+  // Dark Mode Colours
+  .dark & {
+    background-color: $colour-dark;
+    fill: $colour-dark;
+  }
+
+  // Current Acive Section Dot
   .current & {
     fill: $colour-accent;
     background-color: $colour-accent;
+
+    .dark & {
+      background-color: $colour-light;
+    }
   }
 
+  // CompleteSection Dot
   .complete & {
     fill: $colour-light;
     background-color: $colour-accent;
+
+    .dark & {
+      background-color: $colour-light;
+    }
   }
 }
-
 </style>
