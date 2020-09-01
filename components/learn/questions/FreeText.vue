@@ -1,25 +1,40 @@
 <template>
   <!-- <vs-input v-model="value" placeholder="Name" /> -->
-  <textarea v-model="text" :disabled="revealAnswer"></textarea>
+  <div>
+    <textarea v-model="text" :disabled="revealAnswer" rows="5" cols="50"></textarea>
+    <div class="free-text-answer" v-if="revealAnswer">{{answers}}</div>
+  </div>
 </template>
 
 <script>
 export default {
   props: ["answers", "revealAnswer"],
-  data(){
-      return {
-          text: ''
-      }
+  data() {
+    return {
+      text: "",
+    };
   },
   watch: {
-      revealAnswer(value){
-          if(value){
-              this.text = this.answers
-          }
-      }
-  }
+    // revealAnswer(value) {
+    //   if (value) {
+    //     this.text = this.answers;
+    //   }
+    // },
+  },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+textarea{
+    resize: none;
+    &:disabled {
+        border: none;
+        background: none;
+        opacity: 1;
+        color: $text-colour-dark;
+    }
+}
+.free-text-answer {
+    color: $colour-accent;
+}
 </style>
