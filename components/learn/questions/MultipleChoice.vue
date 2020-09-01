@@ -39,7 +39,5 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  margin-bottom: 2em;
 }
 </style>

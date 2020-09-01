@@ -11,10 +11,12 @@
           <div class="actual-question" :key="currentIndex.question">
             <learn-question :question="currentQuestion.question" class="space-1" />
             <learn-input
+              class="space-2"
               :type="currentQuestion.type"
               :answers="currentQuestion.answers"
               :reveal-answer="showAnswer"
             />
+            <div v-if="showAnswer && currentQuestion.feedback" v-html="$md.render(currentQuestion.feedback)"></div>
             <vs-button flat :active="true" @click="showAnswer = true" v-if="!showAnswer">Submit</vs-button>
             <vs-button flat :active="true" @click="nextQuestion" v-else>Next</vs-button>
           </div>
