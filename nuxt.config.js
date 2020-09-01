@@ -23,7 +23,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.typekit.net/wgf8sbs.css'}
+      { rel: 'stylesheet', href: 'https://use.typekit.net/wgf8sbs.css' }
     ]
   },
   /*
@@ -63,7 +63,11 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
   ],
+  markdownit: {
+    injected: true
+  },
   env: {
     fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
   },
