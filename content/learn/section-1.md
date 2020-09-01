@@ -13,6 +13,11 @@ questions:
         correct: false
       - answer: No public health emergency has been announced
         correct: false
+    feedback: >
+      I was responsible for the following:
+        - Review of contracts
+        - Hiring
+        - Accounting
   - question: Type anything you want
     type: free-text
     answers: Except that!
