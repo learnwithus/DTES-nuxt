@@ -31,7 +31,9 @@
                 </div>
               </vs-col>
               <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
-                <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
+                <transition name="fade">
+                  <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
+                </transition>
               </vs-col>
             </vs-row>
           </div>
