@@ -1,6 +1,7 @@
 <template>
   <main :class="{dark: showFeedback}">
     <learn-background :accent="showFeedback" />
+
     <transition name="slide-fade" mode="out-in">
       <learn-title :key="currentIndex.section" class="space-2">{{currentSectionNumber}} /</learn-title>
     </transition>
@@ -8,24 +9,38 @@
     <transition name="slide-fade" mode="out-in">
       <div class="question" v-if="!showFeedback" key="1">
         <transition name="slide-fade" mode="out-in">
-          <div class="actual-question" :key="currentIndex.question">
-            <learn-question :question="currentQuestion.question" class="space-1" />
-            <learn-input
-              class="space-2"
-              :type="currentQuestion.type"
-              :answers="currentQuestion.answers"
-              :reveal-answer="showAnswer"
-            />
-            <div v-if="showAnswer && currentQuestion.feedback" v-html="$md.render(currentQuestion.feedback)"></div>
-            <vs-button flat :active="true" @click="showAnswer = true" v-if="!showAnswer">Submit</vs-button>
-            <vs-button flat :active="true" @click="nextQuestion" v-else>Next</vs-button>
+          <div class="center grid">
+            <vs-row>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6">
+                <div class="actual-question" :key="currentIndex.question">
+                  <learn-question :question="currentQuestion.question" class="space-1" />
+                  <learn-input
+                    class="space-2"
+                    :type="currentQuestion.type"
+                    :answers="currentQuestion.answers"
+                    :reveal-answer="showAnswer"
+                  />
+
+                  <vs-button
+                    flat
+                    :active="true"
+                    @click="showAnswer = true"
+                    v-if="!showAnswer"
+                  >Submit</vs-button>
+                  <vs-button flat :active="true" @click="nextQuestion" v-else>Next</vs-button>
+                </div>
+              </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
+                <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
+              </vs-col>
+            </vs-row>
           </div>
         </transition>
       </div>
       <!-- Feedback View -->
       <div v-else key="2">
         <h2>Feedback</h2>
-        <feedback :feedback="currentSection" />
+        <section-feedback :feedback="currentSection.feedback" />
         <vs-button
           flat
           :active="true"
@@ -49,24 +64,46 @@
 
     <!-- DEBUG DATA -->
     <!-- <br />
-    {{currentSection}} -->
+    DEBUG DATA
+    {{sections[0]}}-->
   </main>
 </template>
 
 <script>
 export default {
   async asyncData(context) {
-
     // Get content from flatfiles in ~/content/ folder
-    const learnSections = await context
-      .$content("learn")
-      .sortBy('slug')
-      .only(["questions", "feedback", "body"])
+    const flatQuestions = await context
+      .$content("learn", { deep: true })
+      .sortBy("dir")
+      .sortBy("slug")
+      // .only(["questions", "feedback", "body"])
       .fetch();
+
+    // Organize questions into their parent sections
+    const learnSections = flatQuestions.reduce((acc, obj) => {
+      const property = obj["dir"]; // Sort all the quetsions into their parent directories (their sections)
+
+      acc[property] = acc[property] || {}; // Create new sub object if it doesn't already exist
+
+      // If the slug is feedback (for end-of-section feedback) add it to the feedback key,
+      // If not, it must be a question so add it to the array of questions
+      if (obj.slug == "feedback") {
+        acc[property].feedback = obj;
+      } else {
+        acc[property].questions = acc[property].questions || [];
+        acc[property].questions.push(obj);
+      }
+
+      return acc;
+    }, {});
+
+    // Convert to array
+    const learnSectionsArray = Object.values(learnSections);
 
     // Return data object complete with learning module sections
     return {
-      sections: learnSections,
+      sections: learnSectionsArray,
       currentIndex: {
         section: 0,
         question: 0,
@@ -93,17 +130,19 @@ export default {
       return this.sections[this.currentIndex.section];
     },
     currentQuestion() {
-      return this.currentSection.questions[this.currentIndex.question];
+      return this.currentSection?.questions[this.currentIndex.question];
     },
     showFeedback() {
-      return this.currentSection.questions.length <= this.currentIndex.question;
+      return (
+        this.currentSection?.questions?.length <= this.currentIndex.question
+      );
     },
     isLastSection() {
       return this.sections.length - 1 <= this.currentIndex.section;
     },
     sectionProgress() {
       const progress =
-        this.currentIndex.question / this.currentSection.questions.length;
+        this.currentIndex.question / this.currentSection?.questions.length;
 
       return progress * 100;
     },
@@ -122,7 +161,7 @@ main {
   left: 0;
   width: 100%;
 
-  >.learn-progress-wrapper {
+  > .learn-progress-wrapper {
     max-width: 300px;
     margin: 0 auto;
   }

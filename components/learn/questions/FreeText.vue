@@ -2,7 +2,7 @@
   <!-- <vs-input v-model="value" placeholder="Name" /> -->
   <div>
     <textarea v-model="text" :disabled="revealAnswer" rows="5" cols="50"></textarea>
-    <div class="free-text-answer" v-if="revealAnswer">{{answers}}</div>
+    <!-- <div class="free-text-answer" v-if="revealAnswer">{{answers}}</div> -->
   </div>
 </template>
 

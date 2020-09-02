@@ -24,13 +24,13 @@ export default {
 
 <style lang="scss">
 .correct {
-    color: green;
+    color: $colour-accent;
     opacity: 1 !important;
     font-weight: bold;
 }
 
 .incorrect {
-    opacity: 0.25 !important;
+    opacity: 0.2 !important;
 }
 
 .answers {
