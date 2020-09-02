@@ -1,23 +1,7 @@
 ---
-question: Another second question? (4)
-type: multiple-choice
-answers:
-  - answer: 2018
-    correct: false
-  - answer: 2014
-    correct: true
-  - answer: 2016
-    correct: false
-  - answer: 2017
-    correct: false
-  - answer: No public health emergency has been announced
-    correct: false
+question: What does the word stigma mean to you? 
+type: free-text
+answers: Except that!
 ---
 <!--- This is where the rich feedback goes -->
-<markdown-container>
-  <markdown-column size="1">Question 2 Feedback
-  </markdown-column>
-  <markdown-column size="1">
-  [ Picture ]
-  </markdown-column>
-</markdown-container>
+According to Oxford Dictionary: a mark of disgrace associated with a particular circumstance, quality, or person.

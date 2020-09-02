@@ -1,24 +1,26 @@
 ---
-question: Another first question? (2)
+question: Who is most affected by the Overdose Crisis?
 type: multiple-choice
 answers:
-  - answer: 2018
-    correct: false
-  - answer: 2014
+  - answer: Men aged 30-39
     correct: true
-  - answer: 2016
+  - answer: Men aged 20-29
     correct: false
-  - answer: 2017
-    correct: false
-  - answer: No public health emergency has been announced
+  - answer: Women aged 20-29
     correct: false
 
 ---
 <!--- This is where question-level feedback goes -->
 <markdown-container>
-  <markdown-column size="1">Quesiton 1 Feedback
+  <markdown-column size="1">
+    <img src="/images/graph-placeholder-dark.svg"></markdown-image>
   </markdown-column>
   <markdown-column size="1">
-  [ Picture ]
+    <img src="/images/graph-placeholder-dark.svg"></markdown-image>
   </markdown-column>
 </markdown-container>
+
+
+Death and hospitalization infographic
+- Men aged 30-39 are the most affected group
+- Overdoses affect people both inside and outside the workforce/social assistance systems
