@@ -13,5 +13,9 @@ export default {
 <style lang="scss">
 .question-feedback {
   color: $colour-accent;
+
+  :first-child {
+    margin-top: 0px;
+  }
 }
 </style>
