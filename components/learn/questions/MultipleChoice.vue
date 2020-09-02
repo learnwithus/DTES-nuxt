@@ -4,6 +4,7 @@
       v-model="selectedAnswer"
       v-for="(answer, index) in answers"
       v-bind:key="index"
+      class="multiple-choice-answer"
       :class="{correct: revealAnswer && answer.correct, incorrect: revealAnswer && !answer.correct}"
       :disabled="revealAnswer"
       :val="index"
@@ -23,6 +24,10 @@ export default {
 </script>
 
 <style lang="scss">
+.multiple-choice-answer {
+  transition: all 200ms linear;
+}
+
 .correct {
     color: $colour-accent;
     opacity: 1 !important;
