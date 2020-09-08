@@ -4,6 +4,8 @@ type: free-text
 answers: Whatever the answer is
 ---
 <!--- This is where the rich feedback goes -->
+<markdown-image src="images/graph-placeholder-dark.svg"></markdown-image>
+
 Stigma undermines the effectiveness of the response to the BC overdose crisis:
 - Creates barriers to individuals who need to receive or access basic healthcare and social needs.
 - Compromises the quality of care provided and/or received when an individual is treated.

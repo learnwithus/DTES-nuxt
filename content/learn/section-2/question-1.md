@@ -13,7 +13,7 @@ answers:
 <!--- This is where question-level feedback goes -->
 <markdown-container>
   <markdown-column size="1">
-    <img src="/images/graph-placeholder-dark.svg"></markdown-image>
+    <markdown-image src="images/graph-placeholder-dark.svg"></markdown-image>
   </markdown-column>
   <markdown-column size="1">
     

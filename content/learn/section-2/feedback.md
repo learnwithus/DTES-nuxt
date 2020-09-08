@@ -1,7 +1,7 @@
 <!-- Section Level Feedback -->
 <markdown-container>
   <markdown-column size="1">
-    <img src="/images/graph-placeholder.svg"></markdown-image>
+    <markdown-image src="images/graph-placeholder.svg"></markdown-image>
 
 Canada-wide, in 2019, among accidental apparent opioid-related deaths:
   - 77% involved fentanyl or fentanyl analogues
@@ -11,7 +11,7 @@ Canada-wide, in 2019, among accidental apparent opioid-related deaths:
   </markdown-column>
   
   <markdown-column size="1">
-  <img src="/images/graph-placeholder.svg"></markdown-image>
+  <markdown-image src="images/graph-placeholder.svg"></markdown-image>
   
 
   In British Columbia in 2019:

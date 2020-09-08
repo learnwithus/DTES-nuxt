@@ -5,6 +5,6 @@
   </markdown-column>
   
   <markdown-column size="1">
-    <img src="/images/graph-placeholder.svg"></markdown-image>
+    <markdown-image src="images/graph-placeholder.svg"></markdown-image>
   </markdown-column>
 </markdown-container>
