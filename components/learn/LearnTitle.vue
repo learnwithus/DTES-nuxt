@@ -15,5 +15,9 @@ export default {};
   font-weight: 900;
   font-size: 3em;
   color: $colour-secondary;
+
+  .dark & {
+    color: $colour-light;
+  }
 }
 </style>
