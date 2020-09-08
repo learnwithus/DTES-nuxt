@@ -16,7 +16,7 @@ answers:
     <img src="/images/graph-placeholder-dark.svg"></markdown-image>
   </markdown-column>
   <markdown-column size="1">
-    <img src="/images/graph-placeholder-dark.svg"></markdown-image>
+    
   </markdown-column>
 </markdown-container>
 

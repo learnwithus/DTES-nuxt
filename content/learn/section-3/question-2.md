@@ -1,21 +1,17 @@
 ---
-question: Another second question? (3)
+question: Which of these situations shows expressed or implied stigma?
 type: multiple-choice
 answers:
-  - answer: 2018
+  - answer: Individuals using outside in parks, homeless encampments, streets etc
     correct: false
-  - answer: 2014
+  - answer: Individuals using alone in place of residence 
     correct: true
-  - answer: 2016
-    correct: false
-  - answer: 2017
-    correct: false
-  - answer: No public health emergency has been announced
+  - answer: Groups using at social gatherings
     correct: false
 ---
 <!--- This is where the rich feedback goes -->
 <markdown-container>
-  <markdown-column size="1">Question 2 Feedback
+  <markdown-column size="1">Question Feedback
   </markdown-column>
   <markdown-column size="1">
   [ Picture ]
