@@ -30,7 +30,7 @@
                   <vs-button flat :border="!isLastQuestion" :active="isLastQuestion" @click="nextQuestion" v-else>Next</vs-button>
                 </div>
               </vs-col>
-              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4" offset="1">
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" offset="1">
                 <transition name="fade">
                   <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
                 </transition>
