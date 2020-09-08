@@ -27,8 +27,11 @@ export default {
 <style lang="scss" scoped>
 textarea{
     resize: none;
+    border-radius: 5px;
+    border: 1px solid $colour-light;
+    padding: 1em;
     &:disabled {
-        border: none;
+         border: 1px solid rgba(255, 255, 255, 0);
         background: none;
         opacity: 1;
         color: $text-colour-dark;
