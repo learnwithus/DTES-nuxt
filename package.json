@@ -9,11 +9,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.5.0",
+    "@nuxt/content": "^1.8.1",
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/style-resources": "^1.0.0",
-    "nuxt": "^2.14.0",
-    "vuesax": "^4.0.1-alpha.23"
+    "nuxt": "^2.14.4",
+    "vuesax": "^4.0.1-alpha.24"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
