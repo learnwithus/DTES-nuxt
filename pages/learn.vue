@@ -11,7 +11,7 @@
         <transition name="slide-fade" mode="out-in">
           <div class="center grid">
             <vs-row>
-              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6">
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="5">
                 <div class="actual-question" :key="currentIndex.question">
                   <learn-question :question="currentQuestion.question" class="space-1" />
                   <learn-input
@@ -30,7 +30,7 @@
                   <vs-button flat :border="!isLastQuestion" :active="isLastQuestion" @click="nextQuestion" v-else>Next</vs-button>
                 </div>
               </vs-col>
-              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4" offset="1">
                 <transition name="fade">
                   <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
                 </transition>
