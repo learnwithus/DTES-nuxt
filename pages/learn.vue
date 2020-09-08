@@ -23,11 +23,11 @@
 
                   <vs-button
                     flat
-                    :active="true"
+                    border
                     @click="showAnswer = true"
                     v-if="!showAnswer"
                   >Submit</vs-button>
-                  <vs-button flat :active="true" @click="nextQuestion" v-else>Next</vs-button>
+                  <vs-button flat :border="!isLastQuestion" :active="isLastQuestion" @click="nextQuestion" v-else>Next</vs-button>
                 </div>
               </vs-col>
               <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
@@ -45,6 +45,8 @@
         <section-feedback :feedback="currentSection.feedback" />
         <vs-button
           flat
+          dark
+          border
           :active="true"
           @click="nextQuestion()"
           class="submit"
@@ -138,6 +140,9 @@ export default {
       return (
         this.currentSection?.questions?.length <= this.currentIndex.question
       );
+    },
+    isLastQuestion(){
+      return this.currentSection?.questions?.length - 1 <= this.currentIndex.question;
     },
     isLastSection() {
       return this.sections.length - 1 <= this.currentIndex.section;
