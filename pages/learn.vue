@@ -75,6 +75,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Resisting Stigma - Learn"
+    };
+  },
   async asyncData(context) {
     // Get content from flatfiles in ~/content/ folder
     const flatQuestions = await context
