@@ -52,7 +52,16 @@
           class="submit"
           v-if="!isLastSection"
         >Next Section</vs-button>
-        <div v-else>DONE QUIZ</div>
+
+        <!-- Quiz Demo Buttons (Temporary) -->
+        <div v-else>
+          <br>
+          ---
+          <br>
+          DONE QUIZ
+          <br>
+          <button @click="currentIndex = { section: 0, question: 0, }">Restart</button>
+        </div>
       </div>
     </transition>
 
