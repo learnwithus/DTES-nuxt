@@ -13,6 +13,12 @@ h1 {
 }
 
 a {
-    // text-decoration: none;
-    // color: black;
+    text-decoration: none;
+    color: $colour-accent;
+    border-bottom: 1px solid $colour-accent;
+
+    .dark & {
+        color: $text-colour-light;
+        border-bottom: 1px solid $text-colour-light;
+    }
 }
