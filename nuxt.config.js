@@ -27,7 +27,12 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/wgf8sbs.css' }
-    ]
+    ],
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js'
+      }
+    ],
   },
   /*
   ** Global CSS
@@ -41,11 +46,6 @@ export default {
       './assets/scss/breakpoints.scss'
     ],
   },
-  script: [
-    {
-      src: 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js'
-    }
-  ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
