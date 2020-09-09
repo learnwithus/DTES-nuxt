@@ -163,7 +163,7 @@ export default {
     },
     sectionProgress() {
       const progress =
-        this.currentIndex.question / this.currentSection?.questions.length;
+        this.currentIndex.question / (this.currentSection?.questions.length + 1);
 
       return progress * 100;
     },
