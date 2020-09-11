@@ -79,12 +79,12 @@ export default {
 
 .dot {
   margin: 0 auto;
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.4em;
+  height: 0.4em;
   background-color: $colour-light;
   fill: $colour-light;
   border-radius: 50%;
-  padding: 0.5em;
+  padding: 0.4em;
   max-width: 100%;
   z-index: 10;
   position: relative;
