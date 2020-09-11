@@ -33,6 +33,7 @@ export default {
 
   transition: background-color 200ms ease-in-out;
 
+  // Use support quesrries to create a fallback for browsers that don't support clip-path because text would become unreadable otherwise
   @supports (clip-path: polygon(96% 0, 100% 0, 100% 100%, 85% 100%)) {
     transition: clip-path 300ms ease-in-out;
     background-color: $colour-primary;
