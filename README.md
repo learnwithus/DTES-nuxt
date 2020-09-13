@@ -1,6 +1,8 @@
 # DTES: Resisting Stigma
 
-An internal VCH website designed to teach visitors about the DTES through: **[1] a learning module** and **[2] an interactive video tour**.
+An internal VCH website designed to teach visitors about the DTES through: 
+**[1] a learning module** and 
+**[2] an interactive video tour**.
 
 Beta URL: https://dtes.netlify.app/
 
