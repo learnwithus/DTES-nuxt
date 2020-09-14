@@ -21,13 +21,14 @@
                     :reveal-answer="showAnswer"
                   />
 
+                  <vs-button flat border @click="showAnswer = true" v-if="!showAnswer">Submit</vs-button>
                   <vs-button
                     flat
-                    border
-                    @click="showAnswer = true"
-                    v-if="!showAnswer"
-                  >Submit</vs-button>
-                  <vs-button flat :border="!isLastQuestion" :active="isLastQuestion" @click="nextQuestion" v-else>Next</vs-button>
+                    :border="!isLastQuestion"
+                    :active="isLastQuestion"
+                    @click="nextQuestion"
+                    v-else
+                  >Next</vs-button>
                 </div>
               </vs-col>
               <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" offset="1">
@@ -42,7 +43,7 @@
       <!-- Feedback View -->
       <div v-else key="2">
         <h2>Feedback</h2>
-        <section-feedback :feedback="currentSection.feedback" />
+        <section-feedback :feedback="currentFeedback" />
         <vs-button
           flat
           dark
@@ -51,16 +52,14 @@
           @click="nextQuestion()"
           class="submit"
           v-if="!isLastSection"
-        >Next Section</vs-button>
+        >{{isLastFeedback ? 'Next Section' : 'Next'}}</vs-button>
 
         <!-- Quiz Demo Buttons (Temporary) -->
         <div v-else>
-          <br>
-          ---
-          <br>
-          DONE QUIZ
-          <br>
-          <button @click="currentIndex = { section: 0, question: 0, }">Restart</button>
+          <br />---
+          <br />DONE QUIZ
+          <br />
+          <button @click="currentIndex = { section: 0, question: 0, feedback: 0}">Restart</button>
         </div>
       </div>
     </transition>
@@ -86,7 +85,7 @@
 export default {
   head() {
     return {
-      title: "Resisting Stigma - Learn"
+      title: "Resisting Stigma - Learn",
     };
   },
   async asyncData(context) {
@@ -106,9 +105,10 @@ export default {
 
       // If the slug is feedback (for end-of-section feedback) add it to the feedback key,
       // If not, it must be a question so add it to the array of questions
-      if (obj.slug == "feedback") {
-        acc[property].feedback = obj;
-      } else {
+      if (obj.slug.startsWith("feedback")) {
+        acc[property].feedback = acc[property].feedback || [];
+        acc[property].feedback.push(obj);
+      } else if (obj.slug.startsWith("question")) {
         acc[property].questions = acc[property].questions || [];
         acc[property].questions.push(obj);
       }
@@ -125,6 +125,7 @@ export default {
       currentIndex: {
         section: 0,
         question: 0,
+        feedback: 0,
       },
       showAnswer: false,
     };
@@ -132,8 +133,13 @@ export default {
   methods: {
     nextQuestion() {
       if (this.showFeedback) {
-        this.currentIndex.question = 0;
-        this.currentIndex.section++;
+        if (this.isLastFeedback) {
+          this.currentIndex.question = 0;
+          this.currentIndex.feedback = 0;
+          this.currentIndex.section++;
+        } else {
+          this.currentIndex.feedback++;
+        }
       } else {
         this.currentIndex.question++;
         this.showAnswer = false;
@@ -150,20 +156,31 @@ export default {
     currentQuestion() {
       return this.currentSection?.questions[this.currentIndex.question];
     },
+    currentFeedback() {
+      return this.currentSection?.feedback[this.currentIndex.feedback];
+    },
     showFeedback() {
       return (
         this.currentSection?.questions?.length <= this.currentIndex.question
       );
     },
-    isLastQuestion(){
-      return this.currentSection?.questions?.length - 1 <= this.currentIndex.question;
+    isLastQuestion() {
+      return (
+        this.currentSection?.questions?.length - 1 <= this.currentIndex.question
+      );
     },
     isLastSection() {
       return this.sections.length - 1 <= this.currentIndex.section;
     },
+    isLastFeedback() {
+      return (
+        this.currentSection?.feedback?.length - 1 <= this.currentIndex.feedback
+      );
+    },
     sectionProgress() {
       const progress =
-        this.currentIndex.question / (this.currentSection?.questions.length + 1);
+        this.currentIndex.question /
+        (this.currentSection?.questions.length + 1);
 
       return progress * 100;
     },
