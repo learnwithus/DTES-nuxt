@@ -30,6 +30,9 @@ export default {
 .cirlcle {
   height: 6em;
   width: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2em;
   border: 2px white solid;
   text-align: center;
