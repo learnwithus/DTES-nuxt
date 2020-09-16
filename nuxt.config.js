@@ -52,6 +52,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/vuesax' },
+    { src: '~/plugins/tooltip' },
   ],
   /*
   ** Auto import components
