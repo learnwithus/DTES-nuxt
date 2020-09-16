@@ -1,13 +1,13 @@
 <template>
-  <main :class="{dark: showFeedback}">
-    <learn-background :accent="showFeedback" />
+  <main :class="{dark: showFeedback || moduleComplete}">
+    <learn-background :accent="showFeedback || moduleComplete" />
 
     <transition name="slide-fade" mode="out-in">
       <learn-title :key="currentIndex.section" class="space-2">{{currentSectionNumber}} /</learn-title>
     </transition>
     <!-- Question View -->
     <transition name="slide-fade" mode="out-in">
-      <div class="question" v-if="!showFeedback" key="1">
+      <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
         <transition name="slide-fade" mode="out-in">
           <div class="center grid">
             <vs-row>
@@ -26,7 +26,7 @@
                     flat
                     :border="!isLastQuestion"
                     :active="isLastQuestion"
-                    @click="nextQuestion"
+                    @click="nextScreen"
                     v-else
                   >Next</vs-button>
                 </div>
@@ -41,7 +41,7 @@
         </transition>
       </div>
       <!-- Feedback View -->
-      <div v-else key="2">
+      <div v-else-if="showFeedback && !moduleComplete" key="2">
         <h2>Feedback</h2>
         <section-feedback :feedback="currentFeedback" />
         <vs-button
@@ -49,22 +49,14 @@
           dark
           border
           :active="true"
-          @click="nextQuestion()"
+          @click="nextScreen()"
           class="submit"
-          v-if="!isLastSection"
         >{{isLastFeedback ? 'Next Section' : 'Next'}}</vs-button>
-
+      </div>
+      <div v-else key="3">
+        <section-feedback :feedback="finalPage"/>
         <!-- Quiz Demo Buttons (Temporary) -->
-        <div v-else>
-          <vs-button
-            flat
-            dark
-            border
-            :active="true"
-            @click="nextQuestion()"
-            class="submit"
-            v-if="!isLastSection"
-          >{{isLastFeedback ? 'Next Section' : 'Next'}}</vs-button>
+        <div>
           <button @click="currentIndex = { section: 0, question: 0, feedback: 0}">Restart</button>
         </div>
       </div>
@@ -133,24 +125,32 @@ export default {
       sections: learnSectionsArray,
       finalPage: finalPage,
       currentIndex: {
-        section: 0,
-        question: 0,
+        section: 4,
+        question: 2,
         feedback: 0,
       },
       showAnswer: false,
     };
   },
   methods: {
-    nextQuestion() {
+    // Progresses the user through the learning module
+    nextScreen() {
+      // If feedback is being displayed...
       if (this.showFeedback) {
+        // If the feedback being shown is the last feedback for that section, move on to the next section
+        // If not, show the user the next page of feedback
         if (this.isLastFeedback) {
-          this.currentIndex.question = 0;
-          this.currentIndex.feedback = 0;
-          this.currentIndex.section++;
+
+            this.currentIndex.question = 0;
+            this.currentIndex.feedback = 0;
+            this.currentIndex.section++;
+
         } else {
           this.currentIndex.feedback++;
         }
-      } else {
+      }
+      // If not displaying feedback, increment the question index and hide the answer of the next question
+      else {
         this.currentIndex.question++;
         this.showAnswer = false;
       }
@@ -172,6 +172,11 @@ export default {
     showFeedback() {
       return (
         this.currentSection?.questions?.length <= this.currentIndex.question
+      );
+    },
+    moduleComplete() {
+      return (
+        this.sections.length <= this.currentIndex.section
       );
     },
     isLastQuestion() {
