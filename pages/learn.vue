@@ -56,9 +56,15 @@
 
         <!-- Quiz Demo Buttons (Temporary) -->
         <div v-else>
-          <br />---
-          <br />DONE QUIZ
-          <br />
+          <vs-button
+            flat
+            dark
+            border
+            :active="true"
+            @click="nextQuestion()"
+            class="submit"
+            v-if="!isLastSection"
+          >{{isLastFeedback ? 'Next Section' : 'Next'}}</vs-button>
           <button @click="currentIndex = { section: 0, question: 0, feedback: 0}">Restart</button>
         </div>
       </div>
@@ -90,8 +96,11 @@ export default {
   },
   async asyncData(context) {
     // Get content from flatfiles in ~/content/ folder
+
+    const finalPage = await context.$content("learn/final").fetch();
+
     const flatQuestions = await context
-      .$content("learn", { deep: true })
+      .$content("learn/sections", { deep: true })
       .sortBy("dir")
       .sortBy("slug")
       // .only(["questions", "feedback", "body"])
@@ -122,6 +131,7 @@ export default {
     // Return data object complete with learning module sections
     return {
       sections: learnSectionsArray,
+      finalPage: finalPage,
       currentIndex: {
         section: 0,
         question: 0,
