@@ -125,8 +125,8 @@ export default {
       sections: learnSectionsArray,
       finalPage: finalPage,
       currentIndex: {
-        section: 4,
-        question: 2,
+        section: 0,
+        question: 0,
         feedback: 0,
       },
       showAnswer: false,
