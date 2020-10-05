@@ -1,6 +1,6 @@
 <template>
   <markdown-container>
-    <markdown-column size="1" style="padding-right: 3em">{{activeContentKey ? content[activeContentKey] : "Hover over circles to view"}}</markdown-column>
+    <markdown-column size="1" style="padding-right: 3em">{{activeContentKey ? content[activeContentKey] : content["default"]}}</markdown-column>
 
     <markdown-column size="1" style="padding-left: 3em">
       <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +34,10 @@ export default {
     iconSize: 70,
     activeContentKey: false,
     content: {
+      default: 
+        `The negative impacts of stigma can be felt through the continuum of care, from individual stigma, to structural or institutional stigma, to broader stigma in society as a whole. 
+        Examples of these impacts can be seen by clicking on the levels of stigma: \n
+        Click on the diagram on the right to learn more.`,
       individual: 
         `The negative impacts of stigma can be felt through the continuum of care, 
         from individual stigma, to structural or institutional stigma, to broader stigma in society as a whole. 
@@ -79,7 +83,7 @@ export default {
 
 .venn-icon {
   &.active {
-    filter: hue-rotate(86deg) brightness(10%) contrast(119%);
+    filter: brightness(20%);
   }
 }
 </style>
