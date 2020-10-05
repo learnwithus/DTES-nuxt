@@ -1,8 +1,45 @@
 <template>
   <markdown-container>
-    <markdown-column size="1" style="padding-right: 3em">{{activeContentKey ? content[activeContentKey] : content["default"]}}</markdown-column>
+    <markdown-column size="1" style="padding-right: 3em">
+      <div v-if="activeContent == 'individual'">
+        <h3>Individual Stigma</h3>
+       <ul>
+         <li>Interpersonal (eg, relations with others): The stigma and stereotypes we hold against groups based on learned prejudice and social and structural reinforcement.
+           <ul>
+             <li>This stigma is expressed as discrimination - as defined as unfair treatment due to a person’s identity [ref cmha]</li>
+           </ul>
+         </li>
+         <li>Intrapersonal (eg, self-stigma): People who use drugs might internalize stigma.
+           <ul>
+             <li>This could manifest in a reduced sense of self-worth, increased likelihood to conceal use of drugs, or reduced help or support seeking. All this leads to increased harms.</li>
+           </ul>
+         </li>
+       </ul>
+      </div>
+      <div v-else-if="activeContent == 'community'">
+        <h3>Social stigma</h3>
+        <ul>
+          <li>At a societal level, negative labels and images, rhetoric and stereotyping by members of the public, news, media, public figures, etc. reinforces and informs public perspective of the situation and the crisis, and ultimately impact political leanings and policies.</li>
+        </ul>
+      </div>
+      <div v-else-if="activeContent == 'staff'">
+        <h3>Structural stigma</h3>
+        <ul>
+          <li>Stigma as it occurs or is embedded within structures or institutions. 
+            <ul>
+              <li>For example, studies have shown many healthcare workers hold negative opinions of people who use drugs. This, along with other layers of social stigma likely influences drug policies and programs within institutions. This has the potential to reduce, limit or otherwise deny healthcare or essential services (e.g. evidence-based harm reduction services such as needle exchanges)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div v-else>
+        <p>The negative impacts of stigma can be felt on many levels.</p>
+        <em>Click on the diagram on the right for examples of these impacts.</em>
+      </div>
+    </markdown-column>
 
     <markdown-column size="1" style="padding-left: 3em">
+      <!-- Venn Diagram -->
       <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
         <g>
           <title>Circles</title>
@@ -32,28 +69,15 @@
 export default {
   data: () => ({
     iconSize: 70,
-    activeContentKey: false,
-    content: {
-      default: 
-        `The negative impacts of stigma can be felt through the continuum of care, from individual stigma, to structural or institutional stigma, to broader stigma in society as a whole. 
-        Examples of these impacts can be seen by clicking on the levels of stigma: \n
-        Click on the diagram on the right to learn more.`,
-      individual: 
-        `The negative impacts of stigma can be felt through the continuum of care, 
-        from individual stigma, to structural or institutional stigma, to broader stigma in society as a whole. 
-        Examples of these impacts can be seen by clicking on the levels of stigma:`,
-      community: "community",
-      staff: "staff",
-    },
+    activeContent: false,
   }),
   methods: {
     setActiveContent(key){
-      this.activeContentKey = key;
-      this.contentToDisply = this.content[this.activeContentKey];
+      this.activeContent = key;
       console.log(this.contentToDisply)
     },
     isActive(key){
-      return this.activeContentKey == key;
+      return this.activeContent == key;
     }
   }
 };
