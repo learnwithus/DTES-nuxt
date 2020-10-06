@@ -8,9 +8,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .learn-question {
-  font-family: adobe-caslon-pro, serif;
+  font-family: $font-serif;
   font-size: 1.5em;
 }
 </style>
