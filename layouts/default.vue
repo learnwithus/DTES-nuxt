@@ -1,13 +1,15 @@
 <template>
   <div>
     <header>
-      <img id="logo" src="~assets/images/logo-small.png" alt="Resisting Stigma">
+      <nuxt-link id="logo" to="/"
+        ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
+      /></nuxt-link>
       <nav>
         <ul>
-          <li>Learn</li>
-          <li>Tour</li>
-          <li>About</li>
-          <li>Resources</li>
+          <li><nuxt-link to="/learn">Learn</nuxt-link></li>
+          <li><nuxt-link to="/tour">Tour</nuxt-link></li>
+          <li><nuxt-link to="/about">About</nuxt-link></li>
+          <li><nuxt-link to="/resources">Resources</nuxt-link></li>
         </ul>
       </nav>
     </header>
@@ -32,16 +34,25 @@ header {
     ul {
       display: flex;
       list-style: none;
-      
     }
     li {
       margin: 0 1em;
     }
+    a {
+      color: white;
+      border: none;
+    }
+    
   }
 }
 
 #logo {
-  width: 200px;
-  height: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  img {
+    width: 200px;
+    height: 100%;
+  }
 }
 </style>
