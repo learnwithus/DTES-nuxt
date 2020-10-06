@@ -1,33 +1,8 @@
 <template>
-  <main>
+  <div>
     <h1>Home</h1>
     <nuxt-link to="/learn">Learn</nuxt-link>
-  </main>
-  
-  <!-- <client-only placeholder="Loading...">
-    <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section" v-for="(question, index) in assessmentQuestions" v-bind:key="index">
-         Question Slide 
-        <div class="slide">
-          <h2 class="question">{{question.question}}</h2>
-          <div class="answers">
-            <vs-radio
-              v-model="selectedAnswer"
-              v-for="(answer, index) in question.answers"
-              v-bind:key="index"
-              :val="index"
-            >{{answer.answer}}</vs-radio>
-          </div>
-          <vs-button flat :active="true" @click="$refs.fullpage.api.moveSlideRight()" class="submit">Submit</vs-button>
-        </div>
-
-         Answer Slide 
-        <div class="slide">
-          <h3>Here is the feedback / answer</h3>
-        </div>
-      </div>
-    </full-page>
-  </client-only>-->
+  </div>
 </template>
 
 <script>

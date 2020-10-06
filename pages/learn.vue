@@ -1,5 +1,5 @@
 <template>
-  <main :class="{dark: showFeedback || moduleComplete}">
+  <div :class="{dark: showFeedback || moduleComplete}">
     <learn-background :accent="showFeedback || moduleComplete" />
 
     <transition name="slide-fade" mode="out-in">
@@ -76,7 +76,7 @@
     <!-- <br />
     DEBUG DATA
     {{sections[0]}}-->
-  </main>
+  </div>
 </template>
 
 <script>
@@ -158,7 +158,7 @@ export default {
   },
   computed: {
     currentSectionNumber() {
-      return this.currentIndex.section + 1;
+      return this.currentIndex.section + 1;  // One number larger than the index because nerds start at 0 instead of 1
     },
     currentSection() {
       return this.sections[this.currentIndex.section];
