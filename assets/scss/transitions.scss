@@ -11,6 +11,22 @@
     opacity: 0;
 }
 
+// Slide vertically and fade-in / out
+.verticle-slide-fade-enter-active {
+    transition: all 0.3s ease;
+}
+.verticle-slide-fade-leave-active {
+    transition: all 0.3s ease-out;
+}
+.verticle-slide-fade-enter{
+    transform: translateY(-25px);
+    opacity: 0;
+}
+.verticle-slide-fade-leave-to {
+    transform: translateY(25px);
+    opacity: 0;
+}
+
 
 // Fade-in / out
 .fade-enter-active {
