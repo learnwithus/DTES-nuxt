@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="dtes-layout">
     <header>
       <nuxt-link id="logo" to="/"
         ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
@@ -13,13 +13,21 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <Nuxt />
-    </main>
+
+    <Nuxt id="dtes-page"/>
   </div>
 </template>
 
 <style lang="scss">
+#dtes-layout{
+  display: flex;
+  flex-direction: column;
+}
+
+#dtes-page {
+  flex: 1 1 auto;
+}
+
 header {
   padding: 0 1em;
   display: flex;
@@ -42,7 +50,6 @@ header {
       color: white;
       border: none;
     }
-    
   }
 }
 

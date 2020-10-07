@@ -1,5 +1,5 @@
 <template>
-  <div id="learn-container"  class="container" :class="{dark: showFeedback || moduleComplete}">
+  <main id="learn-container"  class="container" :class="{dark: showFeedback || moduleComplete}">
     <learn-background :accent="showFeedback || moduleComplete" />
 
     <transition name="slide-fade" mode="out-in">
@@ -76,7 +76,7 @@
     <!-- <br />
     DEBUG DATA
     {{sections[0]}}-->
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <main class="watch-page">
     <h1>Speaker Video</h1>
     <h2>{{ speaker.name }}</h2>
-    <v-plyr :options="videoOptions" ref="plyr">
+    <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
-        <source :src="require(`~/assets/videos/${speaker.video}`)" type="video/mp4" size="720" />
+        <source
+          :src="require(`~/assets/videos/${speaker.video}`)"
+          type="video/mp4"
+          size="720"
+        />
       </video>
     </v-plyr>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -35,5 +39,26 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.watch-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plyr {
+  flex: 1 1 auto;
+  // width: 100%;
+  // height: 100%;
+  // width: 100%;
+}
+
+#video-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+
+  .plyr__video-wrapper {
+    width: auto;
+  }
+}
 </style>
