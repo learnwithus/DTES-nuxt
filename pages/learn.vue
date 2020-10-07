@@ -1,5 +1,5 @@
 <template>
-  <main id="learn-container"  class="container" :class="{dark: showFeedback || moduleComplete}">
+  <main class="container learn-container" :class="{dark: showFeedback || moduleComplete}">
     <learn-background :accent="showFeedback || moduleComplete" />
 
     <transition name="slide-fade" mode="out-in">
@@ -204,8 +204,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#learn-container {
+.learn-container {
   overflow: hidden;
+  padding-top: 1em;
 }
 .learn-progress-container {
   position: absolute;
