@@ -70,4 +70,8 @@ export default {
 };
 </script>
 
-<style src="../../node_modules/plyr/dist/plyr.css"></style>
+<style lang="scss">
+$plyr-color-main: $colour-accent;
+
+@import '../../node_modules/plyr/src/sass/plyr.scss';
+</style>

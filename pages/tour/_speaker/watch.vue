@@ -59,6 +59,7 @@ export default {
 
   .plyr__video-wrapper {
     width: auto;
+    position: absolute;
   }
 }
 </style>
