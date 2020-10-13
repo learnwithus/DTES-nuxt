@@ -5,7 +5,7 @@
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
         <source
-          :src="require(`~/assets/videos/${speaker.video}`)"
+          :src="require(`~/assets/tour/${speaker.video}`)"
           type="video/mp4"
           size="720"
         />
@@ -56,6 +56,10 @@ export default {
 #video-wrapper {
   display: flex;
   flex: 1 1 auto;
+
+  video {
+    object-fit: cover;
+  }
 
   .plyr__video-wrapper {
     width: auto;
