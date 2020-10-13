@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Tour</h1>
     <nuxt-link to="/tour/speakers">Speakers</nuxt-link>
     <template>
