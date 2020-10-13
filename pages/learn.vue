@@ -242,7 +242,7 @@ export default {
 <style scoped lang="scss">
 .learn-container {
   overflow: hidden;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 .learn-progress-container {
   position: absolute;
