@@ -1,9 +1,14 @@
 <template>
-  <main class="container learn-container" :class="{dark: showFeedback || moduleComplete}">
+  <main
+    class="container learn-container"
+    :class="{ dark: showFeedback || moduleComplete }"
+  >
     <learn-background :accent="showFeedback || moduleComplete" />
 
     <transition name="slide-fade" mode="out-in">
-      <learn-title :key="currentIndex.section" class="space-2">{{currentSectionNumber}} /</learn-title>
+      <learn-title :key="currentIndex.section" class="space-2"
+        >{{ currentSectionNumber }} /</learn-title
+      >
     </transition>
     <!-- Question View -->
     <transition name="slide-fade" mode="out-in">
@@ -11,9 +16,17 @@
         <transition name="slide-fade" mode="out-in">
           <div class="center grid">
             <vs-row>
-              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="5">
+              <vs-col
+                vs-type="flex"
+                vs-justify="center"
+                vs-align="center"
+                w="5"
+              >
                 <div class="actual-question" :key="currentIndex.question">
-                  <learn-question :question="currentQuestion.question" class="space-1" />
+                  <learn-question
+                    :question="currentQuestion.question"
+                    class="space-1"
+                  />
                   <learn-input
                     class="space-2"
                     :type="currentQuestion.type"
@@ -21,19 +34,35 @@
                     :reveal-answer="showAnswer"
                   />
 
-                  <vs-button flat border @click="showAnswer = true" v-if="!showAnswer">Submit</vs-button>
+                  <vs-button
+                    flat
+                    border
+                    @click="showAnswer = true"
+                    v-if="!showAnswer"
+                    >Submit</vs-button
+                  >
                   <vs-button
                     flat
                     :border="!isLastQuestion"
                     :active="isLastQuestion"
                     @click="nextScreen"
                     v-else
-                  >Next</vs-button>
+                    >Next</vs-button
+                  >
                 </div>
               </vs-col>
-              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4" offset="1">
+              <vs-col
+                vs-type="flex"
+                vs-justify="center"
+                vs-align="center"
+                w="4"
+                offset="1"
+              >
                 <transition name="fade">
-                  <question-feedback v-if="showAnswer" :feedback="currentQuestion" />
+                  <question-feedback
+                    v-if="showAnswer"
+                    :feedback="currentQuestion"
+                  />
                 </transition>
               </vs-col>
             </vs-row>
@@ -51,13 +80,19 @@
           :active="true"
           @click="nextScreen()"
           class="submit"
-        >{{isLastFeedback ? 'Next Section' : 'Next'}}</vs-button>
+          >{{ isLastFeedback ? "Next Section" : "Next" }}</vs-button
+        >
       </div>
       <div v-else key="3">
-        <section-feedback :feedback="finalPage"/>
+        <section-feedback :feedback="finalPage" />
+        <vs-button to="/tour" dark border flat :active="true"> Continue To Tour </vs-button>
         <!-- Quiz Demo Buttons (Temporary) -->
         <div>
-          <button @click="currentIndex = { section: 0, question: 0, feedback: 0}">Restart</button>
+          <button
+            @click="currentIndex = { section: 0, question: 0, feedback: 0 }"
+          >
+            Restart
+          </button>
         </div>
       </div>
     </transition>
@@ -132,6 +167,10 @@ export default {
       showAnswer: false,
     };
   },
+  beforeDestroy(){
+    // Reset
+    this.$data.currentIndex = { section: 0, question: 0, feedback: 0 }
+  },
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
@@ -140,11 +179,9 @@ export default {
         // If the feedback being shown is the last feedback for that section, move on to the next section
         // If not, show the user the next page of feedback
         if (this.isLastFeedback) {
-
-            this.currentIndex.question = 0;
-            this.currentIndex.feedback = 0;
-            this.currentIndex.section++;
-
+          this.currentIndex.question = 0;
+          this.currentIndex.feedback = 0;
+          this.currentIndex.section++;
         } else {
           this.currentIndex.feedback++;
         }
@@ -158,7 +195,7 @@ export default {
   },
   computed: {
     currentSectionNumber() {
-      return this.currentIndex.section + 1;  // One number larger than the index because nerds start at 0 instead of 1
+      return this.currentIndex.section + 1; // One number larger than the index because nerds start at 0 instead of 1
     },
     currentSection() {
       return this.sections[this.currentIndex.section];
@@ -175,9 +212,7 @@ export default {
       );
     },
     moduleComplete() {
-      return (
-        this.sections.length <= this.currentIndex.section
-      );
+      return this.sections.length <= this.currentIndex.section;
     },
     isLastQuestion() {
       return (
