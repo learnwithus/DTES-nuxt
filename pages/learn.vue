@@ -1,109 +1,110 @@
 <template>
-  <main
-    class="container learn-container"
-    :class="{ dark: showFeedback || moduleComplete }"
-  >
-    <learn-background :accent="showFeedback || moduleComplete" />
+  <main :class="{ dark: showFeedback || moduleComplete }">
+    <div class="container learn-container">
+      <learn-background :accent="showFeedback || moduleComplete" />
 
-    <transition name="slide-fade" mode="out-in">
-      <learn-title :key="currentIndex.section" class="space-2"
-        >{{ currentSectionNumber }} /</learn-title
-      >
-    </transition>
-    <!-- Question View -->
-    <transition name="slide-fade" mode="out-in">
-      <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
-        <transition name="slide-fade" mode="out-in">
-          <div class="center grid">
-            <vs-row>
-              <vs-col
-                vs-type="flex"
-                vs-justify="center"
-                vs-align="center"
-                w="5"
-              >
-                <div class="actual-question" :key="currentIndex.question">
-                  <learn-question
-                    :question="currentQuestion.question"
-                    class="space-1"
-                  />
-                  <learn-input
-                    class="space-2"
-                    :type="currentQuestion.type"
-                    :answers="currentQuestion.answers"
-                    :reveal-answer="showAnswer"
-                  />
-
-                  <vs-button
-                    flat
-                    border
-                    @click="showAnswer = true"
-                    v-if="!showAnswer"
-                    >Submit</vs-button
-                  >
-                  <vs-button
-                    flat
-                    :border="!isLastQuestion"
-                    :active="isLastQuestion"
-                    @click="nextScreen"
-                    v-else
-                    >Next</vs-button
-                  >
-                </div>
-              </vs-col>
-              <vs-col
-                vs-type="flex"
-                vs-justify="center"
-                vs-align="center"
-                w="4"
-                offset="1"
-              >
-                <transition name="fade">
-                  <question-feedback
-                    v-if="showAnswer"
-                    :feedback="currentQuestion"
-                  />
-                </transition>
-              </vs-col>
-            </vs-row>
-          </div>
-        </transition>
-      </div>
-      <!-- Feedback View -->
-      <div v-else-if="showFeedback && !moduleComplete" key="2">
-        <h2>Feedback</h2>
-        <section-feedback :feedback="currentFeedback" />
-        <vs-button
-          flat
-          dark
-          border
-          :active="true"
-          @click="nextScreen()"
-          class="submit"
-          >{{ isLastFeedback ? "Next Section" : "Next" }}</vs-button
+      <transition name="slide-fade" mode="out-in">
+        <learn-title :key="currentIndex.section" class="space-2"
+          >{{ currentSectionNumber }} /</learn-title
         >
-      </div>
-      <div v-else key="3">
-        <section-feedback :feedback="finalPage" />
-        <vs-button to="/tour" dark border flat :active="true"> Continue To Tour </vs-button>
-        <!-- Quiz Demo Buttons (Temporary) -->
-        <div>
-          <button
-            @click="currentIndex = { section: 0, question: 0, feedback: 0 }"
-          >
-            Restart
-          </button>
-        </div>
-      </div>
-    </transition>
+      </transition>
+      <!-- Question View -->
+      <transition name="slide-fade" mode="out-in">
+        <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
+          <transition name="slide-fade" mode="out-in">
+            <div class="center grid">
+              <vs-row>
+                <vs-col
+                  vs-type="flex"
+                  vs-justify="center"
+                  vs-align="center"
+                  w="5"
+                >
+                  <div class="actual-question" :key="currentIndex.question">
+                    <learn-question
+                      :question="currentQuestion.question"
+                      class="space-1"
+                    />
+                    <learn-input
+                      class="space-2"
+                      :type="currentQuestion.type"
+                      :answers="currentQuestion.answers"
+                      :reveal-answer="showAnswer"
+                    />
 
-    <div class="learn-progress-container">
-      <div class="learn-progress-wrapper">
-        <progress-dots
-          :sections="sections.length"
-          :current-section="currentSectionNumber"
-          :progress="sectionProgress"
-        />
+                    <vs-button
+                      flat
+                      border
+                      @click="showAnswer = true"
+                      v-if="!showAnswer"
+                      >Submit</vs-button
+                    >
+                    <vs-button
+                      flat
+                      :border="!isLastQuestion"
+                      :active="isLastQuestion"
+                      @click="nextScreen"
+                      v-else
+                      >Next</vs-button
+                    >
+                  </div>
+                </vs-col>
+                <vs-col
+                  vs-type="flex"
+                  vs-justify="center"
+                  vs-align="center"
+                  w="4"
+                  offset="1"
+                >
+                  <transition name="fade">
+                    <question-feedback
+                      v-if="showAnswer"
+                      :feedback="currentQuestion"
+                    />
+                  </transition>
+                </vs-col>
+              </vs-row>
+            </div>
+          </transition>
+        </div>
+        <!-- Feedback View -->
+        <div v-else-if="showFeedback && !moduleComplete" key="2">
+          <h2>Feedback</h2>
+          <section-feedback :feedback="currentFeedback" />
+          <vs-button
+            flat
+            dark
+            border
+            :active="true"
+            @click="nextScreen()"
+            class="submit"
+            >{{ isLastFeedback ? "Next Section" : "Next" }}</vs-button
+          >
+        </div>
+        <div v-else key="3">
+          <section-feedback :feedback="finalPage" />
+          <vs-button to="/tour" dark border flat :active="true">
+            Continue To Tour
+          </vs-button>
+          <!-- Quiz Demo Buttons (Temporary) -->
+          <div>
+            <button
+              @click="currentIndex = { section: 0, question: 0, feedback: 0 }"
+            >
+              Restart
+            </button>
+          </div>
+        </div>
+      </transition>
+
+      <div class="learn-progress-container">
+        <div class="learn-progress-wrapper">
+          <progress-dots
+            :sections="sections.length"
+            :current-section="currentSectionNumber"
+            :progress="sectionProgress"
+          />
+        </div>
       </div>
     </div>
 
@@ -167,9 +168,9 @@ export default {
       showAnswer: false,
     };
   },
-  beforeDestroy(){
+  beforeDestroy() {
     // Reset
-    this.$data.currentIndex = { section: 0, question: 0, feedback: 0 }
+    this.$data.currentIndex = { section: 0, question: 0, feedback: 0 };
   },
   methods: {
     // Progresses the user through the learning module
