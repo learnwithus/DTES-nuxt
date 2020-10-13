@@ -1,7 +1,7 @@
 <template>
   <main class="watch-page">
-    <h1>Speaker Video</h1>
-    <h2>{{ speaker.name }}</h2>
+    <!-- <h1>Speaker Video</h1>
+    <h2>{{ speaker.name }}</h2> -->
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
         <source
@@ -30,6 +30,19 @@ export default {
         fullscreen: { enabled: false },
       },
     };
+  },
+  mounted() {
+    this.$store.commit("overlayHeader");
+
+    this.player.on("controlsshown", (event) => {
+      this.$store.commit("showHeader");
+    });
+    this.player.on("controlshidden", (event) => {
+      this.$store.commit("hideHeader");
+    });
+  },
+  destroyed() {
+    this.$store.commit("fixedHeader");
   },
   computed: {
     player() {
