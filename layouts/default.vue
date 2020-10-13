@@ -15,7 +15,13 @@
         <nav>
           <ul>
             <li><nuxt-link to="/learn">Learn</nuxt-link></li>
-            <li><nuxt-link to="/tour">Tour</nuxt-link></li>
+            <li class="dropdown">
+              <nuxt-link to="/tour">Tour</nuxt-link>
+              <ul>
+                <li><nuxt-link to="/tour">Intro</nuxt-link></li>
+                <li><nuxt-link to="/tour/speakers">Speakers</nuxt-link></li>
+              </ul>
+            </li>
             <li><nuxt-link to="/about">About</nuxt-link></li>
             <li><nuxt-link to="/resources">Resources</nuxt-link></li>
           </ul>
@@ -74,13 +80,46 @@ header {
     ul {
       display: flex;
       list-style: none;
+      margin: 0;
     }
     li {
-      margin: 0 1em;
+      padding: 1em;
+      height: 100%;
     }
     a {
       color: white;
       border: none;
+    }
+
+    // Nested Nav Dropdown
+    .dropdown {
+      position: relative;
+
+      &:hover ul {
+        display: block;
+      }
+
+      a {
+        font-size: 16px;
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.685);
+        padding: 0.5em;
+        top: 57px;
+        left: -1em;
+        z-index: 1;
+      }
+
+      ul a {
+        text-decoration: none;
+      }
+
+      // li a:hover {
+      //   background-color: #ddd;
+      // }
     }
   }
 }
