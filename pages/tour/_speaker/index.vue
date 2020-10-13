@@ -1,8 +1,16 @@
 <template>
   <div>
     <h1>Speaker Intro</h1>
-    <p>{{speaker.about}}</p>
+
+    <img
+      class="profile"
+      :src="require(`~/assets/tour/${speaker.profile}`)"
+      :alt="`An image of ${speaker.name}`"
+    />
+    <h3>{{ speaker.name }}</h3>
+    <p>{{ speaker.bio }}</p>
     <nuxt-link :to="`/tour/${speaker.slug}/watch`">Watch Interview</nuxt-link>
+    <tour-map />
   </div>
 </template>
 
@@ -23,5 +31,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.profile {
+  width: 10em;
+  border-radius: 50%;
+}
 </style>
