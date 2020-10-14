@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Home</h1>
-    <nuxt-link to="/learn">Learn</nuxt-link>
+    <div class="container">
+      <h1>Home</h1>
+      <nuxt-link to="/learn">Learn</nuxt-link>
+    </div>
   </div>
 </template>
 
