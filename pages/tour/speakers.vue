@@ -1,17 +1,21 @@
 <template>
   <div>
-    <h1>Tour - Speakers</h1>
-    <ul>
-      <li v-for="speaker in speakers" v-bind:key="speaker.id">
-        <nuxt-link :to="`/tour/${speaker.slug}`"
-          ><img
-            class="profile"
-            :src="require(`~/assets/tour/${speaker.profile}`)"
-            :alt="`An image of ${speaker.name}`"
-          />{{ speaker.name }}</nuxt-link
-        >
-      </li>
-    </ul>
+    <div class="container">
+      <h1>Walk</h1>
+      <h2>All Speakers</h2>
+      <ul id="speaker-list">
+        <li v-for="speaker in speakers" v-bind:key="speaker.id">
+          <nuxt-link :to="`/tour/${speaker.slug}`"
+            ><img
+              class="profile"
+              :src="require(`~/assets/tour/${speaker.profile}`)"
+              :alt="`An image of ${speaker.name}`"
+            />
+            <figcaption>{{ speaker.name }}</figcaption>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -34,7 +38,29 @@ export default {
 
 <style lang="scss" scoped>
 .profile {
-  width: 7em;
+  width: 10em;
+  // height: 10em;
   border-radius: 50%;
+}
+
+#speaker-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+
+  figcaption {
+    text-align: center;
+  }
+
+  li {
+    margin: 1em;
+  }
+
+  a {
+  }
+}
+
+a {
+  border-bottom: none;
 }
 </style>
