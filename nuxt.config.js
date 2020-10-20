@@ -53,6 +53,7 @@ export default {
   plugins: [
     { src: '~/plugins/vuesax' },
     { src: '~/plugins/tooltip' },
+    { src: '~/plugins/lazyload' },
   ],
   /*
   ** Auto import components

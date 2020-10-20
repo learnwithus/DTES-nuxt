@@ -1,24 +1,32 @@
 <template>
-  <div
-    class="speaker-intro-page"
-    :style="{
-      backgroundImage:
-        'url(' + require(`~/assets/tour/${speaker.background}`) + ')',
-    }"
-  >
-    <div class="container">
-      <div class="speaker-info">
-        <img
-          class="profile"
-          :src="require(`~/assets/tour/${speaker.profile}`)"
-          :alt="`An image of ${speaker.name}`"
-        />
-        <h3>{{ speaker.name }}</h3>
-        <p>{{ speaker.bio }}</p>
-        <vs-button :to="`/tour/${speaker.slug}/watch`" flat border color="#fff" class="watch-button">Watch</vs-button>
+  <div>
+    <div class="speaker-intro-background-placeholder"></div>
+    <div
+      class="speaker-intro-background-image"
+      v-lazy:background-image="require(`~/assets/tour/${speaker.background}`)"
+    ></div>
+    <div class="speaker-intro-page">
+      <div class="container speaker-container">
+        <div class="speaker-info">
+          <img
+            class="profile"
+            :src="require(`~/assets/tour/${speaker.profile}`)"
+            :alt="`An image of ${speaker.name}`"
+          />
+          <h3>{{ speaker.name }}</h3>
+          <p>{{ speaker.bio }}</p>
+          <vs-button
+            :to="`/tour/${speaker.slug}/watch`"
+            flat
+            border
+            color="#fff"
+            class="watch-button"
+            >Watch</vs-button
+          >
+        </div>
       </div>
+      <tour-map class="speaker-map" />
     </div>
-    <tour-map class="speaker-map"/>
   </div>
 </template>
 
@@ -39,14 +47,42 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.speaker-intro-background-placeholder {
+  background-color: $colour-dark;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.speaker-intro-background-image {
+  position: absolute;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 200ms linear;
+
+  &[lazy="loaded"] {
+    opacity: 1;
+  }
+}
 .profile {
   width: 10em;
   border-radius: 50%;
 }
 
 .speaker-intro-page {
-  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  // .container {
+  //   position: relative;
+  // }
 }
 
 .speaker-info {
@@ -57,16 +93,16 @@ export default {
   text-align: center;
   padding: 2em;
   border-radius: 1em;
-  margin-top: 5em;
+  margin-top: 7em;
 }
 
-.watch-button{
+.watch-button {
   margin: 2em auto 0 auto;
   text-transform: uppercase;
   padding: 0.5em;
 }
 
-.speaker-map{
+.speaker-map {
   margin-right: 2em;
   display: flex;
   flex-direction: row-reverse;
