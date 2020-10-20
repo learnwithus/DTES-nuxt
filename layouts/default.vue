@@ -54,10 +54,10 @@ export default {
 }
 
 header {
-  z-index: 1;
+  z-index: 3;
   &.overlay {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     transition: opacity 200ms linear;
 

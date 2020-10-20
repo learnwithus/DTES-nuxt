@@ -15,12 +15,10 @@
         />
         <h3>{{ speaker.name }}</h3>
         <p>{{ speaker.bio }}</p>
-        <nuxt-link :to="`/tour/${speaker.slug}/watch`">Watch</nuxt-link>
-        <vs-button flat border color="#fff">Watch</vs-button>
+        <vs-button :to="`/tour/${speaker.slug}/watch`" flat border color="#fff" class="watch-button">Watch</vs-button>
       </div>
     </div>
-
-    <tour-map />
+    <tour-map class="speaker-map"/>
   </div>
 </template>
 
@@ -60,5 +58,17 @@ export default {
   padding: 2em;
   border-radius: 1em;
   margin-top: 5em;
+}
+
+.watch-button{
+  margin: 2em auto 0 auto;
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+
+.speaker-map{
+  margin-right: 2em;
+  display: flex;
+  flex-direction: row-reverse;
 }
 </style>
