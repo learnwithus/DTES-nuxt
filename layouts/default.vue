@@ -54,6 +54,7 @@ export default {
 }
 
 header {
+  z-index: 1;
   &.overlay {
     position: absolute;
     z-index: 2;
