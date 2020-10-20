@@ -1,15 +1,21 @@
 <template>
   <div class="tour-map">
-    <div class="mini-map-container" @click="showMap = true" >
-      <dtes-map class="mini-map" :class="{active: showMap}"/>
+    <div class="mini-map-container" @click="showMap = true">
+      <dtes-map class="mini-map" :class="{ active: showMap }" />
     </div>
 
-    <div class="map-overlay-container" v-if="showMap">
-      <button class="map-close-button" @click="showMap = false">x</button>
-      <div class="map-wrapper">
-        <dtes-map />
+    <transition name="fade">
+      <div
+        class="map-overlay-container"
+        v-if="showMap"
+        :class="{ active: showMap }"
+      >
+        <button class="map-close-button" @click="showMap = false">x</button>
+        <div class="map-wrapper">
+          <dtes-map />
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -29,8 +35,8 @@ export default {
 
 <style lang="scss">
 .tour-map {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2em;
+  // background-color: rgba(0, 0, 0, 0.5);
+  // padding: 2em;
 }
 
 .mini-map {
