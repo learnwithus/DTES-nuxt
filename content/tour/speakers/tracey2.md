@@ -1,5 +1,5 @@
 ---
-name: 'Tracey Draper'
+name: 'Another Great Person'
 video: 'tracey/tracey-interview-test.mp4'
 profile: 'tracey/profile.jpg'
 background: 'tracey/background.jpg'
