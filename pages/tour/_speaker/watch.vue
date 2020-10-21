@@ -5,7 +5,7 @@
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
         <source
-          :src="require(`~/assets/tour/${speaker.video}`)"
+          :src="videoSource"
           type="video/mp4"
           size="720"
         />
@@ -52,6 +52,10 @@ export default {
     player() {
       return this.$refs.plyr.player;
     },
+    videoSource(){
+      const absoluteUrl = new RegExp('^(?:[a-z]+:)?//', 'i');
+      return absoluteUrl.test(this.speaker.video) ? this.speaker.video : require(`~/assets/tour/${this.speaker.video}`);
+    }
   },
 };
 </script>
