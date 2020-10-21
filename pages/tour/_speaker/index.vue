@@ -25,7 +25,7 @@
           >
         </div>
       </div>
-      <tour-map class="speaker-map" />
+      <tour-map :speakers="speakers" class="speaker-map" />
     </div>
   </div>
 </template>
@@ -39,9 +39,11 @@ export default {
   },
   async asyncData({ $content, params }) {
     const speaker = await $content("tour/speakers", params.speaker).fetch();
+    const speakers = await $content("tour/speakers").fetch();
 
     return {
       speaker,
+      speakers
     };
   },
 };

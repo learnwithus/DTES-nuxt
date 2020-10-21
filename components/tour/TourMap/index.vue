@@ -1,7 +1,7 @@
 <template>
   <div class="tour-map">
     <div class="mini-map-container" @click="showMap = true">
-      <dtes-map class="mini-map" :class="{ active: showMap }" />
+      <dtes-map :speakers="speakers" interactive="false" class="mini-map" :class="{ active: showMap }" />
     </div>
 
     <transition name="fade">
@@ -12,7 +12,7 @@
       >
         <button class="map-close-button" @click="showMap = false">x</button>
         <div class="map-wrapper">
-          <dtes-map />
+          <dtes-map :speakers="speakers" interactive="true"/>
         </div>
       </div>
     </transition>
@@ -25,6 +25,9 @@ export default {
   components: {
     DtesMap,
   },
+  props: [
+    'speakers'
+  ],
   data() {
     return {
       showMap: false,
