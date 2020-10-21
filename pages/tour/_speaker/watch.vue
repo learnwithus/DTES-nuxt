@@ -34,12 +34,16 @@ export default {
   mounted() {
     this.$store.commit("overlayHeader");
 
+    // Add event listers for when player controls are shown and hidden and use them to show and hide the navbar
     this.player.on("controlsshown", (event) => {
       this.$store.commit("showHeader");
     });
     this.player.on("controlshidden", (event) => {
       this.$store.commit("hideHeader");
     });
+
+    // Play the video (if the browser lets us)
+    this.player.play();
   },
   destroyed() {
     this.$store.commit("fixedHeader");
