@@ -83,7 +83,7 @@ export default {
   }
 
   .plyr__video-wrapper {
-    width: auto;
+    // width: auto;
     position: absolute;
   }
 }
