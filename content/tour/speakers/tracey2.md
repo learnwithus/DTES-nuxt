@@ -1,5 +1,6 @@
 ---
 name: 'Another Great Person'
+type: peer
 video: 'tracey/tracey-interview-test.mp4'
 profile: 'tracey/profile.jpg'
 background: 'tracey/background.jpg'

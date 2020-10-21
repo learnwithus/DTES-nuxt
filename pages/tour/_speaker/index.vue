@@ -14,6 +14,7 @@
             :alt="`An image of ${speaker.name}`"
           />
           <h3>{{ speaker.name }}</h3>
+          <div class="speaker-type">{{ speakerType }}</div>
           <p>{{ speaker.bio }}</p>
           <vs-button
             :to="`/tour/${speaker.slug}/watch`"
@@ -46,6 +47,14 @@ export default {
       speakers
     };
   },
+  computed: {
+    speakerType(){
+      if(this.speaker.type.toLowerCase() == 'peer'){
+        return "Peer"
+      }
+      else return "Organization"
+    }
+  }
 };
 </script>
 
@@ -96,6 +105,10 @@ export default {
   padding: 2em;
   border-radius: 1em;
   margin-top: 7em;
+}
+
+.speaker-type {
+  font-style: oblique;
 }
 
 .watch-button {

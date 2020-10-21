@@ -1,5 +1,6 @@
 ---
 name: 'Melissa'
+type: peer
 video: 'https://assets.vchlearn.ca/dtes/videos/melissa-720.mp4'
 profile: 'melissa/profile.jpg'
 background: 'tracey/background.jpg'
