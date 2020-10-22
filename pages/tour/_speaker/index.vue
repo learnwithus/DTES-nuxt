@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div class="speaker-intro-background-placeholder"></div>
-    <div
-      class="speaker-intro-background-image"
-      v-lazy:background-image="require(`~/assets/tour/${speaker.background}`)"
-    ></div>
     <div class="speaker-intro-page">
       <div class="container speaker-container">
         <div class="speaker-info">
@@ -44,43 +39,23 @@ export default {
 
     return {
       speaker,
-      speakers
+      speakers,
     };
   },
+  mounted(){
+    this.$store.commit("setBackgroundImage", `tour/${this.speaker.background}`);
+  },
   computed: {
-    speakerType(){
-      if(this.speaker.type.toLowerCase() == 'peer'){
-        return "Peer"
-      }
-      else return "Organization"
-    }
+    speakerType() {
+      if (this.speaker.type.toLowerCase() == "peer") {
+        return "Peer";
+      } else return "Organization";
+    },
   }
 };
 </script>
 
 <style scoped lang="scss">
-.speaker-intro-background-placeholder {
-  background-color: $colour-dark;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-.speaker-intro-background-image {
-  position: absolute;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 200ms linear;
-
-  &[lazy="loaded"] {
-    opacity: 1;
-  }
-}
 .profile {
   width: 10em;
   border-radius: 50%;

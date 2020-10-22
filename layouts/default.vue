@@ -28,17 +28,41 @@
         </nav>
       </div>
     </header>
-
+    <!-- Dynamic Image Background -->
+    <transition name="fade" mode="out-in">
+      <background-image
+        v-if="this.$store.state.backgroundImage"
+        :src="this.$store.state.backgroundImage"
+      />
+    </transition>
+    <!-- Page -->
     <Nuxt id="dtes-page" />
   </div>
 </template>
 
 <script>
 export default {
+  watchQuery: true,
   data() {
     return {
       headerHover: false,
+      // backgroundImage: require(this.$store.state.backgroundImage)
     };
+  },
+  mounted() {},
+  watch: {
+    $route(route) {
+      this.$store.commit("clearBackgroundImage");
+    },
+  },
+  computed: {
+    // backgroundImageSrc() {
+    //   return this.$store.state.backgroundImage;
+    // },
+    // backgroundImage() {
+    //   if(!this.backgroundImageSrc) return false;
+    //   return require(this.backgroundImageSrc);
+    // },
   },
 };
 </script>>
