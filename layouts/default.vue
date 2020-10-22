@@ -55,15 +55,7 @@ export default {
       this.$store.commit("clearBackgroundImage");
     },
   },
-  computed: {
-    // backgroundImageSrc() {
-    //   return this.$store.state.backgroundImage;
-    // },
-    // backgroundImage() {
-    //   if(!this.backgroundImageSrc) return false;
-    //   return require(this.backgroundImageSrc);
-    // },
-  },
+  computed: {},
 };
 </script>>
 
