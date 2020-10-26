@@ -13,12 +13,9 @@
         <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
           <transition name="slide-fade" mode="out-in">
             <div class="center grid">
-              <vs-row>
-                <vs-col
-                  vs-type="flex"
-                  vs-justify="center"
-                  vs-align="center"
-                  w="5"
+              <div class="columns ">
+                <div
+                  class="column is-half"
                 >
                   <div class="actual-question" :key="currentIndex.question">
                     <learn-question
@@ -48,22 +45,19 @@
                       >Next</vs-button
                     >
                   </div>
-                </vs-col>
-                <vs-col
-                  vs-type="flex"
-                  vs-justify="center"
-                  vs-align="center"
-                  w="4"
-                  offset="1"
+                </div>
+                <div
+                  class="column is-one-third-desktop is-half-mobile"
                 >
+                <!-- Questions-level Feedback -->
                   <transition name="fade">
                     <question-feedback
                       v-if="showAnswer"
                       :feedback="currentQuestion"
                     />
                   </transition>
-                </vs-col>
-              </vs-row>
+                </div>
+              </div>
             </div>
           </transition>
         </div>

@@ -19,6 +19,15 @@
 
 @import "transitions";
 
+//Bulma Grid library
+$tablet: map-get($breakpoints, phablet);
+$desktop: map-get($breakpoints, tablet);
+$widescreen: map-get($breakpoints, desktop);
+$fullhd: map-get($breakpoints, desktophd);
+
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/grid/columns.sass";
+
 // Override Vuesax Colours
 :root {
     --vs-primary: 59, 131, 194 !important;
