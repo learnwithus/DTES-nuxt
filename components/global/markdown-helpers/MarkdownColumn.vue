@@ -1,12 +1,12 @@
 <template>
-  <div class="markdown-column" :style="{'flex-grow': size}">
+  <div class="column">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  props: ["size"]
+  // props: ["size"]
 };
 </script>
 

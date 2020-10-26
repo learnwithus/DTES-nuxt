@@ -1,5 +1,5 @@
 <template>
-  <div class="markdown-container">
+  <div class="columns">
     <slot />
   </div>
 </template>
@@ -9,8 +9,8 @@ export default {};
 </script>
 
 <style>
-.markdown-container {
+/* .markdown-container {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 </style>
