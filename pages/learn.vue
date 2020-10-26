@@ -3,6 +3,7 @@
     <div class="container learn-container">
       <learn-background :accent="showFeedback || moduleComplete" />
 
+      <!-- Section Number -->
       <transition name="slide-fade" mode="out-in">
         <learn-title :key="currentIndex.section" class="space-2"
           >{{ currentSectionNumber }} /</learn-title
@@ -13,10 +14,8 @@
         <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
           <transition name="slide-fade" mode="out-in">
             <div class="center grid">
-              <div class="columns ">
-                <div
-                  class="column is-half"
-                >
+              <div class="columns">
+                <div class="column is-half">
                   <div class="actual-question" :key="currentIndex.question">
                     <learn-question
                       :question="currentQuestion.question"
@@ -46,10 +45,8 @@
                     >
                   </div>
                 </div>
-                <div
-                  class="column is-one-third-desktop is-half-mobile"
-                >
-                <!-- Questions-level Feedback -->
+                <div class="column is-one-third-desktop is-half-mobile">
+                  <!-- Questions-level Feedback -->
                   <transition name="fade">
                     <question-feedback
                       v-if="showAnswer"
@@ -62,7 +59,7 @@
           </transition>
         </div>
         <!-- Feedback View -->
-        <div v-else-if="showFeedback && !moduleComplete" key="2">
+        <div class="section-feedback-wrapper" v-else-if="showFeedback && !moduleComplete" key="2">
           <h2>Feedback</h2>
           <section-feedback :feedback="currentFeedback" />
           <vs-button
@@ -75,7 +72,7 @@
             >{{ isLastFeedback ? "Next Section" : "Next" }}</vs-button
           >
         </div>
-        <div v-else key="3">
+        <div class="section-feedback-wrapper" v-else key="3">
           <section-feedback :feedback="finalPage" />
           <vs-button to="/tour" dark border flat :active="true">
             Continue To Tour
@@ -94,6 +91,7 @@
       <div class="learn-progress-container">
         <div class="learn-progress-wrapper">
           <progress-dots
+            class="is-hidden-mobile"
             :sections="sections.length"
             :current-section="currentSectionNumber"
             :progress="sectionProgress"
@@ -249,4 +247,5 @@ export default {
     margin: 0 auto;
   }
 }
+
 </style>
