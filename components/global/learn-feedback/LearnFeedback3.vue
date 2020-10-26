@@ -1,6 +1,6 @@
 <template>
   <markdown-container>
-    <markdown-column size="1" style="padding-right: 3em">
+    <markdown-column style="padding-right: 3em">
       <div v-if="activeContent == 'individual'">
         <h3>Individual Stigma</h3>
        <ul>
@@ -38,9 +38,9 @@
       </div>
     </markdown-column>
 
-    <markdown-column size="1" style="padding-left: 3em">
+    <markdown-column style="padding-left: 3em">
       <!-- Venn Diagram -->
-      <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" viewBox=" 0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <g>
           <title>Circles</title>
           <ellipse ry="150" rx="150" :class="{active: isActive('community')}" class="venn-cirlcle" cy="368.98567" cx="303.88194" @mouseover="setActiveContent('community')"/>
@@ -84,6 +84,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+svg {
+  // width: auto;
+  // height: auto;
+}
 .venn-cirlcle {
 
   stroke-width: 2px;
