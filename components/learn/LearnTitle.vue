@@ -13,8 +13,12 @@ export default {};
   font-family: masqualero, sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 3em;
+  font-size: 2.5em;
   color: $colour-secondary;
+
+  @include breakpoint(phablet) {
+    font-size: 3em;
+  }
 
   .dark & {
     color: $colour-light;
