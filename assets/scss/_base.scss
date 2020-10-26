@@ -27,6 +27,7 @@ $fullhd: map-get($breakpoints, desktophd);
 
 @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/grid/columns.sass";
+@import "bulma/sass/helpers/visibility.sass";
 
 // Override Vuesax Colours
 :root {
