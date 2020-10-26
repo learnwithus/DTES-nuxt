@@ -3,7 +3,8 @@ export const state = () => ({
         overlay: false,
         visible: true
     },
-    backgroundImage: undefined
+    backgroundImage: null,
+    newBackgroundImage: null,
 })
 
 export const mutations = {
@@ -19,12 +20,28 @@ export const mutations = {
     hideHeader(state) {
         state.header.visible = false;
     },
-    setBackgroundImage(state, value){
+    setBackgroundImage(state, value) {
         console.log("setting background to: " + value)
-        if(value !== state.backgroundImage) state.backgroundImage = value;
-        console.log(state);
+        if (value !== state.newBackgroundImage) {
+            state.newBackgroundImage = value;
+
+            if (process.server) {
+                console.log("we're running on the server!!!")
+                state.backgroundImage = state.newBackgroundImage;
+            }
+        }
     },
-    clearBackgroundImage(state){
-        state.backgroundImage = undefined;
+    // Sets background image to the the new background image (Done in router plugin '~/plugins/backgroundImage.js')
+    updateBackgroundImage(state) {
+        state.backgroundImage = state.newBackgroundImage;
+    },
+    clearBackgroundImage(state) {
+        state.backgroundImage = null;
+    }
+}
+
+export const getters = {
+    getBackground: (state) => {
+        return state.backgroundImage
     }
 }

@@ -26,7 +26,7 @@ export default {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params, store }) {
     const speakers = await $content("tour/speakers").fetch();
 
     return {

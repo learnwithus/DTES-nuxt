@@ -33,25 +33,26 @@ export default {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ $content, params }) {
+
+  async asyncData({ $content, params, store }) {
     const speaker = await $content("tour/speakers", params.speaker).fetch();
     const speakers = await $content("tour/speakers").fetch();
+
+    store.commit("setBackgroundImage", `tour/${speaker.background}`);
 
     return {
       speaker,
       speakers,
     };
   },
-  mounted(){
-    this.$store.commit("setBackgroundImage", `tour/${this.speaker.background}`);
-  },
+  mounted() {},
   computed: {
     speakerType() {
       if (this.speaker.type.toLowerCase() == "peer") {
         return "Peer";
       } else return "Organization";
     },
-  }
+  },
 };
 </script>
 

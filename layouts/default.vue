@@ -31,8 +31,8 @@
     <!-- Dynamic Image Background -->
     <transition name="fade" mode="out-in">
       <background-image
-        v-if="this.$store.state.backgroundImage"
-        :src="this.$store.state.backgroundImage"
+        v-if="getBackground"
+        :src="getBackground"
       />
     </transition>
     <!-- Page -->
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   watchQuery: true,
   data() {
@@ -51,11 +52,15 @@ export default {
   },
   mounted() {},
   watch: {
-    $route(route) {
-      this.$store.commit("clearBackgroundImage");
-    },
+    // $route(route) {
+    //   this.$store.commit("clearBackgroundImage");
+    // },
   },
-  computed: {},
+  computed: {
+  ...mapGetters([
+    "getBackground"
+  ])
+}
 };
 </script>>
 

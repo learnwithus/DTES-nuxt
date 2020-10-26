@@ -1,11 +1,6 @@
 
 export default {
   /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
-  mode: 'universal',
-  /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
@@ -54,6 +49,7 @@ export default {
     { src: '~/plugins/vuesax' },
     { src: '~/plugins/tooltip' },
     { src: '~/plugins/lazyload' },
+    { src: '~/plugins/backgroundImage', mode: 'client'},
   ],
   /*
   ** Auto import components
@@ -72,13 +68,16 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/style-resources',
-    '@nuxtjs/markdownit',
+    // '@nuxtjs/markdownit',
   ],
-  markdownit: {
-    injected: true
-  },
+  // markdownit: {
+  //   injected: true
+  // },
   env: {
-    fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
+    // fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
+  },
+  router: {
+    // middleware: 'pageBackgroundImage'
   },
   /*
   ** Content module configuration
