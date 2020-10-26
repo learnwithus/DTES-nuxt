@@ -1,6 +1,10 @@
 <template>
   <div class="learn-background-wrapper">
-    <div class="learn-background" :class="{accent: accent }" ref="learnBG"></div>
+    <div
+      class="learn-background"
+      :class="{ accent: accent }"
+      ref="learnBG"
+    ></div>
   </div>
 </template>
 
@@ -33,11 +37,15 @@ export default {
 
   transition: background-color 200ms ease-in-out;
 
-  // Use support quesrries to create a fallback for browsers that don't support clip-path because text would become unreadable otherwise
+  // Use support queries to create a fallback for browsers that don't support clip-path because text would become unreadable otherwise
   @supports (clip-path: polygon(96% 0, 100% 0, 100% 100%, 85% 100%)) {
     transition: clip-path 300ms ease-in-out;
     background-color: $colour-primary;
-    clip-path: polygon(96% 0, 100% 0, 100% 100%, 85% 100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+    @include breakpoint(tablet) {
+      clip-path: polygon(96% 0, 100% 0, 100% 100%, 85% 100%);
+    }
   }
 
   &.accent {
