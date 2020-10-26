@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 .learn-background-wrapper {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   z-index: -1;
   height: 100%;
