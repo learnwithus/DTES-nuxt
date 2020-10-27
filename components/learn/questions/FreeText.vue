@@ -1,7 +1,12 @@
 <template>
   <!-- <vs-input v-model="value" placeholder="Name" /> -->
   <div>
-    <textarea v-model="text" :disabled="revealAnswer" rows="5" cols="50"></textarea>
+    <textarea
+      v-model="text"
+      :disabled="revealAnswer"
+      rows="6"
+      cols="50"
+    ></textarea>
     <!-- <div class="free-text-answer" v-if="revealAnswer">{{answers}}</div> -->
   </div>
 </template>
@@ -25,19 +30,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-textarea{
-    resize: none;
-    border-radius: 5px;
-    border: 1px solid $colour-light;
-    padding: 1em;
-    &:disabled {
-         border: 1px solid rgba(255, 255, 255, 0);
-        background: none;
-        opacity: 1;
-        color: $text-colour-dark;
-    }
+textarea {
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid $colour-light;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+
+  &:disabled {
+    border: 1px solid rgba(255, 255, 255, 0);
+    background: none;
+    opacity: 1;
+    color: $text-colour-dark;
+  }
 }
 .free-text-answer {
-    color: $colour-accent;
+  color: $colour-accent;
 }
 </style>
