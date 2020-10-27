@@ -6,6 +6,6 @@ profile: 'wendy/profile.jpg'
 background: 'tracey/background.jpg'
 bio: Short biography about Wendy, maybe how she is related to this location?
 map:
-    x: 30
-    y: 20
+    x: 75
+    y: 54
 ---
