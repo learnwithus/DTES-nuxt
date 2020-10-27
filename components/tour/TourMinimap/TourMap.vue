@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tour-map-container">
     <svg
       width="225"
       height="100"
@@ -7,7 +7,7 @@
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-    <!-- Base Map Lines -->
+      <!-- Base Map Lines -->
       <g>
         <path
           class="svg-map-fill"
@@ -53,8 +53,16 @@
           :cx="speaker.map.x"
           :cy="speaker.map.y"
           @mouseover="/*hoverLocation = speaker*/"
-          @click="$router.push({path: `/tour/${speaker.slug}`});"
-          v-tooltip="{ content: speaker.name, offset: 20 }"
+          @click="$router.push({ path: `/tour/${speaker.slug}` })"
+          v-tooltip="{
+            content: generateTooltip({
+              name: speaker.name,
+              image: speaker.profile,
+            }),
+            offset: 20,
+            html: true,
+            classes: 'map-tooltip',
+          }"
           class="speaker-map-dot"
           rx="5"
           ry="5"
@@ -80,39 +88,70 @@ export default {
   data: () => ({
     hoverLocation: undefined,
   }),
+  methods: {
+    generateTooltip({ name, image }) {
+      return `
+        <img class="tooltip-image" src="${require(`~/assets/tour/${image}`)}" />
+        <div class="speaker-name">${name}</div>
+      `;
+    },
+  },
+  mounted() {},
 };
 </script>
 
-<style scoped lang="scss">
-svg {
-  width: 100%;
-  height: auto;
-}
-.svg-map-line {
-  fill: none;
-  stroke: white;
-  stroke-miterlimit: 10;
-}
-.svg-map-fill {
-  opacity: 0.5;
-  fill: rgb(83, 83, 83);
-  /* isolation: isolate; */
-}
-.map-popover{
-    position: absolute;
-}
-.speaker-map-dot {
-  cursor: pointer;
-  transition: all 200ms;
-  fill: white;
-  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0));
-  transform-origin: center center;
-  transform-box: fill-box;
+<style lang="scss">
+.map-tooltip {
 
-  &:hover {
-    fill: $colour-accent;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
-    transform: rotate(-10deg) scale(1.61803398874989484820);
+  .tooltip-inner{
+    text-align: center;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .tooltip-arrow {
+    border-color:  rgba(0, 0, 0, 0.75);
+  }
+  .tooltip-image {
+    border-radius: 50%;
+    width: 5em;
+    margin: 0 auto;
+  }
+  .speaker-name {
+    font-size: 0.9em;
+  }
+}
+
+.tour-map-container {
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  .svg-map-line {
+    fill: none;
+    stroke: white;
+    stroke-miterlimit: 10;
+  }
+  .svg-map-fill {
+    opacity: 0.5;
+    fill: rgb(83, 83, 83);
+    /* isolation: isolate; */
+  }
+  .map-popover {
+    position: absolute;
+  }
+  .speaker-map-dot {
+    cursor: pointer;
+    transition: all 200ms;
+    fill: white;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0));
+    transform-origin: center center;
+    transform-box: fill-box;
+
+    &:hover {
+      fill: $colour-accent;
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
+      transform: rotate(-10deg) scale(1.2);
+    }
   }
 }
 </style>
