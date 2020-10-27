@@ -1,6 +1,6 @@
 <template>
   <div class="container tour-map-page-container">
-    <TourMap :interactive="true" :speakers="speakers"/>
+    <TourMap :interactive="true" :speakers="speakers" />
   </div>
 </template>
 
@@ -12,12 +12,6 @@ export default {
     };
   },
   async asyncData({ redirect, store, $content }) {
-    // If the user hasn't been to the tour intro page yet, redirect them there first
-    if (!store.state.tour.started) {
-      redirect("/tour/intro");
-      return;
-    }
-
     store.commit("requestDarkBackground");
 
     const speakers = await $content("tour/speakers").fetch();
@@ -25,6 +19,13 @@ export default {
     return {
       speakers,
     };
+  },
+  mounted() {
+    // If the user hasn't been to the tour intro page yet, redirect them there first
+    if (!this.$store.state.tour.started) {
+      this.$router.push("/tour/intro");
+      return;
+    }
   },
 };
 </script>
