@@ -5,6 +5,9 @@ export const state = () => ({
     },
     backgroundImage: null,
     newBackgroundImage: null,
+    tour: {
+        started: false
+    }
 })
 
 export const mutations = {
@@ -37,6 +40,9 @@ export const mutations = {
     },
     clearBackgroundImage(state) {
         state.backgroundImage = null;
+    },
+    beginTour(state){
+        state.tour.started = true;
     }
 }
 

@@ -17,7 +17,7 @@
           <li class="dropdown">
             <nuxt-link to="/tour">Tour</nuxt-link>
             <ul>
-              <li><nuxt-link to="/tour">Intro</nuxt-link></li>
+              <li><nuxt-link to="/tour/intro">Intro</nuxt-link></li>
               <li><nuxt-link to="/tour/speakers">Speakers</nuxt-link></li>
             </ul>
           </li>
