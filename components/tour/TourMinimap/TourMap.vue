@@ -52,11 +52,12 @@
           v-bind:key="speaker.id"
           :cx="speaker.map.x"
           :cy="speaker.map.y"
-          @mouseover="hoverLocation = speaker"
+          @mouseover="/*hoverLocation = speaker*/"
           @click="$router.push({path: `/tour/${speaker.slug}`});"
+          v-tooltip="{ content: speaker.name, offset: 20 }"
+          class="speaker-map-dot"
           rx="5"
           ry="5"
-          style="fill: white"
         />
       </g>
     </svg>
@@ -82,7 +83,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 svg {
   width: 100%;
   height: auto;
@@ -99,5 +100,19 @@ svg {
 }
 .map-popover{
     position: absolute;
+}
+.speaker-map-dot {
+  cursor: pointer;
+  transition: all 200ms;
+  fill: white;
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0));
+  transform-origin: center center;
+  transform-box: fill-box;
+
+  &:hover {
+    fill: $colour-accent;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
+    transform: rotate(-10deg) scale(1.61803398874989484820);
+  }
 }
 </style>
