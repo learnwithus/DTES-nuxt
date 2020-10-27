@@ -60,6 +60,7 @@ export const mutations = {
     //     state.background.dark.current = state.background.dark.next;
     // },
     setDarkBackground(state, value){
+        console.log("setting actual background dark state to: " + value)
         state.background.dark.current = value ? true : false;
     },
     beginTour(state){
