@@ -1,12 +1,12 @@
 <!-- Section Level Feedback -->
 <markdown-container>
-  <markdown-column size="1"  style="padding-right: 3em">
+  <markdown-column>
 
   Discrimination by healthcare workers can act as a barrier to healthcare for those that are stigmatized including increased discharges against medical advice, and access to future care. These discriminations might manifest in overt judgement or hostility or through practises such as excessive use of hygiene/infection control, increased wait times, lack of provisioning of on-site usage facilities, or refusal of service based on ongoing drug use.
 
   </markdown-column>
   
-  <markdown-column size="1" style="padding-left: 3em">
+  <markdown-column>
   
 
 - Feelings of shame and isolation caused by social stigma and stigmatizing language may exacerbate substance use complications and consequences where individuals may conceal substance use, use alone, be less likely to attend harm reduction programs, or seek treatment.

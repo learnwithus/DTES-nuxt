@@ -1,6 +1,6 @@
 <!-- Section Level Feedback -->
 <markdown-container>
-  <markdown-column size="1">
+  <markdown-column>
     <markdown-image src="images/graph-placeholder.svg"></markdown-image>
 
 Canada-wide, in 2019, among accidental apparent opioid-related deaths:
@@ -10,7 +10,7 @@ Canada-wide, in 2019, among accidental apparent opioid-related deaths:
 
   </markdown-column>
   
-  <markdown-column size="1">
+  <markdown-column>
   <markdown-image src="images/graph-placeholder.svg"></markdown-image>
   
 
