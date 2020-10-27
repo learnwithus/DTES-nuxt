@@ -3,6 +3,7 @@
     <div class="global-background-placeholder"></div>
     <div
       class="global-background-image"
+      v-if="dynamicImage"
       v-lazy:background-image="dynamicImage"
     ></div>
   </div>
@@ -14,7 +15,6 @@ export default {
 
   props: {
     src: {
-      type: String,
       required: true,
     },
     alt: {
@@ -25,7 +25,7 @@ export default {
 
   computed: {
     dynamicImage() {
-      return require(`~/assets/${this.src}`);
+      return this.src ? require(`~/assets/${this.src}`) : false;
     },
   },
 };

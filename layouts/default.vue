@@ -3,13 +3,10 @@
     <nav-bar />
     <!-- Dynamic Image Background -->
     <transition name="fade" mode="out-in">
-      <background-image
-        v-if="getBackground"
-        :src="getBackground"
-      />
+      <background-image v-if="getBackgroundImage || getBackgroundDark" :src="getBackgroundImage" />
     </transition>
     <!-- Page -->
-    <Nuxt id="dtes-page" />
+    <div id="dtes-page"><Nuxt /></div>
   </div>
 </template>
 
@@ -29,10 +26,8 @@ export default {
     // },
   },
   computed: {
-  ...mapGetters([
-    "getBackground"
-  ])
-}
+    ...mapGetters(["getBackgroundImage", "getBackgroundDark"]),
+  },
 };
 </script>>
 

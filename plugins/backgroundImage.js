@@ -2,8 +2,11 @@ export default ({ app, store }) => {
 
     app.router.beforeEach((to, from, next) => {
         console.log(from)
-        console.log("beforeEach: " + store.state.backgroundImage)
-        if (from.name !== null) store.commit("setBackgroundImage", null);
+        console.log("beforeEach: " + store.state.background)
+        if (from.name !== null) {
+            store.commit("setBackgroundImage", null);
+            store.commit("clearDarkBackgroundRequest");
+        }
         // else store.commit("setBackgroundImage", "tour/tracey/background.jpg");
         next();
     });
@@ -12,10 +15,15 @@ export default ({ app, store }) => {
         // Don't run on first pageload
         if (from.name !== null) {
             console.log(store.state);
-            console.log("afterEach: " + store.state.newBackgroundImage)
+            console.log("afterEach: " + store.state.background)
 
-            if (store.state.newBackgroundImage === null) store.commit("clearBackgroundImage");
+            // If the setBackgroundImage hasn't been called by the page at this point, remove the background image
+            if (store.state.background.image.next === null) store.commit("clearBackgroundImage");
+            // else update the background image to the new image
             else store.commit("updateBackgroundImage");
+
+            if(store.state.background.dark.next == false) store.commit("setDarkBackground", false);
+            else store.commit("setDarkBackground", true);
 
         }
 

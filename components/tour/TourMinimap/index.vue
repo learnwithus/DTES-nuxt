@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import DtesMap from "./-map";
+import DtesMap from "./TourMap";
 export default {
   components: {
     DtesMap,
@@ -87,8 +87,8 @@ export default {
     padding: 10em;
   }
 
-  .map {
-    width: 100%;
-  }
+  // .map {
+  //   width: 100%;
+  // }
 }
 </style>

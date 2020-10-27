@@ -3,8 +3,16 @@ export const state = () => ({
         overlay: false,
         visible: true
     },
-    backgroundImage: null,
-    newBackgroundImage: null,
+    background: {
+        image: {
+            current: null,
+            next: null
+        },
+        dark: {
+            current: false,
+            next: false
+        }
+    },
     tour: {
         started: false
     }
@@ -25,21 +33,34 @@ export const mutations = {
     },
     setBackgroundImage(state, value) {
         console.log("setting background to: " + value)
-        if (value !== state.newBackgroundImage) {
-            state.newBackgroundImage = value;
+        if (value !== state.background.image.next) {
+            state.background.image.next = value;
 
+            // If we're running on the server, set the actual background image as well 
+            // because this must be the first pageload
             if (process.server) {
-                console.log("we're running on the server!!!")
-                state.backgroundImage = state.newBackgroundImage;
+                state.background.image.current = state.background.image.next;
             }
         }
     },
     // Sets background image to the the new background image (Done in router plugin '~/plugins/backgroundImage.js')
     updateBackgroundImage(state) {
-        state.backgroundImage = state.newBackgroundImage;
+        state.background.image.current = state.background.image.next;
     },
     clearBackgroundImage(state) {
-        state.backgroundImage = null;
+        state.background.image.current = null;
+    },
+    clearDarkBackgroundRequest(state){
+        state.background.dark.next = false;
+    },
+    requestDarkBackground(state){
+        state.background.dark.next = true;
+    },
+    // updateDarkBackground(state){
+    //     state.background.dark.current = state.background.dark.next;
+    // },
+    setDarkBackground(state, value){
+        state.background.dark.current = value ? true : false;
     },
     beginTour(state){
         state.tour.started = true;
@@ -47,7 +68,10 @@ export const mutations = {
 }
 
 export const getters = {
-    getBackground: (state) => {
-        return state.backgroundImage
+    getBackgroundImage: (state) => {
+        return state.background.image.current;
+    },
+    getBackgroundDark: (state) => {
+        return state.background.dark.current;
     }
 }

@@ -21,7 +21,7 @@
           >
         </div>
       </div>
-      <tour-map :speakers="speakers" class="speaker-map" />
+      <tour-minimap :speakers="speakers" class="speaker-map" />
     </div>
   </div>
 </template>
@@ -33,7 +33,6 @@ export default {
       title: "Resisting Stigma - Tour",
     };
   },
-
   async asyncData({ $content, params, store }) {
     const speaker = await $content("tour/speakers", params.speaker).fetch();
     const speakers = await $content("tour/speakers").fetch();
