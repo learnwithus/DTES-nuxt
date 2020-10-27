@@ -36,7 +36,7 @@ export default {
     z-index: -1;
 }
 .global-background-placeholder {
-  background-color: $colour-primary;
+  background-color: $colour-primary-dark;
   position: absolute;
   height: 100%;
   width: 100%;
