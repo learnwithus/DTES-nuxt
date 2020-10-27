@@ -102,7 +102,7 @@ header {
 
     a {
       color: white;
-      border: none;
+      border: none !important;
     }
 
     // Nested Nav Dropdown

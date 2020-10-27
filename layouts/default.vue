@@ -1,5 +1,5 @@
 <template>
-  <div id="dtes-layout">
+  <div id="dtes-layout" :class="{dark: getBackgroundDark}">
     <nav-bar />
     <!-- Dynamic Image Background -->
     <transition name="fade" mode="out-in">
