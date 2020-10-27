@@ -17,17 +17,19 @@
               <div class="columns">
                 <div class="column is-half">
                   <div class="actual-question" :key="currentIndex.question">
+                    <!-- Questions -->
                     <learn-question
                       :question="currentQuestion.question"
                       class="space-1"
                     />
+                    <!-- User Answer Input -->
                     <learn-input
                       class="space-2"
                       :type="currentQuestion.type"
                       :answers="currentQuestion.answers"
                       :reveal-answer="showAnswer"
                     />
-
+                    <!-- Submit or Next Button -->
                     <vs-button
                       flat
                       border
@@ -45,7 +47,7 @@
                     >
                   </div>
                 </div>
-                <div class="column is-one-third-desktop is-half-mobile">
+                <div class="column is-one-third-desktop is-full-mobile">
                   <!-- Questions-level Feedback -->
                   <transition name="fade">
                     <question-feedback
