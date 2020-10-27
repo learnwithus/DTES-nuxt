@@ -50,20 +50,26 @@ export const mutations = {
     clearBackgroundImage(state) {
         state.background.image.current = null;
     },
-    clearDarkBackgroundRequest(state){
+    clearDarkBackgroundRequest(state) {
         state.background.dark.next = false;
     },
-    requestDarkBackground(state){
+    requestDarkBackground(state) {
         state.background.dark.next = true;
+
+        // If we're running on the server, set the actual dark mode as well 
+        // because this must be the first pageload
+        if (process.server) {
+            state.background.dark.current = state.background.dark.next;
+        }
     },
     // updateDarkBackground(state){
     //     state.background.dark.current = state.background.dark.next;
     // },
-    setDarkBackground(state, value){
+    setDarkBackground(state, value) {
         console.log("setting actual background dark state to: " + value)
         state.background.dark.current = value ? true : false;
     },
-    beginTour(state){
+    beginTour(state) {
         state.tour.started = true;
     }
 }
