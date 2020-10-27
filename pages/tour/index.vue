@@ -23,10 +23,10 @@ export default {
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
-    if (!this.$store.state.tour.started) {
-      this.$router.push("/tour/intro");
-      return;
-    }
+    // if (!this.$store.state.tour.started) {
+    //   this.$router.push("/tour/intro");
+    //   return;
+    // }
   },
 };
 </script>
