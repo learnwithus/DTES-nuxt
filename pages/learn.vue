@@ -29,22 +29,6 @@
                       :answers="currentQuestion.answers"
                       :reveal-answer="showAnswer"
                     />
-                    <!-- Submit or Next Button -->
-                    <vs-button
-                      flat
-                      border
-                      @click="showAnswer = true"
-                      v-if="!showAnswer"
-                      >Submit</vs-button
-                    >
-                    <vs-button
-                      flat
-                      :border="!isLastQuestion"
-                      :active="isLastQuestion"
-                      @click="nextScreen"
-                      v-else
-                      >Next</vs-button
-                    >
                   </div>
                 </div>
                 <div class="column is-one-third-desktop is-full-mobile">
@@ -61,18 +45,13 @@
           </transition>
         </div>
         <!-- Feedback View -->
-        <div class="section-feedback-wrapper" v-else-if="showFeedback && !moduleComplete" key="2">
+        <div
+          class="section-feedback-wrapper"
+          v-else-if="showFeedback && !moduleComplete"
+          key="2"
+        >
           <h2>Feedback</h2>
           <section-feedback :feedback="currentFeedback" />
-          <vs-button
-            flat
-            dark
-            border
-            :active="true"
-            @click="nextScreen()"
-            class="submit"
-            >{{ isLastFeedback ? "Next Section" : "Next" }}</vs-button
-          >
         </div>
         <div class="section-feedback-wrapper" v-else key="3">
           <section-feedback :feedback="finalPage" />
@@ -90,16 +69,17 @@
         </div>
       </transition>
 
-      <div class="learn-progress-container">
-        <div class="learn-progress-wrapper">
-          <progress-dots
-            class="is-hidden-mobile"
-            :sections="sections.length"
-            :current-section="currentSectionNumber"
-            :progress="sectionProgress"
-          />
-        </div>
-      </div>
+      <!-- Bottom Fixed UI -->
+      <bottom-ui
+        :progress="{
+          sectionCount: sections.length,
+          currentSection: currentSectionNumber,
+          sectionProgress: sectionProgress,
+        }"
+        :button="uiButton"
+        @click-next="nextScreen()"
+        @click-submit="showAnswer = true"
+      />
     </div>
 
     <!-- DEBUG DATA -->
@@ -110,6 +90,7 @@
 </template>
 
 <script>
+import formatQuestions from "~/helpers/formatLearnQuestions";
 export default {
   head() {
     return {
@@ -128,31 +109,11 @@ export default {
       // .only(["questions", "feedback", "body"])
       .fetch();
 
-    // Organize questions into their parent sections
-    const learnSections = flatQuestions.reduce((acc, obj) => {
-      const property = obj["dir"]; // Sort all the quetsions into their parent directories (their sections)
-
-      acc[property] = acc[property] || {}; // Create new sub object if it doesn't already exist
-
-      // If the slug is feedback (for end-of-section feedback) add it to the feedback key,
-      // If not, it must be a question so add it to the array of questions
-      if (obj.slug.startsWith("feedback")) {
-        acc[property].feedback = acc[property].feedback || [];
-        acc[property].feedback.push(obj);
-      } else if (obj.slug.startsWith("question")) {
-        acc[property].questions = acc[property].questions || [];
-        acc[property].questions.push(obj);
-      }
-
-      return acc;
-    }, {});
-
-    // Convert to array
-    const learnSectionsArray = Object.values(learnSections);
+    const formattedSections = formatQuestions(flatQuestions);
 
     // Return data object complete with learning module sections
     return {
-      sections: learnSectionsArray,
+      sections: formattedSections,
       finalPage: finalPage,
       currentIndex: {
         section: 0,
@@ -229,6 +190,12 @@ export default {
 
       return progress * 100;
     },
+    uiButton(){
+      if(!this.showAnswer && !this.showFeedback && !this.moduleComplete) return 'question-submit'
+      else if(this.showAnswer && !this.showFeedback && !this.moduleComplete) return 'question-next'
+      else if (this.isLastFeedback) return 'feedback-next-section'
+      else return 'feedback-next-feedback'
+    }
   },
 };
 </script>
@@ -238,16 +205,4 @@ export default {
   overflow: hidden;
   padding-top: 2em;
 }
-.learn-progress-container {
-  position: absolute;
-  bottom: 2em;
-  left: 0;
-  width: 100%;
-
-  > .learn-progress-wrapper {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
 </style>

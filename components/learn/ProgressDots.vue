@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 .progress-bar {
   margin: 0 auto;
-  padding: 2em 0 3em;
+  // padding: 2em 0 3em;
   list-style: none;
   position: relative;
   display: flex;
