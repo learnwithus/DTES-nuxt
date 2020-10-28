@@ -44,5 +44,10 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 0.9em;
+
+  @include breakpoint(phone) {
+    font-size: 1em;
+  }
 }
 </style>
