@@ -8,8 +8,8 @@
           <nuxt-link :to="`/tour/${speaker.slug}`"
             ><img
               class="profile"
-              :src="require(`~/assets/tour/${speaker.profile}`)"
               :alt="`An image of ${speaker.name}`"
+              v-lazy="{src: require(`~/assets/tour/${speaker.profile}`), preLoad: 1}"
             />
             <figcaption>{{ speaker.name }}</figcaption>
           </nuxt-link>
@@ -41,6 +41,7 @@ export default {
   width: 10em;
   // height: 10em;
   border-radius: 50%;
+  background-color: $colour-light;
 }
 
 #speaker-list {
