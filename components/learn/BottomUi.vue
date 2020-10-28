@@ -5,6 +5,7 @@
       <div class="button-wrapper">
         <vs-button
           flat
+          size="large"
           border
           @click="$emit('click-submit')"
           v-if="button == 'question-submit'"
@@ -12,6 +13,7 @@
         >
         <vs-button
           flat
+          size="large"
           :border="!progress.lastSectionQuestion"
           :active="progress.lastSectionQuestion"
           @click="$emit('click-next')"
@@ -20,6 +22,7 @@
         >
         <vs-button
           flat
+          size="large"
           dark
           border
           :active="true"
