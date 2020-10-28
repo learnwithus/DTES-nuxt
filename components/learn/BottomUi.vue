@@ -84,6 +84,10 @@ export default {
   z-index: 2;
   pointer-events: none;
 
+  @include breakpoint(phablet) {
+      padding-bottom: 3em;
+    }
+
   &::before {
     content: "";
     position: absolute;
