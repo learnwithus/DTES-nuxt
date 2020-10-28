@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <h1>Walk</h1>
-      <h2>All Speakers</h2>
+      <!-- <h1>Walk</h1> -->
+      <h2 class="title">All Speakers</h2>
       <ul id="speaker-list">
         <li v-for="speaker in speakers" v-bind:key="speaker.id">
           <nuxt-link :to="`/tour/${speaker.slug}`"
@@ -27,6 +27,7 @@ export default {
     };
   },
   async asyncData({ $content, params, store }) {
+    store.commit("requestDarkBackground");
     const speakers = await $content("tour/speakers").fetch();
 
     return {
@@ -42,12 +43,23 @@ export default {
   // height: 10em;
   border-radius: 50%;
   background-color: $colour-light;
+
+  @include breakpoint(phone){
+
+  }
+}
+
+.title {
+  font-family: $font-serif;
+  text-align: center;
+  letter-spacing: 0.05em;
 }
 
 #speaker-list {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
+  justify-content: center;
 
   figcaption {
     text-align: center;
