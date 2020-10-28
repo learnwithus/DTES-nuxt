@@ -42,7 +42,6 @@ export default {
 </script>
 
 <style lang="scss">
-$nav-height: 3.5em;
 #hamburger-button {
   display: inline-block;
 
