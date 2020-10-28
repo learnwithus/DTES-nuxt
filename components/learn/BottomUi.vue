@@ -39,7 +39,7 @@
       <div class="learn-progress-wrapper is-hidden-mobile">
         <progress-dots
           :sections="progress.sectionCount"
-          :current-section="progress.progress"
+          :current-section="progress.currentSection"
           :progress="progress.sectionProgress"
         />
       </div>
@@ -66,6 +66,9 @@ export default {
       //   }
     },
   },
+  mounted(){
+      console.log(this.$props.progress)
+  }
 };
 </script>
 
@@ -77,21 +80,67 @@ export default {
   padding-top: 5em;
   left: 0;
   width: 100%;
+  transition: all 200ms linear 200ms;
+  z-index: 2;
+  pointer-events: none;
 
-  background: linear-gradient(
-    0deg,
-    rgba(white, 1) 0%,
-    rgba(white, 0.5) 82%,
-    rgba(white, 0) 100%
-  );
-
-  .dark & {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     background: linear-gradient(
       0deg,
       rgba($colour-primary, 1) 0%,
-      rgba($colour-primary, 0.5) 82%,
+      rgba($colour-primary, 0.5) 50%,
       rgba($colour-primary, 0) 100%
     );
+
+    .dark & {
+      opacity: 1;
+      transition: opacity 200ms linear 250ms;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 200ms linear 250ms;
+    background: linear-gradient(
+      0deg,
+      rgba(white, 1) 0%,
+      rgba(white, 0.5) 82%,
+      rgba(white, 0) 100%
+    );
+
+    @include breakpoint(phablet) {
+      background: unset;
+    }
+
+    .dark & {
+      opacity: 0;
+      transition: none;
+    }
+  }
+
+  .dark & {
+    // background: linear-gradient(
+    //   0deg,
+    //   rgba($colour-primary, 1) 0%,
+    //   rgba($colour-primary, 0.5) 50%,
+    //   ≈
+    //   rgba($colour-primary, 0) 100%
+    // );
+
+    
   }
 
   @include breakpoint(phablet) {
@@ -102,6 +151,7 @@ export default {
   .container {
     display: flex;
     align-items: center;
+    pointer-events: auto;
 
     > * {
       flex-grow: 1;
@@ -112,6 +162,7 @@ export default {
   .button-wrapper {
     display: flex;
     justify-content: center;
+    
     @include breakpoint(phablet) {
       justify-content: unset;
     }
