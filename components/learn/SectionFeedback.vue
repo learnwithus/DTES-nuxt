@@ -14,7 +14,7 @@ export default {
 .section-feedback {
   img {
     max-width: 500px;
-    margin: 0 auto;
+    // margin: 0 auto;
     display: block;
   }
 }

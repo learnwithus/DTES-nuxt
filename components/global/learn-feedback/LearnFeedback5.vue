@@ -1,11 +1,11 @@
 <template>
   <markdown-container>
-    <markdown-column size="2" style="padding-right: 3em">
-      <ul>
+    <div class="column is-one-fifth">
+      <ul class="columns is-mobile is-multiline is-gapless is-centered">
         <li
           v-for="(section, index) in sections"
           v-bind:key="index"
-          class="stigma-level"
+          class="stigma-level column is-4-mobile is-full-tablet"
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
@@ -13,9 +13,9 @@
           <p class="name">{{ section.name }}</p>
         </li>
       </ul>
-    </markdown-column>
+    </div>
 
-    <markdown-column size="10" style="padding-left: 3em">
+    <div class="column">
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
           <h3>Individual</h3>
@@ -53,7 +53,7 @@
           <em>Click on the icons on the left to learn more.</em>
         </div>
       </transition>
-    </markdown-column>
+    </div>
   </markdown-container>
 </template>
 
@@ -85,10 +85,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ul {
+  padding: 0;
+}
+
 .stigma-level {
   cursor: pointer;
   opacity: 0.25;
-  padding: 1em;
+  // padding: 1em;
   border-radius: 1em;
   transition: opacity 200ms;
   list-style: none;
@@ -103,8 +107,20 @@ export default {
     opacity: 1;
   }
 
+  .name {
+    font-size: 0.75em;
+    @include breakpoint(phone){
+      font-size: 1em;
+    }
+  }
+
   img {
-    height: 3em;
+    height: 2em;
+    margin: 0 auto;
+
+    @include breakpoint(phone){
+      height: 3em;
+    }
   }
 }
 </style>
