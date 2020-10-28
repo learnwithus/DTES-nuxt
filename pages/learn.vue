@@ -190,12 +190,15 @@ export default {
 
       return progress * 100;
     },
-    uiButton(){
-      if(!this.showAnswer && !this.showFeedback && !this.moduleComplete) return 'question-submit'
-      else if(this.showAnswer && !this.showFeedback && !this.moduleComplete) return 'question-next'
-      else if (this.isLastFeedback) return 'feedback-next-section'
-      else return 'feedback-next-feedback'
-    }
+    // What type of button are we displaying on the fixed bottom UI ?
+    uiButton() {
+      if (!this.showAnswer && !this.showFeedback && !this.moduleComplete)
+        return "question-submit";
+      else if (this.showAnswer && !this.showFeedback && !this.moduleComplete)
+        return "question-next";
+      else if (this.isLastFeedback) return "feedback-next-section";
+      else return "feedback-next-feedback";
+    },
   },
 };
 </script>
@@ -204,5 +207,10 @@ export default {
 .learn-container {
   overflow: hidden;
   padding-top: 2em;
+  padding-bottom: 5em;
+
+  @include breakpoint(phablet) {
+    padding-bottom: 0;
+  }
 }
 </style>

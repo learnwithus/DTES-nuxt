@@ -36,14 +36,14 @@
       </div>
 
       <!-- Prgoress Dots -->
-      <div class="learn-progress-wrapper">
+      <div class="learn-progress-wrapper is-hidden-mobile">
         <progress-dots
-          class="is-hidden-mobile"
           :sections="progress.sectionCount"
           :current-section="progress.progress"
           :progress="progress.sectionProgress"
         />
       </div>
+      <div class="is-hidden-mobile"></div>
     </dir>
   </div>
 </template>
@@ -71,15 +71,48 @@ export default {
 
 <style lang="scss">
 .bottom-fixed-ui {
-  position: absolute;
-
-  bottom: 2em;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 2em;
+  padding-top: 5em;
   left: 0;
   width: 100%;
+
+//   background: linear-gradient(
+//     0deg,
+//     rgba($colour-primary-dark, 1) 0%,
+//     rgba($colour-primary-dark, 0.10686281348476889) 82%,
+//     rgba($colour-primary-dark, 0) 100%
+//   );
+
+  background: linear-gradient(
+    0deg,
+    rgba(white, 1) 0%,
+    rgba(white, 0.5) 82%,
+    rgba(white, 0) 100%
+  );
+
+  @include breakpoint(phablet) {
+      padding-top: 0;
+    background: unset;
+  }
 
   .container {
     display: flex;
     align-items: center;
+
+    > * {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    @include breakpoint(phablet) {
+      justify-content: unset;
+    }
   }
 
   .learn-progress-wrapper {
