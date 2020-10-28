@@ -99,7 +99,7 @@ export default {
     background: linear-gradient(
       0deg,
       rgba($colour-primary, 1) 0%,
-      rgba($colour-primary, 0.5) 50%,
+      rgba($colour-primary, 0.75) 80%,
       rgba($colour-primary, 0) 100%
     );
 
@@ -121,7 +121,7 @@ export default {
     background: linear-gradient(
       0deg,
       rgba(white, 1) 0%,
-      rgba(white, 0.5) 82%,
+      rgba(white, 0.75) 80%,
       rgba(white, 0) 100%
     );
 
