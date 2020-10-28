@@ -12,8 +12,8 @@
         >
         <vs-button
           flat
-          :border="!isLastQuestion"
-          :active="isLastQuestion"
+          :border="!progress.lastSectionQuestion"
+          :active="progress.lastSectionQuestion"
           @click="$emit('click-next')"
           v-else-if="button == 'question-next'"
           >Next</vs-button
@@ -78,13 +78,6 @@ export default {
   left: 0;
   width: 100%;
 
-//   background: linear-gradient(
-//     0deg,
-//     rgba($colour-primary-dark, 1) 0%,
-//     rgba($colour-primary-dark, 0.10686281348476889) 82%,
-//     rgba($colour-primary-dark, 0) 100%
-//   );
-
   background: linear-gradient(
     0deg,
     rgba(white, 1) 0%,
@@ -92,8 +85,17 @@ export default {
     rgba(white, 0) 100%
   );
 
+  .dark & {
+    background: linear-gradient(
+      0deg,
+      rgba($colour-primary, 1) 0%,
+      rgba($colour-primary, 0.5) 82%,
+      rgba($colour-primary, 0) 100%
+    );
+  }
+
   @include breakpoint(phablet) {
-      padding-top: 0;
+    padding-top: 0;
     background: unset;
   }
 

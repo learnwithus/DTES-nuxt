@@ -75,6 +75,7 @@
           sectionCount: sections.length,
           currentSection: currentSectionNumber,
           sectionProgress: sectionProgress,
+          lastSectionQuestion: isLastQuestion
         }"
         :button="uiButton"
         @click-next="nextScreen()"
@@ -207,7 +208,7 @@ export default {
 .learn-container {
   overflow: hidden;
   padding-top: 2em;
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 
   @include breakpoint(phablet) {
     padding-bottom: 0;
