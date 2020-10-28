@@ -71,12 +71,7 @@
 
       <!-- Bottom Fixed UI -->
       <bottom-ui
-        :progress="{
-          sectionCount: sections.length,
-          currentSection: currentSectionNumber,
-          sectionProgress: sectionProgress,
-          lastSectionQuestion: isLastQuestion
-        }"
+        :progress="progressObject"
         :button="uiButton"
         @click-next="nextScreen()"
         @click-submit="showAnswer = true"
@@ -191,6 +186,15 @@ export default {
 
       return progress * 100;
     },
+    // Porgress object passed to Bottom UI
+    progressObject() {
+      return {
+        sectionCount: this.sections.length,
+        currentSection: this.currentSectionNumber,
+        sectionProgress: this.sectionProgress,
+        lastSectionQuestion: this.isLastQuestion,
+      };
+    },
     // What type of button are we displaying on the fixed bottom UI ?
     uiButton() {
       if (!this.showAnswer && !this.showFeedback && !this.moduleComplete)
@@ -211,7 +215,7 @@ export default {
   padding-bottom: 7em;
 
   @include breakpoint(phablet) {
-    padding-bottom: 0;
+    padding-bottom: 4em;
   }
 }
 </style>
