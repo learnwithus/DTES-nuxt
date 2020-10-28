@@ -60,7 +60,6 @@
               image: speaker.profile,
             }),
             offset: 20,
-            html: true,
             classes: 'map-tooltip',
           }"
           class="speaker-map-dot"
@@ -114,6 +113,7 @@ export default {
   .tooltip-image {
     border-radius: 50%;
     width: 5em;
+    height: 5em;
     margin: 0 auto;
   }
   .speaker-name {
