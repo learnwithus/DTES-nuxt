@@ -1,6 +1,6 @@
 <template>
-  <markdown-container>
-    <markdown-column style="padding-right: 3em">
+  <markdown-container class="is-reversed-mobile">
+    <div class="column">
       <div v-if="activeContent == 'individual'">
         <h3>Individual Stigma</h3>
        <ul>
@@ -36,9 +36,9 @@
         <p>The negative impacts of stigma can be felt on many levels.</p>
         <em>Click on the diagram on the right for examples of these impacts.</em>
       </div>
-    </markdown-column>
+    </div>
 
-    <markdown-column style="padding-left: 3em">
+    <markdown-column>
       <!-- Venn Diagram -->
       <svg width="100%" viewBox=" 0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <g>
