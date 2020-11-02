@@ -53,7 +53,7 @@
           :cx="speaker.map.x"
           :cy="speaker.map.y"
           @mouseover="/*hoverLocation = speaker*/"
-          @click="$router.push({ path: `/tour/${speaker.slug}` })"
+          @click="$props.interactive ? $router.push({ path: `/tour/${speaker.slug}` }) : false"
           v-tooltip="
             $props.interactive
               ? {
