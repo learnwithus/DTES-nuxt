@@ -2,11 +2,27 @@
   <main class="watch-page">
     <!-- <h1>Speaker Video</h1>
     <h2>{{ speaker.name }}</h2> -->
-    <div v-if="videoEnded" class="interview-end-screen">
-      <h3>"Video Finished Screen"</h3>
-      <vs-button to="/tour" flat border color="#fff" class="back-to-map-button"
-        >Continue To Map</vs-button
-      >
+    <div class="interview-overlay">
+      <div v-if="videoEnded" id="interview-end-screen">
+        <h3>"Video Finished Screen"</h3>
+        <vs-button
+          to="/tour"
+          flat
+          border
+          color="#fff"
+          class="back-to-map-button"
+          >Back to Map</vs-button
+        >
+      </div>
+      <div v-else-if="videoPaused" id="interview-pause-screen">
+        <div class="pause-circle">
+          <div class="title">Paused</div>
+          <div class="instructions">
+            Click on the screen to continue listening
+          </div>
+        </div>
+        <tour-minimap :speakers="speakers" class="speaker-map" />
+      </div>
     </div>
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
@@ -25,13 +41,16 @@ export default {
   },
   async asyncData({ $content, params }) {
     const speaker = await $content("tour/speakers", params.speaker).fetch();
+    const speakers = await $content("tour/speakers").fetch();
 
     return {
       speaker,
+      speakers,
       videoOptions: {
         fullscreen: { enabled: false },
       },
       videoEnded: false,
+      videoPaused: false,
     };
   },
   mounted() {
@@ -49,6 +68,13 @@ export default {
     });
     this.player.on("playing", (event) => {
       this.videoEnded = false;
+    });
+
+    this.player.on("pause", (event) => {
+      this.videoPaused = true;
+    });
+    this.player.on("play", (event) => {
+      this.videoPaused = false;
     });
 
     // Play the video (if the browser lets us)
@@ -96,7 +122,11 @@ export default {
 
   // Styles of paused video overlay
   .plyr__control--overlaid {
-    // display: none;
+    display: none;
+  }
+
+  .plyr__controls {
+    z-index: 10;
   }
 
   .plyr__video-wrapper {
@@ -111,16 +141,55 @@ export default {
     }
   }
 }
-.interview-end-screen {
+.interview-overlay {
   position: absolute;
   z-index: 5;
   top: $nav-height;
   color: $text-colour-light;
   text-align: center;
   width: 100%;
+  height: calc(100% - #{$nav-height + 77px});
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
 
   .back-to-map-button {
     margin: 0 auto;
   }
+}
+#interview-pause-screen {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .pause-circle {
+    height: 10em;
+    width: 10em;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5em;
+
+    .title {
+      font-family: $font-serif;
+      font-weight: bold;
+      font-size: 1.4em;
+    }
+    .instructions {
+      font-size: 0.9em;
+    }
+  }
+
+  .tour-map > * {
+    pointer-events: auto;
+  }
+}
+#interview-end-screen {
+  pointer-events: auto;
 }
 </style>
