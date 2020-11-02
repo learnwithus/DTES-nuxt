@@ -5,13 +5,24 @@
 
       <!-- Section Number -->
       <transition name="slide-fade" mode="out-in">
-        <learn-title :key="currentIndex.section" class="space-2"
+        <learn-title
+          :key="currentIndex.section"
+          class="space-2 opacity-show"
+          :class="{ 'opacity-hide' : !moduleStarted }"
+          v-if="!moduleComplete"
           >{{ currentSectionNumber }} /</learn-title
         >
       </transition>
-      <!-- Question View -->
+
       <transition name="slide-fade" mode="out-in">
-        <div class="question" v-if="!showFeedback && !moduleComplete" key="1">
+        <!-- Learning Objectives -->
+        <learning-objectives v-if="!moduleStarted" :learningObjectives="learningObjectives"/>
+        <!-- Question View -->
+        <div
+          class="question"
+          v-else-if="!showFeedback && !moduleComplete && moduleStarted"
+          key="1"
+        >
           <transition name="slide-fade" mode="out-in">
             <div class="center grid">
               <div class="columns">
@@ -44,7 +55,7 @@
             </div>
           </transition>
         </div>
-        <!-- Feedback View -->
+        <!-- Section-level Feedback View -->
         <div
           class="section-feedback-wrapper"
           v-else-if="showFeedback && !moduleComplete"
@@ -53,6 +64,7 @@
           <h2>Feedback</h2>
           <section-feedback :feedback="currentFeedback" />
         </div>
+        <!-- Final Quiz Page -->
         <div class="section-feedback-wrapper" v-else key="3">
           <section-feedback :feedback="finalPage" />
           <vs-button to="/tour" dark border flat :active="true">
@@ -75,6 +87,7 @@
         :button="uiButton"
         @click-next="nextScreen()"
         @click-submit="showAnswer = true"
+        @click-start-module="moduleStarted = true"
       />
     </div>
 
@@ -97,6 +110,9 @@ export default {
     // Get content from flatfiles in ~/content/ folder
 
     const finalPage = await context.$content("learn/final").fetch();
+    const learningObjectives = await context
+      .$content("learn/objectives")
+      .fetch();
 
     const flatQuestions = await context
       .$content("learn/sections", { deep: true })
@@ -111,6 +127,8 @@ export default {
     return {
       sections: formattedSections,
       finalPage: finalPage,
+      learningObjectives: learningObjectives,
+      moduleStarted: false,
       currentIndex: {
         section: 0,
         question: 0,
@@ -122,6 +140,7 @@ export default {
   beforeDestroy() {
     // Reset
     this.$data.currentIndex = { section: 0, question: 0, feedback: 0 };
+    this.$data.moduleStarted = false;
   },
   methods: {
     // Progresses the user through the learning module
@@ -189,6 +208,7 @@ export default {
     // Porgress object passed to Bottom UI
     progressObject() {
       return {
+        show: this.moduleStarted,
         sectionCount: this.sections.length,
         currentSection: this.currentSectionNumber,
         sectionProgress: this.sectionProgress,
@@ -197,7 +217,9 @@ export default {
     },
     // What type of button are we displaying on the fixed bottom UI ?
     uiButton() {
-      if (!this.showAnswer && !this.showFeedback && !this.moduleComplete)
+      if (!this.moduleStarted) {
+        return "start-module";
+      } else if (!this.showAnswer && !this.showFeedback && !this.moduleComplete)
         return "question-submit";
       else if (this.showAnswer && !this.showFeedback && !this.moduleComplete)
         return "question-next";
