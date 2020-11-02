@@ -1,5 +1,5 @@
 <template>
-  <div class="tour-map-container">
+  <div class="tour-map-container" >
     <svg
       width="225"
       height="100"
@@ -54,15 +54,20 @@
           :cy="speaker.map.y"
           @mouseover="/*hoverLocation = speaker*/"
           @click="$router.push({ path: `/tour/${speaker.slug}` })"
-          v-tooltip="{
-            content: generateTooltip({
-              name: speaker.name,
-              image: speaker.profile,
-            }),
-            offset: 20,
-            classes: 'map-tooltip',
-          }"
+          v-tooltip="
+            $props.interactive
+              ? {
+                  content: generateTooltip({
+                    name: speaker.name,
+                    image: speaker.profile,
+                  }),
+                  offset: 20,
+                  classes: 'map-tooltip',
+                }
+              : false
+          "
           class="speaker-map-dot"
+          :class="{ interactive: $props.interactive }"
           rx="5"
           ry="5"
         />
@@ -101,14 +106,13 @@ export default {
 
 <style lang="scss">
 .map-tooltip {
-
-  .tooltip-inner{
+  .tooltip-inner {
     text-align: center;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0.75);
   }
   .tooltip-arrow {
-    border-color:  rgba(0, 0, 0, 0.75);
+    border-color: rgba(0, 0, 0, 0.75);
   }
   .tooltip-image {
     border-radius: 50%;
@@ -147,7 +151,7 @@ export default {
     transform-origin: center center;
     transform-box: fill-box;
 
-    &:hover {
+    &.interactive:hover{
       fill: $colour-accent;
       filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
       transform: rotate(-10deg) scale(1.2);
