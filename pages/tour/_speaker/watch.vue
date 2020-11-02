@@ -3,36 +3,39 @@
     <!-- <h1>Speaker Video</h1>
     <h2>{{ speaker.name }}</h2> -->
     <div class="interview-overlay">
-      <!-- <transition> -->
-      <div v-if="videoEnded" id="interview-end-screen" class="container">
-        <!-- <h3>"Video Finished Screen"</h3> -->
-        <ul class="additional-info" v-if="speaker['additional-info']">
-          <li
-            v-for="(item, index) in speaker['additional-info']"
-            v-bind:key="index"
+      <transition name="fade" mode="out-in">
+        <div v-if="videoEnded" id="interview-end-screen" class="container">
+          <!-- <h3>"Video Finished Screen"</h3> -->
+          <ul class="additional-info" v-if="speaker['additional-info']">
+            <li
+              v-for="(item, index) in speaker['additional-info']"
+              v-bind:key="index"
+            >
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+            </li>
+          </ul>
+          <vs-button
+            to="/tour"
+            flat
+            border
+            color="#fff"
+            class="back-to-map-button"
+            >Back to Map</vs-button
           >
-            <h4>{{ item.title }}</h4>
-            <p>{{ item.description }}</p>
-          </li>
-        </ul>
-        <vs-button
-          to="/tour"
-          flat
-          border
-          color="#fff"
-          class="back-to-map-button"
-          >Back to Map</vs-button
-        >
-      </div>
-      <div v-else-if="videoPaused" id="interview-pause-screen">
-        <div class="pause-circle">
-          <div class="title">Paused</div>
-          <div class="instructions">
-            Click on the screen to continue listening
-          </div>
         </div>
-        <tour-minimap :speakers="speakers" class="speaker-map" />
-      </div>
+        <div v-else-if="videoPaused" id="interview-pause-screen">
+          <!-- <transition name="zoom-fade" mode="in-out" appear> -->
+            <div class="pause-circle" v-if="videoPaused">
+              <div class="title">Paused</div>
+              <div class="instructions">
+                Click on the screen to continue listening
+              </div>
+            </div>
+          <!-- </transition> -->
+          <tour-minimap :speakers="speakers" class="speaker-map" />
+        </div>
+      </transition>
     </div>
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
       <video poster="poster.png" src="video.mp4">
