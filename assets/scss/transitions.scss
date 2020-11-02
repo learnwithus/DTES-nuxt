@@ -11,6 +11,32 @@
     opacity: 0;
 }
 
+// Zoom and fade-in / out
+.zoom-fade-enter-active {
+    transition: all 0.25s ease;
+}
+.zoom-fade-leave-active {
+    transition: all 0.25s ease-out;
+}
+.zoom-fade-enter,
+.zoom-fade-leave-to {
+    transform: scale(0.7);
+    opacity: 0;
+}
+
+// Zoom in / out
+.zoom-enter-active {
+    transition: all 0.25s ease;
+}
+.zoom-leave-active {
+    transition: all 0.25s ease-out;
+}
+.zoom-enter,
+.zoom-leave-to {
+    transform: scale(0.7);
+}
+
+
 // Slide vertically and fade-in / out
 .verticle-slide-fade-enter-active {
     transition: all 0.3s ease;
