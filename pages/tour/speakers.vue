@@ -3,15 +3,37 @@
     <div class="container">
       <!-- <h1>Walk</h1> -->
       <h2 class="title">All Speakers</h2>
+      <!-- Peers -->
+      <h3>Peers</h3>
       <ul id="speaker-list">
-        <li v-for="speaker in speakers" v-bind:key="speaker.id">
-          <nuxt-link :to="`/tour/${speaker.slug}`"
+        <li v-for="peer in peers" v-bind:key="peer.id">
+          <nuxt-link :to="`/tour/${peer.slug}`"
             ><img
               class="profile"
-              :alt="`An image of ${speaker.name}`"
-              v-lazy="{src: require(`~/assets/tour/${speaker.profile}`), preLoad: 1}"
+              :alt="`An image of ${peer.name}`"
+              v-lazy="{
+                src: require(`~/assets/tour/${peer.profile}`),
+                preLoad: 1,
+              }"
             />
-            <figcaption>{{ speaker.name }}</figcaption>
+            <figcaption>{{ peer.name }}</figcaption>
+          </nuxt-link>
+        </li>
+      </ul>
+      <!-- Services -->
+      <h3>Services</h3>
+      <ul id="speaker-list">
+        <li v-for="service in services" v-bind:key="service.id">
+          <nuxt-link :to="`/tour/${service.slug}`"
+            ><img
+              class="profile"
+              :alt="`An image of ${service.name}`"
+              v-lazy="{
+                src: require(`~/assets/tour/${service.profile}`),
+                preLoad: 1,
+              }"
+            />
+            <figcaption>{{ service.name }}</figcaption>
           </nuxt-link>
         </li>
       </ul>
@@ -28,10 +50,16 @@ export default {
   },
   async asyncData({ $content, params, store }) {
     store.commit("requestDarkBackground");
-    const speakers = await $content("tour/speakers").fetch();
+    const peers = await $content("tour/speakers")
+      .where({ type: "peer" })
+      .fetch();
+    const services = await $content("tour/speakers")
+      .where({ type: "service" })
+      .fetch();
 
     return {
-      speakers,
+      peers,
+      services,
     };
   },
 };
@@ -44,8 +72,7 @@ export default {
   border-radius: 50%;
   background-color: $colour-light;
 
-  @include breakpoint(phone){
-
+  @include breakpoint(phone) {
   }
 }
 
