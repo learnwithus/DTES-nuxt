@@ -3,12 +3,16 @@
     <!-- <h1>Speaker Video</h1>
     <h2>{{ speaker.name }}</h2> -->
     <div class="interview-overlay">
+      <!-- <transition> -->
       <div v-if="videoEnded" id="interview-end-screen" class="container">
         <!-- <h3>"Video Finished Screen"</h3> -->
         <ul class="additional-info" v-if="speaker['additional-info']">
-          <li v-for="(item, index) in speaker['additional-info']" v-bind:key="index">
-            <h4>{{item.title}}</h4>
-            <p>{{item.description}}</p>
+          <li
+            v-for="(item, index) in speaker['additional-info']"
+            v-bind:key="index"
+          >
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
           </li>
         </ul>
         <vs-button
@@ -54,6 +58,7 @@ export default {
       speakers,
       videoOptions: {
         fullscreen: { enabled: false },
+        keyboard: { focused: true, global: true },
       },
       videoEnded: false,
       videoPaused: false,
