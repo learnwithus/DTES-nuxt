@@ -7,8 +7,16 @@
           flat
           size="large"
           border
+          @click="$emit('click-start-module')"
+          v-if="button == 'start-module'"
+          >Begin Module</vs-button
+        >
+        <vs-button
+          flat
+          size="large"
+          border
           @click="$emit('click-submit')"
-          v-if="button == 'question-submit'"
+          v-else-if="button == 'question-submit'"
           >Submit</vs-button
         >
         <vs-button
@@ -39,7 +47,7 @@
       </div>
 
       <!-- Prgoress Dots -->
-      <div class="learn-progress-wrapper is-hidden-mobile">
+      <div class="learn-progress-wrapper is-hidden-mobile opacity-show" :class="{'opacity-hide': !$props.progress.show}">
         <progress-dots
           :sections="progress.sectionCount"
           :current-section="progress.currentSection"
@@ -63,15 +71,16 @@ export default {
       type: Object,
       required: true,
       //   {
+      //       show: true, //whether or now we show the prgress
       //       sectionCount: 5, // How many sections
       //       currentSection: 3, // Which section / dot we're on
       //       sectionProgress: 40: // Percentage progress bewteen sections / dots
       //   }
     },
   },
-  mounted(){
-      console.log(this.$props.progress)
-  }
+  mounted() {
+    console.log(this.$props.progress);
+  },
 };
 </script>
 
@@ -88,8 +97,8 @@ export default {
   pointer-events: none;
 
   @include breakpoint(phablet) {
-      padding-bottom: 3em;
-    }
+    padding-bottom: 3em;
+  }
 
   &::before {
     content: "";
@@ -146,8 +155,6 @@ export default {
     //   ≈
     //   rgba($colour-primary, 0) 100%
     // );
-
-    
   }
 
   @include breakpoint(phablet) {
@@ -169,7 +176,7 @@ export default {
   .button-wrapper {
     display: flex;
     justify-content: center;
-    
+
     @include breakpoint(phablet) {
       justify-content: unset;
     }
@@ -178,6 +185,7 @@ export default {
   .learn-progress-wrapper {
     min-width: 300px;
     margin: 0 auto;
+    transition: opacity linear 200ms;
   }
 }
 </style>
