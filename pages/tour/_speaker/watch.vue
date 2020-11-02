@@ -71,7 +71,9 @@ export default {
     });
 
     this.player.on("pause", (event) => {
-      this.videoPaused = true;
+      this.$nextTick(() => {
+        this.videoPaused = true;
+      });
     });
     this.player.on("play", (event) => {
       this.videoPaused = false;
