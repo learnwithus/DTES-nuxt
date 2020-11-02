@@ -1,11 +1,21 @@
 ---
 name: 'Another Great Person'
 type: peer
-video: 'tracey/tracey-interview-test.mp4'
-profile: 'tracey/profile.jpg'
-background: 'tracey/background.jpg'
+video: 'wahrs/tracey-interview-test.mp4'
+profile: 'wahrs/tracey.jpg'
+background: 'wahrs/background.jpg'
 bio: Short biography about Tracey, maybe how she is related to this location?
 map:
     x: 160
     y: 75
+
+additional-info: 
+    - title: Tracey Draper
+      image: 'wahrs/tracey.jpg'
+      description: The Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit lorem sed ligula tempor tempor. Nullam ullamcorper est et eros aliquet convallis. Mauris aliquet libero id risus ornare, vitae porta justo molestie. Curabitur laoreet vitae mauris a tempor. Nunc vel nunc ornare, suscipit nisi in, auctor turpis. 
+    - title: WAHRS
+      image: 'wahrs/profile.jpg'
+      description: The Western Aboriginal Harm Reduction Society (WAHRS) is a group of urban Aboriginal peoples who live, work, and play in Vancouver’s Downtown Eastside neighbourhood. All of our members are current or former illicit drug and/or illicit alcohol users, and we come from all nations – Ojibwe, Cree, Mohawk, and more.
+    
+
 ---

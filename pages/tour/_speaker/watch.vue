@@ -3,8 +3,14 @@
     <!-- <h1>Speaker Video</h1>
     <h2>{{ speaker.name }}</h2> -->
     <div class="interview-overlay">
-      <div v-if="videoEnded" id="interview-end-screen">
-        <h3>"Video Finished Screen"</h3>
+      <div v-if="videoEnded" id="interview-end-screen" class="container">
+        <!-- <h3>"Video Finished Screen"</h3> -->
+        <ul class="additional-info" v-if="speaker['additional-info']">
+          <li v-for="(item, index) in speaker['additional-info']" v-bind:key="index">
+            <h4>{{item.title}}</h4>
+            <p>{{item.description}}</p>
+          </li>
+        </ul>
         <vs-button
           to="/tour"
           flat
@@ -108,9 +114,6 @@ export default {
 
 .plyr {
   flex: 1 1 auto;
-  // width: 100%;
-  // height: 100%;
-  // width: 100%;
 }
 
 #video-wrapper {
@@ -193,5 +196,10 @@ export default {
 }
 #interview-end-screen {
   pointer-events: auto;
+}
+
+.additional-info {
+  list-style: none;
+  text-align: left;
 }
 </style>
