@@ -47,3 +47,8 @@ content
 ```
 
 These markdown files are then used to populate the learning module
+
+## Layout
+Layout is done using Bulma's column system
+https://bulma.io/documentation/columns
+
