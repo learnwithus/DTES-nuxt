@@ -20,8 +20,8 @@
             >Watch</vs-button
           >
         </div>
+        <tour-minimap :speakers="speakers" class="speaker-map" />
       </div>
-      <tour-minimap :speakers="speakers" class="speaker-map" />
     </div>
   </div>
 </template>
@@ -56,6 +56,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.speaker-container {
+  align-items: flex-end;
+  justify-content: space-between;
+  height: calc(100% - 5em);
+  padding-bottom: 5em;
+  text-align: center;
+
+  @include breakpoint(phablet) {
+      display: flex;
+  }
+}
+
 .profile {
   width: 10em;
   border-radius: 50%;
@@ -72,6 +84,7 @@ export default {
 }
 
 .speaker-info {
+  align-self: start;
   color: white;
   background: rgba(0, 0, 0, 0.75);
   display: inline-block;
@@ -93,8 +106,6 @@ export default {
 }
 
 .speaker-map {
-  margin-right: 2em;
-  display: flex;
-  flex-direction: row-reverse;
+  margin-top: 4em;
 }
 </style>
