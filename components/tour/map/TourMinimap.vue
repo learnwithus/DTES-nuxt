@@ -11,7 +11,7 @@
         :class="{ active: showMap }"
       >
         <button class="map-close-button" @click="showMap = false">x</button>
-        <div class="map-wrapper">
+        <div class="map-wrapper container">
           <dtes-map :speakers="speakers" :interactive="true"/>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default {
 
 .map-close-button {
   align-self: flex-end;
-  margin-top: 7rem;
+  margin-top: 70px;
   width: 5em;
   padding: 0.5em;
   font-size: 1.25em;
@@ -70,7 +70,7 @@ export default {
 
 .map-overlay-container {
   z-index: 2;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -84,7 +84,14 @@ export default {
 
   .map-wrapper {
     flex-grow: 1;
-    padding: 10em;
+    margin: unset;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    >* {
+      flex-grow: 1;
+    }
   }
 
   // .map {
