@@ -84,10 +84,11 @@ export default {
 
   .map-wrapper {
     flex-grow: 1;
-    margin: unset;
+    box-sizing: border-box;
+    margin-top: 4em;
+    width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
 
     >* {
       flex-grow: 1;
