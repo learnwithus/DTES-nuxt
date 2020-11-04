@@ -21,9 +21,12 @@
           <h3>Individual</h3>
           <ul>
             <li>Self-reflection and further education</li>
-            <li>Trauma-informed Practice  * Hyperlink 1</li>
+            <li>Trauma-informed Practice * Hyperlink 1</li>
             <li>Language matters *Hyperlink 2</li>
-            <li>Practising with a person-based and evidence-based, not punitive-based, care model</li>
+            <li>
+              Practising with a person-based and evidence-based, not
+              punitive-based, care model
+            </li>
             <li>Building authentic and honest relationships with PWUS</li>
           </ul>
         </div>
@@ -39,17 +42,20 @@
         <div v-else-if="sectionIndex == 2" key="2">
           <h3>Institutional</h3>
           <ul>
-            <li>Direct involvement of people with lived experience in institutional decision making, and compensation for their involvement* *http://www.bccdc.ca/resource-gallery/Documents/PEEP%20Best%20Practice%20Guidelines.pdf </li>
-            <li>Ongoing targeted training and education </li>
+            <li>
+              Direct involvement of people with lived experience in
+              institutional decision making, and compensation for their
+              involvement*
+              *http://www.bccdc.ca/resource-gallery/Documents/PEEP%20Best%20Practice%20Guidelines.pdf
+            </li>
+            <li>Ongoing targeted training and education</li>
             <li>Ongoing assessment of policy and practices</li>
             <li>Inclusion of de-stigmatizing programs and services</li>
             <li>Providing outlets for feedback</li>
           </ul>
         </div>
         <div v-else key="3">
-          <p>
-            Examples of ways to address stigma on each level
-          </p>
+          <p>Examples of ways to address stigma on each level</p>
           <em>Click on the icons on the left to learn more.</em>
         </div>
       </transition>
@@ -64,15 +70,15 @@ export default {
     sections: [
       {
         icon: "individual.svg",
-        name: "Individual"
+        name: "Individual",
       },
       {
         icon: "staff.svg",
-        name: "Societal"
+        name: "Societal",
       },
       {
         icon: "community.svg",
-        name: "Institutional"
+        name: "Institutional",
       },
     ],
   }),
@@ -98,6 +104,12 @@ ul {
   list-style: none;
   text-align: center;
 
+  @include breakpoint(phablet) {
+    &.column {
+      padding-bottom: 2em !important;
+    }
+  }
+
   &:hover {
     opacity: 0.5;
   }
@@ -109,7 +121,7 @@ ul {
 
   .name {
     font-size: 0.75em;
-    @include breakpoint(phone){
+    @include breakpoint(phone) {
       font-size: 1em;
     }
   }
@@ -118,7 +130,7 @@ ul {
     height: 2em;
     margin: 0 auto;
 
-    @include breakpoint(phone){
+    @include breakpoint(phone) {
       height: 3em;
     }
   }
