@@ -8,7 +8,7 @@
         <learn-title
           :key="currentIndex.section"
           class="space-2 opacity-show"
-          :class="{ 'opacity-hide' : !moduleStarted }"
+          :class="{ 'opacity-hide': !moduleStarted }"
           v-if="!moduleComplete"
           >{{ currentSectionNumber }} /</learn-title
         >
@@ -16,7 +16,10 @@
 
       <transition name="slide-fade" mode="out-in">
         <!-- Learning Objectives -->
-        <learning-objectives v-if="!moduleStarted" :learningObjectives="learningObjectives"/>
+        <learning-objectives
+          v-if="!moduleStarted"
+          :learningObjectives="learningObjectives"
+        />
         <!-- Question View -->
         <div
           class="question"
@@ -26,7 +29,12 @@
           <transition name="slide-fade" mode="out-in">
             <div class="center grid">
               <div class="columns">
-                <div class="column is-half">
+                <div
+                  class="column"
+                  :class="[
+                    currentQuestion.type == 'match' ? 'is-10' : 'is-half',
+                  ]"
+                >
                   <div class="actual-question" :key="currentIndex.question">
                     <!-- Questions -->
                     <learn-question
@@ -42,7 +50,7 @@
                     />
                   </div>
                 </div>
-                <div class="column is-one-third-desktop is-full-mobile">
+                <div class="column is-one-third-desktop is-full-mobile" v-if="currentQuestion.type != 'match'">
                   <!-- Questions-level Feedback -->
                   <transition name="fade">
                     <question-feedback

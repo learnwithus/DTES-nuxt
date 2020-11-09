@@ -29,3 +29,8 @@
 .vs-button {
     --vs-button-border-radius: 6px !important;
 }
+
+// Fix Vuesax bug with multiline text in dropdowns
+button.vs-select__option {
+    max-height: unset;
+}
