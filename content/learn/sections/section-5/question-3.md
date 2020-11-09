@@ -1,5 +1,5 @@
 ---
-question: "Please provide the non-stigmatizing term to the following terms:"
+question: "Drag the non-stigmatizing term to the following terms:"
 type: match
 answers:
     - Stigmatizing term: Addict
