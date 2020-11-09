@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-    <div class="is-hidden-mobile drag-options"  :class="{ hide: revealAnswer }">
+    <div class="is-hidden-mobile drag-options" :class="{ hide: revealAnswer }">
       <!-- Available definitions to match with terms -->
       <div v-for="(definition, index) in termDefinitions" v-bind:key="index">
         <drag
@@ -140,7 +140,7 @@ export default {
   }
 
   &.hide {
-      opacity: 0;
+    opacity: 0;
   }
 }
 .drop {
@@ -149,6 +149,7 @@ export default {
   border-radius: 0.5em;
   min-height: 2em;
   padding: 0.5em 0.75em;
+  font-size: 0.9em;
 
   .reveal-answer & {
     border-color: $colour-accent;
@@ -160,6 +161,7 @@ export default {
   }
 }
 .drag {
+  font-size: 0.9em;
   border: 1px solid $colour-primary;
   box-sizing: border-box;
   border-radius: 0.5em;

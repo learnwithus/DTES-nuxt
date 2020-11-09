@@ -32,7 +32,7 @@
                 <div
                   class="column"
                   :class="[
-                    currentQuestion.type == 'match' ? 'is-10' : 'is-half',
+                    currentQuestion.type == 'match' ? 'is-10-desktop is-full-tablet' : 'is-half',
                   ]"
                 >
                   <div class="actual-question" :key="currentIndex.question">
@@ -136,10 +136,10 @@ export default {
       sections: formattedSections,
       finalPage: finalPage,
       learningObjectives: learningObjectives,
-      moduleStarted: false,
+      moduleStarted: true,
       currentIndex: {
-        section: 0,
-        question: 0,
+        section: 4,
+        question: 2,
         feedback: 0,
       },
       showAnswer: false,
