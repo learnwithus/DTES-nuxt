@@ -33,6 +33,7 @@
             placeholder="Select"
             v-model="userAnswers[index]"
             class="is-hidden-tablet"
+            :disabled="revealAnswer"
             :state="
               revealAnswer
                 ? isCorrectDefinition(index)
