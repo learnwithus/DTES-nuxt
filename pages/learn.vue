@@ -136,10 +136,10 @@ export default {
       sections: formattedSections,
       finalPage: finalPage,
       learningObjectives: learningObjectives,
-      moduleStarted: true,
+      moduleStarted: false,
       currentIndex: {
-        section: 4,
-        question: 2,
+        section: 0,
+        question: 0,
         feedback: 0,
       },
       showAnswer: false,
