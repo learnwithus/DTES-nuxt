@@ -1,13 +1,12 @@
 <template>
-  <!-- <vs-input v-model="value" placeholder="Name" /> -->
   <div>
     <textarea
       v-model="text"
       :disabled="revealAnswer"
       rows="6"
       cols="50"
+      @input="$emit('user-answered', $event.target.value)"
     ></textarea>
-    <!-- <div class="free-text-answer" v-if="revealAnswer">{{answers}}</div> -->
   </div>
 </template>
 
@@ -20,11 +19,7 @@ export default {
     };
   },
   watch: {
-    // revealAnswer(value) {
-    //   if (value) {
-    //     this.text = this.answers;
-    //   }
-    // },
+
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Column Titles (Only shown on desktop breakpoints) -->
     <div class="columns is-hidden-mobile">
       <div class="column is-3 title">
         {{ termColumnTitle }}
@@ -121,6 +122,16 @@ export default {
     isCorrectDefinition(index) {
       const definition = this.userAnswers[index];
       return this.termDefinitions[index] === definition;
+    },
+  },
+  watch: {
+    userAnswers() {
+      if (
+        this.userAnswers.filter((answer) => answer !== "").length ==
+        this.userAnswers.length
+      ) {
+        this.$emit("user-answered");
+      }
     },
   },
 };

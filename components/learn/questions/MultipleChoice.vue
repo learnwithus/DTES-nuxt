@@ -17,8 +17,13 @@ export default {
     props: [ "answers", "revealAnswer" ],
     data(){
         return {
-            selectedAnswer: 0
+            selectedAnswer: undefined
         }
+    },
+    watch: {
+      selectedAnswer(){
+        if(this.selectedAnswer != undefined) this.$emit("user-answered");
+      }
     }
 };
 </script>

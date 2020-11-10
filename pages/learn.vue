@@ -32,7 +32,9 @@
                 <div
                   class="column"
                   :class="[
-                    currentQuestion.type == 'match' ? 'is-10-desktop is-full-tablet' : 'is-half',
+                    currentQuestion.type == 'match'
+                      ? 'is-10-desktop is-full-tablet'
+                      : 'is-half',
                   ]"
                 >
                   <div class="actual-question" :key="currentIndex.question">
@@ -47,16 +49,26 @@
                       :type="currentQuestion.type"
                       :answers="currentQuestion.answers"
                       :reveal-answer="showAnswer"
+                      @answered="onUserAnswered()"
                     />
                   </div>
                 </div>
-                <div class="column is-one-third-desktop is-full-mobile" v-if="currentQuestion.type != 'match'">
+                <div
+                  class="column is-one-third-desktop is-full-mobile"
+                  v-if="currentQuestion.type != 'match'"
+                >
                   <!-- Questions-level Feedback -->
                   <transition name="fade">
                     <question-feedback
                       v-if="showAnswer"
                       :feedback="currentQuestion"
                     />
+                    <div
+                      v-else-if="userRequestedAnswer && !userAnsweredQuestion"
+                      class="answer-reminder"
+                    >
+                      Don't forget to answer the question!
+                    </div>
                   </transition>
                 </div>
               </div>
@@ -94,15 +106,10 @@
         :progress="progressObject"
         :button="uiButton"
         @click-next="nextScreen()"
-        @click-submit="showAnswer = true"
+        @click-submit="onAnswerSubmit()"
         @click-start-module="moduleStarted = true"
       />
     </div>
-
-    <!-- DEBUG DATA -->
-    <!-- <br />
-    DEBUG DATA
-    {{sections[0]}}-->
   </main>
 </template>
 
@@ -129,6 +136,7 @@ export default {
       // .only(["questions", "feedback", "body"])
       .fetch();
 
+    // Do some complex organizing of the data (check function for details)
     const formattedSections = formatQuestions(flatQuestions);
 
     // Return data object complete with learning module sections
@@ -142,7 +150,8 @@ export default {
         question: 0,
         feedback: 0,
       },
-      showAnswer: false,
+      userRequestedAnswer: false,
+      userAnsweredQuestion: false,
     };
   },
   beforeDestroy() {
@@ -153,6 +162,9 @@ export default {
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
+      // User has no longer answered the question becuase we're onto a new screen
+      this.userAnsweredQuestion = false;
+
       // If feedback is being displayed...
       if (this.showFeedback) {
         // If the feedback being shown is the last feedback for that section, move on to the next section
@@ -168,8 +180,15 @@ export default {
       // If not displaying feedback, increment the question index and hide the answer of the next question
       else {
         this.currentIndex.question++;
-        this.showAnswer = false;
+        this.userRequestedAnswer = false;
       }
+    },
+    onUserAnswered() {
+      this.userAnsweredQuestion = true;
+      this.userRequestedAnswer = false;
+    },
+    onAnswerSubmit() {
+      this.userRequestedAnswer = true;
     },
   },
   computed: {
@@ -223,7 +242,7 @@ export default {
         lastSectionQuestion: this.isLastQuestion,
       };
     },
-    // What type of button are we displaying on the fixed bottom UI ?
+    // Reuturns the type of button we should be displaying based on the current state of things
     uiButton() {
       if (!this.moduleStarted) {
         return "start-module";
@@ -233,6 +252,9 @@ export default {
         return "question-next";
       else if (this.isLastFeedback) return "feedback-next-section";
       else return "feedback-next-feedback";
+    },
+    showAnswer() {
+      return this.userRequestedAnswer && this.userAnsweredQuestion;
     },
   },
 };
@@ -247,5 +269,9 @@ export default {
   @include breakpoint(phablet) {
     padding-bottom: 4em;
   }
+}
+
+.answer-reminder {
+  color: $colour-accent;
 }
 </style>
