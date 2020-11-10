@@ -144,8 +144,9 @@ export default {
 
   .plyr__video-wrapper {
     // width: auto;
-    position: absolute;
+    // position: absolute;
     background-color: black;
+    height: 100vh;
   }
 
   .plyr--paused {
