@@ -38,7 +38,7 @@
       </transition>
     </div>
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
-      <video poster="poster.png" src="video.mp4">
+      <video poster="">
         <source :src="videoSource" type="video/mp4" size="720" />
       </video>
     </v-plyr>
