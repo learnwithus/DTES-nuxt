@@ -1,3 +1,14 @@
+// Global Page Transition
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+
 // Slide horizontally and fade-in / out
 .slide-fade-enter-active {
     transition: all 0.3s ease;
