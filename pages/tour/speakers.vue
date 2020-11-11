@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   head() {
     return {
@@ -50,18 +51,10 @@ export default {
   },
   async asyncData({ $content, params, store }) {
     store.commit("requestDarkBackground");
-    const peers = await $content("tour/speakers")
-      .where({ type: "peer" })
-      .fetch();
-    const services = await $content("tour/speakers")
-      .where({ type: "service" })
-      .fetch();
-
-    return {
-      peers,
-      services,
-    };
   },
+  computed: {
+    ...mapGetters(["services", "peers"])
+  }
 };
 </script>
 

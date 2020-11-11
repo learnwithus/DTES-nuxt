@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   head() {
     return {
@@ -14,12 +16,6 @@ export default {
   },
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
-
-    const speakers = await $content("tour/speakers").fetch();
-
-    return {
-      speakers,
-    };
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -27,6 +23,9 @@ export default {
     //   this.$router.push("/tour/intro");
     //   return;
     // }
+  },
+  computed: {
+    ...mapGetters(["speakers"]),
   },
 };
 </script>

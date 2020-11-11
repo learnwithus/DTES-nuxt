@@ -14,11 +14,22 @@ export const state = () => ({
         }
     },
     tour: {
+        speakers: [],
         started: false
     }
 })
 
+export const actions = {
+    async nuxtServerInit({ commit, dispatch }, { $content }) {
+        const speakers = await $content("tour/speakers").fetch();
+        await commit('setSpeakers', speakers)
+    }
+}
+
 export const mutations = {
+    setSpeakers(state, speakers) {
+        state.tour.speakers = speakers;
+    },
     overlayHeader(state) {
         state.header.overlay = true;
     },
@@ -80,5 +91,17 @@ export const getters = {
     },
     getBackgroundDark: (state) => {
         return state.background.dark.current;
+    },
+    speakers: (state) => {
+        return state.tour.speakers;
+    },
+    peers: (state) => {
+        return state.tour.speakers.filter(speaker => speaker.type == "peer");
+    },
+    services: (state) => {
+        return state.tour.speakers.filter(speaker => speaker.type == "service");
+    },
+    getSpeakerBySlug: (state) => (slug) => {
+        return state.tour.speakers.find(speaker => speaker.slug === slug)
     }
 }

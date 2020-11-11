@@ -26,12 +26,12 @@
         </div>
         <div v-else-if="videoPaused" id="interview-pause-screen">
           <!-- <transition name="zoom-fade" mode="in-out" appear> -->
-            <div class="pause-circle" v-if="videoPaused">
-              <div class="title">Paused</div>
-              <div class="instructions">
-                Click on the screen to continue listening
-              </div>
+          <div class="pause-circle" v-if="videoPaused">
+            <div class="title">Paused</div>
+            <div class="instructions">
+              Click on the screen to continue listening
             </div>
+          </div>
           <!-- </transition> -->
           <tour-minimap :speakers="speakers" class="speaker-map" />
         </div>
@@ -46,19 +46,18 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ $content, params }) {
-    const speaker = await $content("tour/speakers", params.speaker).fetch();
-    const speakers = await $content("tour/speakers").fetch();
+  async asyncData({ params, store }) {
+    const speaker = store.getters.getSpeakerBySlug(params.speaker);
 
     return {
       speaker,
-      speakers,
       videoOptions: {
         fullscreen: { enabled: false },
         keyboard: { focused: true, global: true },
@@ -100,6 +99,7 @@ export default {
     this.$store.commit("fixedHeader");
   },
   computed: {
+    ...mapGetters(["speakers"]),
     player() {
       return this.$refs.plyr.player;
     },

@@ -27,21 +27,20 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ $content, params, store }) {
-    const speaker = await $content("tour/speakers", params.speaker).fetch();
-    const speakers = await $content("tour/speakers").fetch();
+  async asyncData({ params, store }) {
+    const speaker = store.getters.getSpeakerBySlug(params.speaker);
 
     store.commit("setBackgroundImage", `tour/${speaker.background}`);
 
     return {
       speaker,
-      speakers,
     };
   },
   mounted() {},
@@ -51,6 +50,7 @@ export default {
         return "Peer";
       } else return "Organization";
     },
+    ...mapGetters(["speakers"])
   },
 };
 </script>
@@ -64,7 +64,7 @@ export default {
   text-align: center;
 
   @include breakpoint(phablet) {
-      display: flex;
+    display: flex;
   }
 }
 
