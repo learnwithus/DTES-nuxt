@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 export default {
   head() {
     return {
@@ -53,8 +53,8 @@ export default {
     store.commit("requestDarkBackground");
   },
   computed: {
-    ...mapGetters(["services", "peers"])
-  }
+    ...mapGetters(["services", "peers"]),
+  },
 };
 </script>
 

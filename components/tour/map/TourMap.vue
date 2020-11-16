@@ -1,5 +1,5 @@
 <template>
-  <div class="tour-map-container" >
+  <div class="tour-map-container">
     <svg
       width="225"
       height="100"
@@ -53,7 +53,11 @@
           :cx="speaker.map.x"
           :cy="speaker.map.y"
           @mouseover="/*hoverLocation = speaker*/"
-          @click="$props.interactive ? $router.push({ path: `/tour/${speaker.slug}` }) : false"
+          @click="
+            $props.interactive
+              ? $router.push({ path: `/tour/${speaker.slug}` })
+              : false
+          "
           v-tooltip="
             $props.interactive
               ? {
@@ -67,7 +71,10 @@
               : false
           "
           class="speaker-map-dot"
-          :class="{ interactive: $props.interactive }"
+          :class="{
+            interactive: $props.interactive,
+            complete: isSpeakerComplete(speaker.slug),
+          }"
           rx="5"
           ry="5"
         />
@@ -77,12 +84,9 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   props: {
-    speakers: {
-      type: Array,
-      required: false,
-    },
     interactive: {
       type: Boolean,
       required: false,
@@ -99,6 +103,14 @@ export default {
         <div class="speaker-name">${name}</div>
       `;
     },
+    isSpeakerComplete(speakerSlug) {
+      return this.userProgress.speakers.find((x) => x === speakerSlug)
+        ? true
+        : false;
+    },
+  },
+  computed: {
+    ...mapGetters(["speakers", "userProgress"]),
   },
   mounted() {},
 };
@@ -151,10 +163,16 @@ export default {
     transform-origin: center center;
     transform-box: fill-box;
 
-    &.interactive:hover{
-      fill: $colour-accent;
-      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
-      transform: rotate(-10deg) scale(1.2);
+    &.interactive {
+      &.complete {
+        fill: rgb(34, 199, 34);
+        content: "done";
+      }
+      &:hover {
+        fill: $colour-accent;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.63));
+        transform: rotate(-10deg) scale(1.2);
+      }
     }
   }
 }

@@ -33,7 +33,7 @@
             </div>
           </div>
           <!-- </transition> -->
-          <tour-minimap :speakers="speakers" class="speaker-map" />
+          <tour-minimap class="speaker-map" />
         </div>
       </transition>
     </div>
@@ -78,6 +78,7 @@ export default {
     });
     this.player.on("ended", (event) => {
       this.videoEnded = true;
+      this.$store.commit("userWatchedSpeaker", this.speaker.slug);
     });
     this.player.on("playing", (event) => {
       this.videoEnded = false;
@@ -99,7 +100,7 @@ export default {
     this.$store.commit("fixedHeader");
   },
   computed: {
-    ...mapGetters(["speakers"]),
+    ...mapGetters([]),
     player() {
       return this.$refs.plyr.player;
     },

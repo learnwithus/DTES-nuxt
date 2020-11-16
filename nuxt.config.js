@@ -1,73 +1,74 @@
-
 export default {
   /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
-  target: 'static',
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
+  target: "static",
   /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
-    title: 'Resisting Stigma',
+    title: "Resisting Stigma",
     htmlAttrs: {
-      lang: 'en',
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Learn about Vancouver's Downtown Eastside and how stigma affects its residence" }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Learn about Vancouver's Downtown Eastside and how stigma affects its residence",
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.typekit.net/wgf8sbs.css' }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://use.typekit.net/wgf8sbs.css" },
     ],
     script: [
       {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js'
-      }
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js",
+      },
     ],
   },
   /*
-  ** Global CSS
-  */
-  css: [
-    '~/assets/scss/_base.scss'
-  ],
+   ** Global CSS
+   */
+  css: ["~/assets/scss/_base.scss"],
   styleResources: {
-    scss: [
-      './assets/scss/variables.scss',
-      './assets/scss/breakpoints.scss'
-    ],
+    scss: ["./assets/scss/variables.scss", "./assets/scss/breakpoints.scss"],
   },
   /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
   plugins: [
-    { src: '~/plugins/vuesax' },
-    { src: '~/plugins/tooltip' },
-    { src: '~/plugins/lazyload' },
-    { src: '~/plugins/backgroundImage', mode: 'client'},
+    { src: "~/plugins/vuesax" },
+    { src: "~/plugins/tooltip" },
+    { src: "~/plugins/lazyload" },
+    { src: "~/plugins/backgroundImage", mode: "client" },
+    { src: "~/plugins/persistedState.client.js", mode: "client" },
   ],
   /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
   components: true,
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
-    '@nuxtjs/style-resources',
+    "@nuxt/content",
+    "@nuxtjs/style-resources",
+    "@nuxt/image",
     // '@nuxtjs/markdownit',
   ],
   // markdownit: {
@@ -80,14 +81,13 @@ export default {
     // middleware: 'pageBackgroundImage'
   },
   /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
+   ** Content module configuration
+   ** See https://content.nuxtjs.org/configuration
+   */
   content: {},
   /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
-  build: {
-  }
-}
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
+  build: {},
+};

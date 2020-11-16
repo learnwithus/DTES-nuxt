@@ -1,7 +1,8 @@
 <template>
   <div class="container tour-map-page-container">
     <p class="tour-map-instruction">Select a location on the map</p>
-    <TourMap :interactive="true" :speakers="speakers" />
+    <TourMap :interactive="true" />
+    <button @click="$store.commit('resetUserProgress')">Reset Progress</button>
   </div>
 </template>
 
@@ -25,7 +26,7 @@ export default {
     // }
   },
   computed: {
-    ...mapGetters(["speakers"]),
+    ...mapGetters([]),
   },
 };
 </script>
