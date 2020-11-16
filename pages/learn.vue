@@ -122,7 +122,7 @@ export default {
     };
   },
   async asyncData(context) {
-    // Get content from flatfiles in ~/content/ folder
+    // Get content from flat files in ~/content/ folder
 
     const finalPage = await context.$content("learn/final").fetch();
     const learningObjectives = await context
@@ -162,7 +162,7 @@ export default {
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
-      // User has no longer answered the question becuase we're onto a new screen
+      // User has no longer answered the question because we're onto a new screen
       this.userAnsweredQuestion = false;
 
       // If feedback is being displayed...
@@ -232,7 +232,7 @@ export default {
 
       return progress * 100;
     },
-    // Porgress object passed to Bottom UI
+    // Progress object passed to Bottom UI
     progressObject() {
       return {
         show: this.moduleStarted,
@@ -242,7 +242,7 @@ export default {
         lastSectionQuestion: this.isLastQuestion,
       };
     },
-    // Reuturns the type of button we should be displaying based on the current state of things
+    // Returns the type of button we should be displaying based on the current state of things
     uiButton() {
       if (!this.moduleStarted) {
         return "start-module";
