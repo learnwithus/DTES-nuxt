@@ -132,7 +132,6 @@ export default {
   video {
     object-fit: cover;
     transition: opacity 200ms linear;
-    position: fixed;
   }
 
   // Styles of paused video overlay
@@ -150,6 +149,8 @@ export default {
     // position: absolute;
     background-color: black;
     height: 100vh;
+    // width: 100vw;
+    position: fixed;
   }
 
   .plyr--paused {
