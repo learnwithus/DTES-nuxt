@@ -28,7 +28,7 @@
         </p>
       </div>
     </div>
-    <nuxt-link to="/tour">Begin</nuxt-link>
+    <vs-button size="large" border color="#ffffff" to="/tour">Begin</vs-button>
   </div>
 </template>
 
@@ -38,6 +38,10 @@ export default {
     return {
       title: "Resisting Stigma - Tour",
     };
+  },
+  async asyncData({ $content, params, store }) {
+    store.commit("requestDarkBackground");
+    store.commit("setBackgroundImage", `images/tourintrobg.jpg`);
   },
   mounted() {
     this.$store.commit("beginTour");

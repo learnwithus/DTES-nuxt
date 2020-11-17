@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss">
 .global-background-wrapper {
-    z-index: -1;
+  z-index: -1;
 }
 .global-background-placeholder {
   background-color: $colour-primary-dark;
@@ -43,6 +43,7 @@ export default {
   top: 0;
   left: 0;
 }
+
 .global-background-image {
   position: fixed;
   background-size: cover;
@@ -55,6 +56,10 @@ export default {
 
   &[lazy="loaded"] {
     opacity: 1;
+
+    .dark & {
+      opacity: 0.125;
+    }
   }
 }
 </style>
