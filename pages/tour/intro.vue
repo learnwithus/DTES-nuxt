@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mt-6">
     <h1>Tour</h1>
     <div class="columns is-variable is-8">
       <div class="column">
