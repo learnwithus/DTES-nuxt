@@ -27,6 +27,13 @@
     // }
 }
 
+.container-is-desktop {
+    @include breakpoint(phablet) {
+        margin: 0 auto;
+        padding: 0 $container-padding;
+    }
+}
+
 .space-1 {
     margin-bottom: 1rem;
 }
