@@ -8,7 +8,7 @@
     }"
   >
     <nav
-      class="navbar is-transparent"
+      class="navbar is-transparent container-is-desktop"
       role="navigation"
       aria-label="main navigation"
     >
@@ -140,7 +140,7 @@ header {
   }
 
   .navbar-menu {
-    background-color: black;
+    background-color: $colour-primary-dark;
     @include breakpoint(phablet) {
       background-color: unset;
     }
