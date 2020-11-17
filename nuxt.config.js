@@ -49,7 +49,8 @@ export default {
     { src: "~/plugins/vuesax" },
     { src: "~/plugins/tooltip" },
     { src: "~/plugins/lazyload" },
-    { src: "~/plugins/backgroundImage", mode: "client" },
+    { src: "~/plugins/resetBackgroundImage", mode: "client" },
+    { src: "~/plugins/updateBackgroundMixin" },
     { src: "~/plugins/persistedState.client.js", mode: "client" },
   ],
   /*
