@@ -1,7 +1,12 @@
 import Vue from 'vue'
-import Vuesax from 'vuesax'
+import vsButton from 'vuesax/dist/vsButton'
+import vsSelect from 'vuesax/dist/vsSelect'
+import vsRadio from 'vuesax/dist/vsRadio'
 
-import 'vuesax/dist/vuesax.css' //Vuesax styles
-Vue.use(Vuesax, {
-    // options here
-})
+//Vuesax styles
+import 'vuesax/dist/vuesax.css'
+
+
+Vue.use(vsButton)
+Vue.use(vsSelect)
+Vue.use(vsRadio)
