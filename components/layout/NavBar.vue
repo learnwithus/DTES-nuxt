@@ -7,26 +7,82 @@
       overlay: $store.state.header.overlay,
     }"
   >
-    <div class="nav-wrapper">
-      <nuxt-link id="logo" to="/"
-        ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
-      /></nuxt-link>
-      <nav>
-        <ul>
-          <li><nuxt-link to="/learn">Learn</nuxt-link></li>
-          <li class="dropdown">
-            <nuxt-link to="/tour">Tour</nuxt-link>
-            <ul>
-              <li><nuxt-link to="/tour/intro">Intro</nuxt-link></li>
-              <li><nuxt-link to="/tour/speakers">Speakers</nuxt-link></li>
-            </ul>
-          </li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/resources">Resources</nuxt-link></li>
-        </ul>
-        <button id="hamburger-button">㆔</button>
-      </nav>
-    </div>
+    <nav
+      class="navbar is-transparent"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <nuxt-link
+          id="logo"
+          to="/"
+          class="navbar-item"
+          @click.native="hamburgerOpen = false"
+          ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
+        /></nuxt-link>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="navbar-burger burger"
+          :class="{ 'is-active': hamburgerOpen }"
+          @click="hamburgerOpen = !hamburgerOpen"
+          aria-label="menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="navbar-menu" :class="{ 'is-active': hamburgerOpen }">
+        <div class="navbar-end">
+          <nuxt-link
+            class="navbar-item"
+            to="/learn"
+            @click.native="hamburgerOpen = false"
+            >Learn</nuxt-link
+          >
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <nuxt-link
+              class="navbar-link is-arrowless"
+              to="/tour"
+              @click.native="hamburgerOpen = false"
+              >Tour</nuxt-link
+            >
+
+            <div class="navbar-dropdown-wrapper">
+              <div class="navbar-dropdown is-boxed">
+                <nuxt-link
+                  class="navbar-item"
+                  to="/tour/intro"
+                  @click.native="hamburgerOpen = false"
+                  >Intro</nuxt-link
+                >
+                <nuxt-link
+                  class="navbar-item"
+                  to="/tour/speakers"
+                  @click.native="hamburgerOpen = false"
+                  >Speakers</nuxt-link
+                >
+              </div>
+            </div>
+          </div>
+          <nuxt-link
+            class="navbar-item"
+            to="/about"
+            @click.native="hamburgerOpen = false"
+            >About</nuxt-link
+          >
+          <nuxt-link
+            class="navbar-item"
+            to="/resources"
+            @click.native="hamburgerOpen = false"
+            >Resources</nuxt-link
+          >
+        </div>
+      </div>
+    </nav>
   </header>
 </template>
 
@@ -35,20 +91,13 @@ export default {
   data() {
     return {
       headerHover: false,
-      // backgroundImage: require(this.$store.state.backgroundImage)
+      hamburgerOpen: false,
     };
   },
 };
 </script>
 
 <style lang="scss">
-#hamburger-button {
-  display: inline-block;
-
-  @include breakpoint(phablet) {
-    display: none;
-  }
-}
 header {
   z-index: 3;
   // Will be themed in the future, depending on context
@@ -56,6 +105,16 @@ header {
   color: white;
   height: $nav-height;
   min-height: $nav-height;
+
+  .navbar-burger {
+    border: none;
+    background: none;
+    height: $nav-height;
+  }
+
+  a.navbar-item, a.navbar-link {
+    border: none;
+  }
 
   &.overlay {
     position: absolute;
@@ -68,76 +127,32 @@ header {
     }
   }
 
-  .nav-wrapper {
-    padding: 0 2em;
-    display: flex;
-    align-items: center;
-    height: 100%;
+  .has-dropdown {
+    padding-bottom: 1em;
   }
 
   nav {
-    margin-left: auto;
-    display: flex;
     height: 100%;
-    align-items: center;
+  }
 
-    > ul {
-      display: none;
-      list-style: none;
-      height: 100%;
-      margin: 0;
+  a {
+    border: none;
+  }
 
-      @include breakpoint(phablet) {
-        display: flex;
-      }
-
-      li {
-        display: flex;
-        align-items: center;
-        padding: 0 1em;
-        height: 100%;
-      }
+  .navbar-menu {
+    background-color: black;
+    @include breakpoint(phablet) {
+      background-color: unset;
     }
+  }
 
-    a {
-      color: white;
-      border: none !important;
-    }
-
-    // Nested Nav Dropdown
-    .dropdown {
-      position: relative;
-
-      &:hover ul {
-        display: block;
-      }
-
-      a {
-        font-size: 16px;
-      }
-
-      ul {
-        display: none;
-        list-style: none;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.685);
-        padding: 0.5em;
-        top: $nav-height;
-        left: -1em;
-        z-index: 1;
-
-        li {
-            padding: 1em;
-        }
-      }
-
-      ul a {
-        text-decoration: none;
-      }
-
-      // li a:hover {
-      //   background-color: #ddd;
-      // }
+  .navbar-dropdown-wrapper {
+    @include breakpoint(phablet) {
+      left: 0;
+      min-width: 100%;
+      position: absolute;
+      top: 100%;
+      height: 0.5em;
     }
   }
 }

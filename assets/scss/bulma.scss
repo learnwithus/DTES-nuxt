@@ -4,10 +4,20 @@ $desktop: map-get($breakpoints, tablet);
 $widescreen: map-get($breakpoints, desktop);
 $fullhd: map-get($breakpoints, desktophd);
 
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/grid/columns.sass";
-@import "bulma/sass/helpers/visibility.sass";
-@import "bulma/sass/helpers/spacing.sass";
+$navbar-background-color: unset;
+$navbar-breakpoint: $tablet;
+$navbar-item-hover-color: white;
+$navbar-dropdown-item-hover-color: white;
+$navbar-dropdown-background-color: rgba(0, 0, 0, 0.5);
+$navbar-item-color: #dfdfdf;
+$navbar-dropdown-offset: 0px;
+// $navbar-padding-vertical: 0;
+
+@import "bulma/sass/utilities/_all.sass"; // Global Styles needed by all of Bulma
+@import "bulma/sass/grid/columns.sass"; // Responsive Columns
+@import "bulma/sass/components/navbar.sass"; // Navbar
+@import "bulma/sass/helpers/visibility.sass"; // Visibility helper functions
+@import "bulma/sass/helpers/spacing.sass"; // Spacer Helper functions
 
 // Custom helper function for revesing column
 @media (max-width: $tablet) {
