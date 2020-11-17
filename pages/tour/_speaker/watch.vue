@@ -38,7 +38,7 @@
       </transition>
     </div>
     <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
-      <video poster="">
+      <video poster="" playsinline="true">
         <source :src="videoSource" type="video/mp4" size="720" />
       </video>
     </v-plyr>
@@ -132,6 +132,7 @@ export default {
   video {
     object-fit: cover;
     transition: opacity 200ms linear;
+    position: fixed;
   }
 
   // Styles of paused video overlay
@@ -141,6 +142,7 @@ export default {
 
   .plyr__controls {
     z-index: 10;
+    position: fixed;
   }
 
   .plyr__video-wrapper {
@@ -169,7 +171,7 @@ export default {
   pointer-events: none;
 
   .back-to-map-button {
-    margin: 0 auto;
+    margin: 2em auto 0 auto;
   }
 }
 #interview-pause-screen {
@@ -205,7 +207,13 @@ export default {
   }
 }
 #interview-end-screen {
+  padding-top: 1em;
   pointer-events: auto;
+  padding-bottom: 4em;
+
+  ul {
+    padding: 0;
+  }
 }
 
 .additional-info {
