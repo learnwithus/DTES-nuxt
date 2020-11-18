@@ -12,7 +12,11 @@ answers:
 ---
 <!--- This is where question-level feedback goes -->
 
-Majority of people (~65%) had no contact with police in past two years
-- Those that did have contact were mostly for minor offenses (shoplifting, breach of probation)
+Highest numbers of overdoses are occurring with individuals using alone and using in their place of residence. 
 
-Highest number of overdoses are occurring with individuals using alone and using in their place of residence
+Different options are now offered to people who want to use substances: 
+- Use with a buddy
+- Go to an Overdose Prevention Site or Supervised Consumption Site
+- Use the [Lifeguard App](https://lifeguarddh.com/ )
+
+

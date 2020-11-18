@@ -1,12 +1,12 @@
 ---
-question: Can you think of some ways stigma might impact the Overdose Crisis in the relations between PWUS and Health institutions?
+question: Can you think of some ways stigma might impact the overdose crisis in the relations between PWUS and health institutions?
 type: free-text
-answers: Whatever the answer is
+answers: Stigma undermines the effectiveness of the response to the BC overdose crisis
 ---
 <!--- This is where the rich feedback goes -->
 <markdown-image src="images/graph-placeholder-dark.svg"></markdown-image>
 
 Stigma undermines the effectiveness of the response to the BC overdose crisis:
-- Creates barriers to individuals who need to receive or access basic healthcare and social needs.
+- Creates barriers to individuals who want to receive or access basic healthcare and social needs.
 - Compromises the quality of care provided and/or received when an individual is treated.
 - Influences public support for evidence-based strategies and project funding.

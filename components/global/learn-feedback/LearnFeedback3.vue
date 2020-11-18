@@ -9,7 +9,7 @@
              <li>This stigma is expressed as discrimination - as defined as unfair treatment due to a person’s identity [ref cmha]</li>
            </ul>
          </li>
-         <li>Intrapersonal (eg, self-stigma): People who use drugs might internalize stigma.
+         <li>Intrapersonal (eg. self-stigma): People who use drugs might internalize stigma.
            <ul>
              <li>This could manifest in a reduced sense of self-worth, increased likelihood to conceal use of drugs, or reduced help or support seeking. All this leads to increased harms.</li>
            </ul>

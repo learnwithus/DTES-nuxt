@@ -21,8 +21,20 @@
           <h3>Individual</h3>
           <ul>
             <li>Self-reflection and further education</li>
-            <li>Trauma-informed Practice * Hyperlink 1</li>
-            <li>Language matters *Hyperlink 2</li>
+            <li>
+              <a
+                href="https://journals.sagepub.com/doi/pdf/10.1177/0706743717711172"
+                target="_blank"
+                >Trauma-informed Practice</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://journals.lww.com/jan/Abstract/2013/04000/Stigmatizing_Harm_Reduction_Through_Language__A.6.aspx"
+                target="_blank"
+                >Language matters</a
+              >
+            </li>
             <li>
               Practising with a person-based and evidence-based, not
               punitive-based, care model
@@ -45,8 +57,7 @@
             <li>
               Direct involvement of people with lived experience in
               institutional decision making, and compensation for their
-              involvement*
-              *http://www.bccdc.ca/resource-gallery/Documents/PEEP%20Best%20Practice%20Guidelines.pdf
+              involvement
             </li>
             <li>Ongoing targeted training and education</li>
             <li>Ongoing assessment of policy and practices</li>

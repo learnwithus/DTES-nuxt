@@ -21,6 +21,9 @@ answers:
 </markdown-container>
 
 
-Death and hospitalization infographic
 - Men aged 30-39 are the most affected group
 - Overdoses affect people both inside and outside the workforce/social assistance systems
+- First Nations people are disproportionately represented in overdose deaths 
+
+
+**Note:** Trans and two-spirited people are very affected by this crisis, but have not been well captured to date
