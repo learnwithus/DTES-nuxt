@@ -1,5 +1,5 @@
 ---
-name: 'Wendy Stevens'
+name: Wendy
 type: peer
 video: 'https://assets.vchlearn.ca/dtes/videos/wendy-720.mp4'
 profile: 'wendy/profile.jpg'
