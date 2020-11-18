@@ -9,7 +9,7 @@ $navbar-breakpoint: $tablet;
 $navbar-item-hover-color: white;
 $navbar-dropdown-item-hover-color: white;
 $navbar-dropdown-background-color: rgba(0, 0, 0, 0.5);
-$navbar-item-color: #dfdfdf;
+$navbar-item-color: $nav-text-colour;
 $navbar-dropdown-offset: 0px;
 // $navbar-padding-vertical: 0;
 
