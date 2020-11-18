@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
 .question-feedback {
-  color: $colour-accent;
+  color: $colour-primary;
 
   .dark & {
     color: white;

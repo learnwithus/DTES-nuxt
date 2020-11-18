@@ -272,6 +272,6 @@ export default {
 }
 
 .answer-reminder {
-  color: $colour-accent;
+  color: $colour-primary;
 }
 </style>
