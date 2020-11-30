@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="container"><h1>Resources</h1></div>
+    <div class="container">
+      <h1>Resources</h1>
+      <nuxt-content :document="resources" />
+      </div>
   </div>
 </template>
 
@@ -11,6 +14,13 @@ export default {
       title: "Resisting Stigma - Resources",
     };
   },
+  async asyncData({ $content, params, store }){
+        const resources = await $content("resources").fetch();
+
+        return {
+            resources
+        }
+    }
 };
 </script>
 
