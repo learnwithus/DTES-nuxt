@@ -30,7 +30,7 @@ export default {
     script: [
       {
         src:
-          "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.min.js",
+          "https://polyfill.io/v3/polyfill.js",
       },
     ],
   },
