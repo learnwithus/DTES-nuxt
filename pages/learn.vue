@@ -87,9 +87,9 @@
         <!-- Final Quiz Page -->
         <div class="section-feedback-wrapper" v-else key="3">
           <section-feedback :feedback="finalPage" />
-          <vs-button to="/tour" dark border flat :active="true">
+          <!-- <vs-button to="/tour" dark border flat :active="true">
             Continue To Tour
-          </vs-button>
+          </vs-button> -->
           <!-- Quiz Demo Buttons (Temporary) -->
           <div>
             <button
@@ -108,6 +108,7 @@
         @click-next="nextScreen()"
         @click-submit="onAnswerSubmit()"
         @click-start-module="moduleStarted = true"
+        @click-start-tour="$router.push({ path: '/tour' })"
       />
     </div>
   </main>
@@ -251,6 +252,7 @@ export default {
       else if (this.showAnswer && !this.showFeedback && !this.moduleComplete)
         return "question-next";
       else if (this.isLastFeedback) return "feedback-next-section";
+      else if (this.moduleComplete) return "start-tour";
       else return "feedback-next-feedback";
     },
     showAnswer() {

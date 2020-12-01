@@ -44,10 +44,24 @@
             button == "feedback-next-section" ? "Next Section" : "Next"
           }}</vs-button
         >
+        <vs-button
+          flat
+          size="large"
+          dark
+          border
+          :active="true"
+          v-else-if="button == 'start-tour'"
+          @click="$emit('click-start-tour')"
+          class="submit"
+          >Star Tour</vs-button
+        >
       </div>
 
       <!-- Prgoress Dots -->
-      <div class="learn-progress-wrapper is-hidden-mobile opacity-show" :class="{'opacity-hide': !$props.progress.show}">
+      <div
+        class="learn-progress-wrapper is-hidden-mobile opacity-show"
+        :class="{ 'opacity-hide': !$props.progress.show }"
+      >
         <progress-dots
           :sections="progress.sectionCount"
           :current-section="progress.currentSection"
