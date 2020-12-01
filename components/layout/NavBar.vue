@@ -105,6 +105,8 @@ header {
   color: white;
   height: $nav-height;
   min-height: $nav-height;
+  position: sticky;
+  top: 0;
 
   .navbar-burger {
     border: none;
