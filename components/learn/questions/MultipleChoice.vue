@@ -31,6 +31,7 @@ export default {
 <style lang="scss" scoped>
 .multiple-choice-answer {
   transition: all 200ms linear;
+  margin-bottom: 0.75em;
 }
 
 .correct {
