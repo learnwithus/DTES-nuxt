@@ -6,6 +6,6 @@ profile: 'melissa/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: Short biography about Tracey, maybe how she is related to this location?
 map:
-    x: 35
-    y: 40
+    x: 550
+    y: 300
 ---

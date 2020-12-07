@@ -6,8 +6,8 @@ profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: Short biography about WAHRS.
 map:
-    x: 196
-    y: 20
+    x: 500
+    y: 300
 speakers:
     - name: 'Tracey Draper'
 additional-info: 
