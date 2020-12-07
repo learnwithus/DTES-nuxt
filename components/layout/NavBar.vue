@@ -5,6 +5,7 @@
     :class="{
       hide: !$store.state.header.visible && !headerHover,
       overlay: $store.state.header.overlay,
+      transparent: $store.state.header.transparent
     }"
   >
     <nav
@@ -16,7 +17,8 @@
         <nuxt-link
           id="logo"
           to="/"
-          class="navbar-item"
+          class="navbar-item opacity-show"
+          :class="{'opacity-hide': !$store.state.header.logo}"
           @click.native="hamburgerOpen = false"
           ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
         /></nuxt-link>
@@ -107,6 +109,10 @@ header {
   min-height: $nav-height;
   position: sticky;
   top: 0;
+
+  &.transparent {
+    background-color: unset;
+  }
 
   .navbar-burger {
     border: none;

@@ -2,6 +2,8 @@ export const state = () => ({
   header: {
     overlay: false,
     visible: true,
+    transparent: false,
+    logo: true,
   },
   background: {
     image: {
@@ -67,6 +69,16 @@ export const mutations = {
   },
   clearDarkBackgroundRequest(state) {
     state.background.dark.next = false;
+  },
+  transparentHeader(state) {
+    state.header.transparent = true;
+  },
+  defaultHeader(state) {
+    state.header.transparent = false;
+    state.header.logo = true;
+  },
+  hideHeaderLogo(state) {
+    state.header.logo = false;
   },
   requestDarkBackground(state) {
     state.background.dark.next = true;

@@ -8,7 +8,6 @@
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
     <TourMap :interactive="true" />
-
     <button @click="$store.commit('resetUserProgress')">Reset Progress</button>
   </div>
 </template>
@@ -45,6 +44,9 @@ export default {
   border-radius: 1em;
   max-width: 45em;
   margin: 0 auto;
+  font-size: 0.75em;
+  margin-top: 2em;
+  color: #ffffffa6;
 }
 .tour-map-page-container {
   margin-top: 2em;
