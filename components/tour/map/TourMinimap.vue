@@ -3,6 +3,7 @@
     <div class="mini-map-container" @click="showMap = true">
       <dtes-map
         :interactive="false"
+        :simple="true"
         class="mini-map"
         :class="{ active: showMap }"
       />
@@ -16,7 +17,7 @@
       >
         <button class="map-close-button" @click="showMap = false">x</button>
         <div class="map-wrapper container">
-          <dtes-map :interactive="true" />
+          <dtes-map :interactive="true"/>
         </div>
       </div>
     </transition>
