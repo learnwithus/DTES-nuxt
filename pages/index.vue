@@ -19,17 +19,19 @@
         >
           Begin
         </vs-button>
-        <div v-if="showDetails">
-          <nuxt-content :document="content" />
-          <vs-button
-          id="landing-start-course"
-            to="/learn"
-            size="xl"
-            flat
-            border
-            color="#fff"
-            >Start Course
-          </vs-button>
+        <div v-if="showDetails" class="columns">
+          <div class="column is-three-fifths-desktop">
+            <nuxt-content :document="content" />
+            <vs-button
+              id="landing-start-course"
+              to="/learn"
+              size="xl"
+              flat
+              border
+              color="#fff"
+              >Start Course
+            </vs-button>
+          </div>
         </div>
       </transition>
     </div>
