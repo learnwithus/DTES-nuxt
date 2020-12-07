@@ -8,6 +8,7 @@ body,
 
 body {
     margin: 0;
+    color: $colour-dark;
 }
 
 main {
@@ -37,5 +38,27 @@ a {
     .dark & {
         color: $text-colour-light;
         border-bottom: 1px solid $text-colour-light;
+    }
+}
+
+.light-page-title {
+    color: $colour-secondary;
+    text-align: center;
+    font-family: $font-serif;
+}
+
+.light-page-content {
+    li {
+        list-style: none;
+        margin-bottom: 0.3em;
+    }
+
+    a {
+        border-bottom: 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.2em;
     }
 }

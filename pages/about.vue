@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <h1>About</h1>
-      <nuxt-content :document="about" />
+      <h1 class="light-page-title">About</h1>
+      <nuxt-content :document="about" class="light-page-content"/>
     </div>
   </div>
 </template>
@@ -14,15 +14,16 @@ export default {
       title: "Resisting Stigma - About",
     };
   },
-  async asyncData({ $content, params, store }){
-        const about = await $content("about").fetch();
+  async asyncData({ $content, params, store }) {
+    const about = await $content("about").fetch();
 
-        return {
-            about
-        }
-    }
+    return {
+      about,
+    };
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+
 </style>

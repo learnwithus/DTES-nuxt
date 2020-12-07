@@ -22,6 +22,7 @@
         <div v-if="showDetails">
           <nuxt-content :document="content" />
           <vs-button
+          id="landing-start-course"
             to="/learn"
             size="xl"
             flat
@@ -91,5 +92,8 @@ export default {
     max-width: 12em;
     width: 33%;
   }
+}
+#landing-start-course {
+  margin-top: 3em;
 }
 </style>
