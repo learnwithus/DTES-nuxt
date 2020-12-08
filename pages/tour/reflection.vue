@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-      <h1>Refelction</h1>
-      <nuxt-content :document="conclusion" />
+      <h1 class="light-page-title">Refelction</h1>
+      <nuxt-content :document="conclusion" class="light-page-document"/>
   </div>
 </template>
 
