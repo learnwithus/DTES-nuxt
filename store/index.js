@@ -18,6 +18,7 @@ export const state = () => ({
   tour: {
     speakers: [],
     started: false,
+    speakerRequirement: 3 // How many videos is the user required to watch
   },
   userProgress: {
     speakers: [],
@@ -134,4 +135,10 @@ export const getters = {
   userProgress: (state) => {
     return state.userProgress;
   },
+  tourSpeakerRequirement: (state) => {
+    return state.tour.speakerRequirement;
+  },
+  tourComplete: (state) => {
+    return state.userProgress.speakers.length >= state.tour.speakerRequirement;
+  }
 };

@@ -13,6 +13,7 @@
       <div class="column is-half location">{{ locationText }}</div>
       <div class="column is-one-fifth">
         <vs-button
+          v-if="!tourComplete"
           id="tour-progress-btn"
           size="xl"
           flat
@@ -24,7 +25,23 @@
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"
-          >0/3
+          >{{ videosWatchedCount }}/{{ tourSpeakerRequirement }}
+        </vs-button>
+        <vs-button
+          v-else
+          id="tour-progress-btn"
+          to="/tour/reflection"
+          size="xl"
+          flat
+          border
+          color="#fff"
+          v-tooltip="{
+            content:
+              'You did it! Press this button to complete your journey',
+            offset: 20,
+            classes: 'map-tooltip map-page-tooltip',
+          }"
+          >Complete Tour
         </vs-button>
       </div>
     </div>
@@ -56,7 +73,10 @@ export default {
     // }
   },
   computed: {
-    ...mapGetters([]),
+    ...mapGetters(["userProgress", "tourSpeakerRequirement", "tourComplete"]),
+    videosWatchedCount() {
+      return this.userProgress.speakers.length;
+    },
   },
   methods: {
     onLocationHover(location) {
