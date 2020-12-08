@@ -289,7 +289,8 @@
             v-bind:key="speaker.id"
             :cx="speaker.map.x"
             :cy="speaker.map.y"
-            @mouseover="/*hoverLocation = speaker*/"
+            @mouseover="$emit('hover', speaker.location)"
+            @mouseleave="$emit('hover', '')"
             @click="
               $props.interactive
                 ? $router.push({ path: `/tour/${speaker.slug}` })
@@ -329,6 +330,8 @@
             height="25"
             :x="speaker.map.x - 25 / 2"
             :y="speaker.map.y - 25 / 2"
+            @mouseover="$emit('hover', speaker.location)"
+            @mouseleave="$emit('hover', '')"
             @click="
               $props.interactive
                 ? $router.push({ path: `/tour/${speaker.slug}` })

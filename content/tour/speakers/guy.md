@@ -5,6 +5,7 @@ video: 'wahrs/tracey-interview-test.mp4'
 profile: 'wahrs/tracey.jpg'
 background: 'guy/background.jpg'
 bio: Short biography about Tracey, maybe how she is related to this location?
+location: 1080 Guy Street
 map:
     x: 290
     y: 310

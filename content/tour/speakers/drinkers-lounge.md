@@ -5,6 +5,7 @@ video: 'https://assets.vchlearn.ca/dtes/videos/tracy-720.mp4'
 profile: 'drinkers-lounge/profile.jpg'
 background: 'drinkers-lounge/background.jpg'
 bio: Short biography about the Drinker's Lounge
+location: 1080 Drinker Lounge Street
 map:
     x: 800
     y: 100

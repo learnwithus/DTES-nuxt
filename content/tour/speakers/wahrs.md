@@ -5,6 +5,7 @@ video: 'https://assets.vchlearn.ca/dtes/videos/tracy-720.mp4'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: Short biography about WAHRS.
+location: 1080 WAHRS Street
 map:
     x: 500
     y: 300

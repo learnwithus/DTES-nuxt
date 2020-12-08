@@ -7,18 +7,20 @@
       community of the Downtown Eastside (DTES) of Vancouver, BC.
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
-    <TourMap :interactive="true" />
+    <TourMap :interactive="true" @hover="onLocationHover" />
     <div id="map-page-bottom-ui" class="columns">
       <div class="column is-one-fifth"></div>
-      <div class="column is-half location">Location</div>
+      <div class="column is-half location">{{ locationText }}</div>
       <div class="column is-one-fifth">
         <vs-button
+          id="tour-progress-btn"
           size="xl"
           flat
           border
           color="#fff"
           v-tooltip="{
-            content: 'Visit at least 3 locations and watch \n the speakers there to complete the course',
+            content:
+              'Visit at least 3 locations and watch \n the speakers there to complete the course',
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"
@@ -41,6 +43,10 @@ export default {
   },
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
+
+    return {
+      locationText: "",
+    };
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -51,6 +57,11 @@ export default {
   },
   computed: {
     ...mapGetters([]),
+  },
+  methods: {
+    onLocationHover(location) {
+      this.locationText = location;
+    },
   },
 };
 </script>
@@ -79,9 +90,15 @@ export default {
 
   .location {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .map-page-tooltip {
   max-width: 250px;
+}
+#tour-progress-btn {
+  float: right;
 }
 </style>
