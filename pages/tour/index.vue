@@ -8,6 +8,24 @@
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
     <TourMap :interactive="true" />
+    <div id="map-page-bottom-ui" class="columns">
+      <div class="column is-one-fifth"></div>
+      <div class="column is-half location">Location</div>
+      <div class="column is-one-fifth">
+        <vs-button
+          size="xl"
+          flat
+          border
+          color="#fff"
+          v-tooltip="{
+            content: 'Visit at least 3 locations and watch \n the speakers there to complete the course',
+            offset: 20,
+            classes: 'map-tooltip map-page-tooltip',
+          }"
+          >0/3
+        </vs-button>
+      </div>
+    </div>
     <button @click="$store.commit('resetUserProgress')">Reset Progress</button>
   </div>
 </template>
@@ -37,7 +55,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .land-acknowledgement {
   padding: 1.5em;
   border: 2px solid rgba(255, 255, 255, 0.15);
@@ -55,5 +73,15 @@ export default {
   font-style: oblique;
   text-align: center;
   margin-bottom: 1em;
+}
+#map-page-bottom-ui {
+  margin-top: 1em;
+
+  .location {
+    text-align: center;
+  }
+}
+.map-page-tooltip {
+  max-width: 250px;
 }
 </style>
