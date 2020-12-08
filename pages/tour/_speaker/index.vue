@@ -20,7 +20,7 @@
             >Watch</vs-button
           >
         </div>
-        <tour-minimap class="speaker-map" />
+        <tour-minimap class="speaker-map" :location="speaker.slug" />
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ export default {
         return "Peer";
       } else return "Organization";
     },
-    ...mapGetters([])
+    ...mapGetters([]),
   },
 };
 </script>
