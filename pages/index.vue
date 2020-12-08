@@ -76,7 +76,7 @@ export default {
 #landing-logo {
   margin-top: 20%;
   width: 100%;
-  transition: all 200ms linear;
+  transition: all 0.5s ease-in-out;
 
   &.details {
     margin-top: 2em;
