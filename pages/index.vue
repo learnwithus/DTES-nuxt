@@ -90,9 +90,14 @@ export default {
   flex-shrink: 0;
   padding-bottom: 2em;
 
+  > .container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   img {
-    max-width: 12em;
-    width: 33%;
+    max-width: 10em;
+    width: 30%;
   }
 }
 #landing-start-course {
