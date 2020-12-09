@@ -7,7 +7,7 @@ background: 'wahrs/background.jpg'
 bio: Short biography about WAHRS.
 location: 380 E Hastings St
 map:
-    x: 500
+    x: 600
     y: 300
 speakers:
     - name: 'Tracey Draper'

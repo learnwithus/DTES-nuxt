@@ -7,6 +7,6 @@ background: 'wahrs/background.jpg'
 bio: Short biography about Tracey, maybe how she is related to this location?
 location: 380 E Hastings St
 map:
-    x: 550
+    x: 640
     y: 300
 ---
