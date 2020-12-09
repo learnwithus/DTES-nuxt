@@ -1,5 +1,5 @@
 <template>
-  <img :src="dynamicImage" :alt="alt" />
+  <img :src="dynamicImage" :alt="alt" class="markdown-image"/>
 </template>
 
 <script>
@@ -24,3 +24,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.markdown-image {
+  width: 100%;
+}
+</style>

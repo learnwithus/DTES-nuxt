@@ -1,23 +1,14 @@
 <!-- Section Level Feedback -->
 <markdown-container>
   <markdown-column>
-    <markdown-image src="images/graph-placeholder.svg"></markdown-image>
-
-Canada-wide, in 2019, among accidental apparent opioid-related deaths:
-  - 77% involved fentanyl or fentanyl analogues – drugs with similar chemical structure to fentanyl (eg. carfentanil, acetylfentanyl)
-  - 72% involved one or more types of non-opioid substances such as alcohol, benzodiazepines, cocaine, gabapentinoids, methamphetamines, W-18, etc.
-
-
-
+    <h2>Canada-wide, in 2020, among accidental apparent opioid-related deaths:</h2>
+    <markdown-image style="max-width: 30em" src="images/learn/graphic1.svg"></markdown-image>
   </markdown-column>
   
   <markdown-column>
-  <markdown-image src="images/graph-placeholder.svg"></markdown-image>
-  
 
-  In British Columbia in 2019:
-  - 86% of deaths related to illicit drugs involved fentanyl or fentanyl analogues. 
+  ## In British Columbia in 2020:
 
-
+  <markdown-image src="images/learn/graph2.svg"></markdown-image>
   </markdown-column>
 </markdown-container>
