@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
 .section-feedback {
   img {
-    max-width: 500px;
+    // max-width: 500px;
     // margin: 0 auto;
     display: block;
   }
