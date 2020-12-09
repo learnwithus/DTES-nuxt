@@ -33,138 +33,42 @@
           stroke-width="17.7177"
           stroke-miterlimit="10"
         />
-        <path
-          d="M58.3887 130.76L185.66 166.771"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M686.638 3.63281L675.128 387.886"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M790.392 8.82422L782.547 387.887"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M995.871 357.813L481.716 345.625"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
+        <path d="M58.3887 130.76L185.66 166.771" class="svg-map-line" />
+        <path d="M686.638 3.63281L675.128 387.886" class="svg-map-line" />
+        <path d="M790.392 8.82422L782.547 387.887" class="svg-map-line" />
+        <path d="M995.871 357.813L481.716 345.625" class="svg-map-line" />
         <path
           d="M539.188 73.6582L569.675 387.857"
           stroke="white"
           stroke-width="10.6306"
           stroke-miterlimit="10"
         />
-        <path
-          d="M400.539 69.4863L397.543 380.664"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M302.65 97.5371L293.663 377.96"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M182.478 337.268L399.043 342.639"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
+        <path d="M400.539 69.4863L397.543 380.664" class="svg-map-line" />
+        <path d="M302.65 97.5371L293.663 377.96" class="svg-map-line" />
+        <path d="M182.478 337.268L399.043 342.639" class="svg-map-line" />
         <path
           d="M37.1855 206.934L182.478 250.028L398.731 257.391"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
+          class="svg-map-line"
         />
         <path
           d="M224.654 142.699V179.703L399.443 183.279"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
+          class="svg-map-line"
         />
-        <path
-          d="M302.256 109.84H400.54"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M488.879 73.0664V148.638"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M1002.24 124.595L488.879 109.84"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M497.832 148.641L498.429 183.279"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M549.766 187.354L680.423 191.087"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M786.192 194.197L999.424 200.449"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
+        <path d="M302.256 109.84H400.54" class="svg-map-line" />
+        <path d="M488.879 73.0664V148.638" class="svg-map-line" />
+        <path d="M1002.24 124.595L488.879 109.84" class="svg-map-line" />
+        <path d="M497.832 148.641L498.429 183.279" class="svg-map-line" />
+        <path d="M549.766 187.354L680.423 191.087" class="svg-map-line" />
+        <path d="M786.192 194.197L999.424 200.449" class="svg-map-line" />
         <path
           d="M19.127 284.348L130.745 315.78L108.463 355.234"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
+          class="svg-map-line"
         />
-        <path
-          d="M484.104 223.254L481.717 382.855"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M997.804 275.276L483.54 261.17"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M539.017 73.2695L1002.24 85.9271"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M822.578 22.8242L819.598 80.9398"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
-        <path
-          d="M790.392 41.8297L684.454 40.0391"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
+        <path d="M484.104 223.254L481.717 382.855" class="svg-map-line" />
+        <path d="M997.804 275.276L483.54 261.17" class="svg-map-line" />
+        <path d="M539.017 73.2695L1002.24 85.9271" class="svg-map-line" />
+        <path d="M822.578 22.8242L819.598 80.9398" class="svg-map-line" />
+        <path d="M790.392 41.8297L684.454 40.0391" class="svg-map-line" />
         <path
           d="M28.0469 239.762L211.127 288.328L997.804 314.165"
           stroke="white"
@@ -195,12 +99,7 @@
           stroke-width="10.6306"
           stroke-miterlimit="10"
         />
-        <path
-          d="M895.56 83.0156L886.009 393.374"
-          stroke="white"
-          stroke-width="3.54354"
-          stroke-miterlimit="10"
-        />
+        <path d="M895.56 83.0156L886.009 393.374" class="svg-map-line" />
       </g>
       <!-- Map Outline -->
       <path
@@ -478,9 +377,9 @@ export default {
     letter-spacing: 0.1em;
   }
   .svg-map-line {
-    fill: none;
     stroke: white;
     stroke-miterlimit: 10;
+    stroke-width: 3.54354;
   }
   .svg-map-fill {
     opacity: 0.5;
