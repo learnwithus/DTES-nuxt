@@ -15,4 +15,4 @@ answers:
 
 ---
 <!--- This is where question-level feedback goes -->
-In April 2016 BC’s Provincial Health Officer declared a province-wide public health emergency under the Public Health Act. This was the first time a public health emergency had been declared at a provincial level in BC.
+In April 2016 British Columbia’s Provincial Health Officer declared a province-wide public health emergency under the Public Health Act. This was the first time a public health emergency had been declared at a provincial level in BC.
