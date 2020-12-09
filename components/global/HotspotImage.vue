@@ -4,7 +4,8 @@
     <v-popover
       v-for="(hotspot, index) in hotspots"
       v-bind:key="index"
-      :style="{left: hotspot.x, top: hotspot.y}"
+      :style="{ left: hotspot.x, top: hotspot.y }"
+      popoverClass="hotspot-image-theme"
       class="popover-hotspot"
       trigger="hover"
       offset="25"
@@ -13,7 +14,7 @@
       <div class="hotspot"></div>
       <!-- This will be the content of the popover -->
       <template slot="popover">
-          {{hotspot.text}}
+        {{ hotspot.text }}
       </template>
     </v-popover>
   </div>
@@ -47,6 +48,7 @@ export default {
 <style lang="scss">
 .popover-hotspot {
   position: absolute;
+  
 }
 .hotspot-image-wrapper {
   position: relative;
@@ -56,12 +58,22 @@ export default {
   }
 
   .hotspot {
-    height: 1em;
-    width: 1em;
-    margin-left: -0.5em;
+    height: 0.75em;
+    width: 0.75em;
+    margin-left: -0.85em;
     border-radius: 50%;
-    background: orange;
+    background: white;
+    border: solid 0.5em $colour-accent;
     position: absolute;
+  }
+}
+.hotspot-image-theme{
+  max-width: 500px;
+  font-size: 14px;
+  // padding: 1em;
+
+  .tooltip-inner.popover-inner {
+    padding: 1em;
   }
 }
 </style>
