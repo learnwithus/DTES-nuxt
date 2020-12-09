@@ -17,8 +17,8 @@ A significant increase in rates of apparent opioid-related deaths at the nationa
         text: `BC is the most impacted province in Canada with 5,085 deaths between Jan 2016 and December 2019 (of the 15,393 deaths seen Canada wide).`
       },
       {
-        x: `19%`,
-        y: `62%`,
+        x: `15%`,
+        y: `48%`,
         text: `Western Canada continue to be the most impacted region in the country, but rates have increased in other regions, including Ontario.  A significant increase in rates of apparent opioid-related deaths at the national level was observed between January 2016 and June 2017. The rates remained high from July 2017 to December 2019`
       },
     ]" />
