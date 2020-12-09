@@ -70,6 +70,7 @@ export default {
 .hotspot-image-theme{
   max-width: 500px;
   font-size: 14px;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
   // padding: 1em;
 
   .tooltip-inner.popover-inner {
