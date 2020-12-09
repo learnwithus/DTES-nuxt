@@ -6,7 +6,7 @@ Overdose deaths in the province have become so pervasive that there has been a m
 
 “There is widespread global recognition that the failed 'war on drugs' and the resulting criminalization and stigmatization of people who use drugs has not reduced drug use but instead has increased health harms.“ *– Dr Bonnie Henry*
 
-*Click on the hotspots to learn more.*
+*Hover over the hotspots to learn more.*
 
 
   </markdown-column>
