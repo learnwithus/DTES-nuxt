@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container skinny">
       <h1 class="light-page-title">Resources</h1>
       <nuxt-content :document="resources" class="light-page-content"/>
       </div>

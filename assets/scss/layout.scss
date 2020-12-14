@@ -3,6 +3,10 @@
     margin: 0 auto;
     padding: 0 $container-padding;
 
+    &.skinny {
+        max-width: map-get($breakpoints, phablet);
+    }
+
     // @include breakpoint(phone) {
     //     max-width: 100%;
     //     padding: 0 25px;
