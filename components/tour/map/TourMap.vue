@@ -210,7 +210,6 @@
             class="speaker-map-dot"
             :class="{
               interactive: $props.interactive,
-              complete: isSpeakerComplete(speaker.slug),
             }"
             rx="15"
             ry="15"
@@ -223,7 +222,6 @@
             class="speaker-map-dot speaker-map-diamond"
             :class="{
               interactive: $props.interactive,
-              complete: isSpeakerComplete(speaker.slug),
             }"
             width="25"
             height="25"
@@ -284,12 +282,20 @@
               stroke-width="20"
             />
           </g>
-          <!-- <path
+          <path
+            v-if="isSpeakerComplete(speaker.slug)"
             v-bind:key="speaker.id"
-            :transform="`translate(${speaker.map.x - 6} ${speaker.map.y - 6}) scale(0.05)`"
+            :transform="`translate(${speaker.map.x - 6} ${
+              speaker.map.y - 6
+            }) scale(0.05)`"
             d="M 30,180 90,240 240,30"
-            style="stroke: #fff; stroke-width: 30; fill: none"
-          /> -->
+            style="
+              stroke: #868786;
+              stroke-width: 30;
+              fill: none;
+              pointer-events: none;
+            "
+          />
         </template>
       </g>
     </svg>
@@ -402,10 +408,6 @@ export default {
     }
 
     &.interactive {
-      &.complete {
-        fill: $colour-green;
-        content: "done";
-      }
       &:hover {
         // fill: $colour-accent;
         filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
