@@ -8,6 +8,7 @@
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
     <TourMap :interactive="true" @hover="onLocationHover" />
+    <img src="~assets/images/legend.svg" alt="Legend" class="tour-map-page-legend">
     <div id="map-page-bottom-ui" class="columns">
       <div class="column is-one-fifth"></div>
       <div class="column is-half location">{{ locationText }}</div>
@@ -106,7 +107,7 @@ export default {
   margin-bottom: 1em;
 }
 #map-page-bottom-ui {
-  margin-top: 1em;
+  // margin-top: 1em;
 
   .location {
     text-align: center;
@@ -120,5 +121,11 @@ export default {
 }
 #tour-progress-btn {
   float: right;
+}
+.tour-map-page-legend {
+  width: 100%;
+  max-width: 17em;
+  margin: 0 auto;
+  display: block;
 }
 </style>
