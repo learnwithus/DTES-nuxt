@@ -2,7 +2,7 @@
 name: Guy
 type: peer
 video: 'wahrs/tracey-interview-test.mp4'
-profile: 'wahrs/tracey.jpg'
+profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
 bio: Short biography about Tracey, maybe how she is related to this location?
 location: The Alley
