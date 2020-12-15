@@ -7,7 +7,7 @@
       :style="{ left: hotspot.x, top: hotspot.y }"
       popoverClass="hotspot-image-theme"
       class="popover-hotspot"
-      trigger="hover"
+      trigger="hover focus"
       offset="25"
     >
       <!-- This will be the popover target (for the events and position) -->
