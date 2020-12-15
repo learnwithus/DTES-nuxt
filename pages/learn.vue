@@ -263,7 +263,7 @@ export default {
 .learn-container {
   overflow: hidden;
   padding-top: 2em;
-  padding-bottom: 7em;
+  padding-bottom: 9em;
 
   @include breakpoint(phablet) {
     padding-bottom: 4em;
