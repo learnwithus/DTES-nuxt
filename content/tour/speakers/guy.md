@@ -4,7 +4,7 @@ type: peer
 video: 'wahrs/tracey-interview-test.mp4'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Short biography about Tracey, maybe how she is related to this location?
+bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
 location: The Alley
 map:
     x: 290
