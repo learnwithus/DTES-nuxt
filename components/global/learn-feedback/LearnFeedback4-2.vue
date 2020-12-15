@@ -17,59 +17,100 @@
     <div class="column">
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
-          <h3>Individual</h3>
-          <ul>
-            <li>Self-reflection and further education</li>
-            <li>
-              <a
-                href="https://journals.sagepub.com/doi/pdf/10.1177/0706743717711172"
-                target="_blank"
-                >Trauma-informed Practice</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://journals.lww.com/jan/Abstract/2013/04000/Stigmatizing_Harm_Reduction_Through_Language__A.6.aspx"
-                target="_blank"
-                >Language matters</a
-              >
-            </li>
-            <li>
-              Practising with a person-based and evidence-based, not
-              punitive-based, care model
-            </li>
-            <li>Building authentic and honest relationships with PWUS</li>
-          </ul>
+          <h3>
+            1. When a health problem or substance use issue needs medical
+            attention
+          </h3>
+
+          <p>
+            <strong>Issue:</strong> Previous negative experiences, expectations
+            of poor treatment or internalized stigma can discourage people from
+            seeking help
+          </p>
+
+          <p>
+            <strong>Outcome:</strong> Clients may delay or avoid seeking help
+            <br />- Conditions may worsen and become more complex if care is
+            delayed <br />- Increased morbidity and mortality due to illness or
+            overdose
+          </p>
+          <p>“If I go to hospital, they won’t believe me or listen to me”</p>
+          <p>“It’s my own fault I am sick, I don’t deserve help.”</p>
         </div>
+
         <div v-else-if="sectionIndex == 1" key="1">
-          <h3>Societal</h3>
-          <ul>
-            <li>Purposeful media consumption</li>
-            <li>Critical analysis of media</li>
-            <li>Legislative advocacy</li>
-            <li>Awareness campaigns</li>
-          </ul>
+          <h3>
+            2. When people first come into a service (person at reception desk)
+          </h3>
+
+          <p>
+            <strong>Issue:</strong> Negative first impression through signs and
+            interactions at reception will colour clients’ entire experience of
+            service
+          </p>
+
+          <p>
+            <strong>Outcome:</strong> : Clients may leave without getting seen
+            or having problems addressed<br />- Clients will enter clinical
+            encounter feeling unsafe/ judged.
+          </p>
+          <p>“I’m not welcome here, I should just get out of here.”</p>
+          <p>
+            “I can tell by the way you’re looking at me that you won’t help me.”
+          </p>
+          <p>
+            “They are making me wait because they don’t like people like me”
+          </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
-          <h3>Institutional</h3>
-          <ul>
-            <li>
-              Direct involvement of people with lived experience in
-              institutional decision making, and compensation for their
-              involvement
-            </li>
-            <li>Ongoing targeted training and education</li>
-            <li>Ongoing assessment of policy and practices</li>
-            <li>Inclusion of de-stigmatizing programs and services</li>
-            <li>Providing outlets for feedback</li>
-          </ul>
+          <h3>3. Clinical assessment (clinic room or triage desk)</h3>
+
+          <p>
+            <strong>Issue:</strong> Clients may not disclose important
+            information for fear of being treated differently <br />- Providers
+            can jump to conclusions about symptoms/ diagnosis/ care plans
+          </p>
+
+          <p>
+            <strong>Outcome:</strong> Abuse, conflict and violence can escalate
+            Misdiagnosis <br />- Minimizing of symptoms and distress
+          </p>
+          <p>
+            <strong>Client:</strong> “If I’m open about my substance use, I’ll
+            get treated worse than everyone else”
+          </p>
+          <p>
+            <strong>Provider:</strong> “This person is just drunk/ high, I don’t
+            have to look further for the cause of their symptoms”
+          </p>
         </div>
         <div v-else-if="sectionIndex == 3" key="3">
-          <p>4</p>
+          <h3>4. Care plans, referral and follow up</h3>
+
+          <p>
+            <strong>Issue:</strong> Assumptions, misunderstandings and poor
+            communication between clients and providers
+          </p>
+
+          <p>
+            <strong>Outcome:</strong> Clients are labelled as drug seeking
+            receive inadequate pain control <br />- care plans may not reflect
+            clients’ situations <br />- Providers may hesitate to refer to
+            specialists<br />- Clients may miss follow up appointments and be
+            lost to care<br />- Clients may not feel comfortable following up,
+            avoid care in future<br />- People die of overdose or illness
+            because they did not receive health care
+          </p>
+          <p>
+            “I’m not getting better, but there’s no way I’ll go back there.”
+          </p>
         </div>
         <div v-else key="4">
-          <p>Timeline</p>
-          <em>Click on the icons on the left to learn more.</em>
+          <p>The Stigma Timeline</p>
+          <em
+            >Click on the icons on the left to explore how stigma effetcs the
+            healthcare experience</em
+          >
         </div>
       </transition>
     </div>
