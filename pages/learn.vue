@@ -86,18 +86,15 @@
         </div>
         <!-- Final Quiz Page -->
         <div class="section-feedback-wrapper" v-else key="3">
-          <section-feedback :feedback="finalPage" />
-          <!-- <vs-button to="/tour" dark border flat :active="true">
-            Continue To Tour
-          </vs-button> -->
+          <section-feedback :feedback="finalPage" />  
           <!-- Quiz Demo Buttons (Temporary) -->
-          <div>
+          <!-- <div>
             <button
               @click="currentIndex = { section: 0, question: 0, feedback: 0 }"
             >
               Restart
             </button>
-          </div>
+          </div> -->
         </div>
       </transition>
 
@@ -108,7 +105,7 @@
         @click-next="nextScreen()"
         @click-submit="onAnswerSubmit()"
         @click-start-module="moduleStarted = true"
-        @click-start-tour="$router.push({ path: '/tour' })"
+        @click-start-tour="$router.push({ path: '/tour/intro' })"
       />
     </div>
   </main>
