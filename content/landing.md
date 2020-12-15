@@ -1,6 +1,6 @@
 ## By the end of this module you will be able to: 
-The objective of the course is to allow healthcare providers to better understand the lives of their patients, to provide culturally safe practice, and to increase access to care and quality of care for people who use substances. The goal is for this education is reducing social and structural stigma in health care, improve health care access, and ultimately reduce the toll of the overdose public health emergency.
+People who use substances (PWUS) and people living in Vancouver’s Downtown Eastside (DTES) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients from the DTES.
 
 ### THERE ARE 2 PARTS
-1. Learn - learn what is stigma and what we can do about it
-2. Tour - visit the Downtown Eastside area to meet the people who have faced stigma and the services which are offered there
+1. **Learn** - A course to allow healthcare providers to better understand the lives of their patients, to provide culturally safe practice, and to increase access to care and quality of care for people who use substances.
+2. **Tour** - A virtual tour of some of the community-based services in the DTES, and shares video interviews with community members who have been impacted by stigma.
