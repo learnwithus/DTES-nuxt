@@ -1,12 +1,12 @@
 <template>
   <div class="tour-map">
     <div class="mini-map-container" @click="showMap = true">
+      <div v-if="$props.location" class="mini-map-location">{{ speaker.location }}</div>
       <dtes-map
         :interactive="false"
         :location="$props.location"
         :simple="true"
         class="mini-map"
-        :class="{ active: showMap }"
       />
     </div>
 
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import DtesMap from "./TourMap";
 export default {
   components: {
@@ -41,6 +42,12 @@ export default {
     return {
       showMap: false,
     };
+  },
+  computed: {
+    ...mapGetters(["speakers"]),
+    speaker() {
+      return this.speakers.find((x) => x.slug == this.$props.location);
+    },
   },
 };
 </script>
@@ -73,8 +80,16 @@ export default {
 }
 
 .mini-map-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
   cursor: pointer;
   display: inline-block;
+}
+
+.mini-map-location {
+  margin-bottom: 1em;
 }
 
 .map-overlay-container {

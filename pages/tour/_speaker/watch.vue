@@ -33,7 +33,7 @@
             </div>
           </div>
           <!-- </transition> -->
-          <tour-minimap class="speaker-map" />
+          <tour-minimap class="speaker-map" :location="speaker.slug"/>
         </div>
       </transition>
     </div>
