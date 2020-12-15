@@ -106,7 +106,7 @@
           </p>
         </div>
         <div v-else key="4">
-          <p>The Stigma Timeline</p>
+          <h3>The Stigma Timeline</h3>
           <em
             >Click on the icons on the left to explore how stigma effetcs the
             healthcare experience</em
