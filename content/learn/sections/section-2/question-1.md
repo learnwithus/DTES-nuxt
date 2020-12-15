@@ -11,19 +11,13 @@ answers:
 
 ---
 <!--- This is where question-level feedback goes -->
-<markdown-container>
-  <markdown-column size="1">
-    <markdown-image src="images/graph-placeholder-dark.svg"></markdown-image>
-  </markdown-column>
-  <markdown-column size="1">
-    
-  </markdown-column>
-</markdown-container>
+
+<markdown-image src="images/learn/gender-graph.svg"></markdown-image>
 
 
 - Men aged 30-39 are the most affected group
 - Overdoses affect people both inside and outside the workforce/social assistance systems
-- First Nations people are disproportionately represented in overdose deaths 
+- First Nations people are __disproportionately represented__ in overdose deaths 
 
 
 **Note:** Trans and two-spirited people are very affected by this crisis, but have not been well captured to date
