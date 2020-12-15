@@ -46,10 +46,10 @@
         </div>
         <div v-else key="3">
           <p>
-            Study: BC healthcare utilization patterns by people who experience
-            an overdose from illegal drugs
+            In the study BC Healthcare Utilization Patterns by People Who
+            Experience an Overdose From Illegal Drugs (2018), findings show:
           </p>
-          <em>Click on the diagram on the right to learn more.</em>
+          <em>Click on each diagram for more information.</em>
         </div>
       </transition>
     </markdown-column>
