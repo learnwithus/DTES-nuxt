@@ -94,9 +94,13 @@ export default {
   border-radius: 1em;
   max-width: 45em;
   margin: 0 auto;
-  font-size: 0.75em;
+  font-size: 0.6em;
   margin-top: 2em;
   color: #ffffffa6;
+
+  @include breakpoint(phablet) {
+    font-size: 0.75em;
+  }
 }
 .tour-map-page-container {
   margin-top: 2em;
