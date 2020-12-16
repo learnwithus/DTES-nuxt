@@ -1,7 +1,7 @@
 ---
 name: Drinker's Lounge
 type: service
-video: 'https://assets.vchlearn.ca/dtes/videos/tracy-720.mp4'
+video: 'https://assets.vchlearn.ca/dtes/videos/Drinkers_Lounge_1.mp4'
 profile: 'drinkers-lounge/profile.jpg'
 background: 'drinkers-lounge/background.jpg'
 bio: The Drinker's Lounge is for individuals who struggle with severe alcohol use disorder and who sometimes drink non-beverage alcohol such as mouthwash or rubbing alcohol. CMAP works with members to substitute this with limited amounts of member-brewed wine and beer.

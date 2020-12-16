@@ -1,7 +1,7 @@
 ---
 name: Guy
 type: peer
-video: 'wahrs/tracey-interview-test.mp4'
+video: 'https://assets.vchlearn.ca/dtes/videos/Guy.mp4'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
 bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
