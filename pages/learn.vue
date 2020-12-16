@@ -81,12 +81,14 @@
           v-else-if="showFeedback && !moduleComplete"
           key="2"
         >
-          <h2>Feedback</h2>
+          <h2 v-if="currentFeedback.title !== undefined">
+            {{ currentFeedback.title }}
+          </h2>
           <section-feedback :feedback="currentFeedback" />
         </div>
         <!-- Final Quiz Page -->
         <div class="section-feedback-wrapper" v-else key="3">
-          <section-feedback :feedback="finalPage" />  
+          <section-feedback :feedback="finalPage" />
           <!-- Quiz Demo Buttons (Temporary) -->
           <!-- <div>
             <button
