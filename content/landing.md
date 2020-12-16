@@ -1,4 +1,3 @@
-## By the end of this module you will be able to: 
 People who use substances (PWUS) and people living in Vancouver’s Downtown Eastside (DTES) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients from the DTES.
 
 ### THERE ARE 2 PARTS
