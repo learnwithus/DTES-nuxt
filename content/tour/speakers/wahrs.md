@@ -1,7 +1,8 @@
 ---
 name: WAHRS
 type: service
-video: 'https://assets.vchlearn.ca/dtes/videos/Tracy.mp4'
+video: 'https://assets.vchlearn.ca/dtes/videos/Guy_1/master.m3u8'
+poster: 'guy/poster.jpg'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: The Western Aboriginal Harm Reduction Society is an organization of Indigenous people who are current and former users of illicit drugs and/or illicit alcohol.

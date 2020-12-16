@@ -33,13 +33,28 @@
             </div>
           </div>
           <!-- </transition> -->
-          <tour-minimap class="speaker-map" :location="speaker.slug"/>
+          <tour-minimap class="speaker-map" :location="speaker.slug" />
         </div>
       </transition>
     </div>
-    <v-plyr :options="videoOptions" ref="plyr" id="video-wrapper">
-      <video poster="" playsinline="true">
-        <source :src="videoSource" type="video/mp4" size="720" />
+    <v-plyr
+      :emit="playerEvents"
+      @controlsshown="$store.commit('showHeader')"
+      @controlshidden="$store.commit('hideHeader')"
+      @ended="onVideoEnded()"
+      @playing="videoEnded = false"
+      @pause="onVideoPaused()"
+      @play="videoPaused = false"
+      @ready="onVideoReady()"
+      :options="videoOptions"
+      ref="plyr"
+      id="video-wrapper"
+      :hls="speaker.video"
+    >
+      <video
+        :poster="require(`~/assets/tour/${speaker.poster}`)"
+        playsinline="true"
+      >
       </video>
     </v-plyr>
   </main>
@@ -62,39 +77,21 @@ export default {
         fullscreen: { enabled: false },
         keyboard: { focused: true, global: true },
       },
+      playerEvents: [
+        "controlsshown",
+        "controlshidden",
+        "ended",
+        "playing",
+        "pause",
+        "play",
+        "ready",
+      ],
       videoEnded: false,
       videoPaused: false,
     };
   },
   mounted() {
     this.$store.commit("overlayHeader");
-
-    // Add event listers for when player controls are shown and hidden and use them to show and hide the navbar
-    this.player.on("controlsshown", (event) => {
-      this.$store.commit("showHeader");
-    });
-    this.player.on("controlshidden", (event) => {
-      this.$store.commit("hideHeader");
-    });
-    this.player.on("ended", (event) => {
-      this.videoEnded = true;
-      this.$store.commit("userWatchedSpeaker", this.speaker.slug);
-    });
-    this.player.on("playing", (event) => {
-      this.videoEnded = false;
-    });
-
-    this.player.on("pause", (event) => {
-      this.$nextTick(() => {
-        this.videoPaused = true;
-      });
-    });
-    this.player.on("play", (event) => {
-      this.videoPaused = false;
-    });
-
-    // Play the video (if the browser lets us)
-    this.player.play();
   },
   destroyed() {
     this.$store.commit("fixedHeader");
@@ -104,11 +101,21 @@ export default {
     player() {
       return this.$refs.plyr.player;
     },
-    videoSource() {
-      const absoluteUrl = new RegExp("^(?:[a-z]+:)?//", "i");
-      return absoluteUrl.test(this.speaker.video)
-        ? this.speaker.video
-        : require(`~/assets/tour/${this.speaker.video}`);
+  },
+  methods: {
+    onVideoEnded() {
+      this.videoEnded = true;
+      this.$store.commit("userWatchedSpeaker", this.speaker.slug);
+    },
+    onVideoPaused() {
+      this.$nextTick(() => {
+        this.videoPaused = true;
+      });
+    },
+    onVideoReady() {
+      this.player.play().catch((e) => {
+        console.info("Not permitted to autoplay video");
+      });
     },
   },
 };
@@ -128,6 +135,10 @@ export default {
 #video-wrapper {
   display: flex;
   flex: 1 1 auto;
+
+  .plyr__poster {
+    background-size: cover;
+  }
 
   video {
     object-fit: cover;
