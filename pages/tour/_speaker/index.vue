@@ -19,6 +19,10 @@
             class="watch-button"
             >Watch</vs-button
           >
+          <nuxt-link
+            :to="`/tour/${speaker.slug}/watch`"
+            style="display: none"
+          />
         </div>
         <tour-minimap class="speaker-map" :location="speaker.slug" />
       </div>
