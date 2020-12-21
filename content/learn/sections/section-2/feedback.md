@@ -9,6 +9,6 @@
 
   ## In British Columbia in 2020:
 
-  <markdown-image src="images/learn/graph2.svg"></markdown-image>
+  <markdown-image src="images/learn/canada-deaths-graph.svg"></markdown-image>
   </markdown-column>
 </markdown-container>
