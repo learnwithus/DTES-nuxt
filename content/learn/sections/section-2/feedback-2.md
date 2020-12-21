@@ -1,8 +1,11 @@
 <!-- Section Level Feedback -->
 <markdown-container>
   <markdown-column>
-    <h2>Canada-wide, in 2020, among accidental apparent opioid-related deaths:</h2>
-    <markdown-image style="max-width: 30em" src="images/learn/graphic1.svg"></markdown-image>
+
+In British Columbia in 2020, 75% of deaths related to illicit drugs involved fentanyl or fentanyl analogues. 
+
+[Source](https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/)
+
   </markdown-column>
   
   <markdown-column>
