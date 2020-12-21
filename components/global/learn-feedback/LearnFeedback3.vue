@@ -6,7 +6,7 @@
        <ul>
          <li>Interpersonal (eg, relations with others): The stigma and stereotypes we hold against groups based on learned prejudice and social and structural reinforcement.
            <ul>
-             <li>This stigma is expressed as discrimination - as defined as unfair treatment due to a person’s identity [ref cmha]</li>
+             <li>This stigma is expressed as discrimination - as defined as unfair treatment due to a person’s identity <a href="https://ontario.cmha.ca/documents/stigma-and-discrimination/">(source)</a></li>
            </ul>
          </li>
          <li>Intrapersonal (eg. self-stigma): People who use drugs might internalize stigma.
