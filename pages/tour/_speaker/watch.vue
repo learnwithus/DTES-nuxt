@@ -133,6 +133,7 @@ export default {
 }
 
 #video-wrapper {
+  max-height: 100vh;
   display: flex;
   flex: 1 1 auto;
 
@@ -143,6 +144,7 @@ export default {
   video {
     object-fit: cover;
     transition: opacity 200ms linear;
+    width: 100%;
   }
 
   // Styles of paused video overlay
