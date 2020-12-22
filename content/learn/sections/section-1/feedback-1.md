@@ -4,9 +4,13 @@
 
 Overdose deaths in the province have become so pervasive that there has been a measured decrease in life expectancy at birth for all British Columbians.
 
-“There is widespread global recognition that the failed 'war on drugs' and the resulting criminalization and stigmatization of people who use drugs has not reduced drug use but instead has increased health harms.“ *– Dr Bonnie Henry*
-
 *Hover over the hotspots to learn more.*
+<br/><br/>
+
+### "There is widespread global recognition that the failed 'war on drugs' and the resulting criminalization and stigmatization of people who use drugs has not reduced drug use but instead has increased health harms.“ 
+*– Dr Bonnie Henry*
+
+
 
 
   </markdown-column>
