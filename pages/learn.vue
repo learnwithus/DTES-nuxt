@@ -79,7 +79,7 @@
         <div
           class="section-feedback-wrapper"
           v-else-if="showFeedback && !moduleComplete"
-          key="2"
+          :key="`sectionFeedback${currentIndex.feedback}`"
         >
           <h2 v-if="currentFeedback.title !== undefined">
             {{ currentFeedback.title }}
