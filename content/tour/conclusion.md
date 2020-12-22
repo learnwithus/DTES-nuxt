@@ -10,4 +10,4 @@ Before you go, here a a few questions to ask yourself:
 -	What would you like to share with other healthcare providers about the impacts of stigma?
 -	Would you recommend this course for your colleagues as a learning tool to improve interactions and engagement with client care?
 
-Thank you for exploring with us
+Thank you for exploring with us.
