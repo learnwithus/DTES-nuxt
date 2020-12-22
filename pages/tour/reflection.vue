@@ -3,7 +3,14 @@
     <h1 class="light-page-title">Reflection</h1>
     <nuxt-content :document="conclusion" class="light-page-document" />
     <br />
-    <vs-button to="/tour" size="xl" flat border>Back to Map </vs-button>
+    <vs-button
+      to="/tour"
+      @click="$store.commit('resetUserProgress')"
+      size="xl"
+      flat
+      border
+      >Back to Map
+    </vs-button>
   </div>
 </template>
 

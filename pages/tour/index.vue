@@ -46,7 +46,7 @@
         </vs-button>
       </div>
     </div>
-    <button @click="$store.commit('resetUserProgress')">Reset Progress</button>
+    <!-- <button @click="$store.commit('resetUserProgress')">Reset Progress</button> -->
   </div>
 </template>
 
