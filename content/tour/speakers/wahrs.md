@@ -5,7 +5,7 @@ video: 'https://assets.vchlearn.ca/dtes/videos/WAHRS/master.m3u8'
 poster: 'wahrs/poster.jpg'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
-bio: The Western Aboriginal Harm Reduction Society is an organization of Indigenous people who are current and former users of illicit drugs and/or illicit alcohol.
+bio: The Western Aboriginal Harm Reduction Society (WAHRS) is an organization of Indigenous people who are current and former users of illicit drugs and/or illicit alcohol.
 location: 380 E Hastings St
 map:
     x: 600
@@ -13,10 +13,7 @@ map:
 speakers:
     - name: 'Tracey Draper'
 additional-info: 
-    - title: Tracey Draper
-      image: 'wahrs/tracey.jpg'
-      description: The Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit lorem sed ligula tempor tempor. Nullam ullamcorper est et eros aliquet convallis. Mauris aliquet libero id risus ornare, vitae porta justo molestie. Curabitur laoreet vitae mauris a tempor. Nunc vel nunc ornare, suscipit nisi in, auctor turpis. 
     - title: WAHRS
-      image: 'wahrs/profile.jpg'
-      description: The Western Aboriginal Harm Reduction Society (WAHRS) is a group of urban Aboriginal peoples who live, work, and play in Vancouver’s Downtown Eastside neighbourhood. All of our members are current or former illicit drug and/or illicit alcohol users, and we come from all nations – Ojibwe, Cree, Mohawk, and more.
+      image: 'wahrs/tracey.jpg'
+      description: The Western Aboriginal Harm Reduction Society (WAHRS) is an advocacy group of urban Aboriginal peoples who live, work, and play in Vancouver’s Downtown Eastside neighbourhood.  All members of WAHRS are people that have currently or formerly used illicit drugs and/or illicit alcohol, and come from many different Indigenous nations. WAHRS is involved in activism, research, healing, harm reduction, community-building, and are passionate about their community, and are work to support their members.
 ---

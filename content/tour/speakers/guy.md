@@ -12,12 +12,9 @@ map:
     y: 310
 
 additional-info: 
-    - title: Tracey Draper
+    - title: Guy
       image: 'wahrs/tracey.jpg'
-      description: The Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit lorem sed ligula tempor tempor. Nullam ullamcorper est et eros aliquet convallis. Mauris aliquet libero id risus ornare, vitae porta justo molestie. Curabitur laoreet vitae mauris a tempor. Nunc vel nunc ornare, suscipit nisi in, auctor turpis. 
-    - title: WAHRS
-      image: 'wahrs/profile.jpg'
-      description: The Western Aboriginal Harm Reduction Society (WAHRS) is a group of urban Aboriginal peoples who live, work, and play in Vancouver’s Downtown Eastside neighbourhood. All of our members are current or former illicit drug and/or illicit alcohol users, and we come from all nations – Ojibwe, Cree, Mohawk, and more.
+      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
     
 
 ---
