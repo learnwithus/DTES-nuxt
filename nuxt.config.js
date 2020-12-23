@@ -53,6 +53,9 @@ export default {
     { src: "~/plugins/updateBackgroundMixin" },
     { src: "~/plugins/persistedState.client.js", mode: "client" },
   ],
+  loading: {
+    color: '#3B83C2'
+  },
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
