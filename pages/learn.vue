@@ -159,6 +159,15 @@ export default {
     this.$data.currentIndex = { section: 0, question: 0, feedback: 0 };
     this.$data.moduleStarted = false;
   },
+  beforeRouteLeave(to, from, next) {
+    if (!this.moduleComplete && this.moduleStarted) {
+      const answer = window.confirm(
+        "Do you really want to leave? You will lose your progress in this learning module."
+      );
+      if (answer) next();
+      else next(false);
+    } else next();
+  },
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
