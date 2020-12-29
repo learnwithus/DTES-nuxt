@@ -1,5 +1,9 @@
 <!-- Final Page shown after completing the Learning Module -->
-# Further Education and Resources
+# Learning Module Complete
+You have finished **Part 1** of this course, review the resources below and continue to the tour **(Part 2)**.
+<br/><br/>
+
+## Further Education and Resources
 [Towards the Heart (BCCDC). (2019) Compassionate Engagement Modules](https://towardtheheart.com/reducing-stigma)
 
 [The Centre for Addiction and Mental Health. (2019) Understanding Stigma Workshop](https://www.camh.ca/en/education/continuing-education-programs-and-courses/continuing-education-directory/understanding-stigma)
