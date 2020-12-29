@@ -1,6 +1,27 @@
 <template>
-  <markdown-container>
-    <markdown-column size="1" style="padding-right: 3em">
+  <div class="columns is-reversed">
+    <markdown-column size="1">
+      <ul>
+        <li
+          v-for="(section, index) in sections"
+          v-bind:key="index"
+          class="utilization-section"
+          @mousedown="setSection(index)"
+          :class="{ active: sectionIndex == index }"
+        >
+          <div class="percentage">{{ section.perecentage }}%</div>
+          <div class="right-section">
+            <img
+              :src="require(`~/assets/images/icons/${section.icon}`)"
+              :alt="section.alt"
+            />
+            <p class="description is-hidden-mobile">{{ section.description }}</p>
+          </div>
+        </li>
+      </ul>
+    </markdown-column>
+
+    <markdown-column size="1">
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
           <h3>
@@ -53,28 +74,7 @@
         </div>
       </transition>
     </markdown-column>
-
-    <markdown-column size="1" style="padding-left: 3em">
-      <ul>
-        <li
-          v-for="(section, index) in sections"
-          v-bind:key="index"
-          class="utilization-section"
-          @mousedown="setSection(index)"
-          :class="{ active: sectionIndex == index }"
-        >
-          <div class="percentage">{{ section.perecentage }}%</div>
-          <div class="right-section">
-            <img
-              :src="require(`~/assets/images/icons/${section.icon}`)"
-              :alt="section.alt"
-            />
-            <p class="description">{{ section.description }}</p>
-          </div>
-        </li>
-      </ul>
-    </markdown-column>
-  </markdown-container>
+  </div>
 </template>
 
 <script>
@@ -114,6 +114,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ul {
+  margin: 0;
+  padding: 0;
+}
 .utilization-section {
   display: flex;
   align-items: center;
