@@ -282,8 +282,9 @@
               stroke-width="20"
             />
           </g>
+          <!-- Show checkmark if speaker is complete && the active location is NOT this location beacuse we display a pushin in that instance-->
           <path
-            v-if="isSpeakerComplete(speaker.slug)"
+            v-if="isSpeakerComplete(speaker.slug) && speaker.slug != location"
             v-bind:key="speaker.id"
             :transform="`translate(${speaker.map.x - 6} ${
               speaker.map.y - 6
