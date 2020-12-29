@@ -5,7 +5,7 @@
     :class="{
       hide: !$store.state.header.visible && !headerHover,
       overlay: $store.state.header.overlay,
-      transparent: $store.state.header.transparent
+      transparent: $store.state.header.transparent,
     }"
   >
     <nav
@@ -18,7 +18,7 @@
           id="logo"
           to="/"
           class="navbar-item opacity-show"
-          :class="{'opacity-hide': !$store.state.header.logo}"
+          :class="{ 'opacity-hide': !$store.state.header.logo }"
           @click.native="hamburgerOpen = false"
           ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
         /></nuxt-link>
@@ -120,12 +120,16 @@ header {
     height: $nav-height;
   }
 
-  a.navbar-item, a.navbar-link {
+  a.navbar-item,
+  a.navbar-link {
     border: none;
     color: $nav-text-colour;
 
     &:hover {
       color: $colour-primary-dark;
+      @include breakpoint(phablet) {
+        color: white;
+      }
     }
   }
 
