@@ -173,4 +173,14 @@ header {
     }
   }
 }
+
+// #logo {
+//   border: none;
+//   display: flex;
+//   align-items: center;
+//   img {
+//     width: 200px;
+//     height: 100%;
+//   }
+// }
 </style>

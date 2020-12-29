@@ -41,13 +41,4 @@ export default {
   flex: 1 1 auto;
 }
 
-#logo {
-  border: none;
-  display: flex;
-  align-items: center;
-  img {
-    width: 200px;
-    height: 100%;
-  }
-}
 </style>
