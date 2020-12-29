@@ -1,11 +1,11 @@
 <template>
   <markdown-container>
     <div class="column is-one-fifth">
-      <ul class="columns is-mobile is-multiline is-gapless is-centered">
+      <ul class="timeline">
         <li
           v-for="(section, index) in sections"
           v-bind:key="index"
-          class="timeline-item column is-4-mobile is-full-tablet"
+          class="timeline-item"
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
@@ -149,10 +149,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-ul {
+.timeline {
   padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  @include breakpoint(phablet) {
+    display: block;
+  }
 }
 
 .timeline-item {
@@ -161,24 +164,31 @@ ul {
   transition: opacity 200ms;
   list-style: none;
   text-align: center;
-  border: 0.5em #8792a8 solid;
-  height: 4em;
-  width: 4em;
+  border: 0.25em #8792a8 solid;
+  height: 3em;
+  width: 3em;
 
-  &:not(:last-child):after {
-    content: "";
-    width: 1em;
-    height: 2.75em;
-    background-color: #8792a8;
-    position: absolute;
-    z-index: -1;
-    transform: translateY(0) translateX(-0.5em);
-    transition: all 0.25s ease-out;
+  @include breakpoint(phone) {
+    border-width: 0.5em;
+    font-size: 1em;
+    height: 3.5em;
+    width: 3.5em;
   }
 
   @include breakpoint(phablet) {
-    &.column {
-      margin-bottom: 2em !important;
+    margin-bottom: 2em !important;
+    height: 4em;
+    width: 4em;
+
+    &:not(:last-child):after {
+      content: "";
+      width: 1em;
+      height: 2.75em;
+      background-color: #8792a8;
+      position: absolute;
+      z-index: -1;
+      transform: translateY(0) translateX(-0.5em);
+      transition: all 0.25s ease-out;
     }
   }
 
