@@ -37,7 +37,22 @@
     </div>
     <div id="landing-logos">
       <div class="container">
-        <img src="~assets/images/vch.svg" alt="Vancouver Coastal Health Logo" />
+        <img
+          src="~assets/images/vch.svg"
+          alt="Vancouver Coastal Health Logo"
+          class="vch"
+        />
+        <img
+          src="~assets/images/lt-logo.svg"
+          alt="Learning Technologies Logo"
+          class="lt"
+          v-tooltip="{
+            content:
+              'Designed and developed by Learning Technologies',
+            offset: 20,
+            classes: 'map-tooltip map-page-tooltip',
+          }"
+        />
       </div>
     </div>
   </div>
@@ -72,6 +87,7 @@ export default {
 }
 #landing-content {
   flex: 1 0 auto;
+  margin-bottom: 2em;
 }
 #landing-logo {
   margin-top: 20%;
@@ -93,11 +109,29 @@ export default {
   > .container {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
   img {
     max-width: 10em;
     width: 30%;
+    max-height: 4em;
+
+    &.lt {
+      max-height: 2em;
+    }
+
+    @include breakpoint(phone) {
+      width: unset;
+
+      &.lt {
+        max-height: 3.5em;
+      }
+    }
+
+    @include breakpoint(phablet) {
+      width: unset;
+    }
   }
 }
 #landing-start-course {

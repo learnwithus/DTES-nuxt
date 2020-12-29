@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.2 57.2">
+	<defs>
+		<style>
+			.a{fill:#fff; opacity: 0.9;}
+		</style>
+	</defs>
+	<path class="a" d="M28.6,0A28.6,28.6,0,1,0,57.2,28.6,28.6,28.6,0,0,0,28.6,0ZM22.9,26.6H13.6V12.8h2.7V24.1h6.6Zm3.5,9.5H23.5l6.9-13.8h2.8Zm17.2-.3H39.9v8.6H37.3V35.8H33.7V33.4h9.9Z" />
+</svg>
