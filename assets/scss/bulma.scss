@@ -26,3 +26,6 @@ $navbar-dropdown-offset: 0px;
         display: flex;
     }
 }
+.columns.is-reversed {
+    flex-direction: row-reverse;
+}
