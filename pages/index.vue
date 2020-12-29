@@ -4,7 +4,7 @@
       <img
         id="landing-logo"
         src="~assets/images/logo-large.png"
-        alt=""
+        alt="Resisting Stigma"
         :class="{ details: showDetails }"
       />
       <transition name="fade" mode="out-in">
@@ -37,7 +37,7 @@
     </div>
     <div id="landing-logos">
       <div class="container">
-        <img src="~assets/images/vch.svg" alt="" />
+        <img src="~assets/images/vch.svg" alt="Vancouver Coastal Health Logo" />
       </div>
     </div>
   </div>

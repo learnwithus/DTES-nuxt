@@ -67,7 +67,7 @@
           <div class="right-section">
             <img
               :src="require(`~/assets/images/icons/${section.icon}`)"
-              alt=""
+              :alt="section.alt"
             />
             <p class="description">{{ section.description }}</p>
           </div>
@@ -85,18 +85,21 @@ export default {
       {
         perecentage: 20,
         icon: "ambulance.svg",
+        alt: "Ambulance Icon",
         description:
           "of people overdosed after leaving Emergency Departments either against medical advice",
       },
       {
         perecentage: 16,
         icon: "hospital.svg",
+        alt: "Hospital Icon",
         description:
           "of people overdosed and had no engagement with medical care",
       },
       {
         perecentage: 60,
         icon: "clipboard.svg",
+        alt: "Clipboard Icon",
         description:
           "of individuals treated for illicit drug overdose in a hospital setting did not have a mental health or substance use disorder diagnosis in the year leading up to the overdose",
       },
