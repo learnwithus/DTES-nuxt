@@ -1,5 +1,5 @@
 <template>
-  <div class="tour-map-container">
+  <div class="tour-map-container" @click.self="$emit('click-container')">
     <svg
       width="1006"
       height="400"

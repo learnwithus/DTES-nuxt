@@ -15,10 +15,11 @@
         class="map-overlay-container"
         v-if="showMap"
         :class="{ active: showMap }"
+        @click.self="showMap = false"
       >
         <button class="map-close-button" @click="showMap = false">x</button>
-        <div class="map-wrapper container">
-          <dtes-map :interactive="true" :location="$props.location" />
+        <div class="map-wrapper container" >
+          <dtes-map :interactive="true" :location="$props.location" @click-container="showMap = false"/>
         </div>
       </div>
     </transition>
