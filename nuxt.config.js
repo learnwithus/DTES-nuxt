@@ -28,7 +28,7 @@ export default {
       { rel: "icon", type: "image/x-icon", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/x-icon", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "manifest", type: "image/x-icon", href: "/site.webmanifest" },
-      { rel: "preload", as: "style", href: "https://use.typekit.net/wgf8sbs.css" },
+      { rel: "stylesheet", href: "https://use.typekit.net/mbs4zfv.css" },
     ],
     script: [
     ],
