@@ -123,6 +123,10 @@ header {
   a.navbar-item, a.navbar-link {
     border: none;
     color: $nav-text-colour;
+
+    &:hover {
+      color: $colour-primary-dark;
+    }
   }
 
   &.overlay {
