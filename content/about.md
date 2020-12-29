@@ -16,7 +16,7 @@ The VCH Overdose Emergency Response (OER) Team is part of the regional preventio
 For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
   
   </div>
-   <div class="column is-6">
+   <div class="column is-5">
      <markdown-image src="images/team.jpg"></markdown-image>
    </div>
 </div>
