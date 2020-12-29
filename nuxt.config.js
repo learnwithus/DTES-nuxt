@@ -31,10 +31,6 @@ export default {
       { rel: "stylesheet", href: "https://use.typekit.net/wgf8sbs.css" },
     ],
     script: [
-      {
-        src:
-          "https://polyfill.io/v3/polyfill.js",
-      },
     ],
   },
   /*
