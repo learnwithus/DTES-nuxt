@@ -1,3 +1,9 @@
+function stringIncludes(string, search) {
+    start = 0;
+    return string.indexOf(search, start) !== -1;
+};
+
+
 function isIE() {
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
@@ -7,5 +13,5 @@ function isIE() {
 }
 
 if (isIE() != false) {
-    if (window.location.pathname != "/unsupported-browser") window.location = "/unsupported-browser";
+    if (!stringIncludes(window.location.pathname, "unsupported-browser")) window.location = "/unsupported-browser";
 }
