@@ -42,16 +42,18 @@
           alt="Vancouver Coastal Health Logo"
           class="vch"
         />
-        <a class="lt" href=""
-          ><img
-            src="~assets/images/lt-logo.svg"
-            alt="Learning Technologies Logo"
-            v-tooltip="{
-              content: 'Designed and developed by Learning Technologies',
-              offset: 20,
-              classes: 'map-tooltip map-page-tooltip',
-            }"
-        /></a>
+        <img
+          src="~assets/images/lt-logo.svg"
+          alt="Learning Technologies Logo"
+          @click="openLTSite()"
+          style="cursor: pointer"
+          class="lt"
+          v-tooltip="{
+            content: 'Designed and developed by Learning Technologies',
+            offset: 20,
+            classes: 'map-tooltip map-page-tooltip',
+          }"
+        />
       </div>
     </div>
   </div>
@@ -74,6 +76,11 @@ export default {
   },
   destroyed() {
     this.$store.commit("defaultHeader");
+  },
+  methods: {
+    openLTSite() {
+      window.open("https://vchdesign.ca");
+    },
   },
 };
 </script>
@@ -111,30 +118,25 @@ export default {
     justify-content: space-between;
   }
 
-  a {
-    // width: 100%;
-    display: inline-block;
-  }
-
   img {
     max-width: 10em;
     width: 30%;
     max-height: 4em;
 
-    .lt & {
+    &.lt {
       max-height: 2em;
     }
 
     @include breakpoint(phone) {
       width: unset;
 
-      .lt & {
+      &.lt {
         max-height: 3.5em;
       }
     }
 
     @include breakpoint(phablet) {
-      width: 100%;
+      width: unset;
     }
   }
 }
