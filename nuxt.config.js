@@ -31,6 +31,10 @@ export default {
       { rel: "stylesheet", href: "https://use.typekit.net/mbs4zfv.css" },
     ],
     script: [
+      {
+        src: "/browser-detect.js",
+        body: true
+      },
     ],
   },
   /*
