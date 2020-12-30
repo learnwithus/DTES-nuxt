@@ -75,8 +75,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     "@nuxt/content",
     "@nuxtjs/style-resources",
-    "@nuxt/image",
-    // '@nuxtjs/markdownit',
+    //"@nuxt/image",
   ],
   // markdownit: {
   //   injected: true
