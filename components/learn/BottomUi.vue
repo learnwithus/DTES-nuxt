@@ -93,7 +93,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$props.progress);
+    // console.log(this.$props.progress);
   },
 };
 </script>

@@ -1,8 +1,8 @@
 export default ({ app, store }) => {
     // Reset background request functions before moving to the next route
     app.router.beforeEach((to, from, next) => {
-        console.log(from)
-        console.log("beforeEach: " + store.state.background)
+        // console.log(from)
+        // console.log("beforeEach: " + store.state.background)
         if (from.name !== null) {
             store.commit("setBackgroundImage", null);
             store.commit("clearDarkBackgroundRequest");

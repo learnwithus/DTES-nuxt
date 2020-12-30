@@ -50,11 +50,11 @@ export default {
     const defaultOptions = {};
 
     if (Hls.isSupported() && this.$props.hls !== undefined) {
-      console.log("we have hls!");
+      // console.log("we have hls!");
       // For more Hls.js options, see https://github.com/dailymotion/hls.js
       const hls = new Hls();
       hls.loadSource(this.$props.hls);
-      console.log(hls);
+      // console.log(hls);
 
       // From the m3u8 playlist, hls parses the manifest and returns
       // all available video qualities. This is important, in this approach,
@@ -116,7 +116,7 @@ export default {
     updateQuality(newQuality) {
       window.hls.levels.forEach((level, levelIndex) => {
         if (level.height === newQuality) {
-          console.log("Found quality match with " + newQuality);
+          // console.log("Found quality match with " + newQuality);
           window.hls.currentLevel = levelIndex;
         }
       });

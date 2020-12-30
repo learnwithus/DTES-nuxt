@@ -179,7 +179,7 @@ export default {
   methods: {
     setActiveContent(key) {
       this.activeContent = key;
-      console.log(this.contentToDisply);
+      // console.log(this.contentToDisply);
     },
     isActive(key) {
       return this.activeContent == key;

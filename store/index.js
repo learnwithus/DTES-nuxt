@@ -50,7 +50,7 @@ export const mutations = {
     state.header.visible = false;
   },
   setBackgroundImage(state, value) {
-    console.log("setting background to: " + value);
+    // console.log("setting background to: " + value);
     if (value !== state.background.image.next) {
       state.background.image.next = value;
 
@@ -94,7 +94,7 @@ export const mutations = {
   //     state.background.dark.current = state.background.dark.next;
   // },
   setDarkBackground(state, value) {
-    console.log("setting actual background dark state to: " + value);
+    // console.log("setting actual background dark state to: " + value);
     state.background.dark.current = value ? true : false;
   },
   beginTour(state) {
