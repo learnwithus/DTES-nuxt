@@ -10,8 +10,7 @@ People who use substances (PWUS) and people living in Vancouver’s Downtown Eas
 <div class="columns">
   <div class="column is-6">
 
-## About the Team
-About the Team
+## The OER Team
 The VCH Overdose Emergency Response (OER) Team is part of the regional prevention and public health program. OER supports harm reduction initiatives and provides education to address the opioid overdose crisis. 
 For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
   
@@ -21,4 +20,5 @@ For more information please visit [VCH Overdose Emergency Response Page](http://
    </div>
 </div>
 
-
+## The Website
+This website was designed and developed with love by [Learning Technologies](https://vchdesign.ca) in collaboration with the OER team.  For more information about Learning Technologies and what we do, please visit https://vchdesign.ca
