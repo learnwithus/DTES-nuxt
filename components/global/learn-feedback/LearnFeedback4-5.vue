@@ -15,7 +15,9 @@
               :src="require(`~/assets/images/icons/${section.icon}`)"
               :alt="section.alt"
             />
-            <p class="description is-hidden-mobile">{{ section.description }}</p>
+            <p class="description is-hidden-mobile">
+              {{ section.description }}
+            </p>
           </div>
         </li>
       </ul>
@@ -44,7 +46,7 @@
           </h3>
           <p>
             Highlights a need for community-based / non-clinical strategies to
-            engage, focussing on reducing barriers to care
+            engage, focusing on reducing barriers to care.
           </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
@@ -55,13 +57,13 @@
           </h3>
           <ul>
             <li>
-              Not all overdoses are characterised by use or mental health
+              Not all overdoses are characterized by use or mental health
               diagnoses. This highlights the need for integration of harm
               reduction and overdose education in routine daily care.
             </li>
             <li>
               Stigma may result in under-diagnosis and reduced preventative
-              treatment
+              treatment.
             </li>
           </ul>
         </div>

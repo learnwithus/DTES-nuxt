@@ -25,7 +25,7 @@
           within Vancouver, and includes Indigenous people from across North
           America. While recognized for poverty, homelessness, substance use,
           the DTES also needs to be acknowledged for their multi-cultural,
-          inter-connected communities thatcare for each other.
+          inter-connected communities that care for each other.
         </p>
       </div>
       <div class="column">

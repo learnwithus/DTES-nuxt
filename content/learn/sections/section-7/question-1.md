@@ -2,18 +2,18 @@
 question: "Drag the non-stigmatizing term to the following terms:"
 type: match
 answers:
-    - Stigmatizing term: Addict
-      Non-Stigmatizing term: Person who uses substances regularly
-    - Stigmatizing term: Drub abuse
-      Non-Stigmatizing term: Substance use
-    - Stigmatizing term: Junkie
-      Non-Stigmatizing term: Person with lived / living experience of substance use
-    - Stigmatizing term: Non-compliant
-      Non-Stigmatizing term: Person experiencing barriers in accessing services
-    - Stigmatizing term: Dirty or Clean drug tests
-      Non-Stigmatizing term: Negative / Positive
-    - Stigmatizing term: Clean
-      Non-Stigmatizing term: Not using substances
+    - Stigmatizing Term: Addict
+      Non-Stigmatizing Term: Person who uses substances regularly
+    - Stigmatizing Term: Drug abuse
+      Non-Stigmatizing Term: Substance use
+    - Stigmatizing Term: Junkie
+      Non-Stigmatizing Term: Person with lived / living experience of substance use
+    - Stigmatizing Term: Non-compliant
+      Non-Stigmatizing Term: Person experiencing barriers in accessing services
+    - Stigmatizing Term: Dirty or Clean drug tests
+      Non-Stigmatizing Term: Negative / Positive
+    - Stigmatizing Term: Clean
+      Non-Stigmatizing Term: Not using substances
 
 
 

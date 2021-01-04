@@ -9,7 +9,10 @@
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
-          <img :src="require(`~/assets/images/icons/${section.icon}`)" :alt="section.alt" />
+          <img
+            :src="require(`~/assets/images/icons/${section.icon}`)"
+            :alt="section.alt"
+          />
           <p class="name">{{ section.name }}</p>
         </li>
       </ul>
@@ -36,7 +39,7 @@
               >
             </li>
             <li>
-              Practising with a person-based and evidence-based, not
+              Practicing with a person-based and evidence-based, not
               punitive-based, care model
             </li>
             <li>Building authentic and honest relationships with PWUS</li>
@@ -85,7 +88,7 @@ export default {
         name: "Individual",
       },
       {
-        icon: "staff.svg",
+        icon: "social.svg",
         alt: "Staff Icon",
         name: "Societal",
       },
