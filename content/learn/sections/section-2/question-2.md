@@ -17,6 +17,6 @@ Highest numbers of overdoses are occurring with individuals using alone and usin
 Different options are now offered to people who want to use substances: 
 - Use with a buddy
 - Go to an Overdose Prevention Site or Supervised Consumption Site
-- Use the [Lifeguard App](https://lifeguarddh.com/ )
+- Use the [Lifeguard App](https://lifeguarddh.com/)
 
 

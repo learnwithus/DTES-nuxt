@@ -5,13 +5,13 @@
         <h3>Individual Stigma</h3>
         <ul>
           <li>
-            Interpersonal (eg, relations with others): The stigma and
+            Interpersonal (i.e. relations with others): The stigma and
             stereotypes we hold against groups based on learned prejudice and
             social and structural reinforcement.
             <ul>
               <li>
-                This stigma is expressed as discrimination - as defined as
-                unfair treatment due to a person’s identity
+                This stigma is expressed as discrimination (as defined as unfair
+                treatment due to a person’s identity)
                 <a
                   href="https://ontario.cmha.ca/documents/stigma-and-discrimination/"
                   >(source)</a
@@ -20,8 +20,7 @@
             </ul>
           </li>
           <li>
-            Intrapersonal (eg. self-stigma): People who use drugs might
-            internalize stigma.
+            Intrapersonal (i.e. self-stigma): PWUS might internalize stigma.
             <ul>
               <li>
                 This could manifest in a reduced sense of self-worth, increased
@@ -36,10 +35,9 @@
         <h3>Social stigma</h3>
         <ul>
           <li>
-            At a societal level, negative labels and images, rhetoric and
-            stereotyping by members of the public, news, media, public figures,
-            etc. reinforces and informs public perspective of the situation and
-            the crisis, and ultimately impact political leanings and policies.
+            This could manifest in a reduced sense of self-worth, increased
+            likelihood to conceal use of drugs, or reduced help or support
+            seeking. All this leads to increased harms.
           </li>
         </ul>
       </div>
@@ -56,8 +54,8 @@
                 other layers of social stigma likely influences drug policies
                 and programs within institutions. This has the potential to
                 reduce, limit or otherwise deny healthcare or essential services
-                (e.g. evidence-based harm reduction services such as needle
-                exchanges)
+                (i.e. evidence-based harm reduction services such as needle
+                exchanges).
               </li>
             </ul>
           </li>
@@ -120,22 +118,22 @@
             xlink:href="~/assets/images/icons/individual.svg"
           />
           <image
-            x="250"
-            y="340"
-            class="venn-icon"
-            :class="{ active: isActive('community') }"
-            :width="iconSize"
-            :height="iconSize"
-            xlink:href="~/assets/images/icons/community.svg"
-          />
-          <image
             x="490"
             y="340"
             class="venn-icon"
             :class="{ active: isActive('staff') }"
             :width="iconSize"
             :height="iconSize"
-            xlink:href="~/assets/images/icons/staff.svg"
+            xlink:href="~/assets/images/icons/community.svg"
+          />
+          <image
+            x="250"
+            y="340"
+            class="venn-icon"
+            :class="{ active: isActive('community') }"
+            :width="iconSize"
+            :height="iconSize"
+            xlink:href="~/assets/images/icons/social.svg"
           />
         </g>
         <g>
@@ -150,19 +148,19 @@
           </text>
           <text
             y="460"
-            x="240"
+            x="260"
             :class="{ active: isActive('community') }"
             class="venn-title"
           >
-            Community
+            Social
           </text>
           <text
             y="460"
-            x="507"
+            x="490"
             :class="{ active: isActive('staff') }"
             class="venn-title"
           >
-            Staff
+            Structural
           </text>
         </g>
       </svg>
@@ -189,10 +187,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-svg {
-  // width: auto;
-  // height: auto;
-}
 .venn-cirlcle {
   stroke-width: 2px;
   stroke: white;

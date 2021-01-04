@@ -25,16 +25,16 @@
           <p>
             <strong>Issue:</strong> Previous negative experiences, expectations
             of poor treatment or internalized stigma can discourage people from
-            seeking help
+            seeking help.
           </p>
 
           <p>
-            <strong>Outcome:</strong> Clients may delay or avoid seeking help
+            <strong>Outcome:</strong> Clients may delay or avoid seeking help.
             <br />- Conditions may worsen and become more complex if care is
             delayed <br />- Increased morbidity and mortality due to illness or
             overdose
           </p>
-          <p>“If I go to hospital, they won’t believe me or listen to me”</p>
+          <p>“If I go to hospital, they won’t believe me or listen to me.”</p>
           <p>“It’s my own fault I am sick, I don’t deserve help.”</p>
         </div>
 
@@ -108,8 +108,8 @@
         <div v-else key="4">
           <h3>The Stigma Timeline</h3>
           <em
-            >Click on the icons on the left to explore how stigma effetcs the
-            healthcare experience</em
+            >Click on the icons on the left to explore how stigma effects the
+            healthcare experience.</em
           >
         </div>
       </transition>
