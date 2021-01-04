@@ -4,7 +4,7 @@ type: multiple-choice
 answers:
   - answer: Doctor telling a patient who uses meth, “You’re lucky to have all your teeth left”
     correct: false
-  - answer: Being told they were stupid for using.
+  - answer: Being told they were stupid for using
     correct: false
   - answer: Rejection from family and friends after each disclosure of use
     correct: false

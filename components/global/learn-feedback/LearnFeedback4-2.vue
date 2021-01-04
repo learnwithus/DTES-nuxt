@@ -59,7 +59,7 @@
             “I can tell by the way you’re looking at me that you won’t help me.”
           </p>
           <p>
-            “They are making me wait because they don’t like people like me”
+            “They are making me wait because they don’t like people like me.”
           </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
@@ -77,11 +77,11 @@
           </p>
           <p>
             <strong>Client:</strong> “If I’m open about my substance use, I’ll
-            get treated worse than everyone else”
+            get treated worse than everyone else.”
           </p>
           <p>
             <strong>Provider:</strong> “This person is just drunk/ high, I don’t
-            have to look further for the cause of their symptoms”
+            have to look further for the cause of their symptoms.”
           </p>
         </div>
         <div v-else-if="sectionIndex == 3" key="3">
@@ -108,7 +108,7 @@
         <div v-else key="4">
           <h3>The Stigma Timeline</h3>
           <em
-            >Click on the icons on the left to explore how stigma effects the
+            >Click on the icons on the left to explore how stigma affects the
             healthcare experience.</em
           >
         </div>

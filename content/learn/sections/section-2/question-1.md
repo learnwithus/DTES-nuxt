@@ -20,6 +20,6 @@ answers:
 - First Nations people are __disproportionately represented__ in overdose deaths 
 
 
-**Note:** Trans and two-spirited people are very affected by this crisis, but have not been well captured to date
+**Note:** Trans and two-spirited people are very affected by this crisis, but have not been well captured to date.
 
 [Source](https://www.fnha.ca/Documents/FNHA-First-Nations-in-BC-and-the-Overdose-Crisis-Infographic.pdf)

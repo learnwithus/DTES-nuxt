@@ -2,4 +2,4 @@ People who use substances (PWUS) and people living in Vancouver’s Downtown Eas
 
 ### THERE ARE 2 PARTS
 1. **Learn** - A course to allow healthcare providers to better understand the lives of their patients, to provide culturally safe practice, and to increase access to care and quality of care for people who use substances.
-2. **Tour** - A virtual tour of some of the community-based services in the DTES, and shares video interviews with community members who have been impacted by stigma.
+2. **Tour** - A virtual tour exploring some community-based services in the DTES with interviews of community members who have been impacted by stigma.
