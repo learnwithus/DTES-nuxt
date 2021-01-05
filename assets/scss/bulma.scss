@@ -4,6 +4,7 @@ $desktop: map-get($breakpoints, tablet);
 $widescreen: map-get($breakpoints, desktop);
 $fullhd: map-get($breakpoints, desktophd);
 
+// Navbar
 $navbar-background-color: unset;
 $navbar-breakpoint: $tablet;
 $navbar-item-hover-color: white;

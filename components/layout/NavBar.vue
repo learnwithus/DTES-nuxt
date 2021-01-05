@@ -118,6 +118,12 @@ header {
     border: none;
     background: none;
     height: $nav-height;
+
+    span {
+      height: 2px;
+      width: 2em;
+      left: calc(50% - 1em);
+    }
   }
 
   a.navbar-item,
@@ -174,13 +180,4 @@ header {
   }
 }
 
-// #logo {
-//   border: none;
-//   display: flex;
-//   align-items: center;
-//   img {
-//     width: 200px;
-//     height: 100%;
-//   }
-// }
 </style>
