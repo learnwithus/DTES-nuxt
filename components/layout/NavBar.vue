@@ -163,6 +163,7 @@ header {
   }
 
   .navbar-menu {
+    z-index: 5;
     background-color: $colour-primary-dark;
     @include breakpoint(phablet) {
       background-color: unset;

@@ -28,7 +28,7 @@
           <!-- <transition name="zoom-fade" mode="in-out" appear> -->
           <div class="pause-circle" v-if="videoPaused">
             <div class="title">Paused</div>
-            <div class="instructions">
+            <div class="instructions" v-if="!isTouchscreen">
               Click on the screen to continue listening
             </div>
           </div>
@@ -49,12 +49,13 @@
       :options="videoOptions"
       ref="plyr"
       id="video-wrapper"
-      :hls="speaker.video"
+      :hls="speaker.hls"
     >
       <video
         :poster="require(`~/assets/tour/${speaker.poster}`)"
         playsinline="true"
       >
+        <source :src="videoSource" type="video/mp4" size="720" />
       </video>
     </v-plyr>
   </main>
@@ -72,6 +73,7 @@ export default {
     const speaker = store.getters.getSpeakerBySlug(params.speaker);
 
     return {
+      isTouchscreen: false,
       speaker,
       videoOptions: {
         fullscreen: { enabled: false },
@@ -92,6 +94,17 @@ export default {
   },
   mounted() {
     this.$store.commit("overlayHeader");
+
+    // Check if screen is touchscreen or not
+    if (
+      "ontouchstart" in window ||
+      navigator.MaxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    ) {
+      this.isTouchscreen = true;
+    } else {
+      this.isTouchscreen = false;
+    }
   },
   destroyed() {
     this.$store.commit("fixedHeader");
@@ -100,6 +113,12 @@ export default {
     ...mapGetters([]),
     player() {
       return this.$refs.plyr.player;
+    },
+    videoSource() {
+      const absoluteUrl = new RegExp("^(?:[a-z]+:)?//", "i");
+      return absoluteUrl.test(this.speaker.video)
+        ? this.speaker.video
+        : require(`~/assets/tour/${this.speaker.video}`);
     },
   },
   methods: {
@@ -174,7 +193,7 @@ export default {
 }
 .interview-overlay {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   top: $nav-height;
   color: $text-colour-light;
   text-align: center;
