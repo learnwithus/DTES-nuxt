@@ -86,6 +86,7 @@ export default {
       hls.attachMedia(this.$el.firstChild);
       window.hls = hls;
     } else {
+      console.info("HLS not supported");
       // default options with no quality update in case Hls is not supported
       this.player = new Plyr(this.$el.firstChild, this.opts);
 
