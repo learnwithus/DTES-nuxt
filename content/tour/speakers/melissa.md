@@ -1,8 +1,8 @@
 ---
 name: Melissa
 type: peer
-hls: 'https://assets.vchlearn.ca/dtes/videos/Melissa_2/master.m3u8'
-video: 'https://assets.vchlearn.ca/dtes/videos/Tracy.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa_5/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa_5.mp4'
 poster: 'melissa/poster.jpg'
 profile: 'melissa/profile.jpg'
 background: 'wahrs/background.jpg'

@@ -1,8 +1,8 @@
 ---
 name: WAHRS
 type: service
-hls: 'https://assets.vchlearn.ca/dtes/videos/WAHRS/master.m3u8'
-video: 'https://assets.vchlearn.ca/dtes/videos/Tracy.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/WAHRS_5/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/WAHRS_5.mp4'
 poster: 'wahrs/poster.jpg'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'

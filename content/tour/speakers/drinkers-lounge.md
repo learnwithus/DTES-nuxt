@@ -1,8 +1,8 @@
 ---
 name: Drinker's Lounge
 type: service
-hls: 'https://assets.vchlearn.ca/dtes/videos/Drinkers%20Lounge_3/master.m3u8'
-video: 'https://assets.vchlearn.ca/dtes/videos/Tracy.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/DrinkersLounge_5/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/DrinkersLounge_5.mp4'
 poster: 'drinkers-lounge/poster.jpg'
 profile: 'drinkers-lounge/profile.jpg'
 background: 'drinkers-lounge/background.jpg'

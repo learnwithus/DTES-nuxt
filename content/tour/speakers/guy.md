@@ -1,8 +1,8 @@
 ---
 name: Guy
 type: peer
-hls: 'https://assets.vchlearn.ca/dtes/videos/Guy_1/master.m3u8'
-video: 'https://assets.vchlearn.ca/dtes/videos/Tracy.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
