@@ -24,3 +24,8 @@ For more information please visit [VCH Overdose Emergency Response Page](http://
 
 ## The Website
 This website was designed and developed with love by [Learning Technologies](https://vchdesign.ca) in collaboration with the OER team.  For more information about Learning Technologies and what we do, please visit https://vchdesign.ca
+
+<br>
+
+## Origins
+The idea for this project came from community members in the downtown eastside who were  participants of the [VCH Street Degree Program](http://www.vch.ca/about-us/news/news-releases/street-smart-peers-receive-canadas-first-certificate-in-overdose-response) (refer to the link for more information on Street Degree). These community members wanted to share their experiences of stigma and the realities of their community with healthcare providers, with the hope of improving care for people who use subtances.
