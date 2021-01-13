@@ -1,5 +1,5 @@
-People who use substances (PWUS) and people living in Vancouver’s Downtown Eastside (DTES) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients from the DTES.
+People who use substances (PWUS) and people living in Vancouver’s Downtown Eastside (DTES) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients from the DTES.  Not everyone who lives in the DTES uses substances, and not everyone who uses substances lives in the DTES. In this module, we focused on our partnerships PWUS in the DTES as this community faces multiple types of stigma.
 
 ### THERE ARE 2 PARTS
 1. **Learn** - A course to allow healthcare providers to better understand the lives of their patients, to provide culturally safe practice, and to increase access to care and quality of care for people who use substances.
-2. **Tour** - A virtual tour exploring some community-based services in the DTES with interviews of community members who have been impacted by stigma.
+2. **Tour** - An interactive module introducing the concept of stigma in the context of the overdose crisis
