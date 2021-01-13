@@ -1,5 +1,7 @@
 By the end of this module you will be able to: 
-1. Evaluate your understanding of the meaning of stigma, and a basic overview of the overdose crisis in BC.
-2. Develop a better understanding of the impacts of stigma and how it influences the overdose crisis.  
-3. Recognize stigma in health care settings and the impacts on clients.
-4. Investigate ways we can address stigma in our workplaces and communities.
+1. Define stigma against people who use substances
+2. Describe the overdose public health emergency in British Columbia
+3. Relate stigma to the opioid overdose crisis
+4. Reflect on the impacts of stigma in healthcare settings
+5. Consider ways to address stigma in our workplaces and communities.  
+
