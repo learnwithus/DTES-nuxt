@@ -4,6 +4,15 @@
       <!-- Buttons -->
       <div class="button-wrapper">
         <vs-button
+        v-if="button != 'start-module'"
+          flat
+          size="large"
+          dark
+          color="#ffffff"
+          @click="$emit('click-back')"
+          >Back</vs-button
+        >
+        <vs-button
           flat
           size="large"
           border
@@ -90,7 +99,7 @@ export default {
       //       currentSection: 3, // Which section / dot we're on
       //       sectionProgress: 40: // Percentage progress bewteen sections / dots
       //   }
-    },
+    }
   },
   mounted() {
     // console.log(this.$props.progress);

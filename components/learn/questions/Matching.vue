@@ -83,11 +83,11 @@ export default {
     Drag,
     Drop,
   },
-  props: ["answers", "revealAnswer"],
+  props: ["answers", "revealAnswer", "value"],
   data() {
     return {
       selectedAnswer: 0,
-      userAnswers: new Array(this.$props.answers.length).fill(""),
+      userAnswers: this.value ?? new Array(this.$props.answers.length).fill(""),
     };
   },
   mounted() {
@@ -125,7 +125,9 @@ export default {
     },
   },
   watch: {
-    userAnswers() {
+    userAnswers(val) {
+      this.$emit("input", val);
+
       if (
         this.userAnswers.filter((answer) => answer !== "").length ==
         this.userAnswers.length

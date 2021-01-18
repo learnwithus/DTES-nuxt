@@ -16,6 +16,8 @@ export default function (flatQuestions) {
             acc[property].feedback.push(obj);
         } else if (obj.slug.startsWith("question")) {
             acc[property].questions = acc[property].questions || [];
+            obj.userRequestedAnswer = false;
+            obj.userAnsweredQuestion = false;
             acc[property].questions.push(obj);
         }
 

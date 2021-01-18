@@ -50,6 +50,7 @@
                       :answers="currentQuestion.answers"
                       :reveal-answer="showAnswer"
                       @answered="onUserAnswered()"
+                      v-model="currentQuestion.userInput"
                     />
                   </div>
                 </div>
@@ -104,6 +105,7 @@
       <bottom-ui
         :progress="progressObject"
         :button="uiButton"
+        @click-back="previousScreen()"
         @click-next="nextScreen()"
         @click-submit="onAnswerSubmit()"
         @click-start-module="moduleStarted = true"
@@ -150,8 +152,6 @@ export default {
         question: 0,
         feedback: 0,
       },
-      userRequestedAnswer: false,
-      userAnsweredQuestion: false,
     };
   },
   beforeDestroy() {
@@ -171,9 +171,6 @@ export default {
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
-      // User has no longer answered the question because we're onto a new screen
-      this.userAnsweredQuestion = false;
-
       // If feedback is being displayed...
       if (this.showFeedback) {
         // If the feedback being shown is the last feedback for that section, move on to the next section
@@ -186,18 +183,42 @@ export default {
           this.currentIndex.feedback++;
         }
       }
-      // If not displaying feedback, increment the question index and hide the answer of the next question
+      // If not displaying feedback, increment the question index
       else {
         this.currentIndex.question++;
-        this.userRequestedAnswer = false;
+      }
+    },
+    // Go back to previous screen
+    previousScreen() {
+      // If feedback is being displayed...
+      if (this.showFeedback) {
+        if (this.currentIndex.feedback > 0) {
+          this.currentIndex.feedback--;
+        } else {
+          this.currentIndex.question--;
+        }
+      }
+      // If not displaying feedback, decrement the question index
+      else {
+        if (this.currentIndex.section == 0 && this.currentIndex.question == 0) {
+          this.moduleStarted = false;
+        } else if (this.currentIndex.question > 0) {
+          this.currentIndex.question--;
+        } else {
+          this.currentIndex = {
+            section: this.currentIndex.section - 1,
+            question: this.previousSection.questions.length,
+            feedback: this.previousSection.feedback.length - 1,
+          };
+        }
       }
     },
     onUserAnswered() {
-      this.userAnsweredQuestion = true;
-      this.userRequestedAnswer = false;
+      this.currentQuestion.userAnsweredQuestion = true;
+      this.currentQuestion.userRequestedAnswer = false;
     },
     onAnswerSubmit() {
-      this.userRequestedAnswer = true;
+      this.currentQuestion.userRequestedAnswer = true;
     },
   },
   computed: {
@@ -207,10 +228,21 @@ export default {
     currentSection() {
       return this.sections[this.currentIndex.section];
     },
+    previousSection() {
+      return this.currentIndex.section > 0
+        ? this.sections[this.currentIndex.section - 1]
+        : undefined;
+    },
     currentQuestion() {
       return this.currentSection?.questions[this.currentIndex.question];
     },
     currentFeedback() {
+      console.log({
+        "this.currentIndex.feedback": this.currentIndex.feedback,
+        "this.currentSection?.feedback": this.currentSection?.feedback,
+        "this.currentSection?.feedback[this.currentIndex.feedback]": this
+          .currentSection?.feedback[this.currentIndex.feedback],
+      });
       return this.currentSection?.feedback[this.currentIndex.feedback];
     },
     showFeedback() {
@@ -262,6 +294,12 @@ export default {
       else if (this.isLastFeedback) return "feedback-next-section";
       else if (this.moduleComplete) return "start-tour";
       else return "feedback-next-feedback";
+    },
+    userRequestedAnswer() {
+      return this.currentQuestion?.userRequestedAnswer;
+    },
+    userAnsweredQuestion() {
+      return this.currentQuestion?.userAnsweredQuestion;
     },
     showAnswer() {
       return this.userRequestedAnswer && this.userAnsweredQuestion;
