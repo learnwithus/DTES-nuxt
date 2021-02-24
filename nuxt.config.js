@@ -63,7 +63,15 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
-  components: true,
+  components: [
+    '~/components/general',
+    '~/components/layout',
+    '~/components/learn',
+    '~/components/learn/questions',
+    { path: '~/components/learn/feedback', prefix: 'learn-feedback' },
+    { path: '~/components/markdown-helpers/', prefix: 'markdown' },
+    '~/components/tour/map'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -77,9 +85,6 @@ export default {
     "@nuxtjs/style-resources",
     //"@nuxt/image",
   ],
-  // markdownit: {
-  //   injected: true
-  // },
   env: {
     // fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
   },

@@ -1,32 +1,13 @@
 <!-- Section Level Feedback -->
 <markdown-container>
-  <markdown-column size="1">
+  <markdown-column>
 
-Overdose deaths in the province have become so pervasive that there has been a measured decrease in life expectancy at birth for all British Columbians.
+Remember that stigma is defined as attitudes, behaviours, structures and/or beliefs that are prejudicial towards a group or individual based on life circumstance. 
 
-*Hover over the hotspots to learn more.*
-<br/><br/>
-
-### "There is widespread global recognition that the failed 'war on drugs' and the resulting criminalization and stigmatization of people who use drugs has not reduced drug use but instead has increased health harms.“ 
-*– Dr Bonnie Henry*
-
-
-
+The social process of stigma reinforces power and control roles and leads to discrimination, denial of services and loss of status for those that are stigmatized.
 
   </markdown-column>
-  
-  <markdown-column size="2">
-    <hotspot-image src="images/learn/graph1.png" :hotspots="[
-      {
-        x: `30%`,
-        y: `60%`,
-        text: `Illegal drug overdoses had been increasing in BC since 2012 but in 2015 there was a significant increase both in number and in geographic spread of overdose deaths.`
-      },
-      {
-        x: `71%`,
-        y: `30%`,
-        text: `Death by overdose is now the leading cause of unnatural death in BC, surpassing by far other causes like suicide or motor vehicle incident.`
-      },
-    ]" />
+
+  <markdown-column>
   </markdown-column>
 </markdown-container>

@@ -1,18 +1,13 @@
 ---
-question: In what year was the Overdose Crisis declared a BC public health emergency?
-type: multiple-choice
-answers:
-  - answer: 2018
-    correct: false
-  - answer: 2014
-    correct: false
-  - answer: 2016
-    correct: true
-  - answer: 2017
-    correct: false
-  - answer: No public health emergency has been announced
-    correct: false
+question: What does the word stigma mean to you?
+type: free-text
+answers: Stigma is prejudice.
 
 ---
 <!--- This is where question-level feedback goes -->
-In April 2016 BC’s Provincial Health Officer declared a province-wide public health emergency under the Public Health Act. This was the first time a public health emergency had been declared at a provincial level in BC 
+**Stigma** comes from the Greek word 'mark/puncture'. Stigma can be defined as attitudes, behaviours, structures and/or beliefs that are prejudicial towards a group or individual based on life circumstance. 
+
+Based on our own personal experiences, cultural and racial backgrounds, socioeconomic statuses, and other elements that make up our identities, we experience different types of stigmas in different ways. Stigma can be experienced individually, socially, and structurally: when we become stigmatized by these external sources, we can, in turn, internalize stigma.
+
+
+

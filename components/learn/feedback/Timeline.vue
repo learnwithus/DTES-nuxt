@@ -9,7 +9,11 @@
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
-          <div class="name">{{ section.name }}</div>
+          <img
+            :src="require(`~/assets/images/icons/${section.icon}`)"
+            :alt="`${section.name} Icon`"
+          />
+          <!-- <div class="name">{{ section.name }}</div> -->
         </li>
       </ul>
     </div>
@@ -123,19 +127,19 @@ export default {
     sectionIndex: undefined,
     sections: [
       {
-        icon: "1.jpg",
+        icon: "community.svg",
         name: "1",
       },
       {
-        icon: "2.jpg",
+        icon: "secretary.svg",
         name: "2",
       },
       {
-        icon: "3.jpg",
+        icon: "doctor.svg",
         name: "3",
       },
       {
-        icon: "4.jpg",
+        icon: "checklist.svg",
         name: "4",
       },
     ],

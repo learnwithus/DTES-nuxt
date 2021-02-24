@@ -146,7 +146,7 @@ export default {
       sections: formattedSections,
       finalPage: finalPage,
       learningObjectives: learningObjectives,
-      moduleStarted: false,
+      moduleStarted: true,
       currentIndex: {
         section: 0,
         question: 0,
