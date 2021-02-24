@@ -81,6 +81,7 @@ export default {
    */
   modules: [
     // Doc: https://github.com/nuxt/content
+    "@nuxtjs/svg",
     "@nuxt/content",
     "@nuxtjs/style-resources",
     //"@nuxt/image",

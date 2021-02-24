@@ -1,5 +1,5 @@
 <template>
-  <markdown-container>
+  <markdown-container class="learn--timeline">
     <div class="column is-one-fifth">
       <ul class="timeline">
         <li
@@ -9,10 +9,7 @@
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
-          <img
-            :src="require(`~/assets/images/icons/${section.icon}`)"
-            :alt="`${section.name} Icon`"
-          />
+          <div class="icon-wrapper" v-html="require(`~/assets/images/icons/${section.icon}?raw`)" />
           <!-- <div class="name">{{ section.name }}</div> -->
         </li>
       </ul>
@@ -152,81 +149,91 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.timeline {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  @include breakpoint(phablet) {
-    display: block;
-  }
-}
-
-.timeline-item {
-  cursor: pointer;
-  border-radius: 50%;
-  transition: opacity 200ms;
-  list-style: none;
-  text-align: center;
-  border: 0.25em #8792a8 solid;
-  height: 3em;
-  width: 3em;
-
-  @include breakpoint(phone) {
-    border-width: 0.5em;
-    font-size: 1em;
-    height: 3.5em;
-    width: 3.5em;
-  }
-
-  @include breakpoint(phablet) {
-    margin-bottom: 2em !important;
-    height: 4em;
-    width: 4em;
-
-    &:not(:last-child):after {
-      content: "";
-      width: 1em;
-      height: 2.75em;
-      background-color: #8792a8;
-      position: absolute;
-      z-index: -1;
-      transform: translateY(0) translateX(-0.5em);
-      transition: all 0.25s ease-out;
-    }
-  }
-
-  &:hover {
-    border-color: #afb6c5;
-  }
-
-  &.active {
-    // background-color: rgba($colour-dark, 0.5);
-    border-color: white;
-  }
-
-  .name {
-    font-size: 1em;
-    font-weight: 700;
-    text-align: center;
-    height: 100%;
-    color: white;
+<style lang="scss">
+.learn--timeline {
+  .timeline {
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    @include breakpoint(phone) {
-      font-size: 1.5em;
+    justify-content: space-between;
+    @include breakpoint(phablet) {
+      display: block;
     }
   }
 
-  // img {
-  //   height: 2em;
-  //   margin: 0 auto;
-  //   border-radius: 50%;
+  .timeline-item {
+    cursor: pointer;
+    border-radius: 50%;
+    transition: opacity 200ms;
+    list-style: none;
+    text-align: center;
+    border: 0.25em #8792a8 solid;
+    height: 3em;
+    width: 3em;
+    // padding: 1em;
 
-  //   @include breakpoint(phone) {
-  //     height: 5em;
-  //   }
-  // }
+    @include breakpoint(phone) {
+      border-width: 0.5em;
+      font-size: 1em;
+      height: 3.5em;
+      width: 3.5em;
+    }
+
+    @include breakpoint(phablet) {
+      margin-bottom: 2em !important;
+      height: 4em;
+      width: 4em;
+
+      &:not(:last-child):after {
+        content: "";
+        width: 1em;
+        height: 2.75em;
+        background-color: #8792a8;
+        position: absolute;
+        z-index: -1;
+        transform: translateY(0) translateX(-0.5em);
+        transition: all 0.25s ease-out;
+      }
+    }
+
+    &:hover {
+      border-color: #afb6c5;
+    }
+
+    &.active {
+      // background-color: rgba($colour-dark, 0.5);
+      border-color: white;
+
+      path {
+        fill: white;
+      }
+    }
+
+    .name {
+      font-size: 1em;
+      font-weight: 700;
+      text-align: center;
+      height: 100%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include breakpoint(phone) {
+        font-size: 1.5em;
+      }
+    }
+
+    .icon-wrapper {
+      height: 100%;
+    }
+
+    svg {
+      width: 50%;
+      height: 100%;
+      // margin: 0 auto;
+      path {
+        fill: #afb6c5;
+      }
+    }
+  }
 }
 </style>
