@@ -14,14 +14,16 @@
 
 <script>
 export default {
-    props: [ "answers", "revealAnswer" ],
+    props: [ "answers", "revealAnswer", "value"],
     data(){
         return {
-            selectedAnswer: undefined
+            selectedAnswer: this.value
         }
     },
     watch: {
-      selectedAnswer(){
+      selectedAnswer(val){
+        this.$emit("input", val);
+        
         if(this.selectedAnswer != undefined) this.$emit("user-answered");
       }
     }

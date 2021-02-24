@@ -12,14 +12,16 @@
 
 <script>
 export default {
-  props: ["answers", "revealAnswer"],
+  props: ["answers", "revealAnswer", "value"],
   data() {
     return {
-      text: "",
+      text: this.value ?? "",
     };
   },
   watch: {
-
+    text(val) {
+      this.$emit("input", val);
+    },
   },
 };
 </script>

@@ -27,50 +27,52 @@
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
           <h3>
-            20% of people overdosed after leaving Emergency Departments either
-            against medical advice
+            19% of people overdosed after leaving Emergency Departments either
+            against medical advice.
           </h3>
           <p>
-            Indicates there is a missed opportunity to engage these individuals
-            in care.
-          </p>
-          <p>
-            Potential strategies to engage this group could include harm
-            reduction initiatives and services at point of care, which in turn
-            would challenge stigma from healthcare workers.
+            This ndicates there is a missed opportunity to engage these
+            individuals in care. Potential strategies to engage this group could
+            include harm reduction initiatives and services at point of care,
+            which in turn would challenge stigma from healthcare workers.
           </p>
         </div>
         <div v-else-if="sectionIndex == 1" key="1">
           <h3>
-            16% of people overdosed and had no engagement with medical care
+            16% of people overdosed and had no engagement with medical care.
           </h3>
           <p>
-            Highlights a need for community-based / non-clinical strategies to
-            engage, focusing on reducing barriers to care.
+            This highlights a need for community-based / non-clinical strategies
+            to engage, focussing on reducing barriers to care
           </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
-          <h3>
-            60% of individuals treated for illicit drug overdose in a hospital
-            setting did not have a mental health or substance use disorder
-            diagnosis in the year leading up to the overdose
-          </h3>
+          <p>
+            Of people who experienced an overdose
+            <strong
+              >60% of individuals treated for illicit drug overdose</strong
+            >
+            in a hospital setting did not have a mental health or substance use
+            disorder diagnosis in the year leading up to the overdose.
+          </p>
+
           <ul>
             <li>
-              Not all overdoses are characterized by use or mental health
+              Not all overdoses are characterised by use or mental health
               diagnoses. This highlights the need for integration of harm
               reduction and overdose education in routine daily care.
             </li>
             <li>
               Stigma may result in under-diagnosis and reduced preventative
-              treatment.
+              treatment
             </li>
           </ul>
         </div>
         <div v-else key="3">
           <p>
-            In the study BC Healthcare Utilization Patterns by People Who
-            Experience an Overdose From Illegal Drugs (2018), findings show:
+            In the study Patterns of health care utilization among people who
+            overdosed from illegal drugs (2018), findings show that in the year
+            before a fatal overdose:
           </p>
           <em>Click on each diagram for more information.</em>
         </div>
@@ -85,18 +87,17 @@ export default {
     sectionIndex: undefined,
     sections: [
       {
-        perecentage: 20,
+        perecentage: 19,
         icon: "ambulance.svg",
         alt: "Ambulance Icon",
         description:
-          "of people overdosed after leaving Emergency Departments either against medical advice",
+          "of people had been to emergency rooms but left without being seen or against medical advice",
       },
       {
         perecentage: 16,
         icon: "hospital.svg",
         alt: "Hospital Icon",
-        description:
-          "of people overdosed and had no engagement with medical care",
+        description: "had no engagement with medical care",
       },
       {
         perecentage: 60,
