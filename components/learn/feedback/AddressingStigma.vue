@@ -67,6 +67,11 @@
             <li>Inclusion of de-stigmatizing programs and services</li>
             <li>Providing outlets for feedback</li>
           </ul>
+          <a
+            href="http://www.bccdc.ca/resource-gallery/Documents/PEEP%20Best%20Practice%20Guidelines.pdf"
+            target="_blank"
+            >Source: PEEP Best Practice Guidelines</a
+          >
         </div>
         <div v-else key="3">
           <p>Examples of ways to address stigma on each level</p>
