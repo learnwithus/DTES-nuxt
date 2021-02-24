@@ -154,6 +154,10 @@ export default {
       },
     };
   },
+  mounted() {
+    this.currentIndex = { section: 0, question: 0, feedback: 0 };
+    this.moduleStarted = false;
+  },
   beforeDestroy() {
     // Reset
     this.$data.currentIndex = { section: 0, question: 0, feedback: 0 };
