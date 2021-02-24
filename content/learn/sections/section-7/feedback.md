@@ -1,2 +1,3 @@
 <!-- Section Level Feedback -->
-Words matter, use these terms to reduce stigma and create a respectful environment.
+# Learning Module Complete
+You have finished **Part 1** of this course, continue to view additional resources.
