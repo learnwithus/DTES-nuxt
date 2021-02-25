@@ -5,18 +5,10 @@
       <div class="column">
         <h2>Welcome to the Tour</h2>
         <p>
-          The project provides a virtual tour of some of the community-based
-          services in the DTES, and shares video interviews with community
-          members who have been impacted by stigma. The objective of the course
-          is to allow healthcare providers to better understand the lives of
-          their patients, to provide culturally safe practice, and to increase
-          access to care and quality of care for people who use substances.
-        </p>
-        <p>
           The community of the DTES is multi-cultural, with many residents
           connected to culturally diverse communities and histories, including
-          the Chinatown district, as well the histories of Japanese residents in
-          Oppenheimer, prior to World War II and the devastation of the
+          the Chinatown district, as well as the histories of Japanese residents
+          in Oppenheimer, prior to World War II and the devastation of the
           internment camps.
         </p>
         <p>
@@ -26,6 +18,11 @@
           America. While recognized for poverty, homelessness, substance use,
           the DTES also needs to be acknowledged for their multi-cultural,
           inter-connected communities that care for each other.
+        </p>
+        <p>
+          The project provides a tour of some of the community-based services in
+          the DTES, and shares video interviews with community members who have
+          been impacted by stigma.
         </p>
       </div>
       <div class="column">
