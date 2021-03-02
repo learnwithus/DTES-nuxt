@@ -1,27 +1,18 @@
 ---
-question: Which of these situations shows stigma against substance use?
+question: In what year was the Overdose Crisis declared a BC public health emergency?
 type: multiple-choice
 answers:
-  - answer: Doctor telling a patient who uses meth, “You’re lucky to have all your teeth left”
+  - answer: 2018
     correct: false
-  - answer: Being told they were stupid for using
+  - answer: 2014
     correct: false
-  - answer: Rejection from family and friends after disclosure of use
-    correct: false
-  - answer: Endless worry for missing a day at work
-    correct: false
-  - answer: Afraid of being honest with someone because they thought they would lose a job or relationship
-    correct: false
-  - answer: A Dental hygienist says after patient discloses their drug use, “Oh, you really have to stop that, it’s awful”
-    correct: false
-  - answer: All of the above 
+  - answer: 2016
     correct: true
+  - answer: 2017
+    correct: false
+  - answer: No public health emergency has been announced
+    correct: false
+
 ---
-<!--- This is where the rich feedback goes -->
-<markdown-container>
-  <markdown-column size="1">
-
-Stigma may manifest in overt judgement or hostility, or through tacit/non-verbal practises such as excessive use of hygiene/infection control, increased wait times, lack of on-site facilities for substance use (i.e. overdose prevention services), or refusal of service based on ongoing drug use.
-
-  </markdown-column>
-</markdown-container>
+<!--- This is where question-level feedback goes -->
+In April 2016 BC’s Provincial Health Officer declared a province-wide public health emergency under the Public Health Act. This was the first time a public health emergency had been declared at a provincial level in BC.

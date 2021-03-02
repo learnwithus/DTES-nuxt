@@ -9,7 +9,10 @@
           @mousedown="setSection(index)"
           :class="{ active: sectionIndex == index }"
         >
-          <div class="icon-wrapper" v-html="require(`~/assets/images/icons/${section.icon}?raw`)" />
+          <div
+            class="icon-wrapper"
+            v-html="require(`~/assets/images/icons/${section.icon}?raw`)"
+          />
           <!-- <div class="name">{{ section.name }}</div> -->
         </li>
       </ul>
@@ -20,17 +23,17 @@
         <div v-if="sectionIndex == 0" key="0">
           <h3>
             1. When a health problem or substance use issue needs medical
-            attention
+            attention (person at home with injury/ illness)
           </h3>
 
           <p>
             <strong>Issue:</strong> Previous negative experiences, expectations
             of poor treatment or internalized stigma can discourage people from
-            seeking help.
+            seeking help
           </p>
 
           <p>
-            <strong>Outcome:</strong> Clients may delay or avoid seeking help.
+            <strong>Outcome:</strong> Clients may delay or avoid seeking help
             <br />- Conditions may worsen and become more complex if care is
             delayed <br />- Increased morbidity and mortality due to illness or
             overdose
@@ -41,7 +44,8 @@
 
         <div v-else-if="sectionIndex == 1" key="1">
           <h3>
-            2. When people first come into a service (person at reception desk)
+            2. When people first come into a service (person at reception desk –
+            maybe a sign saying “no alcohol or drugs tolerated here”)
           </h3>
 
           <p>
@@ -51,8 +55,8 @@
           </p>
 
           <p>
-            <strong>Outcome:</strong> : Clients may leave without getting seen
-            or having problems addressed<br />- Clients will enter clinical
+            <strong>Outcome:</strong> Clients may leave without getting seen or
+            having problems addressed<br />- Clients will enter clinical
             encounter feeling unsafe/ judged.
           </p>
           <p>“I’m not welcome here, I should just get out of here.”</p>
@@ -60,7 +64,7 @@
             “I can tell by the way you’re looking at me that you won’t help me.”
           </p>
           <p>
-            “They are making me wait because they don’t like people like me.”
+            “They are making me wait because they don’t like people like me”
           </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
@@ -69,7 +73,7 @@
           <p>
             <strong>Issue:</strong> Clients may not disclose important
             information for fear of being treated differently <br />- Providers
-            can jump to conclusions about symptoms/ diagnosis/ care plans
+            can jump to conclusions about symptoms / diagnosis / care plans
           </p>
 
           <p>
@@ -81,8 +85,8 @@
             get treated worse than everyone else.”
           </p>
           <p>
-            <strong>Provider:</strong> “This person is just drunk/ high, I don’t
-            have to look further for the cause of their symptoms.”
+            <strong>Provider:</strong> “This person is just drunk / high, I
+            don’t have to look further for the cause of their symptoms.”
           </p>
         </div>
         <div v-else-if="sectionIndex == 3" key="3">

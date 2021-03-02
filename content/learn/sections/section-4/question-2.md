@@ -1,12 +1,14 @@
 ---
-question: Why might people hesitate to disclose their substance use to healthcare providers?
+question: Can you recall a situation at your workplace where stigma impacted a client’s access to care?
 type: free-text
-answers: Stigma undermines the effectiveness of the response to the BC overdose crisis
+answers: Reflect on how this situation might be avoided using what you have learned in this module.
 ---
 <!--- This is where the rich feedback goes -->
-Stigma undermines the effectiveness of the response to the BC overdose crisis:
-- Creates barriers to individuals who want to receive or access basic healthcare and social needs.
-- Compromises the quality of care provided and/or received when an individual is treated.
-- Negatively influences public support and political will for evidence-based strategies and project funding.
-
+Impacts of stigma on health care:
+- Barrier to seeking care
+- Less likely to come back for care
+- Using substances alone
+- Concealing substance use
+- Shame and isolation
+- Discharges against medical advice
 

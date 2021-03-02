@@ -28,10 +28,10 @@
         <div v-if="sectionIndex == 0" key="0">
           <h3>
             19% of people overdosed after leaving Emergency Departments either
-            against medical advice.
+            against medical advice
           </h3>
           <p>
-            This ndicates there is a missed opportunity to engage these
+            This indicates there is a missed opportunity to engage these
             individuals in care. Potential strategies to engage this group could
             include harm reduction initiatives and services at point of care,
             which in turn would challenge stigma from healthcare workers.
@@ -47,18 +47,15 @@
           </p>
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
-          <p>
-            Of people who experienced an overdose
-            <strong
-              >60% of individuals treated for illicit drug overdose</strong
-            >
-            in a hospital setting did not have a mental health or substance use
-            disorder diagnosis in the year leading up to the overdose.
-          </p>
+          <h3>
+            60% of individuals treated for illicit drug overdose in a hospital
+            setting did not have a mental health or substance use disorder
+            diagnosis in the year leading up to the overdose.
+          </h3>
 
           <ul>
             <li>
-              Not all overdoses are characterised by use or mental health
+              Not all overdoses are characterised by addiction or mental health
               diagnoses. This highlights the need for integration of harm
               reduction and overdose education in routine daily care.
             </li>
@@ -69,12 +66,11 @@
           </ul>
         </div>
         <div v-else key="3">
-          <p>
-            In the study Patterns of health care utilization among people who
-            overdosed from illegal drugs (2018), findings show that in the year
-            before a fatal overdose:
-          </p>
-          <em>Click on each diagram for more information.</em>
+          <h3>
+            Study: BC healthcare utilization patterns by people who experience
+            an overdose from illegal drugs.
+          </h3>
+          <em>Click on each statistic to explore what the findings showed</em>
         </div>
       </transition>
     </markdown-column>
@@ -91,13 +87,14 @@ export default {
         icon: "ambulance.svg",
         alt: "Ambulance Icon",
         description:
-          "of people had been to emergency rooms but left without being seen or against medical advice",
+          "of people overdosed after leaving Emergency Departments either against medical advice",
       },
       {
         perecentage: 16,
         icon: "hospital.svg",
         alt: "Hospital Icon",
-        description: "had no engagement with medical care",
+        description:
+          "of people overdosed and had no engagement with medical care",
       },
       {
         perecentage: 60,

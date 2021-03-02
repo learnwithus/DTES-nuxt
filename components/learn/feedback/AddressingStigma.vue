@@ -39,8 +39,8 @@
               >
             </li>
             <li>
-              Practicing with a person-based and evidence-based, not
-              punitive-based, care model
+              Get to know your clients and communities Practising with a
+              person-based and evidence-based, not punitive-based, care model
             </li>
             <li>Building authentic and honest relationships with PWUS</li>
           </ul>

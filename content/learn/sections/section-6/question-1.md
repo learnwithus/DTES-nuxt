@@ -1,15 +1,7 @@
 ---
-question: "Drag the non-stigmatizing term to the following terms:"
-type: match
-answers:
-    - Stigmatizing Term: Addict
-      Non-Stigmatizing Term: Person who uses substances regularly
-    - Stigmatizing Term: Drug abuse
-      Non-Stigmatizing Term: Substance use
-    - Stigmatizing Term: Junkie
-      Non-Stigmatizing Term: Person with lived / living experience of substance use
-
+question: '<div style="font-size: 0.8em">Reflecting on your own experiences:</div> What changes would you recommend in your workplace to address institutional stigma? What could you personally do?'
+type: free-text
+answers: Reflect on how this situation might be avoided using what you have learned in this module.
 ---
-<!--- This is where question-level feedback goes -->
-Not used for matching questions
-
+<!--- This is where the rich feedback goes -->
+Reflect on how one might implement these changes.

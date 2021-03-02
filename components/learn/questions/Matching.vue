@@ -64,7 +64,10 @@
     </div>
     <div class="is-hidden-mobile drag-options" :class="{ hide: revealAnswer }">
       <!-- Available definitions to match with terms -->
-      <div v-for="(definition, index) in termDefinitions" v-bind:key="index">
+      <div
+        v-for="(definition, index) in suffledDefinitions"
+        v-bind:key="index"
+      >
         <drag
           class="drag"
           :transfer-data="definition"
@@ -78,6 +81,7 @@
 
 <script>
 import { Drag, Drop } from "vue-drag-drop";
+import { shuffle } from "lodash";
 export default {
   components: {
     Drag,
@@ -88,6 +92,7 @@ export default {
     return {
       selectedAnswer: 0,
       userAnswers: this.value ?? new Array(this.$props.answers.length).fill(""),
+      suffledDefinitionsArray: undefined,
     };
   },
   mounted() {
@@ -107,6 +112,13 @@ export default {
       return this.termContent.map((term) => {
         return term[1];
       });
+    },
+    suffledDefinitions() {
+      if (!this.suffledDefinitionsArray) {
+        this.suffledDefinitionsArray = shuffle(this.termDefinitions);
+      }
+
+      return this.suffledDefinitionsArray;
     },
     termColumnTitle() {
       return this.termColumns[0];

@@ -5,22 +5,16 @@
         <h3>Individual Stigma</h3>
         <ul>
           <li>
-            Interpersonal (i.e. relations with others): The stigma and
-            stereotypes we hold against groups based on learned prejudice and
-            social and structural reinforcement.
-            <ul>
-              <li>
-                This stigma is expressed as discrimination (as defined as unfair
-                treatment due to a person’s identity)
-                <a
-                  href="https://ontario.cmha.ca/documents/stigma-and-discrimination/"
-                  >(source)</a
-                >
-              </li>
-            </ul>
+            Interpersonal stigma is expressed as discrimination - as defined as
+            unfair treatment due to a person’s identity
+            <a
+              href="https://ontario.cmha.ca/documents/stigma-and-discrimination/"
+              >(source)</a
+            >
           </li>
           <li>
-            Intrapersonal (i.e. self-stigma): PWUS might internalize stigma.
+            <strong>Interpersonal</strong> (eg, self-stigma): People who use
+            Substances (PWUS) might internalize stigma.
             <ul>
               <li>
                 This could manifest in a reduced sense of self-worth, increased
@@ -35,29 +29,21 @@
         <h3>Social stigma</h3>
         <ul>
           <li>
-            This could manifest in a reduced sense of self-worth, increased
-            likelihood to conceal use of drugs, or reduced help or support
-            seeking. All this leads to increased harms.
+            At a societal level, negative labels and images, rhetoric and
+            stereotyping by members of the public, news, media, public figures,
+            etc. reinforces and informs public perspective of the situation and
+            the crisis, and ultimately impact political leanings and policies.
           </li>
         </ul>
       </div>
       <div v-else-if="activeContent == 'staff'">
         <h3>Structural stigma</h3>
         <ul>
+          <li>Stigma within structures or institutions.</li>
           <li>
-            Stigma as it occurs or is embedded within structures or
-            institutions.
-            <ul>
-              <li>
-                For example, studies have shown many healthcare workers hold
-                negative opinions of people who use drugs. This, along with
-                other layers of social stigma likely influences drug policies
-                and programs within institutions. This has the potential to
-                reduce, limit or otherwise deny healthcare or essential services
-                (i.e. evidence-based harm reduction services such as needle
-                exchanges).
-              </li>
-            </ul>
+            For example, laws and policies about substances and substance use,
+            “zero tolerance” policies at health and social services, and the
+            criminalization of substance use.
           </li>
         </ul>
       </div>

@@ -1,7 +1,17 @@
 ---
-question: Can you recall a situation at your workplace where stigma impacted a client’s access to care?
-type: free-text
-answers: Reflect on how this situation might be avoided using what you have learned in this module.
+question: "Please provide the non-stigmatizing term to the following terms:"
+type: match
+answers:
+    - Stigmatizing Term: Addict
+      Non-Stigmatizing Term: Person who uses substances regularly
+    - Stigmatizing Term: Drug abuse
+      Non-Stigmatizing Term: Substance use
+    - Stigmatizing Term: Junkie
+      Non-Stigmatizing Term: Person with lived / living experience of substance use
+    - Stigmatizing Term: Clean
+      Non-Stigmatizing Term: Stopped / quit / not using substances
+
 ---
-<!--- This is where the rich feedback goes -->
-Reflect on how this situation might be avoided using what you have learned in this module.
+<!--- This is where question-level feedback goes -->
+Not used for matching questions
+
