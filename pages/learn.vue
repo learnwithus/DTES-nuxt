@@ -6,11 +6,11 @@
       <!-- Section Number -->
       <transition name="slide-fade" mode="out-in">
         <learn-title
-          :key="currentIndex.section"
+          :key="currentQuestion ? currentQuestion.questionNumber : undefined"
           class="space-2 opacity-show"
           :class="{ 'opacity-hide': !moduleStarted }"
           v-if="!moduleComplete"
-          >{{ currentSectionNumber }} /</learn-title
+          >{{ currentQuestion ? currentQuestion.questionNumber : 'Feedback' }} /</learn-title
         >
       </transition>
 

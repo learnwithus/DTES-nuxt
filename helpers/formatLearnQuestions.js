@@ -3,6 +3,8 @@
 //
 // This was done so the ~/content/learn folder could have a clearer and more maintainable hierarchy
 export default function (flatQuestions) {
+    // Used to generate question numbers for each question
+    let questionCounter = 0;
     // Organize questions into their parent sections
     const learnSections = flatQuestions.reduce((acc, obj) => {
         const property = obj["dir"]; // Sort all the quetsions into their parent directories (their sections)
@@ -18,6 +20,11 @@ export default function (flatQuestions) {
             acc[property].questions = acc[property].questions || [];
             obj.userRequestedAnswer = false;
             obj.userAnsweredQuestion = false;
+            
+            // Increment and assign question number to object
+            questionCounter++;
+            obj.questionNumber = questionCounter;
+
             acc[property].questions.push(obj);
         }
 
