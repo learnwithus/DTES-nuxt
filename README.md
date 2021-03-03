@@ -49,7 +49,7 @@ Learning Module content can be found in markdown files in the `~/content/learn/`
 content
 ├── learn
 │   ├── section-1 // Each module section has its own folder
-│   │   ├── question-1.md //Each questino is a markdown file
+│   │   ├── question-1.md //Each question is a markdown file
 │   │   ├── question-2.md
 │   │   ├── question-3.md
 │   │   ├── feedback-1.md // The end-of-section feedback also has it's own file
