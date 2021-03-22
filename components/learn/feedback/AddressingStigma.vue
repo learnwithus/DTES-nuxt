@@ -38,23 +38,15 @@
                 >Language matters</a
               >
             </li>
+            <li>Get to know your clients and communities</li>
             <li>
-              Get to know your clients and communities Practising with a
-              person-based and evidence-based, not punitive-based, care model
+              Practicing with a person-based and evidence-based, not
+              punitive-based, care model
             </li>
             <li>Building authentic and honest relationships with PWUS</li>
           </ul>
         </div>
         <div v-else-if="sectionIndex == 1" key="1">
-          <h3>Societal</h3>
-          <ul>
-            <li>Purposeful media consumption</li>
-            <li>Critical analysis of media</li>
-            <li>Legislative advocacy</li>
-            <li>Awareness campaigns</li>
-          </ul>
-        </div>
-        <div v-else-if="sectionIndex == 2" key="2">
           <h3>Institutional</h3>
           <ul>
             <li>
@@ -72,6 +64,15 @@
             target="_blank"
             >Source: PEEP Best Practice Guidelines</a
           >
+        </div>
+        <div v-else-if="sectionIndex == 2" key="2">
+          <h3>Societal</h3>
+          <ul>
+            <li>Purposeful media consumption</li>
+            <li>Critical analysis of media</li>
+            <li>Legislative advocacy</li>
+            <li>Awareness campaigns</li>
+          </ul>
         </div>
         <div v-else key="3">
           <p>Examples of ways to address stigma on each level</p>
@@ -93,14 +94,14 @@ export default {
         name: "Individual",
       },
       {
-        icon: "social.svg",
-        alt: "Staff Icon",
-        name: "Societal",
-      },
-      {
         icon: "community.svg",
         alt: "Institutional Icon",
         name: "Institutional",
+      },
+      {
+        icon: "social.svg",
+        alt: "Staff Icon",
+        name: "Societal",
       },
     ],
   }),
