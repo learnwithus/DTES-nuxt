@@ -70,7 +70,8 @@ export default {
     '~/components/learn/questions',
     { path: '~/components/learn/feedback', prefix: 'learn-feedback' },
     { path: '~/components/markdown-helpers/', prefix: 'markdown' },
-    '~/components/tour/map'
+    '~/components/tour/map',
+    '~/components/tour'
   ],
   /*
    ** Nuxt.js dev-modules
