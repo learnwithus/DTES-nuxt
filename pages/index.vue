@@ -1,5 +1,5 @@
 <template>
-  <div id="landing-container">
+  <main id="landing-container">
     <div class="container" id="landing-content">
       <img
         id="landing-logo"
@@ -56,7 +56,7 @@
         />
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

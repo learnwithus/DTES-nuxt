@@ -1,0 +1,66 @@
+<template>
+  <main class="watch-page">
+    <tour-video :src="intro.video" :hls="intro.hls" :poster="intro.poster">
+      <template #videoEndScreen>
+        <p>Video End</p>
+        <vs-button
+          to="/tour"
+          flat
+          border
+          color="#fff"
+          class="back-to-map-button"
+          >Continue to Tour</vs-button
+        >
+      </template>
+      <template #videoPausedScreen>
+        <div class="pause-circle">
+          <div class="title">Paused</div>
+          <!-- <div class="instructions" v-if="!isTouchscreen">
+            Click on the screen to continue listening
+          </div> -->
+        </div>
+      </template>
+    </tour-video>
+  </main>
+</template>
+
+<script>
+import { mapGetters } from "vuex";
+export default {
+  head() {
+    return {
+      title: "Resisting Stigma - Tour",
+    };
+  },
+  async asyncData({ params,  $content }) {
+    const intro = await $content("tour/intro").fetch();
+
+    return {
+      intro,
+    };
+  },
+  mounted() {
+    this.$store.commit("overlayHeader");
+  },
+  destroyed() {
+    this.$store.commit("fixedHeader");
+  },
+  computed: {
+    ...mapGetters([]),
+  },
+  methods: {
+    onVideoEnded() {
+
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.watch-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+</style>

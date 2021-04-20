@@ -53,7 +53,7 @@
         </ul>
       </div>
     </div>
-    <vs-button size="large" border color="#ffffff" to="/tour">Begin</vs-button>
+    <vs-button size="large" border color="#ffffff" to="/tour/intro/watch">Begin</vs-button>
     <br />
   </div>
 </template>
