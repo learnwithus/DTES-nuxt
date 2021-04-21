@@ -33,10 +33,7 @@
       id="video-wrapper"
       :hls="hls"
     >
-      <video
-        :poster="require(`~/assets/tour/${poster}`)"
-        playsinline="true"
-      >
+      <video :poster="require(`~/assets/tour/${poster}`)" playsinline="true">
         <source :src="videoSource" type="video/mp4" size="720" />
       </video>
     </v-plyr>
@@ -99,7 +96,7 @@ export default {
   methods: {
     onVideoEnded() {
       this.videoEnded = true;
-      this.$emit("videoEnded");
+      this.$emit("video-ended");
     },
     onVideoPaused() {
       this.$nextTick(() => {
@@ -118,8 +115,11 @@ export default {
 <style lang="scss">
 .tour-video-wrapper {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
 }
 
 .plyr {

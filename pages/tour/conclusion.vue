@@ -1,15 +1,15 @@
 <template>
   <main class="watch-page">
-    <tour-video :src="intro.video" :hls="intro.hls" :poster="intro.poster" @video-ended="onVideoEnded">
+    <tour-video :src="conclusion.video" :hls="conclusion.hls" :poster="conclusion.poster" @video-ended="onVideoEnded">
       <template #videoEndScreen>
-        <p>Video End</p>
+        <p></p>
         <vs-button
-          to="/tour"
+          to="/tour/reflection"
           flat
           border
           color="#fff"
           class="back-to-map-button"
-          >Continue to Map</vs-button
+          >Continue to Reflection</vs-button
         >
       </template>
       <template #videoPausedScreen>
@@ -33,10 +33,10 @@ export default {
     };
   },
   async asyncData({ params,  $content }) {
-    const intro = await $content("tour/intro").fetch();
+    const conclusion = await $content("tour/conclusion").fetch();
 
     return {
-      intro,
+      conclusion,
     };
   },
   mounted() {

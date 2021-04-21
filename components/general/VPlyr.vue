@@ -8,6 +8,7 @@
 <script>
 import Plyr from "plyr";
 import Hls from "hls.js";
+
 export default {
   name: "VuePlyr",
   props: {
@@ -95,21 +96,21 @@ export default {
       });
     }
   },
-  beforeDestroy() {
-    try {
-      this.player.destroy();
-    } catch (e) {
-      if (
-        !(
-          this.opts.hideYouTubeDOMError &&
-          e.message === "The YouTube player is not attached to the DOM."
-        )
-      ) {
-        // eslint-disable-next-line no-console
-        console.error(e);
-      }
-    }
-  },
+  // destroyed() {
+  //   try {
+  //     this.player.destroy();
+  //   } catch (e) {
+  //     if (
+  //       !(
+  //         this.opts.hideYouTubeDOMError &&
+  //         e.message === "The YouTube player is not attached to the DOM."
+  //       )
+  //     ) {
+  //       // eslint-disable-next-line no-console
+  //       console.error(e);
+  //     }
+  //   }
+  // },
   methods: {
     emitPlayerEvent(event) {
       this.$emit(event.type, event);

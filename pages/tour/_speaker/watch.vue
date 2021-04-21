@@ -1,6 +1,6 @@
 <template>
   <main class="watch-page">
-    <tour-video :src="speaker.video" :hls="speaker.hls" :poster="speaker.poster">
+    <tour-video :src="speaker.video" :hls="speaker.hls" :poster="speaker.poster" @video-ended="onVideoEnded">
       <template #videoEndScreen>
         <ul class="additional-info" v-if="speaker['additional-info']">
           <li
@@ -46,6 +46,7 @@ export default {
 
     return {
       speaker,
+      isTouchscreen: false,
     };
   },
   mounted() {

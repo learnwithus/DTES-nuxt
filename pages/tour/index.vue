@@ -31,7 +31,7 @@
         <vs-button
           v-else
           id="tour-progress-btn"
-          to="/tour/reflection"
+          to="/tour/conclusion"
           size="xl"
           flat
           border
