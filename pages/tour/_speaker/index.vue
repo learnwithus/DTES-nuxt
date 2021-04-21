@@ -32,6 +32,13 @@ export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
+      link: [
+        {
+          rel: "preload",
+          href: require(`~/assets/tour/${this.speaker.poster}`),
+          as: "image",
+        },
+      ],
     };
   },
   async asyncData({ params, store }) {
