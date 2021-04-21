@@ -12,14 +12,6 @@
           >Continue to Reflection</vs-button
         >
       </template>
-      <template #videoPausedScreen>
-        <div class="pause-circle">
-          <div class="title">Paused</div>
-          <!-- <div class="instructions" v-if="!isTouchscreen">
-            Click on the screen to continue listening
-          </div> -->
-        </div>
-      </template>
     </tour-video>
   </main>
 </template>

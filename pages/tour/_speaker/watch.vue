@@ -21,12 +21,6 @@
         >
       </template>
       <template #videoPausedScreen>
-        <div class="pause-circle">
-          <div class="title">Paused</div>
-          <div class="instructions" v-if="!isTouchscreen">
-            Click on the screen to continue listening
-          </div>
-        </div>
         <tour-minimap class="speaker-map" :location="speaker.slug" />
       </template>
     </tour-video>
@@ -46,7 +40,6 @@ export default {
 
     return {
       speaker,
-      isTouchscreen: false,
     };
   },
   mounted() {

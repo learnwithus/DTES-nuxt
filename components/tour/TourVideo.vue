@@ -6,16 +6,13 @@
           <slot name="videoEndScreen" />
         </div>
         <div v-else-if="videoPaused" id="video-pause-screen">
-          <slot name="videoPausedScreen">
-            <!-- <transition name="zoom-fade" mode="in-out" appear> -->
-            <div class="pause-circle" v-if="videoPaused">
-              <div class="title">Paused</div>
-              <div class="instructions" v-if="!isTouchscreen">
-                Click on the screen to continue listening
-              </div>
+          <div class="pause-circle" v-if="videoPaused">
+            <div class="title">Paused</div>
+            <div class="instructions" v-if="!isTouchscreen">
+              Click on the screen to continue listening
             </div>
-            <!-- </transition> -->
-          </slot>
+          </div>
+          <slot name="videoPausedScreen"></slot>
         </div>
       </transition>
     </div>
