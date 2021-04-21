@@ -2,7 +2,7 @@
   <main class="watch-page">
     <tour-video :src="intro.video" :hls="intro.hls" :poster="intro.poster" @video-ended="onVideoEnded">
       <template #videoEndScreen>
-        <p>Video End</p>
+        <p>Intro Complete</p>
         <vs-button
           to="/tour"
           flat
