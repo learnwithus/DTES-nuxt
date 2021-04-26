@@ -69,15 +69,24 @@ export default {
   height: calc(100% - 5em);
   padding-bottom: 5em;
   text-align: center;
+  font-size: 0.9em;
 
-  @include breakpoint(phablet) {
+  @include breakpoint(phone) {
+    font-size: 1em;
+  }
+
+  @include breakpoint(tablet) {
     display: flex;
   }
 }
 
 .profile {
-  width: 10em;
+  width: 8em;
   border-radius: 50%;
+
+  @include breakpoint(phone) {
+    width: 10em;
+  }
 }
 
 .speaker-intro-page {
@@ -100,6 +109,7 @@ export default {
   padding: 2em;
   border-radius: 1em;
   margin-top: 7em;
+
 }
 
 .speaker-type {
