@@ -8,7 +8,11 @@
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
     <TourMap :interactive="true" @hover="onLocationHover" />
-    <img src="~assets/images/legend.svg" alt="Legend" class="tour-map-page-legend">
+    <img
+      src="~assets/images/legend.svg"
+      alt="Legend"
+      class="tour-map-page-legend"
+    />
     <div id="map-page-bottom-ui" class="columns">
       <div class="column is-one-fifth"></div>
       <div class="column is-half location">{{ locationText }}</div>
@@ -37,8 +41,7 @@
           border
           color="#fff"
           v-tooltip="{
-            content:
-              'You did it! Press this button to complete your journey',
+            content: 'You did it! Press this button to complete your journey',
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"
@@ -57,6 +60,19 @@ export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
+      // Preload the speakers profile pictures and background images so the user doesn't have to wait when they click on them
+      link: [
+        ...this.speakers.map((speaker) => ({
+          rel: "preload",
+          href: require(`~/assets/tour/${speaker.profile}`),
+          as: "image",
+        })),
+        ...this.speakers.map((speaker) => ({
+          rel: "preload",
+          href: require(`~/assets/tour/${speaker.background}`),
+          as: "image",
+        })),
+      ],
     };
   },
   async asyncData({ redirect, store, $content }) {
@@ -74,7 +90,12 @@ export default {
     // }
   },
   computed: {
-    ...mapGetters(["userProgress", "tourSpeakerRequirement", "tourComplete"]),
+    ...mapGetters([
+      "userProgress",
+      "tourSpeakerRequirement",
+      "tourComplete",
+      "speakers",
+    ]),
     videosWatchedCount() {
       return this.userProgress.speakers.length;
     },

@@ -63,11 +63,24 @@ export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
+      link: [
+        {
+          rel: "preload",
+          href: require(`~/assets/tour/${this.intro.poster}`),
+          as: "image",
+        },
+      ],
     };
   },
   async asyncData({ $content, params, store }) {
     store.commit("requestDarkBackground");
     store.commit("setBackgroundImage", `images/tourintrobg.jpg`);
+
+    const intro = await $content("tour/intro").fetch();
+
+    return {
+      intro,
+    };
   },
   mounted() {
     this.$store.commit("beginTour");
