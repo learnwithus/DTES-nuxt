@@ -98,6 +98,7 @@ export default {
    */
   content: {
     markdown: {
+      // Don't inlcude the default remark plugin which adds header links to markdown HTML, was casuing a WCAG failure
       remarkPlugins: () => ['remark-squeeze-paragraphs', 'remark-slug', 'remark-external-links', 'remark-footnotes'],
     }
   },

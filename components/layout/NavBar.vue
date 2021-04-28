@@ -28,7 +28,8 @@
           class="navbar-burger burger"
           :class="{ 'is-active': hamburgerOpen }"
           @click="hamburgerOpen = !hamburgerOpen"
-          aria-label="menu"
+          aria-label="Hamburger Menu"
+          aria-controls="main-menu"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -36,7 +37,7 @@
         </button>
       </div>
 
-      <div class="navbar-menu" :class="{ 'is-active': hamburgerOpen }">
+      <div class="navbar-menu" :class="{ 'is-active': hamburgerOpen }" aria-label="menu" id="main-menu">
         <div class="navbar-end">
           <nuxt-link
             class="navbar-item"

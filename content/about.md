@@ -19,7 +19,7 @@ The VCH Overdose Emergency Response (OER) Team is part of the regional preventio
   
   </div>
    <div class="column is-5">
-     <markdown-image src="images/team.jpg"></markdown-image>
+     <markdown-image src="images/team.jpg" alt="The OER Team, sitting outside, smiling"></markdown-image>
    </div>
 </div>
 

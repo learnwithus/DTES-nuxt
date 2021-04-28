@@ -6,6 +6,7 @@
       rows="6"
       cols="50"
       @input="$emit('user-answered', $event.target.value)"
+      aria-label="Free text input"
     ></textarea>
   </div>
 </template>
