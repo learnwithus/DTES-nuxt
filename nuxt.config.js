@@ -81,7 +81,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://github.com/nuxt/content
     "@nuxtjs/svg",
     "@nuxt/content",
     "@nuxtjs/style-resources",
@@ -97,7 +96,11 @@ export default {
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
-  content: {},
+  content: {
+    markdown: {
+      remarkPlugins: () => ['remark-squeeze-paragraphs', 'remark-slug', 'remark-external-links', 'remark-footnotes'],
+    }
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
