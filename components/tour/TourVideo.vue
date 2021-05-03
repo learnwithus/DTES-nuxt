@@ -2,7 +2,7 @@
   <div class="tour-video-wrapper">
     <div class="video-overlay">
       <transition name="fade" mode="out-in">
-        <div v-if="videoEnded" id="video-end-screen" class="container">
+        <div v-if="videoEnded" id="video-end-screen" class="container skinny">
           <slot name="videoEndScreen" />
         </div>
         <div v-else-if="videoPaused" id="video-pause-screen">
@@ -219,10 +219,5 @@ export default {
   ul {
     padding: 0;
   }
-}
-
-.additional-info {
-  list-style: none;
-  text-align: left;
 }
 </style>

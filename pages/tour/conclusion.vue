@@ -1,15 +1,16 @@
 <template>
   <main class="watch-page">
     <tour-video :src="conclusion.video" :hls="conclusion.hls" :poster="conclusion.poster" @video-ended="onVideoEnded">
-      <template #videoEndScreen>
-        <p></p>
+      <template #videoEndScreen >
+        <nuxt-content :document="conclusion" class="light-page-document conclusion-document" />
         <vs-button
-          to="/tour/reflection"
+          to="/tour"
+          @click="$store.commit('resetUserProgress')"
           flat
           border
           color="#fff"
           class="back-to-map-button"
-          >Continue to Reflection</vs-button
+          >Back to Map</vs-button
         >
       </template>
     </tour-video>
@@ -53,6 +54,11 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.conclusion-document {
+  text-align: left;
+  margin-bottom: 3rem;
 }
 
 </style>

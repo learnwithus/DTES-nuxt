@@ -16,3 +16,9 @@ Before you go, here a a few questions to ask yourself:
 -	Would you recommend this course for your colleagues as a learning tool to improve interactions and engagement with client care?
 
 Thank you for exploring with us.
+
+---
+
+*The course is considered complete when you complete this feedback form on LearningHub. You are always welcome to return to this site as a resource.*
+
+<vs-button href="https://moodle.learninghub.phsa.ca/course/view.php?id=8012" flat border size="large" color="#fff" blank>Share Feedback & Complete Course</vs-button>

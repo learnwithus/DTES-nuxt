@@ -59,11 +59,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .watch-page {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
+.additional-info {
+  list-style: none;
+  text-align: left;
+}
 </style>
