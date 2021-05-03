@@ -32,6 +32,15 @@
     >
       <video :poster="require(`~/assets/tour/${poster}`)" playsinline="true">
         <source :src="videoSource" type="video/mp4" size="720" />
+
+        <track
+          v-if="subtitles"
+          kind="captions"
+          label="English captions"
+          :src="require(`~/assets/tour/${subtitles}`).default"
+          srclang="en"
+          default
+        />
       </video>
     </v-plyr>
   </div>
@@ -40,7 +49,7 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  props: ["src", "hls", "poster"],
+  props: ["src", "hls", "poster", "subtitles"],
   data() {
     return {
       isTouchscreen: false,

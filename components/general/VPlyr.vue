@@ -77,6 +77,13 @@ export default {
           forced: true,
           onChange: (e) => this.updateQuality(e),
         };
+
+        this.opts.captions = {
+          active: true,
+          update: true,
+          language: "en",
+        };
+
         // Initialize here
         this.player = new Plyr(this.$el.firstChild, this.opts);
 
