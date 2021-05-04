@@ -95,4 +95,4 @@ Layout is done using Bulma's column system
 https://bulma.io/documentation/columns
 
 ## UI
-DTES site uses the [Vuesax 4.x](https://vuesax.com/) component library as a starting point for buttons, dropdowns, etc.  It was initally selected for it's aestetic design which meshed well with the chosen design for DTES.  However, it is still fairly early in development and incomplete in terms of components.  It was also pushed as an option out-of-the-bax with Nuxt even though it was an alpha stage project.  It was likely a mistake to use Vuesax in production but luckily it didn't end up biting us.
+DTES site uses the [Vuesax 4.x](https://vuesax.com/) component library as a starting point for buttons, dropdowns, etc.  It was initally selected for it's aestetic design which meshed well with the chosen design for DTES.  However, it is still fairly early in development and incomplete in terms of components.  It was also pushed as an option out-of-the-box with Nuxt even though it was an alpha stage project.  It was likely a mistake to use Vuesax in production but luckily it didn't end up biting us.
