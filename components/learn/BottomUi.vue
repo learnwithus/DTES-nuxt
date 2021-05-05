@@ -160,7 +160,7 @@ export default {
       rgba(white, 0) 100%
     );
 
-    @include breakpoint(phablet) {
+    @include breakpoint(tablet) {
       background: unset;
     }
 
