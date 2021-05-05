@@ -12,7 +12,9 @@
               Click on the screen to continue listening
             </div>
           </div>
-          <slot name="videoPausedScreen"></slot>
+          <div class="additional-content">
+            <slot name="videoPausedScreen"></slot>
+          </div>
         </div>
       </transition>
     </div>
@@ -169,7 +171,7 @@ export default {
 
   .plyr--paused {
     &:not(.plyr--stopped) video {
-      opacity: 0.4;
+      opacity: 0.3;
     }
 
     &.plyr--stopped {
@@ -177,7 +179,7 @@ export default {
         opacity: 0;
       }
       .plyr__poster {
-        opacity: 0.4;
+        opacity: 0.3;
       }
     }
   }
@@ -203,8 +205,18 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2em;
+
+  .additional-content {
+    display: none;
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+  }
 
   .pause-circle {
+    font-size: 0.75em;
     height: 10em;
     width: 10em;
     border: 2px solid white;
@@ -215,6 +227,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5em;
+
+    @include breakpoint(tablet) {
+      font-size: 1em;
+    }
 
     .title {
       font-family: $font-serif;
