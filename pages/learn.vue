@@ -319,6 +319,10 @@ export default {
   padding-bottom: 9em;
 
   @include breakpoint(phablet) {
+    padding-bottom: 7em;
+  }
+
+  @include breakpoint(tablet) {
     padding-bottom: 4em;
   }
 }
