@@ -112,6 +112,7 @@ export default {
     onVideoReady() {
       this.player.play().catch((e) => {
         console.info("Not permitted to autoplay video");
+        this.videoPaused = true;
       });
     },
   },
@@ -167,8 +168,17 @@ export default {
   }
 
   .plyr--paused {
-    video {
+    &:not(.plyr--stopped) video {
       opacity: 0.4;
+    }
+
+    &.plyr--stopped {
+      video {
+        opacity: 0;
+      }
+      .plyr__poster {
+        opacity: 0.4;
+      }
     }
   }
 }
@@ -224,6 +234,7 @@ export default {
   padding-top: 1em;
   pointer-events: auto;
   padding-bottom: 4em;
+  overflow-y: auto;
 
   ul {
     padding: 0;
