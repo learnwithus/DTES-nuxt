@@ -115,7 +115,13 @@ export default {
           name: '[path][name].[ext]'
         }
       })
-    }
+    },
+    babel: {
+      plugins: [
+        // Fix Babel issue with current version of Nuxt.js (2.15.7)  Should be able to remove soon
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+      ],
+    },
   },
   generate: {
     async routes() {
