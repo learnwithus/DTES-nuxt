@@ -8,10 +8,10 @@ poster: 'wahrs/poster.jpg'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: The Western Aboriginal Harm Reduction Society (WAHRS) is an organization of Indigenous people who are current and former users of illicit drugs and/or illicit alcohol.
-location: 380 E Hastings St
+location: VANDU (380 E Hastings)
 map:
     x: 600
-    y: 300
+    y: 310
 speakers:
     - name: 'Tracey Draper'
 additional-info: 

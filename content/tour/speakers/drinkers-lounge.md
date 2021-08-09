@@ -9,7 +9,7 @@ background: 'drinkers-lounge/background.jpg'
 bio: The Drinkers Lounge is an innovative and one-of-a-kind community managed alcohol program (MAP). The Lounge is a harm reduction-centered drop-in space for people who have severe alcohol use disorder, and offers alcohol substitution with beer and wine brewed by members of the Lounge.
 location: 111 Princess Ave
 map:
-    x: 800
+    x: 870
     y: 100
 # speakers:
 #     - name: 'Tracey Draper'
