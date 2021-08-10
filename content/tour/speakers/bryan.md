@@ -9,7 +9,7 @@ background: 'guy/background.jpg'
 bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
 location: Insite (139 E Hastings St)
 map:
-    x: 398
+    x: 405
     y: 284
 
 additional-info: 
