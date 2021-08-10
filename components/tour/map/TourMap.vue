@@ -403,6 +403,8 @@ export default {
     filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0));
     transform-origin: center center;
     transform-box: fill-box;
+    stroke: #cbcdd0;
+    stroke-width: 3px;
 
     &.speaker-map-diamond {
       transform: rotate(45deg);
@@ -411,7 +413,7 @@ export default {
     &.interactive {
       &:hover {
         // fill: $colour-accent;
-        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+        // filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
         transform: scale(1.2);
 
         &.speaker-map-diamond {
