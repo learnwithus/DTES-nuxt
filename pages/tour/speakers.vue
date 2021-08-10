@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container skinny">
       <!-- <h1>Walk</h1> -->
       <h2 class="title">All Speakers</h2>
       <!-- Peers -->
@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 .profile {
-  width: 10em;
+  width: 9.7em;
   // height: 10em;
   border-radius: 50%;
   background-color: $colour-light;
@@ -73,6 +73,7 @@ export default {
   font-family: $font-serif;
   text-align: center;
   letter-spacing: 0.05em;
+  margin-top: 2em;
 }
 
 #speaker-list {
@@ -80,6 +81,11 @@ export default {
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+
+  @include breakpoint(thone) {
+    justify-content: flex-start;
+  }
 
   figcaption {
     text-align: center;
