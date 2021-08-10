@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
+bio: The Overdose Outreach Team (OOT) is a team of Social Workers, Outreach Workers and Peer Support Workers who can follow up with a person after an opioid overdose and connect with people at high risk of overdosing. They can connect people to community resources and provide short term support for those waiting for connection to services.
 location: 524 Powell Street
 map:
     x: 840

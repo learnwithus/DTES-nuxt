@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Bio
+bio: Trey Helton is the manager at the Overdose Prevention Society in the Downtown Eastside. Trey is a well-known artist in the area as well as promoting the artistic abilities of others in the DTES. One of Trey’s hopes for the future is that one day stigma toward drug users in a medical environment will be a thing of the past.
 location: OPS (58 E Hastings)
 map:
     x: 295
@@ -15,7 +15,7 @@ map:
 additional-info: 
     - title: Trey
       image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+      description: Trey Helton is the manager at the Overdose Prevention Society in the Downtown Eastside. Trey is a well-known artist in the area as well as promoting the artistic abilities of others in the DTES. One of Trey’s hopes for the future is that one day stigma toward drug users in a medical environment will be a thing of the past.
     
 
 ---

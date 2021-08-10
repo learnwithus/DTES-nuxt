@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Bio
+bio: Opened in 2003, Insite is the first legal supervised consumption site in North America. Hundreds and hundreds of thousands of injections have been done at Insite with thousands of overdoses, and zero fatalities. Staff at Insite are trained to recognize, respond and reverse overdose within minutes of a person injecting.
 location: 139 E Hastings St
 map:
     x: 365
@@ -15,7 +15,7 @@ map:
 additional-info: 
     - title: Insite
       image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+      description: Opened in 2003, Insite is the first legal supervised consumption site in North America. Hundreds and hundreds of thousands of injections have been done at Insite with thousands of overdoses, and zero fatalities. Staff at Insite are trained to recognize, respond and reverse overdose within minutes of a person injecting. Community members can also access nursing care for things such as wound care, HIV and STI testing and referals to other community resourses, harm reduction supplies, drug testing and opioid replacement treatments.
     
 
 ---

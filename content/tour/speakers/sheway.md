@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
+bio: Sheway is an important resource in the Downtown Eastside for pregnant women and new moms who are struggling with substance use. Clients can access medical care, counselling, baby care, parenting support, First Nations support services, community referrals and advocacy.
 location: 533 E Hastings St
 map:
     x: 825

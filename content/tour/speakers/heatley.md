@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
+bio: Heatley Community Health Center provides culturally inclusive care including primary care, mental health and substance use support, harm reduction. Peers, counsellors, physicians, nurses, nurse practitioners and Indigenous Elders are all part of the primary care team.
 location: 330 Heatley Ave
 map:
     x: 970

@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Bio
+bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
 location: Insite (139 E Hastings St)
 map:
     x: 398
@@ -15,7 +15,7 @@ map:
 additional-info: 
     - title: Bryan
       image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+      description: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
     
 
 ---

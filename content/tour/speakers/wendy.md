@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
-bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
+bio: Wendy Stevens is the Peer Operations Coordinator with Vancouver Coastal Health’s Overdose Emergency Response Team.  Before coming to work with VCH, she worked in HIV healthcare, education and support. Wendy has many years of lived experience with addiction, sex trade and life in the Downtown Eastside.
 location: East Hastings
 map:
     x: 120
@@ -15,7 +15,7 @@ map:
 additional-info: 
     - title: Wendy
       image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+      description: Wendy Stevens is the Peer Operations Coordinator with Vancouver Coastal Health’s Overdose Emergency Response Team.  Before coming to work with VCH, she worked in HIV healthcare, education and support. Wendy has many years of lived experience with addiction, sex trade and life in the Downtown Eastside.  Wendy has been off of street drugs for almost 10 years and is on a replacement treatment. She’s truly grateful that she’s able to stay connected to the DTES community through her work with VCH.
     
 
 ---

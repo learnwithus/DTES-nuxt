@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa_5.mp4'
 poster: 'melissa/poster.jpg'
 profile: 'melissa/profile.jpg'
 background: 'wahrs/background.jpg'
-bio: Bio
+bio: Nina is a proud First Nations/Italian woman working as a Peer Educator and employee at both SisterSpace and SisterSquare Tent. She’s very passionate about educating people on how to reverse overdose. Her philosophy is “the more people trained to reverse overdose could be one more life saved.”
 location: SisterSpace (135 Dunlevy Ave)
 map:
     x: 640
@@ -15,5 +15,5 @@ map:
 additional-info: 
     - title: Nina
       image: 'wahrs/tracey.jpg'
-      description: Melissa is a Cree woman from the Saddle Lake Nation, Alberta. She identifies as a peer, and works with the Western Aboriginal Harm Reduction Society. She is passionate about advocating for and supporting her community, and considers it as her calling as her late granny would say, “Do what you do best, help feed the people!”
+      description: Nina is a proud First Nations/Italian woman working as a Peer Educator and employee at both SisterSpace and SisterSquare Tent. She’s very passionate about educating people on how to reverse overdose. Her philosophy is “the more people trained to reverse overdose could be one more life saved.” She also believes that everyone should have Naloxone training because “you can save a life.”
 ---
