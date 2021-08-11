@@ -66,7 +66,7 @@ export default {
 .speaker-container {
   align-items: flex-end;
   justify-content: space-between;
-  height: calc(100% - 5em);
+  min-height: calc(100% - 5em);
   padding-bottom: 5em;
   text-align: center;
   font-size: 0.9em;
