@@ -14,17 +14,17 @@ The goal of the project is to help decrease stigma in healthcare, enhance provid
 <div class="columns">
   <div class="column is-6">
 
-## The OER Team
-The VCH Overdose Emergency Response (OER) Team is part of the regional prevention and public health program. OER supports harm reduction initiatives and provides education to address the opioid overdose crisis. For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
+## The SUPP Team
+The Substance Use and Priority Populations (SUPP) Team is part of the regional prevention and public health program. SUPP supports harm reduction initiatives and provides education to address the opioid overdose crisis. For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
   
   </div>
    <div class="column is-5">
-     <markdown-image src="images/team.jpg" alt="The OER Team, sitting outside, smiling"></markdown-image>
+     <markdown-image src="images/team.jpg" alt="The SUPP Team, sitting outside, smiling"></markdown-image>
    </div>
 </div>
 
 ## The Website
-This website was designed and developed with love by [Learning Technologies](https://vchdesign.ca) in collaboration with the OER team. For more information about Learning Technologies and what we do, please visit https://vchdesign.ca
+This website was designed and developed with love by [Learning Technologies](https://vchdesign.ca) in collaboration with the SUPP team. For more information about Learning Technologies and what we do, please visit https://vchdesign.ca
 
 <br>
 
