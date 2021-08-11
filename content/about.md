@@ -15,7 +15,7 @@ The goal of the project is to help decrease stigma in healthcare, enhance provid
   <div class="column is-6">
 
 ## The SUPP Team
-The Substance Use and Priority Populations (SUPP) Team is part of the regional prevention and public health program. SUPP supports harm reduction initiatives and provides education to address the opioid overdose crisis. For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
+The Substance Use & Priority Populations (SUPP) Team is part of the regional prevention and public health program. SUPP supports harm reduction initiatives and provides education to address the opioid overdose crisis. For more information please visit [VCH Overdose Emergency Response Page](http://www.vch.ca/public-health/harm-reduction/overdose-prevention-response)
   
   </div>
    <div class="column is-5">
