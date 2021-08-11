@@ -7,7 +7,7 @@
 
 <br>
 
-## Services
+## Services found on the tour
 -	[Insite](https://www.phs.ca/program/insite/)
 -	[Western Aboriginal Harm Reduction Society](https://wahrs.ca/)
 -	[Culture Saves Lives](https://www.phs.ca/our-services/culture-saves-lives/)
@@ -16,3 +16,8 @@
 -	[Kilala Lelum Health Center](https://kilalalelum.ca/)
 -	[Sheway Program](http://www.vch.ca/Locations-Services/result?res_id=900)
 
+<br>
+
+## Regional Substance Use Resources
+-   [Harm reduction services](https://towardtheheart.com/site-finder)
+-   [Mental Health Substance Use Resources](https://mhsu.vchlearn.ca/services)
