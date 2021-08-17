@@ -5,7 +5,7 @@ hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
 profile: 'womens-shelter/profile.jpg'
-background: 'guy/background.jpg'
+background: 'womens-shelter/background.jpg'
 bio: The Downtown Eastside Women’s Center (DEWC), provides non-judgemental, low-barrier, 24 hour emergency housing for homeless, self-identified women in the DTES. Women can access meals, counselling, advocacy and outreach programs in a nurturing and empowering setting.
 location: 412 E Cordova St
 map:
