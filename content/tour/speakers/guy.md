@@ -3,7 +3,7 @@ name: Guy
 type: peer
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy.mp4'
-poster: 'guy/poster.jpg'
+poster: 'shared/black-poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
 bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
