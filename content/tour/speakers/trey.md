@@ -1,8 +1,8 @@
 ---
 name: Trey
 type: peer
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Trey/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Trey.mp4'
 poster: 'guy/poster.jpg'
 profile: 'trey/profile.jpg'
 background: 'trey/background.jpg'
