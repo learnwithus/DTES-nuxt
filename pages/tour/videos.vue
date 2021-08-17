@@ -2,10 +2,10 @@
   <div>
     <div class="container skinny">
       <!-- <h1>Walk</h1> -->
-      <h2 class="title">All Speakers</h2>
+      <h2 class="title">All Videos</h2>
       <!-- Peers -->
       <h3>Peers</h3>
-      <ul id="speaker-list">
+      <ul class="video-list">
         <li v-for="peer in peers" v-bind:key="peer.id">
           <nuxt-link :to="`/tour/${peer.slug}`"
             ><img
@@ -22,7 +22,7 @@
       </ul>
       <!-- Services -->
       <h3>Services</h3>
-      <ul id="speaker-list">
+      <ul class="video-list">
         <li v-for="service in services" v-bind:key="service.id">
           <nuxt-link :to="`/tour/${service.slug}`"
             ><img
@@ -76,7 +76,7 @@ export default {
   margin-top: 2em;
 }
 
-#speaker-list {
+.video-list {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
