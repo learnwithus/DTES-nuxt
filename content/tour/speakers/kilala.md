@@ -4,7 +4,7 @@ type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
-profile: 'guy/profile.jpg'
+profile: 'kilala/profile.jpg'
 background: 'guy/background.jpg'
 bio: Kilala Lelum is a unique clinic in the DTES because they partner Indigenous Elders with physicians and allied health professionals to provide physical, mental, emotional and spiritual care to the community of the DTES.
 location: 626 Powell St

@@ -4,7 +4,7 @@ type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
 poster: 'guy/poster.jpg'
-profile: 'guy/profile.jpg'
+profile: 'culture-saves-lives/profile.jpg'
 background: 'guy/background.jpg'
 bio: Culture Saves Lives (CSL) provides an opportunity and space for Indigenous community members who have been oppressed by colonization such as residential schools and the foster care system to reconnect and celebrate their roots. CSL belives in bringing ceremony to the people who need it most, this includes bringing drums and regalia to the street corners, alleys or wherever it’s needed.
 location: 1 E Hastings
