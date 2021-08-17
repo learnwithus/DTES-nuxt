@@ -139,6 +139,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    &:before {
+      content: "\00a0";
+    }
   }
 }
 .map-page-tooltip {
