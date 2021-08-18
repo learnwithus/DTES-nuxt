@@ -6,6 +6,7 @@
       viewBox="0 0 1006 400"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      @click.self="$emit('click-container')"
     >
       <!-- Base Map Background -->
       <path
