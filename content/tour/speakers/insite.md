@@ -1,9 +1,9 @@
 ---
 name: Insite
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
-poster: 'guy/poster.jpg'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Insite/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Insite.mp4'
+poster: 'shared/black-poster.jpg'
 profile: 'insite/profile.jpg'
 background: 'insite/background.jpg'
 bio: Opened in 2003, Insite is the first legal supervised consumption site in North America. Hundreds and hundreds of thousands of injections have been done at Insite with thousands of overdoses, and zero fatalities. Staff at Insite are trained to recognize, respond and reverse overdose within minutes of a person injecting.

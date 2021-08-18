@@ -1,8 +1,8 @@
 ---
 name: Melissa
 type: peer
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa_5/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa_5.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa.mp4'
 poster: 'melissa/poster.jpg'
 profile: 'melissa/profile.jpg'
 background: 'wahrs/background.jpg'

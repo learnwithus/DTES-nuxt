@@ -1,8 +1,8 @@
 ---
 name: WAHRS
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/WAHRS_5/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/WAHRS_5.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Tracy/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Tracy.mp4'
 poster: 'wahrs/poster.jpg'
 # subtitles: 'wahrs/subs.vtt'
 profile: 'wahrs/profile.jpg'

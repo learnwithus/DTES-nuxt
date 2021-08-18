@@ -1,8 +1,8 @@
 ---
 name: Overdose Outreach
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy_5.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/OOT/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/OOT.mp4'
 poster: 'guy/poster.jpg'
 profile: 'oot/profile.jpg'
 background: 'oot/background.jpg'
