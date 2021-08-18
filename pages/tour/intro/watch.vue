@@ -1,8 +1,16 @@
 <template>
   <main class="watch-page">
-    <tour-video :src="intro.video" :hls="intro.hls" :poster="intro.poster" @video-ended="onVideoEnded">
+    <tour-video
+      :src="intro.video"
+      :hls="intro.hls"
+      :poster="intro.poster"
+      @video-ended="onVideoEnded"
+    >
       <template #videoEndScreen>
-        <p>Intro Complete</p>
+        <nuxt-content
+          :document="intro"
+          class="light-page-document intro-document"
+        />
         <vs-button
           to="/tour"
           flat
@@ -24,7 +32,7 @@ export default {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ params,  $content }) {
+  async asyncData({ params, $content }) {
     const intro = await $content("tour/intro").fetch();
 
     return {
@@ -41,9 +49,7 @@ export default {
     ...mapGetters([]),
   },
   methods: {
-    onVideoEnded() {
-
-    },
+    onVideoEnded() {},
   },
 };
 </script>
@@ -55,4 +61,8 @@ export default {
   flex-direction: column;
 }
 
+.intro-document {
+  text-align: left;
+  margin-bottom: 3rem;
+}
 </style>
