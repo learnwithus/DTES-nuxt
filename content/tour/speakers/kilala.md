@@ -13,9 +13,8 @@ map:
     y: 175
 
 additional-info: 
-    - title: Someone
-      image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+    - title: Kilala
+      description: Kilala Lelum is a unique clinic in the DTES because they partner Indigenous Elders with physicians and allied health professionals to provide physical, mental, emotional and spiritual care to the community of the DTES.
     
 
 ---

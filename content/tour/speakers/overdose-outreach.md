@@ -13,9 +13,8 @@ map:
     y: 170
 
 additional-info: 
-    - title: Someone
-      image: 'wahrs/tracey.jpg'
-      description: Guy is the peer clinical advisor for the BC Center on Substance Use, as well as the Overdose Emergency Response and Regional Addiction Program at Vancouver Coastal Health. He is an advocate for harm reduction, and shares his lived experiences with substance use as a reference for positive change.
+    - title: Overdose Outreach
+      description: The Overdose Outreach Team (OOT) is a team of Social Workers, Outreach Workers and Peer Support Workers who can follow up with a person after an opioid overdose and connect with people at high risk of overdosing. They can connect people to community resources and provide short term support for those waiting for connection to services.
     
 
 ---

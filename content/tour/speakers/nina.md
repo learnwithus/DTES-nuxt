@@ -14,6 +14,5 @@ map:
 
 additional-info: 
     - title: Nina
-      image: 'wahrs/tracey.jpg'
       description: Nina is a proud First Nations/Italian woman working as a Peer Educator and employee at both SisterSpace and SisterSquare Tent. She’s very passionate about educating people on how to reverse overdose. Her philosophy is “the more people trained to reverse overdose could be one more life saved.” She also believes that everyone should have Naloxone training because “you can save a life.”
 ---

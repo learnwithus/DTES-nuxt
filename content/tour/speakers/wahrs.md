@@ -12,10 +12,7 @@ location: VANDU (380 E Hastings)
 map:
     x: 600
     y: 310
-speakers:
-    - name: 'Tracey Draper'
 additional-info: 
     - title: WAHRS
-      image: 'wahrs/tracey.jpg'
       description: The Western Aboriginal Harm Reduction Society (WAHRS) is an advocacy group of urban Aboriginal peoples who live, work, and play in Vancouver’s Downtown Eastside neighbourhood.  All members of WAHRS are people that have currently or formerly used illicit drugs and/or illicit alcohol, and come from many different Indigenous nations. WAHRS is involved in activism, research, healing, harm reduction, community-building, and are passionate about their community, and are work to support their members.
 ---

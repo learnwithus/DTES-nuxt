@@ -14,7 +14,6 @@ map:
 
 additional-info: 
     - title: Trey
-      image: 'wahrs/tracey.jpg'
       description: Trey Helton is the manager at the Overdose Prevention Society in the Downtown Eastside. Trey is a well-known artist in the area as well as promoting the artistic abilities of others in the DTES. One of Trey’s hopes for the future is that one day stigma toward drug users in a medical environment will be a thing of the past.
     
 

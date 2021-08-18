@@ -14,6 +14,5 @@ map:
 
 additional-info: 
     - title: Melissa
-      image: 'wahrs/tracey.jpg'
       description: Melissa is a Cree woman from the Saddle Lake Nation, Alberta. She identifies as a peer, and works with the Western Aboriginal Harm Reduction Society. She is passionate about advocating for and supporting her community, and considers it as her calling as her late granny would say, “Do what you do best, help feed the people!”
 ---
