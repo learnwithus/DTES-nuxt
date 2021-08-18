@@ -2,8 +2,8 @@
   <div class="tour-video-wrapper">
     <div class="video-overlay">
       <transition name="fade" mode="out-in">
-        <div v-if="videoEnded" id="video-end-screen" class="container skinny">
-          <slot name="videoEndScreen" />
+        <div v-if="videoEnded" id="video-end-screen">
+          <div class="container skinny"><slot name="videoEndScreen" /></div>
         </div>
         <div v-else-if="videoPaused" id="video-pause-screen">
           <div class="pause-circle" v-if="videoPaused">
@@ -251,6 +251,7 @@ export default {
   pointer-events: auto;
   padding-bottom: 4em;
   overflow-y: auto;
+  height: 100%;
 
   ul {
     padding: 0;
