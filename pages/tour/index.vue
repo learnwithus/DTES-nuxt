@@ -26,7 +26,7 @@
           color="#fff"
           v-tooltip="{
             content:
-              'Visit at least 3 locations and watch \n the speakers there to complete the course',
+              `Visit at least ${tourSpeakerRequirement} locations and watch \n the speakers there to complete the course`,
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"

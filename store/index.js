@@ -18,7 +18,7 @@ export const state = () => ({
   tour: {
     speakers: [],
     started: false,
-    speakerRequirement: 3 // How many videos is the user required to watch
+    speakerRequirement: 4 // How many videos is the user required to watch
   },
   userProgress: {
     speakers: [],
