@@ -9,6 +9,7 @@
             unfair treatment due to a person’s identity
             <a
               href="https://ontario.cmha.ca/documents/stigma-and-discrimination/"
+              target="_blank"
               >(source)</a
             >
           </li>
