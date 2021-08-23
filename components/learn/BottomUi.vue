@@ -4,7 +4,7 @@
       <!-- Buttons -->
       <div class="button-wrapper">
         <vs-button
-        v-if="button != 'start-module'"
+          v-if="button != 'start-module'"
           flat
           size="large"
           dark
@@ -99,7 +99,7 @@ export default {
       //       currentSection: 3, // Which section / dot we're on
       //       sectionProgress: 40: // Percentage progress bewteen sections / dots
       //   }
-    }
+    },
   },
   mounted() {
     // console.log(this.$props.progress);
@@ -116,11 +116,16 @@ export default {
   left: 0;
   width: 100%;
   transition: all 200ms linear 200ms;
-  z-index: 2;
+  z-index: 11;
   pointer-events: none;
 
   @include breakpoint(phablet) {
     padding-bottom: 3em;
+  }
+
+  @include breakpoint(phablet) {
+    padding-top: 2rem;
+    background: unset;
   }
 
   &::before {
@@ -156,13 +161,13 @@ export default {
     background: linear-gradient(
       0deg,
       rgba(white, 1) 0%,
-      rgba(white, 0.75) 80%,
+      rgba(white, 0.8) 80%,
       rgba(white, 0) 100%
     );
 
-    @include breakpoint(tablet) {
-      background: unset;
-    }
+    // @include breakpoint(tablet) {
+    //   background: unset;
+    // }
 
     .dark & {
       opacity: 0;
@@ -178,11 +183,6 @@ export default {
     //   ≈
     //   rgba($colour-primary, 0) 100%
     // );
-  }
-
-  @include breakpoint(phablet) {
-    padding-top: 0;
-    background: unset;
   }
 
   .container {

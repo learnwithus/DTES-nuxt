@@ -1,10 +1,6 @@
 <template>
-  <div class="learn-background-wrapper">
-    <div
-      class="learn-background"
-      :class="{ accent: accent }"
-      ref="learnBG"
-    ></div>
+  <div class="learn-background-wrapper" :class="{ accent: accent }">
+    <div class="learn-background" ref="learnBG"></div>
   </div>
 </template>
 
@@ -27,6 +23,12 @@ export default {
   width: 100%;
   right: 0;
   top: 0;
+  z-index: 12;
+  pointer-events: none;
+
+  &.accent {
+    z-index: -1;
+  }
 }
 .learn-background {
   position: relative;
@@ -48,7 +50,7 @@ export default {
     }
   }
 
-  &.accent {
+  .accent & {
     background-color: $colour-primary;
     @supports (clip-path: polygon(96% 0, 100% 0, 100% 100%, 85% 100%)) {
       clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
