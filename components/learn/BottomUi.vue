@@ -108,6 +108,15 @@ export default {
 </script>
 
 <style lang="scss">
+/* The animation code */
+@keyframes fade-in-bottom-ui {
+  from {
+    opacity: 0;
+  }
+  to {
+  }
+}
+
 .bottom-fixed-ui {
   position: fixed;
   bottom: 0;
@@ -136,6 +145,7 @@ export default {
     width: 100%;
     height: 100%;
     opacity: 0;
+    animation: fade-in-bottom-ui 0.3s linear; // Looks nicer when combined with page transition
     background: linear-gradient(
       0deg,
       rgba($colour-primary, 1) 0%,
@@ -157,6 +167,7 @@ export default {
     width: 100%;
     height: 100%;
     opacity: 1;
+    animation: fade-in-bottom-ui 0.3s linear; // Looks nicer when combined with page transition
     transition: opacity 200ms linear 250ms;
     background: linear-gradient(
       0deg,
@@ -164,10 +175,6 @@ export default {
       rgba(white, 0.8) 80%,
       rgba(white, 0) 100%
     );
-
-    // @include breakpoint(tablet) {
-    //   background: unset;
-    // }
 
     .dark & {
       opacity: 0;

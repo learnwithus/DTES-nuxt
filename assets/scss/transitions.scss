@@ -1,13 +1,12 @@
 // Global Page Transition
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.15s;
+    transition: opacity 0.15s;
 }
 .page-enter,
 .page-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
-
 
 // Slide horizontally and fade-in / out
 .slide-fade-enter-active {
@@ -47,7 +46,6 @@
     transform: scale(0.7);
 }
 
-
 // Slide vertically and fade-in / out
 .verticle-slide-fade-enter-active {
     transition: all 0.3s ease;
@@ -55,7 +53,7 @@
 .verticle-slide-fade-leave-active {
     transition: all 0.3s ease-out;
 }
-.verticle-slide-fade-enter{
+.verticle-slide-fade-enter {
     transform: translateY(-25px);
     opacity: 0;
 }
@@ -63,7 +61,6 @@
     transform: translateY(25px);
     opacity: 0;
 }
-
 
 // Fade-in / out
 .fade-enter-active {
