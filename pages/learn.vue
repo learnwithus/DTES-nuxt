@@ -323,7 +323,7 @@ export default {
   }
 
   @include breakpoint(tablet) {
-    padding-bottom: 5em;
+    padding-bottom: 6em;
   }
 }
 
