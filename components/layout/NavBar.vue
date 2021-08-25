@@ -109,7 +109,6 @@ export default {
 <style lang="scss">
 header {
   z-index: 100;
-  // Will be themed in the future, depending on context
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   height: $nav-height;
