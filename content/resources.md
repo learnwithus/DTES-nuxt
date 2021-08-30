@@ -25,5 +25,5 @@
 <br>
 
 ## Regional Substance Use Resources
--   [Harm reduction services](https://towardtheheart.com/site-finder)
+-   [Harm Reduction Services](https://towardtheheart.com/site-finder)
 -   [Mental Health Substance Use Resources](https://mhsu.vchlearn.ca/services)
