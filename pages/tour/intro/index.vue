@@ -34,7 +34,7 @@
               alt="Mouse Pointer Icon"
             />
             Click on the spots on the map to visit the peer or service and
-            listen to their story. Listen to {{tourSpeakerRequirement}} stories before finishing.
+            listen to their story. Watch a minimum of {{tourSpeakerRequirement}} videos before finishing.
           </li>
           <li>
             <img
