@@ -15,6 +15,12 @@
 -	[Downtown Eastside Women’s Center](https://dewc.ca/)
 -	[Kilala Lelum Health Center](https://kilalalelum.ca/)
 -	[Sheway Program](http://www.vch.ca/Locations-Services/result?res_id=900)
+-   [Overdose Outreach Team](http://www.vch.ca/locations-services/result?res_id=1422)
+-   [Heatley Community Health Clinic](http://www.vch.ca/about-us/news/news-releases/new-clinic-and-new-model-of-care-on-dtes)
+<!-- -   Culture Saves Lives
+-   Drinker’s Lounge
+-   Downtown Eastside Women’s Center -->
+
 
 <br>
 
