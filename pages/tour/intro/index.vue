@@ -34,7 +34,7 @@
               alt="Mouse Pointer Icon"
             />
             Click on the spots on the map to visit the peer or service and
-            listen to their story. Listen to 3 stories before finishing.
+            listen to their story. Listen to {{tourSpeakerRequirement}} stories before finishing.
           </li>
           <li>
             <img
@@ -53,12 +53,15 @@
         </ul>
       </div>
     </div>
-    <vs-button size="large" border color="#ffffff" to="/tour/intro/watch">Watch Intro Video</vs-button>
+    <vs-button size="large" border color="#ffffff" to="/tour/intro/watch"
+      >Watch Intro Video</vs-button
+    >
     <br />
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   head() {
     return {
@@ -84,6 +87,11 @@ export default {
   },
   mounted() {
     this.$store.commit("beginTour");
+  },
+  computed: {
+    ...mapGetters([
+      "tourSpeakerRequirement",
+    ]),
   },
 };
 </script>
