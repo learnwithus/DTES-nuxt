@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
 bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
-location: Behind OPS
+location: Alley behind Insite
 map:
     x: 340
     y: 255
