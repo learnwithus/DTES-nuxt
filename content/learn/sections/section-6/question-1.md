@@ -4,4 +4,4 @@ type: free-text
 answers: Reflect on how this situation might be avoided using what you have learned in this module.
 ---
 <!--- This is where the rich feedback goes -->
-Reflect on how one might implement these changes.
+Look at the suggestions on the next page for more ideas on how you can address stigma in healthcare.
