@@ -1,13 +1,13 @@
 ---
 name: Wendy
 type: peer
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy.mp4'
-poster: 'guy/poster.jpg'
-profile: 'guy/profile.jpg'
-background: 'guy/background.jpg'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Wendy/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Wendy.mp4'
+poster: 'shared/black-poster.jpg'
+profile: 'wendy/profile.jpg'
+background: 'wendy/lostandfoundcafe.jpg'
 bio: Wendy Stevens is the Peer Operations Coordinator with Vancouver Coastal Health’s Overdose Emergency Response Team.  Before coming to work with VCH, she worked in HIV healthcare, education and support. Wendy has many years of lived experience with addiction, sex trade and life in the Downtown Eastside.
-location: East Hastings
+location: Lost + Found Cafe (333 W Hastings)
 map:
     x: 120
     y: 260
