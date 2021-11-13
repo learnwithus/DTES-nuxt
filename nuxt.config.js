@@ -76,12 +76,13 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    "@nuxtjs/svg",
+  ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/svg",
     "@nuxt/content",
     "@nuxtjs/style-resources",
     //"@nuxt/image",
