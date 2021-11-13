@@ -5,9 +5,9 @@ poster: 'outro/poster.jpg'
 ---
 ### Congratulations, you're finished the course!
 
-Before you go, here a a few questions to ask yourself:
+Before you go, here are a few questions to ask yourself:
 
-- Did these stories impact your perspective the overdose crisis, substance use, and community of the downtown east side?
+- Did these stories impact your perspective on the overdose crisis, substance use, and community of the downtown east side?
 - Did you notice anything that you can change in your practice after learning more about stigma in this community?
 - Have you witnessed, or experienced, stigma in healthcare like the examples described in the interviews?
 - How will you approach a situation when you’ve witnessed a stigmatizing interaction or conversation from a colleague?
