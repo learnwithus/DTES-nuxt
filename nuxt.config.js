@@ -1,3 +1,6 @@
+const Sass = require('sass')
+const Fiber = require('fibers')
+
 export default {
   /*
    ** Nuxt target
@@ -76,12 +79,14 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    "@nuxtjs/svg",
+  ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/svg",
+
     "@nuxt/content",
     "@nuxtjs/style-resources",
     //"@nuxt/image",
@@ -116,6 +121,14 @@ export default {
         }
       })
     },
+    loaders: {
+      scss: {
+        implementation: Sass,
+        sassOptions: {
+          fiber: Fiber
+        }
+      }
+    }
   },
   generate: {
     async routes() {
