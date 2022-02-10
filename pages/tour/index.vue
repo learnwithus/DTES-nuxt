@@ -25,8 +25,7 @@
           border
           color="#fff"
           v-tooltip="{
-            content:
-              `Visit at least ${tourSpeakerRequirement} locations and watch \n the speakers there to complete the course`,
+            content: `Visit at least ${tourSpeakerRequirement} locations and watch \n the speakers there to complete the course`,
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"
@@ -49,6 +48,12 @@
         </vs-button>
       </div>
     </div>
+    <p class="center-text">
+      <small>
+        Map and videos for coastal and other community of care and services
+        coming soon.
+      </small>
+    </p>
     <!-- <button @click="$store.commit('resetUserProgress')">Reset Progress</button> -->
   </div>
 </template>

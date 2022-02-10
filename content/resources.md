@@ -7,16 +7,18 @@
 
 <br>
 
-## Services found on the tour
+## Services Found On The Tour
 -	[Insite](https://www.phs.ca/program/insite/)
 -	[Western Aboriginal Harm Reduction Society](https://wahrs.ca/)
 -	[Kilala Lelum Health Center](https://kilalalelum.ca/)
 -	[Sheway Program](http://www.vch.ca/Locations-Services/result?res_id=900)
 -   [Overdose Outreach Team](http://www.vch.ca/locations-services/result?res_id=1422)
 -   [Heatley Community Health Clinic](http://www.vch.ca/about-us/news/news-releases/new-clinic-and-new-model-of-care-on-dtes)
--   [Culture Saves Lives - Video Coming Soon](https://www.phs.ca/our-services/culture-saves-lives/)
--   [Drinker’s Lounge - Video Coming Soon](https://www.phs.ca/program/community-managed-alcohol-program/)
--	[Downtown Eastside Women’s Center - Video Coming Soon](https://dewc.ca/)
+-   [Culture Saves Lives](https://www.phs.ca/our-services/culture-saves-lives/)
+-   [Drinker’s Lounge](https://www.phs.ca/program/community-managed-alcohol-program/)
+-	[Downtown Eastside Women’s Center](https://dewc.ca/)
+
+*Map and videos for coastal and other community of care and services coming soon.*
 
 
 <br>
