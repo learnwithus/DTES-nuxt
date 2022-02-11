@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/CultureSavesLives.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'culture-saves-lives/profile.jpg'
 background: 'guy/background.jpg'
-bio: Culture Saves Lives (CSL) provides an opportunity and space for Indigenous community members who have been oppressed by colonization such as residential schools and the foster care system to reconnect and celebrate their roots. CSL belives in bringing ceremony to the people who need it most, this includes bringing drums and regalia to the street corners, alleys or wherever it’s needed.
+bio: Culture Saves Lives is a program that addresses the need for cultural and spiritual care, reconnects or helps people to connect for the first time to traditional, spiritual and cultural practices.  Their work combines culture and harm reduction. This includes access to Elders and traditional medicines, peer support and links to housing, nutrition and healthcare.
 location: 1 E Hastings
 map:
     x: 230
@@ -15,7 +15,7 @@ map:
 additional-info: 
     - title: Culture Saves Lives
       image: 'culture-saves-lives/profile.jpg'
-      description: Culture Saves Lives (CSL) provides an opportunity and space for Indigenous community members who have been oppressed by colonization such as residential schools and the foster care system to reconnect and celebrate their roots. CSL belives in bringing ceremony to the people who need it most, this includes bringing drums and regalia to the street corners, alleys or wherever it’s needed.
+      description: Culture Saves Lives is a program that addresses the need for cultural and spiritual care, reconnects or helps people to connect for the first time to traditional, spiritual and cultural practices.  Their work combines culture and harm reduction with core programming that includes healing circles, smudging, drumming, singing, traditional dances, feasts, sweat lodge ceremonies, drum-making workshops, honouring ceremonies and memorials for Indigenous people. This includes access to Elders and traditional medicines, peer support and links to housing, nutrition and healthcare.
     
 
 ---
