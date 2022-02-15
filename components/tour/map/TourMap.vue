@@ -284,20 +284,21 @@
             />
           </g>
           <!-- Show checkmark if speaker is complete && the active location is NOT this location beacuse we display a pushin in that instance-->
-          <path
-            v-if="isSpeakerComplete(speaker.slug) && speaker.slug != location"
-            v-bind:key="speaker.id"
-            :transform="`translate(${speaker.map.x - 6} ${
-              speaker.map.y - 6
-            }) scale(0.05)`"
-            d="M 30,180 90,240 240,30"
-            style="
-              stroke: #868786;
-              stroke-width: 30;
-              fill: none;
-              pointer-events: none;
-            "
-          />
+          <client-only :key="speaker.id">
+            <path
+              v-if="isSpeakerComplete(speaker.slug) && speaker.slug != location"
+              :transform="`translate(${speaker.map.x - 6} ${
+                speaker.map.y - 6
+              }) scale(0.05)`"
+              d="M 30,180 90,240 240,30"
+              style="
+                stroke: #868786;
+                stroke-width: 30;
+                fill: none;
+                pointer-events: none;
+              "
+            />
+          </client-only>
         </template>
       </g>
     </svg>
