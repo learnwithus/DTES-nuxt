@@ -103,21 +103,23 @@ export default {
       });
     }
   },
-  // destroyed() {
-  //   try {
-  //     this.player.destroy();
-  //   } catch (e) {
-  //     if (
-  //       !(
-  //         this.opts.hideYouTubeDOMError &&
-  //         e.message === "The YouTube player is not attached to the DOM."
-  //       )
-  //     ) {
-  //       // eslint-disable-next-line no-console
-  //       console.error(e);
-  //     }
-  //   }
-  // },
+  beforeDestroy() {
+    window.hls = undefined;
+    // try {
+      
+    //   this.player.destroy();
+    // } catch (e) {
+    //   if (
+    //     !(
+    //       this.opts.hideYouTubeDOMError &&
+    //       e.message === "The YouTube player is not attached to the DOM."
+    //     )
+    //   ) {
+    //     // eslint-disable-next-line no-console
+    //     console.error(e);
+    //   }
+    // }
+  },
   methods: {
     emitPlayerEvent(event) {
       this.$emit(event.type, event);
