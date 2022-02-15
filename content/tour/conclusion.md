@@ -3,7 +3,7 @@ hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Outro/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Outro.mp4'
 poster: 'outro/poster.jpg'
 ---
-### Congratulations, you're finished the course!
+### Congratulations, you've finished the course!
 
 Before you go, here are a few questions to ask yourself:
 
