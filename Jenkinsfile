@@ -2,9 +2,6 @@ pipeline {
     agent {
         label 'main'
     }
-    environment {
-
-    }
     stages {
         stage('Verify Enviornment') {
             steps {
