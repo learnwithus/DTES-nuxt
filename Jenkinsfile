@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             // do the actual build
             steps {
-                nodejs(nodeJSInstallationName: 'Node 14') {
+                nodejs(nodeJSInstallationName: 'Node 16') {
                     sh 'npm install'
                     sh 'npm run generate'
                 }
