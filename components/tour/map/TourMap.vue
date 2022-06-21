@@ -251,7 +251,7 @@
           <!-- Pushpin if location matched speaker -->
           <g
             v-else-if="speaker.slug == location"
-            v-bind:key="speaker.id"
+            :key="speaker.id"
             :transform="`translate(${speaker.map.x - 20} ${
               speaker.map.y - 25
             }) scale(0.5)`"
@@ -292,7 +292,7 @@
               }) scale(0.05)`"
               d="M 30,180 90,240 240,30"
               style="
-                stroke: #868786;
+                stroke: #91C7EE;
                 stroke-width: 30;
                 fill: none;
                 pointer-events: none;
@@ -376,9 +376,6 @@ export default {
   .svg-map-text {
     fill: black;
     fill-opacity: 0.5;
-    // stroke: white;
-    // stroke-opacity: 0.5;
-    // stroke-width: 0.7px;
     white-space: pre;
     font-family: "Adobe Caslon Pro";
     font-size: 11px;
@@ -401,12 +398,12 @@ export default {
   .speaker-map-dot {
     cursor: pointer;
     transition: all 200ms;
-    fill: white;
-    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0));
+    fill: #248FDD;
     transform-origin: center center;
     transform-box: fill-box;
-    stroke: #cbcdd0;
-    stroke-width: 3px;
+    stroke: #91C7EE;
+    stroke-width: 2px;
+    // box-shadow: 0px 0px 20px #248FDD, 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     &.speaker-map-diamond {
       transform: rotate(45deg);
@@ -414,9 +411,8 @@ export default {
 
     &.interactive {
       &:hover {
-        // fill: $colour-accent;
-        // filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
         transform: scale(1.2);
+        filter: drop-shadow(0px 0px 10px #248FDD);
 
         &.speaker-map-diamond {
           transform: rotate(45deg) scale(1.2);
