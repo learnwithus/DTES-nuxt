@@ -64,9 +64,15 @@
                 >
                 <nuxt-link
                   class="navbar-item"
-                  to="/tour"
+                  to="/tour/dtes"
                   @click.native="hamburgerOpen = false"
-                  >Map</nuxt-link
+                  >DTES</nuxt-link
+                >
+                <nuxt-link
+                  class="navbar-item"
+                  to="/tour/coastal"
+                  @click.native="hamburgerOpen = false"
+                  >Coastal</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"
