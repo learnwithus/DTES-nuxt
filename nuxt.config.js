@@ -121,9 +121,13 @@ export default {
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
-      const files = await $content('tour/videos').only(['slug']).fetch()
+      const dtes = await $content('tour/dtes/videos').only(['slug']).fetch();
+      const coastal = await $content('tour/dtes/videos').only(['slug']).fetch();
 
-      return files.map(file => `/tour/${file.slug}/watch`)
+      const dtesFiles = dtes.map(file => `/tour/dtes/${file.slug}/watch`);
+      const coastalFiles = coastal.map(file => `/tour/dtes/${file.slug}/watch`);
+
+      return [...dtesFiles, ...coastalFiles];
     }
   }
 };
