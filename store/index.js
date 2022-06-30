@@ -32,7 +32,7 @@ export const state = () => ({
 export const actions = {
   async nuxtServerInit({ commit, dispatch }, { $content }) {
     const dtes = await $content("tour/dtes/videos").fetch();
-    const coastal = await $content("tour/dtes/videos").fetch();
+    const coastal = await $content("tour/coastal/videos").fetch();
 
     await commit("setVideos", { 
       dtes: dtes.map(x => ({...x, region: 'dtes'})), 
@@ -134,11 +134,11 @@ export const getters = {
   },
   dtesVideos: (state) => state.tour.videos.dtes,
   coastalVideos: (state) => state.tour.videos.coastal,
-  peers: (state) => {
-    return state.tour.videos.filter((video) => video.type == "peer");
+  peers: (state, getters) => {
+    return getters.videos.filter((video) => video.type == "peer");
   },
-  services: (state) => {
-    return state.tour.videos.filter((video) => video.type == "service");
+  services: (state, getters) => {
+    return getters.videos.filter((video) => video.type == "service");
   },
   getVideoBySlug: (state, getters) => (slug) => {
     return getters.videos.find((video) => video.slug === slug);
