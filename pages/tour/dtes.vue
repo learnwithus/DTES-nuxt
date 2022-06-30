@@ -1,7 +1,6 @@
 <template>
   <TourMap>
     <TourMapDTES/>
-   
   </TourMap>
 </template>
 

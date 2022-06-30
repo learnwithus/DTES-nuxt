@@ -78,14 +78,15 @@ export default {
    */
   buildModules: [
     "@nuxtjs/svg",
+    "@nuxt/content",
+    "@nuxtjs/style-resources",
+    '@nuxt/image',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxt/content",
-    "@nuxtjs/style-resources",
-    //"@nuxt/image",
+
   ],
   env: {
     // fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
