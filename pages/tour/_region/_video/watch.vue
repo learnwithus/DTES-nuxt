@@ -1,10 +1,10 @@
 <template>
   <main class="watch-page">
-    <tour-video :src="speaker.video" :hls="speaker.hls" :subtitles="speaker.subtitles" :poster="speaker.poster" @video-ended="onVideoEnded">
+    <tour-video :src="video.video" :hls="video.hls" :subtitles="video.subtitles" :poster="video.poster" @video-ended="onVideoEnded">
       <template #videoEndScreen>
-        <ul class="additional-info" v-if="speaker['additional-info']">
+        <ul class="additional-info" v-if="video['additional-info']">
           <li
-            v-for="(item, index) in speaker['additional-info']"
+            v-for="(item, index) in video['additional-info']"
             v-bind:key="index"
           >
             <h4>{{ item.title }}</h4>
@@ -21,7 +21,7 @@
         >
       </template>
       <template #videoPausedScreen>
-        <tour-minimap class="speaker-map" :location="speaker.slug" />
+        <tour-minimap class="video-map" :location="video.slug" />
       </template>
     </tour-video>
   </main>
@@ -36,10 +36,10 @@ export default {
     };
   },
   async asyncData({ params, store }) {
-    const speaker = store.getters.getSpeakerBySlug(params.speaker);
+    const video = store.getters.getVideoBySlug(params.video);
 
     return {
-      speaker,
+      video,
     };
   },
   mounted() {
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     onVideoEnded() {
-      this.$store.commit("userWatchedSpeaker", this.speaker.slug);
+      this.$store.commit("userWatchedVideo", this.video.slug);
     },
   },
 };
