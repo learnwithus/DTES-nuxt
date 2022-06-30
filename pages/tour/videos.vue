@@ -7,7 +7,7 @@
       <h3>Peers</h3>
       <ul class="video-list">
         <li v-for="peer in peers" v-bind:key="peer.id">
-          <nuxt-link :to="`/tour/${peer.slug}`"
+          <nuxt-link :to="`/tour/${peer.region}/${peer.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${peer.name}`"
@@ -24,7 +24,7 @@
       <h3>Services</h3>
       <ul class="video-list">
         <li v-for="service in services" v-bind:key="service.id">
-          <nuxt-link :to="`/tour/${service.slug}`"
+          <nuxt-link :to="`/tour/${service.region}/${service.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${service.name}`"
