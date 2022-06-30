@@ -28,7 +28,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import DtesMap from "./TourMap";
+import DtesMap from "./TourMap/DTES";
 export default {
   components: {
     DtesMap,
