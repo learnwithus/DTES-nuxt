@@ -73,8 +73,8 @@ Tour content can be found in markdown files in the `~/content/learn/` folder.
 ```js
 content
 ├── tour
-│   ├── speakers // Folder containing the speakers (locations with videos)
-│   │   ├── person.md // Each location on the map / Speaker is a markdown file
+│   ├── videos // Folder containing the videos (locations with videos)
+│   │   ├── person.md // Each location on the map / Video is a markdown file
 │   │   ├── anotion-person.md
 │   │   ├── a-place.md
 │   │   ├── another-place.md // The end-of-section feedback also has it's own file

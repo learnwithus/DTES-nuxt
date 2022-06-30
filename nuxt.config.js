@@ -121,7 +121,7 @@ export default {
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
-      const files = await $content('tour/speakers').only(['slug']).fetch()
+      const files = await $content('tour/videos').only(['slug']).fetch()
 
       return files.map(file => `/tour/${file.slug}/watch`)
     }

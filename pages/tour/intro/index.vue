@@ -34,7 +34,7 @@
               alt="Mouse Pointer Icon"
             />
             Click on the spots on the map to visit the peer or service and
-            listen to their story. Watch a minimum of {{tourSpeakerRequirement}} videos before finishing.
+            listen to their story. Watch a minimum of {{tourVideoRequirement}} videos before finishing.
           </li>
           <li>
             <img
@@ -90,7 +90,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "tourSpeakerRequirement",
+      "tourVideoRequirement",
     ]),
   },
 };

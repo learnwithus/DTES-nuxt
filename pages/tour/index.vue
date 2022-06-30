@@ -11,16 +11,16 @@ export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
-      // Preload the speakers profile pictures and background images so the user doesn't have to wait when they click on them
+      // Preload the videos profile pictures and background images so the user doesn't have to wait when they click on them
       link: [
-        ...this.speakers.map((speaker) => ({
+        ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${speaker.profile}`),
+          href: require(`~/assets/tour/${video.profile}`),
           as: "image",
         })),
-        ...this.speakers.map((speaker) => ({
+        ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${speaker.background}`),
+          href: require(`~/assets/tour/${video.background}`),
           as: "image",
         })),
       ],
@@ -43,12 +43,12 @@ export default {
   computed: {
     ...mapGetters([
       "userProgress",
-      "tourSpeakerRequirement",
+      "tourVideoRequirement",
       "tourComplete",
-      "speakers",
+      "videos",
     ]),
     videosWatchedCount() {
-      return this.userProgress.speakers.length;
+      return this.userProgress.videos.length;
     },
   },
   methods: {
