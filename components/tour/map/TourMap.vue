@@ -7,7 +7,9 @@
       community of the Downtown Eastside (DTES) of Vancouver, BC.
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
+    <div class="tour-map-container" @click.self="$emit('click-container')">
     <slot/>
+    </div>
     <img
       src="~assets/images/legend.svg"
       alt="Legend"
@@ -15,7 +17,9 @@
     />
     <div id="map-page-bottom-ui" class="columns">
       <div class="column is-one-fifth"></div>
-      <div class="column is-half location">{{ locationText }}</div>
+      <div class="column is-half location">
+        <!-- {{ locationText }} -->
+        </div>
       <div class="column is-one-fifth columns">
         <vs-button
           id="switch-map-btn"
@@ -155,5 +159,78 @@ export default {
   max-width: 17em;
   margin: 0 auto;
   display: block;
+}
+
+.tour-map-container {
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  .svg-map-text {
+    fill: black;
+    fill-opacity: 0.5;
+    white-space: pre;
+    font-family: "Adobe Caslon Pro";
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+  .svg-map-line {
+    stroke: white;
+    stroke-miterlimit: 10;
+    stroke-width: 3.54354;
+  }
+  .svg-map-fill {
+    opacity: 0.5;
+    fill: rgb(83, 83, 83);
+    /* isolation: isolate; */
+  }
+  .map-popover {
+    position: absolute;
+  }
+  .video-map-dot {
+    cursor: pointer;
+    transition: all 200ms;
+    fill: #248fdd;
+    transform-origin: center center;
+    transform-box: fill-box;
+    stroke: #91c7ee;
+    stroke-width: 2px;
+
+    &.video-map-diamond {
+      transform: rotate(45deg);
+    }
+
+    &.interactive {
+      &:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0px 0px 10px #2490ddaf);
+
+        &.video-map-diamond {
+          transform: rotate(45deg) scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.map-tooltip {
+  .tooltip-inner {
+    text-align: center;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .tooltip-arrow {
+    border-color: rgba(0, 0, 0, 0.75);
+  }
+  .tooltip-image {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+  }
+  .video-name {
+    font-size: 0.9em;
+  }
 }
 </style>
