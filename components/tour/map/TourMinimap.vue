@@ -1,7 +1,7 @@
 <template>
   <div class="tour-map">
     <div class="mini-map-container" @click="showMap = true">
-      <div v-if="$props.location" class="mini-map-location">{{ speaker.location }}</div>
+      <div v-if="$props.location" class="mini-map-location">{{ video.location }}</div>
       <dtes-map
         :interactive="false"
         :location="$props.location"
@@ -45,9 +45,9 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["speakers"]),
-    speaker() {
-      return this.speakers.find((x) => x.slug == this.$props.location);
+    ...mapGetters(["videos"]),
+    video() {
+      return this.videos.find((x) => x.slug == this.$props.location);
     },
   },
 };
