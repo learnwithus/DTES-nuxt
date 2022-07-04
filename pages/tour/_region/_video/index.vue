@@ -20,7 +20,7 @@
             >Watch</vs-button
           >
         </div>
-        <tour-minimap class="video-map" :location="video.slug" />
+        <tour-minimap :region="region" class="video-map" :location="video.slug" />
       </div>
     </div>
   </div>
@@ -43,11 +43,13 @@ export default {
   },
   async asyncData({ params, store }) {
     const video = store.getters.getVideoBySlug(params.video);
+    const region = params.region;
 
     store.commit("setBackgroundImage", `tour/${video.background}`);
 
     return {
       video,
+      region
     };
   },
   mounted() {},

@@ -3,6 +3,14 @@
     <div class="mini-map-container" @click="showMap = true">
       <div v-if="$props.location" class="mini-map-location">{{ video.location }}</div>
       <dtes-map
+        v-if="region === 'dtes'"
+        :interactive="false"
+        :location="$props.location"
+        :simple="true"
+        class="mini-map"
+      />
+      <coastal-map
+        v-if="region === 'coastal'"
         :interactive="false"
         :location="$props.location"
         :simple="true"
@@ -19,7 +27,8 @@
       >
         <button class="map-close-button" @click="showMap = false">x</button>
         <div class="map-wrapper container" >
-          <dtes-map :interactive="true" :location="$props.location" @click-container="showMap = false"/>
+          <dtes-map v-if="region === 'dtes'" :interactive="true" :location="$props.location" @click-container="showMap = false"/>
+          <coastal-map v-else-if="region === 'coastal'" :interactive="true" :location="$props.location" @click-container="showMap = false"/>
         </div>
       </div>
     </transition>
@@ -29,14 +38,20 @@
 <script>
 import { mapGetters } from "vuex";
 import DtesMap from "./TourMap/DTES";
+import CoastalMap from "./TourMap/Coastal";
 export default {
   components: {
     DtesMap,
+    CoastalMap
   },
   props: {
     location: {
       type: String,
       required: false,
+    },
+    region: {
+      type: String,
+      required: true,
     },
   },
   data() {
