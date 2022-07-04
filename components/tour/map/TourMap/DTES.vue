@@ -218,4 +218,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+svg {
+  width: 100%;
+  height: auto;
+}
+.svg-map-text {
+  fill: black;
+  fill-opacity: 0.5;
+  white-space: pre;
+  font-family: "Adobe Caslon Pro";
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.svg-map-line {
+  stroke: white;
+  stroke-miterlimit: 10;
+  stroke-width: 3.54354;
+}
+.svg-map-fill {
+  opacity: 0.5;
+  fill: rgb(83, 83, 83);
+  /* isolation: isolate; */
+}
+
 </style>

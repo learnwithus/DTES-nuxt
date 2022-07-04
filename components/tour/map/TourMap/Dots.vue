@@ -164,5 +164,32 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.map-popover {
+  position: absolute;
+}
+.video-map-dot {
+  cursor: pointer;
+  transition: all 200ms;
+  fill: #248fdd;
+  transform-origin: center center;
+  transform-box: fill-box;
+  stroke: #91c7ee;
+  stroke-width: 2px;
+
+  &.video-map-diamond {
+    transform: rotate(45deg);
+  }
+
+  &.interactive {
+    &:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0px 0px 10px #2490ddaf);
+
+      &.video-map-diamond {
+        transform: rotate(45deg) scale(1.2);
+      }
+    }
+  }
+}
 </style>

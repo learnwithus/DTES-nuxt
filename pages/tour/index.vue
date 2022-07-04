@@ -1,5 +1,17 @@
 <template>
-  <div class="container tour-map-page-container">Pick a Map</div>
+  <div class="container">
+    <p class="center-text pt-5 pb-6">Pick a Map</p>
+    <nav>
+      <nuxt-link to="/tour/dtes">
+        <TourMapDTES :simple="true" />
+        <p class="center-text">Downtown Eastside</p>
+      </nuxt-link>
+      <nuxt-link to="/tour/coastal">
+        <TourMapCoastal :simple="true"/>
+        <p class="center-text">Coastal</p>
+      </nuxt-link>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -51,52 +63,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.land-acknowledgement {
-  padding: 1.5em;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  border-radius: 1em;
-  max-width: 45em;
-  margin: 0 auto;
-  font-size: 0.6em;
-  margin-top: 2em;
-  color: #ffffffa6;
+<style lang="scss" scoped>
+nav {
+  display: flex;
+  gap: 5em;
 
-  @include breakpoint(phablet) {
-    font-size: 0.75em;
-  }
-}
-.tour-map-page-container {
-  margin-top: 2em;
-}
-.tour-map-instruction {
-  font-style: oblique;
-  text-align: center;
-  margin-bottom: 1em;
-}
-#map-page-bottom-ui {
-  // margin-top: 1em;
-
-  .location {
-    text-align: center;
+  a {
+    border-bottom: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    &:before {
-      content: "\00a0";
-    }
+    flex-direction: column;
   }
-}
-.map-page-tooltip {
-  max-width: 250px;
-}
-#tour-progress-btn {
-  float: right;
-}
-.tour-map-page-legend {
-  width: 100%;
-  max-width: 17em;
-  margin: 0 auto;
-  display: block;
 }
 </style>

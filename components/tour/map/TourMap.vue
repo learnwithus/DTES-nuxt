@@ -150,59 +150,6 @@ export default {
   display: block;
 }
 
-.tour-map-container {
-  svg {
-    width: 100%;
-    height: auto;
-  }
-  .svg-map-text {
-    fill: black;
-    fill-opacity: 0.5;
-    white-space: pre;
-    font-family: "Adobe Caslon Pro";
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-  }
-  .svg-map-line {
-    stroke: white;
-    stroke-miterlimit: 10;
-    stroke-width: 3.54354;
-  }
-  .svg-map-fill {
-    opacity: 0.5;
-    fill: rgb(83, 83, 83);
-    /* isolation: isolate; */
-  }
-  .map-popover {
-    position: absolute;
-  }
-  .video-map-dot {
-    cursor: pointer;
-    transition: all 200ms;
-    fill: #248fdd;
-    transform-origin: center center;
-    transform-box: fill-box;
-    stroke: #91c7ee;
-    stroke-width: 2px;
-
-    &.video-map-diamond {
-      transform: rotate(45deg);
-    }
-
-    &.interactive {
-      &:hover {
-        transform: scale(1.2);
-        filter: drop-shadow(0px 0px 10px #2490ddaf);
-
-        &.video-map-diamond {
-          transform: rotate(45deg) scale(1.2);
-        }
-      }
-    }
-  }
-}
-
 .map-tooltip {
   .tooltip-inner {
     text-align: center;
