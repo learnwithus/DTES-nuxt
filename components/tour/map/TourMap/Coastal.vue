@@ -411,6 +411,7 @@
         :videos="coastalVideos"
         :interactive="interactive"
         region="coastal"
+        @hover="(e) => $emit('hover', e)"
       />
     </svg>
   </div>
@@ -454,6 +455,6 @@ export default {
   text-align: center;
 }
 svg {
-  max-width: 800px;
+  max-width: 700px;
 }
 </style>

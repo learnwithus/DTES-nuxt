@@ -1,6 +1,6 @@
 <template>
-  <TourMap>
-    <TourMapDTES/>
+  <TourMap :hover-location="hoverLocation">
+    <TourMapDTES @hover="e => hoverLocation = e" />
   </TourMap>
 </template>
 
@@ -30,12 +30,10 @@ export default {
     store.commit("requestDarkBackground");
 
     return {
-      locationText: "",
+      hoverLocation: null,
     };
   },
-  mounted() {
-
-  },
+  mounted() {},
   computed: {
     ...mapGetters([
       "userProgress",
@@ -44,11 +42,7 @@ export default {
       "dtesVideos",
     ]),
   },
-  methods: {
-    onLocationHover(location) {
-      this.locationText = location;
-    },
-  },
+  methods: {},
 };
 </script>
 

@@ -8,7 +8,7 @@
     </p>
     <p class="tour-map-instruction">Select a location on the map</p>
     <div class="tour-map-container" @click.self="$emit('click-container')">
-    <slot/>
+      <slot />
     </div>
     <img
       src="~assets/images/legend.svg"
@@ -18,8 +18,8 @@
     <div id="map-page-bottom-ui" class="columns">
       <div class="column is-one-fifth"></div>
       <div class="column is-half location">
-        <!-- {{ locationText }} -->
-        </div>
+        {{ hoverLocation }}
+      </div>
       <div class="column is-one-fifth columns">
         <vs-button
           id="switch-map-btn"
@@ -65,13 +65,6 @@
         </vs-button>
       </div>
     </div>
-    <!-- <p class="center-text">
-      <small>
-        Map and videos for coastal and other community of care and services
-        coming soon.
-      </small>
-    </p> -->
-    <!-- <button @click="$store.commit('resetUserProgress')">Reset Progress</button> -->
   </div>
 </template>
 
@@ -79,12 +72,12 @@
 import { mapGetters } from "vuex";
 
 export default {
+  props: {
+    region: String,
+    hoverLocation: null | String,
+  },
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
-
-    return {
-      locationText: "",
-    };
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -104,11 +97,7 @@ export default {
       return this.userProgress.videos.length;
     },
   },
-  methods: {
-    onLocationHover(location) {
-      this.locationText = location;
-    },
-  },
+  methods: {},
 };
 </script>
 

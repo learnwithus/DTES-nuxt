@@ -1,6 +1,6 @@
 <template>
-  <TourMap>
-    <TourMapCoastal/>
+  <TourMap :hover-location="hoverLocation">
+    <TourMapCoastal  @hover="e => hoverLocation = e"/>
   </TourMap>
 </template>
 
@@ -30,6 +30,7 @@ export default {
     store.commit("requestDarkBackground");
 
     return {
+      hoverLocation: null,
     };
   },
   mounted() {

@@ -1,7 +1,5 @@
 <template>
-  <div class="container tour-map-page-container">
-   Pick a Map
-  </div>
+  <div class="container tour-map-page-container">Pick a Map</div>
 </template>
 
 <script>
@@ -29,9 +27,7 @@ export default {
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
 
-    return {
-      locationText: "",
-    };
+    return {};
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -51,11 +47,7 @@ export default {
       return this.userProgress.videos.length;
     },
   },
-  methods: {
-    onLocationHover(location) {
-      this.locationText = location;
-    },
-  },
+  methods: {},
 };
 </script>
 

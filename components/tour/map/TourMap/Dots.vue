@@ -1,10 +1,10 @@
 <template>
   <g>
-    <template v-for="video in videos">
+    <template v-for="(video, index) in videos">
       <!-- If it's a peer, draw a circle -->
       <ellipse
         v-if="video.type == 'peer' && video.slug != location"
-        v-bind:key="video.id"
+        v-bind:key="index"
         :cx="video.map.x"
         :cy="video.map.y"
         @mouseover="$emit('hover', video.location)"
@@ -36,7 +36,7 @@
       <!-- If it's a service, draw a diamond (rotated rect) -->
       <rect
         v-else-if="video.type == 'service' && video.slug != location"
-        v-bind:key="video.id"
+        v-bind:key="'service' + index"
         transform="rotate(45)"
         class="video-map-dot video-map-diamond"
         :class="{
@@ -69,7 +69,7 @@
       <!-- Pushpin if location matched video -->
       <g
         v-else-if="video.slug == location"
-        :key="video.id"
+        :key="'pushpin' + index"
         :transform="`translate(${video.map.x - 20} ${
           video.map.y - 25
         }) scale(0.5)`"
@@ -102,7 +102,8 @@
         />
       </g>
       <!-- Show checkmark if video is complete && the active location is NOT this location beacuse we display a pushin in that instance-->
-      <client-only :key="video.id">
+      =
+      <client-only :key="index">
         <path
           v-if="isVideoComplete(video.slug) && video.slug != location"
           :transform="`translate(${video.map.x - 6} ${
@@ -153,9 +154,9 @@ export default {
         ? true
         : false;
     },
-    generateVideoLink(video){
-        return `/tour/${this.region}/${video.slug}`;
-    }
+    generateVideoLink(video) {
+      return `/tour/${this.region}/${video.slug}`;
+    },
   },
   computed: {
     ...mapGetters(["userProgress"]),

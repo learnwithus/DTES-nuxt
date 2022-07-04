@@ -181,6 +181,7 @@
       :videos="dtesVideos"
       :interactive="interactive"
       region="dtes"
+      @hover="(e) => $emit('hover', e)"
     />
   </svg>
 </template>
@@ -207,9 +208,7 @@ export default {
       required: false,
     },
   },
-  data: () => ({
-    hoverLocation: undefined,
-  }),
+  data: () => ({}),
   methods: {},
   computed: {
     ...mapGetters(["dtesVideos", "userProgress"]),
@@ -219,5 +218,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
