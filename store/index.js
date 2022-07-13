@@ -21,7 +21,7 @@ export const state = () => ({
       coastal: [],
     },
     started: false,
-    videoRequirement: 4 // How many videos is the user required to watch
+    videoRequirement: 5 // How many videos is the user required to watch
   },
   userProgress: {
     videos: [],
