@@ -7,7 +7,7 @@
         <p class="center-text">Downtown Eastside</p>
       </nuxt-link>
       <nuxt-link to="/tour/coastal">
-        <TourMapCoastal :simple="true"/>
+        <TourMapCoastal :simple="true" />
         <p class="center-text">Coastal</p>
       </nuxt-link>
     </nav>
@@ -66,12 +66,33 @@ export default {
 <style lang="scss" scoped>
 nav {
   display: flex;
-  gap: 5em;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpoint(phablet) {
+    flex-direction: row;
+    gap: 10%;
+  }
 
   a {
     border-bottom: none;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    &:first-child {
+      width: 85%;
+      @include breakpoint(phablet) {
+        width: 65%;
+      }
+    }
+    &:last-child {
+      width: 70%;
+      @include breakpoint(phablet) {
+        width: 35%;
+      }
+    }
   }
 }
 </style>
