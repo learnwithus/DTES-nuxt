@@ -50,52 +50,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.land-acknowledgement {
-  padding: 1.5em;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  border-radius: 1em;
-  max-width: 45em;
-  margin: 0 auto;
-  font-size: 0.6em;
-  margin-top: 2em;
-  color: #ffffffa6;
+<style lang="scss" scoped>
 
-  @include breakpoint(phablet) {
-    font-size: 0.75em;
-  }
-}
-.tour-map-page-container {
-  margin-top: 2em;
-}
-.tour-map-instruction {
-  font-style: oblique;
-  text-align: center;
-  margin-bottom: 1em;
-}
-#map-page-bottom-ui {
-  // margin-top: 1em;
-
-  .location {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:before {
-      content: "\00a0";
-    }
-  }
-}
-.map-page-tooltip {
-  max-width: 250px;
-}
-#tour-progress-btn {
-  float: right;
-}
-.tour-map-page-legend {
-  width: 100%;
-  max-width: 17em;
-  margin: 0 auto;
-  display: block;
-}
 </style>
