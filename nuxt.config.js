@@ -126,7 +126,7 @@ export default {
       const coastal = await $content('tour/dtes/videos').only(['slug']).fetch();
 
       const dtesFiles = dtes.map(file => `/tour/dtes/${file.slug}/watch`);
-      const coastalFiles = coastal.map(file => `/tour/dtes/${file.slug}/watch`);
+      const coastalFiles = coastal.map(file => `/tour/coastal/${file.slug}/watch`);
 
       return [...dtesFiles, ...coastalFiles];
     }
