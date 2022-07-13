@@ -12,7 +12,7 @@
           </li>
         </ul>
         <vs-button
-          to="/tour"
+          :to="`/tour/${region}`"
           flat
           border
           color="#fff"
@@ -21,7 +21,7 @@
         >
       </template>
       <template #videoPausedScreen>
-        <tour-minimap class="video-map" :location="video.slug" />
+        <tour-minimap class="video-map" :location="video.slug" :region="region" />
       </template>
     </tour-video>
   </main>
@@ -37,9 +37,11 @@ export default {
   },
   async asyncData({ params, store }) {
     const video = store.getters.getVideoBySlug(params.video);
+    const region = params.region;
 
     return {
       video,
+      region,
     };
   },
   mounted() {
