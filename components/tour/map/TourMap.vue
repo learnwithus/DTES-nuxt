@@ -27,12 +27,13 @@
           flat
           border
           color="#fff"
+          :to="otherMap.url"
           v-tooltip="{
-            content: `Switch to the ... map`,
+            content: `Switch to the ${otherMap.title} map`,
             offset: 20,
             classes: 'map-tooltip map-page-tooltip',
           }"
-          >Switch to ...
+          >Switch to {{ otherMap.title }}
         </vs-button>
         <vs-button
           v-if="!tourComplete"
@@ -96,6 +97,16 @@ export default {
     videosWatchedCount() {
       return this.userProgress.videos.length;
     },
+    otherMap(){
+      if(this.region == 'coastal') return {
+        title: 'DTES',
+        url: '/tour/dtes'
+      }
+      else if(this.region == 'dtes') return {
+        title: 'Coastal',
+        url: '/tour/coastal'
+      }
+    }
   },
   methods: {},
 };
