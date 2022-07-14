@@ -3,11 +3,11 @@
     <p class="center-text pt-5 pb-6">Pick a Map</p>
     <nav>
       <nuxt-link to="/tour/dtes">
-        <TourMapDTES :simple="true" />
+        <TourMapDTES :simple="true" :interactive="false" />
         <p class="center-text">Downtown Eastside</p>
       </nuxt-link>
       <nuxt-link to="/tour/coastal">
-        <TourMapCoastal :simple="true" />
+        <TourMapCoastal :simple="true" :interactive="false" />
         <p class="center-text">Coastal</p>
       </nuxt-link>
     </nav>
