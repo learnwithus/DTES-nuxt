@@ -6,15 +6,15 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'bryan/profile.jpg'
 background: 'insite/background.jpg'
-bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+bio: Squamish OOT provide connections for people who have recently experienced opioid overdose and/or are at high risk for opioid overdose to substance use care and support. Services include navigation to appropriate services (e.g., primary care, detox, treatment, etc.), support in accessing Opioid Agonist Therapy (OAT) (e.g., methadone, suboxone, iOAT, etc.), and overdose prevention education.
 location: Insite (139 E Hastings St)
 map:
     x: 630
     y: 190
 
 additional-info: 
-    - title: Bryan
-      description: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+    - title: Overdose Outreach Team
+      description: Squamish OOT provide connections for people who have recently experienced opioid overdose and/or are at high risk for opioid overdose to substance use care and support. Services include navigation to appropriate services (e.g., primary care, detox, treatment, etc.), support in accessing Opioid Agonist Therapy (OAT) (e.g., methadone, suboxone, iOAT, etc.), and overdose prevention education. Currently the team serves Whistler, Pemberton, and Squamish area.
     
 
 ---

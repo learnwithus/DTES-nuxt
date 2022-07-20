@@ -6,15 +6,15 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'bryan/profile.jpg'
 background: 'insite/background.jpg'
-bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+bio: Sunshine Coast OAT Clinic clinic offers opioid agonist treatments and other related harm reduction and addiction services for people with substance use issues. This includes outpatient individual and group counselling, crisis response services, employment and education support, and referrals to other supports and resources such as detox and treatment centre.
 location: Insite (139 E Hastings St)
 map:
     x: 665
     y: 595
 
 additional-info: 
-    - title: Bryan
-      description: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+    - title: Sunshine Coast Harm Reduction Program
+      description: Sunshine Coast OAT Clinic clinic offers opioid agonist treatments and other related harm reduction and addiction services for people with substance use issues. This includes outpatient individual and group counselling, crisis response services, employment and education support, and referrals to other supports and resources such as detox and treatment centre.
     
 
 ---

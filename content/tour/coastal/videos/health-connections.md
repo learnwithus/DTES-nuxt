@@ -1,20 +1,20 @@
 ---
-name: Health Connections Clinic
+name: HealthConnection Clinic
 type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'bryan/profile.jpg'
 background: 'insite/background.jpg'
-bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+bio: North Shore HealthConnection Clinic features an interdisciplinary professional team that provides low barrier access to primary care for those who have complex medical and social needs and who cannot attach to a traditional family practice.
 location: Insite (139 E Hastings St)
 map:
     x: 685
     y: 475
 
 additional-info: 
-    - title: Bryan
-      description: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+    - title: HealthConnection Clinic
+      description: North Shore HealthConnection Clinic features an interdisciplinary professional team that provides low barrier access to primary care for those who have complex medical and social needs and who cannot attach to a traditional family practice. The clinic’s focus is an addressing both health challenges and the social determinants of health. The Clinic team includes family physicians, nurse practitioners, substance use nurse, a chronic disease nurse coordinator and medical office assistants. 
     
 
 ---
