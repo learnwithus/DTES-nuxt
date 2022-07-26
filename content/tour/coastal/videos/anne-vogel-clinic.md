@@ -5,16 +5,16 @@ hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'bryan/profile.jpg'
-background: 'insite/background.jpg'
-bio: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
-location: Insite (139 E Hastings St)
+background: 'anne-vogel/background.jpg'
+bio: The Anne Vogel Clinic provides medical care and social supports to individuals who are living with opioid use disorder in Richmond. We are an inter-disciplinary team that provides a variety of evidence-based medical treatment for substance use.
+location: 7671 Alderbridge Way
 map:
     x: 710
     y: 595
 
 additional-info: 
     - title: Bryan
-      description: Bryan Alleyne is a very dedicated Peer working in the Chill Lounge at Insite in the Downtown Eastside. Bryan has been with Insite since they opened in 2003 serving people coffee and juice after they leave the injection room.
+      description: The Anne Vogel Clinic provides medical care and social supports to individuals who are living with opioid use disorder in Richmond. We are an inter-disciplinary team that provides a variety of evidence-based medical treatment for substance use. We offer a welcoming, non-judgement environment, and are happy to meet with people who are actively using illicit substances in order to discuss options for reducing their risk. 
     
 
 ---

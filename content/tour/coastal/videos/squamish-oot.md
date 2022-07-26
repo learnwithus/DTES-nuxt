@@ -4,7 +4,7 @@ type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
 poster: 'shared/black-poster.jpg'
-profile: 'bryan/profile.jpg'
+profile: 'squamish-oot/profile.jpg'
 background: 'insite/background.jpg'
 bio: Squamish OOT provide connections for people who have recently experienced opioid overdose and/or are at high risk for opioid overdose to substance use care and support. Services include navigation to appropriate services (e.g., primary care, detox, treatment, etc.), support in accessing Opioid Agonist Therapy (OAT) (e.g., methadone, suboxone, iOAT, etc.), and overdose prevention education.
 location: Insite (139 E Hastings St)

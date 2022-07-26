@@ -23,6 +23,7 @@
       <div class="column is-one-fifth columns">
         <vs-button
           id="switch-map-btn"
+          class="column"
           size="xl"
           flat
           border
@@ -38,6 +39,7 @@
         <vs-button
           v-if="!tourComplete"
           id="tour-progress-btn"
+          class="column"
           size="xl"
           flat
           border
@@ -151,9 +153,7 @@ export default {
 .map-page-tooltip {
   max-width: 250px;
 }
-#tour-progress-btn {
-  float: right;
-}
+
 .tour-map-page-legend {
   width: 100%;
   max-width: 17em;
