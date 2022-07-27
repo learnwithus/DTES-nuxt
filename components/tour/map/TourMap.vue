@@ -99,16 +99,18 @@ export default {
     videosWatchedCount() {
       return this.userProgress.videos.length;
     },
-    otherMap(){
-      if(this.region == 'coastal') return {
-        title: 'DTES',
-        url: '/tour/dtes'
-      }
-      else if(this.region == 'dtes') return {
-        title: 'Coastal',
-        url: '/tour/coastal'
-      }
-    }
+    otherMap() {
+      if (this.region == "coastal")
+        return {
+          title: "DTES",
+          url: "/tour/dtes",
+        };
+      else if (this.region == "dtes")
+        return {
+          title: "Coastal",
+          url: "/tour/coastal",
+        };
+    },
   },
   methods: {},
 };
@@ -179,6 +181,10 @@ export default {
   }
   .video-name {
     font-size: 0.9em;
+  }
+
+    &.no-max-width .tooltip-inner {
+    max-width: unset;
   }
 }
 </style>

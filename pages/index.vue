@@ -51,7 +51,7 @@
           v-tooltip="{
             content: 'Designed and developed by Learning Technologies',
             offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
+            classes: 'map-tooltip map-page-tooltip no-max-width',
           }"
         />
       </div>
