@@ -1,8 +1,8 @@
 ---
 name: Anne Vogel Clinic
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Ainslie/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Ainslie.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'bryan/profile.jpg'
 background: 'anne-vogel/background.jpg'
