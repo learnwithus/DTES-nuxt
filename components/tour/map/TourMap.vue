@@ -163,6 +163,7 @@ export default {
 
 .map-tooltip {
   .tooltip-inner {
+    max-width: 160px;
     text-align: center;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0.75);
