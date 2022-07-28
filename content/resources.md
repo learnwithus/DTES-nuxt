@@ -7,7 +7,7 @@
 
 <br>
 
-## Services Found On The Tour
+## DTES Services
 -	[Insite](https://www.phs.ca/program/insite/)
 -	[Western Aboriginal Harm Reduction Society](https://wahrs.ca/)
 -	[Kilala Lelum Health Center](https://kilalalelum.ca/)
@@ -18,8 +18,19 @@
 -   [Drinker’s Lounge](https://www.phs.ca/program/community-managed-alcohol-program/)
 -	[Downtown Eastside Women’s Center](https://dewc.ca/)
 
-*Map and videos for coastal and other community of care and services coming soon.*
+<br>
 
+## Coastal Services
+-	[DART](http://www.vch.ca/about-us/news/a-vehicle-for-change)
+-	[Anne Vogel Clinic](http://www.vch.ca/Locations-Services/result?res_id=1143)
+-	[Overdose Outreach Team](https://www.nsnews.com/local-news/overdose-outreach-team-expands-to-north-shore-3082563)
+-	[North Shore HealthConnection Clinic](http://www.vch.ca/locations-services/result?res_id=1055)
+-	[Mental Health and Substance Use Clinic](http://www.vch.ca/Locations-Services/result?res_id=845)
+-	[Squamish Overdose Outreach Team](http://www.vch.ca/locations-services/result?res_id=1422)
+-	[Sunshine Coast Harm Reduction Program](https://www.facebook.com/SunshineCoastMobileNeedleExchange/)
+-	[Sunshine Coast Opiate Agonist Treatment Clinic](https://sea-to-sky.pathwaysbc.ca/programs/1018)
+-	[Powell River Overdose Prevention Site](https://www.sustainpowellriver.ca/overdose-prevention-centre/)
+-	[Powell River Intensive Case Management Team](https://www.facebook.com/PowellRiverHarmReductionNeedleExchange/photos/a.681159272001847/3177387232379026/?type=3)
 
 <br>
 
