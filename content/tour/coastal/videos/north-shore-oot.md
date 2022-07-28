@@ -10,7 +10,7 @@ bio: The North Shore Overdose Outreach Team (OOT) provides connections for peopl
 location: Health Connections Clinic (139 E Hastings St)
 map:
     x: 725
-    y: 475
+    y: 465
 
 additional-info: 
     - title: Overdose Outreach Team

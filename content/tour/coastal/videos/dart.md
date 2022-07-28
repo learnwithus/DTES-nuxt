@@ -9,7 +9,7 @@ background: 'dart/background.jpg'
 bio: The Drug and Alcohol Resource Team (DART) provides services for people of all ages who are experiencing substance use disorder and are admitted to the inpatient units at Richmond Hospital.
 location: Richmond Hospital
 map:
-    x: 665
+    x: 658
     y: 595
 
 additional-info: 

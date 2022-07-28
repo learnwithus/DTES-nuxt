@@ -10,7 +10,7 @@ bio: North Shore HealthConnection Clinic features an interdisciplinary professio
 location: Insite (139 E Hastings St)
 map:
     x: 685
-    y: 475
+    y: 465
 
 additional-info: 
     - title: HealthConnection Clinic
