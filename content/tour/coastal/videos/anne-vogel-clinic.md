@@ -4,7 +4,7 @@ type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Ainslie/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Ainslie.mp4'
 poster: 'shared/black-poster.jpg'
-profile: 'bryan/profile.jpg'
+profile: 'vch/profile.jpg'
 background: 'anne-vogel/background.jpg'
 bio: The Anne Vogel Clinic provides medical care and social supports to individuals who are living with opioid use disorder in Richmond. We are an inter-disciplinary team that provides a variety of evidence-based medical treatment for substance use.
 location: 7671 Alderbridge Way
