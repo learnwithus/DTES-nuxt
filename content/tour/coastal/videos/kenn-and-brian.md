@@ -5,7 +5,7 @@ hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Kenn+and+Brian/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Kenn+and+Brian.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'kenn-and-brian/profile.jpg'
-background: 'anne-vogel/background.jpg'
+background: 'sunshine-coast-oat/background.jpg'
 bio: Brian and Kenn met in Toronto (1995), have been doing harm reduction outreach and education together for over 25 years, and have presented on their work to audiences in Canada, France and Australia. 
 location: Sechelt
 map:
