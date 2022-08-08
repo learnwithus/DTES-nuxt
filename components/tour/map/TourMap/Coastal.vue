@@ -383,13 +383,13 @@
         <text
            class="region"
         >
-          <tspan x="84" y="61.23">POWELL&#10;</tspan>
-          <tspan x="84" y="83.23">RIVER</tspan>
+          <tspan x="88" y="61.23">POWELL&#10;</tspan>
+          <tspan x="88" y="83.23">RIVER</tspan>
         </text>
         <text
            class="region"
         >
-          <tspan x="595" y="162.23">SQUAMISH</tspan>
+          <tspan x="595" y="155">SQUAMISH</tspan>
         </text>
         <text
            class="region"
@@ -413,7 +413,7 @@
           <tspan x="622.857" y="435.23">VANCOUVER</tspan>
         </text>
         <text class="region">
-          <tspan x="640" y="631.23">RICHMOND</tspan>
+          <tspan x="640" y="638">RICHMOND</tspan>
         </text>
       </g>
 
