@@ -322,164 +322,101 @@
           stroke-miterlimit="10"
           stroke-dasharray="10 10"
         />
-        <g class="labels" v-if="!$props.simple">
-          <text
-            transform="matrix(0.803924 0.594732 -0.595475 0.803374 378.101 403)"
-            fill="#F1F2F2"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            letter-spacing="0em"
-          >
-            <tspan x="0" y="15.23">Straight of Georgia</tspan>
-          </text>
-          <text
-            transform="matrix(0.707448 0.706765 -0.707448 0.706765 569.563 52)"
-            fill="#414042"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            letter-spacing="0em"
-          >
-            <tspan x="0" y="15.23">Mt Tantalus</tspan>
-          </text>
-          <text
-            transform="translate(742 19) rotate(90)"
-            fill="#414042"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            letter-spacing="0em"
-          >
-            <tspan x="0" y="15.23">Mt Garibaldi</tspan>
-          </text>
-          <text
-            transform="matrix(0.932756 -0.360508 0.361114 0.932522 376.956 208.762)"
-            fill="#F1F2F2"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            letter-spacing="0em"
-          >
-            <tspan x="0" y="15.23">Salmon Inlet</tspan>
-          </text>
-          <text
-            transform="matrix(0.308124 0.951346 -0.95152 0.307586 348.778 227.941)"
-            fill="#F1F2F2"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            letter-spacing="0em"
-          >
-            <tspan x="0" y="15.23">Sechlet Inlet</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="84" y="61.23">POWELL&#10;</tspan>
-            <tspan x="84" y="83.23">RIVER</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="595" y="162.23">SQUAMISH</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="406.164" y="329.56">SECHELT</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="463.365" y="368.253">GIBSONS</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="637" y="565.23">VANCOUVER</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="668.736" y="413.23">NORTH&#10;</tspan>
-            <tspan x="622.857" y="435.23">VANCOUVER</tspan>
-          </text>
-          <text
-            fill="#231F20"
-            stroke="white"
-            stroke-opacity="0.5"
-            stroke-width="5"
-            xml:space="preserve"
-            style="white-space: pre"
-            font-family="Adobe Caslon Pro"
-            font-size="18"
-            font-weight="bold"
-            letter-spacing="0em"
-          >
-            <tspan x="640" y="631.23">RICHMOND</tspan>
-          </text>
-        </g>
       </g>
+
+      <g class="labels" v-if="!$props.simple">
+        <text
+          transform="matrix(0.803924 0.594732 -0.595475 0.803374 378.101 403)"
+          fill="#F1F2F2"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Adobe Caslon Pro"
+          font-size="18"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="15.23">Straight of Georgia</tspan>
+        </text>
+        <text
+          transform="matrix(0.707448 0.706765 -0.707448 0.706765 569.563 52)"
+          fill="#414042"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Adobe Caslon Pro"
+          font-size="18"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="15.23">Mt Tantalus</tspan>
+        </text>
+        <text
+          transform="translate(742 19) rotate(90)"
+          fill="#414042"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Adobe Caslon Pro"
+          font-size="18"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="15.23">Mt Garibaldi</tspan>
+        </text>
+        <text
+          transform="matrix(0.932756 -0.360508 0.361114 0.932522 376.956 208.762)"
+          fill="#F1F2F2"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Adobe Caslon Pro"
+          font-size="18"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="15.23">Salmon Inlet</tspan>
+        </text>
+        <text
+          transform="matrix(0.308124 0.951346 -0.95152 0.307586 348.778 227.941)"
+          fill="#F1F2F2"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Adobe Caslon Pro"
+          font-size="18"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="15.23">Sechlet Inlet</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="84" y="61.23">POWELL&#10;</tspan>
+          <tspan x="84" y="83.23">RIVER</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="595" y="162.23">SQUAMISH</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="406.164" y="329.56">SECHELT</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="463.365" y="368.253">GIBSONS</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="637" y="565.23">VANCOUVER</tspan>
+        </text>
+        <text
+           class="region"
+        >
+          <tspan x="668.736" y="413.23">NORTH&#10;</tspan>
+          <tspan x="622.857" y="435.23">VANCOUVER</tspan>
+        </text>
+        <text class="region">
+          <tspan x="640" y="631.23">RICHMOND</tspan>
+        </text>
+      </g>
+
       <!-- Map Dots -->
       <TourMapDots
         :videos="coastalVideos"
@@ -530,5 +467,21 @@ export default {
 }
 svg {
   max-width: 700px;
+}
+.labels {
+}
+
+
+
+.region {
+  fill: #ffffff;
+  font-size: 18px;
+  font-family: Adobe Caslon Pro;
+  font-weight: bold;
+  paint-order: stroke;
+  stroke: #0000008c;
+  stroke-width: 5px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
 }
 </style>
