@@ -1,13 +1,12 @@
 <template>
   <div class="container tour-map-page-container">
-    <h1 class="center-text">{{title}}</h1>
+    <h1 class="tour-map-title center-text">{{title}}</h1>
     <p class="land-acknowledgement">
       The filming and creation of this project took place on the unceded and
       occupied Coast Salish territories of the xʷməθkʷəy̓əm (Musqueam),
       Sḵwx̱wú7mesh (Squamish) and səl̓ilwətaɁɬ (Tsleil-Waututh) Nations in the
       community of the Downtown Eastside (DTES) of Vancouver, BC.
     </p>
-    <p class="tour-map-instruction">Select a location on the map</p>
     <div class="tour-map-container" @click.self="$emit('click-container')">
       <slot />
     </div>
@@ -17,11 +16,11 @@
       class="tour-map-page-legend"
     />
     <div id="map-page-bottom-ui" class="columns">
-      <div class="column is-one-fifth"></div>
-      <div class="column is-half location">
-        {{ hoverLocation }}
+      <div class="column "></div>
+      <div class="column is-two-fifths location">
+        {{ hoverLocation ? hoverLocation : 'Select a location on the map' }}
       </div>
-      <div class="column is-one-fifth columns">
+      <div class="column columns">
         <vs-button
           id="switch-map-btn"
           class="column"
@@ -119,12 +118,15 @@ export default {
 </script>
 
 <style lang="scss">
+.tour-map-title {
+  margin: 0;
+}
 .land-acknowledgement {
   padding: 1.5em;
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 1em;
   max-width: 45em;
-  margin: 0 auto;
+  margin: 0 auto 2em auto;
   font-size: 0.6em;
   margin-top: 2em;
   color: #ffffffa6;
@@ -135,11 +137,6 @@ export default {
 }
 .tour-map-page-container {
   margin-top: 2em;
-}
-.tour-map-instruction {
-  font-style: oblique;
-  text-align: center;
-  margin-bottom: 1em;
 }
 #map-page-bottom-ui {
   // margin-top: 1em;
