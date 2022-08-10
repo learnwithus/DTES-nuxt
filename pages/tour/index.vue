@@ -3,11 +3,11 @@
     <p class="center-text pt-5 pb-6">Pick a Map</p>
     <nav>
       <nuxt-link to="/tour/dtes">
-        <TourMapDTES :simple="true" :interactive="false" />
+        <TourMapDTES class="map" :simple="true" :interactive="false" />
         <p class="center-text">Downtown Eastside</p>
       </nuxt-link>
       <nuxt-link to="/tour/coastal">
-        <TourMapCoastal :simple="true" :interactive="false" />
+        <TourMapCoastal class="map" :simple="true" :interactive="false" />
         <p class="center-text">Coastal</p>
       </nuxt-link>
     </nav>
@@ -93,6 +93,16 @@ nav {
         width: 35%;
       }
     }
+
+    &:hover, &:focus {
+      .map {
+        transform: scale(1.05);
+      }
+    }
+
+    .map {
+        transition: transform 175ms ease-out;
+      }
   }
 }
 </style>
