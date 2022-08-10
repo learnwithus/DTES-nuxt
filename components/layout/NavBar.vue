@@ -20,7 +20,10 @@
           class="navbar-item opacity-show"
           :class="{ 'opacity-hide': !$store.state.header.logo }"
           @click.native="hamburgerOpen = false"
-          ><nuxt-picture src="/assets/images/logo-large.png" alt="Resisting Stigma" sizes="sm:350px"
+          ><nuxt-picture
+            src="/assets/images/logo-large.png"
+            alt="Resisting Stigma"
+            sizes="sm:350px"
         /></nuxt-link>
 
         <!-- Hamburger Menu -->
@@ -37,7 +40,12 @@
         </button>
       </div>
 
-      <div class="navbar-menu" :class="{ 'is-active': hamburgerOpen }" aria-label="menu" id="main-menu">
+      <div
+        class="navbar-menu"
+        :class="{ 'is-active': hamburgerOpen }"
+        aria-label="menu"
+        id="main-menu"
+      >
         <div class="navbar-end">
           <nuxt-link
             class="navbar-item"
@@ -144,6 +152,8 @@ header {
   a.navbar-link {
     border: none;
     color: $nav-text-colour;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
 
     &:hover {
       color: $colour-primary-dark;
@@ -184,12 +194,18 @@ header {
   .navbar-menu {
     z-index: 5;
     background-color: $colour-primary-dark;
+    text-transform: uppercase;
+
     @include breakpoint(phablet) {
       background-color: unset;
     }
   }
 
   .navbar-dropdown-wrapper {
+    .navbar-item {
+      text-transform: initial;
+      letter-spacing: initial;
+    }
     @include breakpoint(phablet) {
       left: 0;
       min-width: 100%;
@@ -199,5 +215,4 @@ header {
     }
   }
 }
-
 </style>
