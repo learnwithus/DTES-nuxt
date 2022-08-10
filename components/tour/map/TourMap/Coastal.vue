@@ -467,6 +467,7 @@ export default {
 }
 svg {
   max-width: 700px;
+  max-height: 58vh;
 }
 .labels {
 }
