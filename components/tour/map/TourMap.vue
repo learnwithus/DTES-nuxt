@@ -1,5 +1,6 @@
 <template>
   <div class="container tour-map-page-container">
+    <h1 class="center-text">{{title}}</h1>
     <p class="land-acknowledgement">
       The filming and creation of this project took place on the unceded and
       occupied Coast Salish territories of the xʷməθkʷəy̓əm (Musqueam),
@@ -77,6 +78,7 @@ import { mapGetters } from "vuex";
 export default {
   props: {
     region: String,
+    title: String,
     hoverLocation: null | String,
   },
   async asyncData({ redirect, store, $content }) {

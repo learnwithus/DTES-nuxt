@@ -1,5 +1,5 @@
 <template>
-  <TourMap :hover-location="hoverLocation" region="dtes">
+  <TourMap :hover-location="hoverLocation" region="dtes" title="DTES">
     <TourMapDTES @hover="e => hoverLocation = e" />
   </TourMap>
 </template>
