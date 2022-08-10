@@ -121,9 +121,11 @@ header {
   min-height: $nav-height;
   position: sticky;
   top: 0;
+  backdrop-filter: blur(10px);
 
   &.transparent {
     background-color: unset;
+    backdrop-filter: none;
   }
 
   .navbar-burger {
@@ -153,6 +155,7 @@ header {
 
   #logo {
     display: flex;
+    margin-top: 3%;
   }
 
   &.overlay {
