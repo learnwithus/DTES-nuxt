@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <p class="center-text pt-5 pb-6">Pick a Map</p>
+    <h1 class="center-text pt-5">Select a Region</h1>
+    <p class="center-text pb-5">You can explore both regions during your tour</p>
     <nav>
       <nuxt-link to="/tour/dtes">
         <TourMapDTES class="map" :simple="true" :interactive="false" />
