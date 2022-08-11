@@ -1,6 +1,6 @@
 <template>
   <div class="container tour-map-page-container">
-    <h1 class="tour-map-title center-text">{{title}}</h1>
+    <h1 class="tour-map-title center-text">{{ title }}</h1>
     <div v-if="landAcknowledgement" class="land-acknowledgement">
       <nuxt-content :document="{ body: landAcknowledgement }" />
     </div>
@@ -13,9 +13,12 @@
       class="tour-map-page-legend"
     />
     <div id="map-page-bottom-ui" class="columns">
-      <div class="column "></div>
-      <div class="column is-two-fifths location">
-        {{ hoverLocation ? hoverLocation : 'Select a location on the map' }}
+      <div class="column"></div>
+      <div
+        class="column is-two-fifths location"
+        :class="{ active: hoverLocation }"
+      >
+        {{ hoverLocation ? hoverLocation : "Select a location on the map" }}
       </div>
       <div class="column columns">
         <vs-button
@@ -144,8 +147,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    opacity: 0.5;
+    font-style: oblique;
     &:before {
       content: "\00a0";
+    }
+    &.active {
+      opacity: 1;
+      font-style: normal;
     }
   }
 }
@@ -180,7 +189,7 @@ export default {
     font-size: 0.9em;
   }
 
-    &.no-max-width .tooltip-inner {
+  &.no-max-width .tooltip-inner {
     max-width: unset;
   }
 }
