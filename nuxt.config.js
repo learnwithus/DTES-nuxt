@@ -20,7 +20,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Learn about Vancouver's Downtown Eastside and how stigma affects its residence",
+          "Learn about communities across BC, including Vancouver's Downtown Eastside, and how stigma affects their residence",
       },
     ],
     link: [
