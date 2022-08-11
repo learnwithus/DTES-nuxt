@@ -145,7 +145,7 @@ export default {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     &:before {
       content: "\00a0";
     }
