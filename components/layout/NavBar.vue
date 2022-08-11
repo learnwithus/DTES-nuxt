@@ -129,7 +129,7 @@ header {
   min-height: $nav-height;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 
   &.transparent {
     background-color: unset;
@@ -165,7 +165,7 @@ header {
 
   #logo {
     display: flex;
-    margin-top: 3%;
+    margin-top: 0.5em;
   }
 
   &.overlay {
