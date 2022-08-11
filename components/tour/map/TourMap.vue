@@ -140,13 +140,13 @@ export default {
   margin-top: 2em;
 }
 #map-page-bottom-ui {
-  // margin-top: 1em;
+  margin-top: 1em;
 
   .location {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     opacity: 0.5;
     font-style: oblique;
     &:before {

@@ -1,15 +1,17 @@
 <template>
   <div class="container">
     <h1 class="center-text pt-5">Select a Region</h1>
-    <p class="center-text pb-5">You can explore both regions during your tour</p>
+    <p class="center-text pb-5">
+      You can explore both regions during your tour
+    </p>
     <nav>
       <nuxt-link to="/tour/dtes">
         <TourMapDTES class="map" :simple="true" :interactive="false" />
-        <p class="center-text">Downtown Eastside</p>
+        <div class="title center-text">Downtown Eastside</div>
       </nuxt-link>
       <nuxt-link to="/tour/coastal">
         <TourMapCoastal class="map" :simple="true" :interactive="false" />
-        <p class="center-text">Coastal</p>
+        <div class="title center-text">Coastal</div>
       </nuxt-link>
     </nav>
   </div>
@@ -95,15 +97,34 @@ nav {
       }
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       .map {
         transform: scale(1.05);
       }
     }
 
     .map {
-        transition: transform 175ms ease-out;
+      transition: transform 175ms ease-out;
+      @include breakpoint(phablet) {
+        min-height: 250px;
       }
+      @include breakpoint(tablet) {
+        min-height: 300px;
+      }
+      @include breakpoint(desktop) {
+        min-height: 350px;
+      }
+      @include breakpoint(desktophd) {
+        min-height: 400px;
+      }
+    }
   }
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 </style>
