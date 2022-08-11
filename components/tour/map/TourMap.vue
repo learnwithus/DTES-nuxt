@@ -1,12 +1,9 @@
 <template>
   <div class="container tour-map-page-container">
     <h1 class="tour-map-title center-text">{{title}}</h1>
-    <p class="land-acknowledgement">
-      The filming and creation of this project took place on the unceded and
-      occupied Coast Salish territories of the xʷməθkʷəy̓əm (Musqueam),
-      Sḵwx̱wú7mesh (Squamish) and səl̓ilwətaɁɬ (Tsleil-Waututh) Nations in the
-      community of the Downtown Eastside (DTES) of Vancouver, BC.
-    </p>
+    <div v-if="landAcknowledgement" class="land-acknowledgement">
+      <nuxt-content :document="{ body: landAcknowledgement }" />
+    </div>
     <div class="tour-map-container" @click.self="$emit('click-container')">
       <slot />
     </div>
@@ -79,6 +76,7 @@ export default {
     region: String,
     title: String,
     hoverLocation: null | String,
+    landAcknowledgement: Object,
   },
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
@@ -122,7 +120,7 @@ export default {
   margin: 0;
 }
 .land-acknowledgement {
-  padding: 1.5em;
+  padding: 0 1.5em;
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 1em;
   max-width: 45em;
@@ -132,7 +130,7 @@ export default {
   color: #ffffffa6;
 
   @include breakpoint(phablet) {
-    font-size: 0.75em;
+    font-size: 0.7em;
   }
 }
 .tour-map-page-container {

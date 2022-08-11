@@ -1,5 +1,5 @@
 <template>
-  <TourMap :hover-location="hoverLocation" region="coastal" title="Coastal">
+  <TourMap :hover-location="hoverLocation" region="coastal" title="Coastal" :land-acknowledgement="landAcknowledgement">
     <TourMapCoastal  @hover="e => hoverLocation = e"/>
   </TourMap>
 </template>
@@ -29,8 +29,11 @@ export default {
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
 
+    const {body: landAcknowledgement} = await $content('tour/coastal/land-acknowledgement').fetch();
+
     return {
       hoverLocation: null,
+      landAcknowledgement
     };
   },
   mounted() {
