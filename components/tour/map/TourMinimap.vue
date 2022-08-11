@@ -1,7 +1,9 @@
 <template>
   <div class="tour-map">
     <div class="mini-map-container" @click="showMap = true">
-      <div v-if="$props.location" class="mini-map-location">{{ video.location }}</div>
+      <div v-if="$props.location" class="mini-map-location">
+        {{ video.location }}
+      </div>
       <dtes-map
         v-if="region === 'dtes'"
         :interactive="false"
@@ -26,9 +28,19 @@
         @click.self="showMap = false"
       >
         <button class="map-close-button" @click="showMap = false">x</button>
-        <div class="map-wrapper container" >
-          <dtes-map v-if="region === 'dtes'" :interactive="true" :location="$props.location" @click-container="showMap = false"/>
-          <coastal-map v-else-if="region === 'coastal'" :interactive="true" :location="$props.location" @click-container="showMap = false"/>
+        <div class="map-wrapper container">
+          <dtes-map
+            v-if="region === 'dtes'"
+            :interactive="true"
+            :location="$props.location"
+            @click-container="showMap = false"
+          />
+          <coastal-map
+            v-else-if="region === 'coastal'"
+            :interactive="true"
+            :location="$props.location"
+            @click-container="showMap = false"
+          />
         </div>
       </div>
     </transition>
@@ -42,7 +54,7 @@ import CoastalMap from "./TourMap/Coastal";
 export default {
   components: {
     DtesMap,
-    CoastalMap
+    CoastalMap,
   },
   props: {
     location: {
@@ -102,6 +114,11 @@ export default {
   padding: 1em;
   cursor: pointer;
   display: inline-block;
+
+  @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 }
 
 .mini-map-location {
@@ -115,7 +132,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-content: center;
   justify-content: center;

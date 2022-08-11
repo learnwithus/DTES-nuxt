@@ -123,13 +123,17 @@ export default {
 <style lang="scss">
 header {
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
   height: $nav-height;
   min-height: $nav-height;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(8px);
+
+  @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
   &.transparent {
     background-color: unset;

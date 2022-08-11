@@ -112,6 +112,11 @@ export default {
   border-radius: 1em;
   margin-top: 7em;
 
+    @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
 }
 
 .video-type {
