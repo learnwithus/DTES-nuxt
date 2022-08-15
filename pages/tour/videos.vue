@@ -6,7 +6,7 @@
       <!-- Peers -->
       <h3>Peers</h3>
       <ul class="video-list">
-        <li class="video" v-for="peer in peers" v-bind:key="peer.id">
+        <li class="video" v-for="peer in peers.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="peer.id">
           <nuxt-link :to="`/tour/${peer.region}/${peer.slug}`"
             ><img
               class="profile"
@@ -23,7 +23,7 @@
       <!-- Services -->
       <h3>Services</h3>
       <ul class="video-list">
-        <li class="video" v-for="service in services" v-bind:key="service.id">
+        <li class="video" v-for="service in services.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="service.id">
           <nuxt-link :to="`/tour/${service.region}/${service.slug}`"
             ><img
               class="profile"
