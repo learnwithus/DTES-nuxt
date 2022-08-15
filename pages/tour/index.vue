@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="center-text pt-5">Select a Region</h1>
     <p class="center-text pb-5">
-      You can explore both regions during your tour
+      You can explore both regions during your tour.  Try to watch 4 videos from each!
     </p>
     <nav>
       <nuxt-link to="/tour/dtes">
