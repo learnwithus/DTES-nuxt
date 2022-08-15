@@ -12,12 +12,12 @@
           </li>
         </ul>
         <vs-button
-          :to="`/tour/${region}`"
+          :to="`/tour`"
           flat
           border
           color="#fff"
-          class="back-to-map-button"
-          >Back to Map</vs-button
+          class="back-to-tour-button"
+          >Back to Tour</vs-button
         >
       </template>
       <template #videoPausedScreen>
@@ -71,5 +71,9 @@ export default {
 .additional-info {
   list-style: none;
   text-align: left;
+}
+
+.back-to-tour-button {
+  margin: 2em auto 0 auto;
 }
 </style>
