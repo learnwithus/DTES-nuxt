@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'health-connections/background.jpg'
 bio: North Shore HealthConnection Clinic features an interdisciplinary professional team that provides low barrier access to primary care for those who have complex medical and social needs and who cannot attach to a traditional family practice.
-location: 148 East 15th St
+location: 148 15th St E, North Vancouver
 map:
     x: 685
     y: 465

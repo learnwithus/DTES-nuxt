@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'squamish-oot/profile.jpg'
 background: 'squamish-mhsu/background.jpg'
 bio: Squamish OOT provide connections for people who have recently experienced opioid overdose and/or are at high risk for opioid overdose to substance use care and support. Services include navigation to appropriate services (e.g., primary care, detox, treatment, etc.), support in accessing Opioid Agonist Therapy (OAT) (e.g., methadone, suboxone, iOAT, etc.), and overdose prevention education.
-location: Insite (139 E Hastings St)
+location:  MHSU Clinic, Squamish
 map:
     x: 630
     y: 190

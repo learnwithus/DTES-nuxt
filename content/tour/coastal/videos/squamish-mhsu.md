@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'squamish-mhsu/background.jpg'
 bio: Squamish Mental Health and Substance Use Clinic provides a range of services that can help those struggling with substance use or addiction, including detox, group therapy, counselling, and medication. All of the treatment programs are free and supply medications and services including counselling, specialized treatment planning, aftercare, and follow-up. 
-location: Address (Squamish)
+location: 38075 2 Ave, Squamish
 map:
     x: 670
     y: 180

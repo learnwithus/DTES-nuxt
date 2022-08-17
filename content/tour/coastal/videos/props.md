@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'props/profile.jpg'
 background: 'props/background.jpg'
 bio: Powell River Overdose Prevention Site is the first OPS to operate outside of Vancouver. It is staffed by trained peers and medical personnel. The services include witness use for both smoking and injection, first aid and overdose response, harm reduction supplies, naloxone and training, and drug checking. 
-location: Insite (139 E Hastings St)
+location: 4752 Joyce Avenue, Powell River
 map:
     x: 50
     y: 80

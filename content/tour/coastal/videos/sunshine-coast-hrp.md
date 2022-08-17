@@ -7,7 +7,7 @@ poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'sunshine-coast-hrp/background.jpg'
 bio: Sunshine Coast OAT Clinic clinic offers opioid agonist treatments and other related harm reduction and addiction services for people with substance use issues. This includes outpatient individual and group counselling, crisis response services, employment and education support, and referrals to other supports and resources such as detox and treatment centre.
-location: Gibsons Health Unit
+location: 821 Gibsons Way, Gibsons
 map:
     x: 510
     y: 405
