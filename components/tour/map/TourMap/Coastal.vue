@@ -327,92 +327,57 @@
       <g class="labels" v-if="!$props.simple">
         <text
           transform="matrix(0.803924 0.594732 -0.595475 0.803374 378.101 403)"
-          fill="#F1F2F2"
-          xml:space="preserve"
-          style="white-space: pre"
-          font-family="Adobe Caslon Pro"
-          font-size="18"
-          letter-spacing="0em"
+          class="map-label"
         >
           <tspan x="0" y="15.23">Straight of Georgia</tspan>
         </text>
         <text
           transform="matrix(0.707448 0.706765 -0.707448 0.706765 569.563 52)"
-          fill="#414042"
-          xml:space="preserve"
-          style="white-space: pre"
-          font-family="Adobe Caslon Pro"
-          font-size="18"
-          letter-spacing="0em"
+          class="map-label dark"
         >
           <tspan x="0" y="15.23">Mt Tantalus</tspan>
         </text>
         <text
           transform="translate(742 19) rotate(90)"
-          fill="#414042"
-          xml:space="preserve"
-          style="white-space: pre"
-          font-family="Adobe Caslon Pro"
-          font-size="18"
-          letter-spacing="0em"
+          class="map-label dark"
         >
           <tspan x="0" y="15.23">Mt Garibaldi</tspan>
         </text>
         <text
           transform="matrix(0.932756 -0.360508 0.361114 0.932522 376.956 208.762)"
-          fill="#F1F2F2"
-          xml:space="preserve"
-          style="white-space: pre"
-          font-family="Adobe Caslon Pro"
-          font-size="18"
-          letter-spacing="0em"
+          class="map-label"
         >
           <tspan x="0" y="15.23">Salmon Inlet</tspan>
         </text>
         <text
           transform="matrix(0.308124 0.951346 -0.95152 0.307586 348.778 227.941)"
-          fill="#F1F2F2"
-          xml:space="preserve"
-          style="white-space: pre"
-          font-family="Adobe Caslon Pro"
-          font-size="18"
-          letter-spacing="0em"
+          class="map-label"
         >
           <tspan x="0" y="15.23">Sechlet Inlet</tspan>
         </text>
-        <text
-           class="region"
-        >
+        <text class="region-label">
           <tspan x="88" y="61.23">POWELL&#10;</tspan>
           <tspan x="88" y="83.23">RIVER</tspan>
         </text>
-        <text
-           class="region"
-        >
+        <text class="region-label">
           <tspan x="595" y="155">SQUAMISH</tspan>
         </text>
-        <text
-           class="region"
-        >
+        <text class="region-label">
           <tspan x="406.164" y="329.56">SECHELT</tspan>
         </text>
-        <text
-           class="region"
-        >
+        <text class="region-label">
           <tspan x="463.365" y="368.253">GIBSONS</tspan>
         </text>
         <text
-           class="region"
+          class="map-label"
         >
-          <tspan x="637" y="565.23">VANCOUVER</tspan>
+          <tspan x="640" y="560">Vancouver</tspan>
         </text>
-        <text
-           class="region"
-        >
+        <text class="region-label">
           <tspan x="668.736" y="413.23">NORTH&#10;</tspan>
           <tspan x="622.857" y="435.23">VANCOUVER</tspan>
         </text>
-        <text class="region">
+        <text class="region-label">
           <tspan x="640" y="638">RICHMOND</tspan>
         </text>
       </g>
@@ -472,9 +437,7 @@ svg {
 .labels {
 }
 
-
-
-.region {
+.region-label {
   fill: #ffffff;
   font-size: 18px;
   font-family: Adobe Caslon Pro;
@@ -484,5 +447,17 @@ svg {
   stroke-width: 5px;
   stroke-linecap: butt;
   stroke-linejoin: miter;
+}
+
+.map-label {
+  fill: #f1f2f2;
+  white-space: pre;
+  font-family: Adobe Caslon Pro;
+  font-size: 18px;
+  letter-spacing: 0em;
+
+  &.dark {
+    fill: #414042;
+  }
 }
 </style>
