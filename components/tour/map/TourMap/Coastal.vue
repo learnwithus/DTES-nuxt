@@ -363,10 +363,8 @@
           <tspan x="595" y="155">SQUAMISH</tspan>
         </text>
         <text class="region-label">
-          <tspan x="406.164" y="329.56">SECHELT</tspan>
-        </text>
-        <text class="region-label">
-          <tspan x="463.365" y="368.253">GIBSONS</tspan>
+          <tspan x="416" y="359">SUNSHINE</tspan>
+          <tspan x="416" y="382">COAST</tspan>
         </text>
         <text
           class="map-label"
