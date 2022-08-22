@@ -37,3 +37,4 @@
 ## Regional Substance Use Resources
 -   [Harm Reduction Services](https://towardtheheart.com/site-finder)
 -   [Mental Health Substance Use Resources](https://mhsu.vchlearn.ca/services)
+-   [Wellbeing – Ministry of Mental Health and Addictions](https://wellbeing.gov.bc.ca/)
