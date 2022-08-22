@@ -1,4 +1,4 @@
-People who use substances (PWUS) and people living in Vancouver’s Downtown Eastside (DTES) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. Stigma and discrimination can prevent people from seeking care, leading to poor quality of care, exacerbation of existing health condition, and further mistrust of the healthcare system. Stigma and discrimination also may uphold rules and policies that exclude and marginalize people who need and deserve good care.
+People who use substances (PWUS) are often stigmatized and labelled with negative stereotypes, including within the healthcare system. Stigma and discrimination can prevent people from seeking care, leading to poor quality of care, exacerbation of existing health conditions, and further mistrust of the healthcare system. Stigma and discrimination also may uphold rules and policies that exclude and marginalize people who need and deserve good care.
 
 ### THERE ARE 2 PARTS
 

@@ -132,9 +132,16 @@ export default {
   margin-top: 2em;
   color: #ffffffa6;
 
+
+
   @include breakpoint(phablet) {
     font-size: 0.7em;
   }
+
+  p {
+      text-align: center;
+  }
+
 }
 .tour-map-page-container {
   margin-top: 2em;
