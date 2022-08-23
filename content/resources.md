@@ -21,7 +21,6 @@
 <br>
 
 ## Coastal Services
--	[DART](http://www.vch.ca/about-us/news/a-vehicle-for-change)
 -	[Overdose Outreach Team](https://www.nsnews.com/local-news/overdose-outreach-team-expands-to-north-shore-3082563)
 -	[North Shore HealthConnection Clinic](http://www.vch.ca/locations-services/result?res_id=1055)
 -	[Mental Health and Substance Use Clinic](http://www.vch.ca/Locations-Services/result?res_id=845)
@@ -35,6 +34,7 @@
 
 ## Richmond Services
 -	[Anne Vogel Clinic](http://www.vch.ca/Locations-Services/result?res_id=1143)
+-	[DART](http://www.vch.ca/about-us/news/a-vehicle-for-change)
 
 <br>
 
