@@ -11,7 +11,7 @@
       </nuxt-link>
       <nuxt-link to="/tour/coastal">
         <TourMapCoastal class="map" :simple="true" :interactive="false" />
-        <div class="title center-text">Coastal</div>
+        <div class="title center-text">Coastal & Richmond</div>
       </nuxt-link>
     </nav>
   </div>

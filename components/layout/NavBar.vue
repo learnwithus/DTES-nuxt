@@ -80,7 +80,7 @@
                   class="navbar-item"
                   to="/tour/coastal"
                   @click.native="hamburgerOpen = false"
-                  >Coastal</nuxt-link
+                  >Coastal & <br> Richmond</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"

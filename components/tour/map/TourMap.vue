@@ -126,12 +126,11 @@ export default {
   padding: 0 1.5em;
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 1em;
-  max-width: 45em;
+  max-width: 46em;
   margin: 0 auto 2em auto;
   font-size: 0.6em;
   margin-top: 2em;
   color: #ffffffa6;
-
 
 
   @include breakpoint(phablet) {
