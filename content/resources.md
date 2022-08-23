@@ -22,7 +22,6 @@
 
 ## Coastal Services
 -	[DART](http://www.vch.ca/about-us/news/a-vehicle-for-change)
--	[Anne Vogel Clinic](http://www.vch.ca/Locations-Services/result?res_id=1143)
 -	[Overdose Outreach Team](https://www.nsnews.com/local-news/overdose-outreach-team-expands-to-north-shore-3082563)
 -	[North Shore HealthConnection Clinic](http://www.vch.ca/locations-services/result?res_id=1055)
 -	[Mental Health and Substance Use Clinic](http://www.vch.ca/Locations-Services/result?res_id=845)
@@ -31,6 +30,11 @@
 -	[Sunshine Coast Opiate Agonist Treatment Clinic](https://sea-to-sky.pathwaysbc.ca/programs/1018)
 -	[Powell River Overdose Prevention Site](https://www.sustainpowellriver.ca/overdose-prevention-centre/)
 -	[Powell River Intensive Case Management Team](https://www.facebook.com/PowellRiverHarmReductionNeedleExchange/photos/a.681159272001847/3177387232379026/?type=3)
+
+<br>
+
+## Richmond Services
+-	[Anne Vogel Clinic](http://www.vch.ca/Locations-Services/result?res_id=1143)
 
 <br>
 
