@@ -1,5 +1,5 @@
 ---
-name: Overdose Outreach Team
+name: Squamish OOT
 type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Amanda/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Amanda.mp4'
