@@ -1,0 +1,1 @@
+The filming and creation of this project took place on the unceded and occupied Coast Salish territories of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish) and səl̓ilwətaɁɬ (Tsleil-Waututh) Nations in the community of the Downtown Eastside (DTES) of Vancouver, BC.

@@ -6,8 +6,8 @@
       <!-- Peers -->
       <h3>Peers</h3>
       <ul class="video-list">
-        <li v-for="peer in peers" v-bind:key="peer.id">
-          <nuxt-link :to="`/tour/${peer.slug}`"
+        <li class="video" v-for="peer in peers.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="peer.id">
+          <nuxt-link :to="`/tour/${peer.region}/${peer.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${peer.name}`"
@@ -23,8 +23,8 @@
       <!-- Services -->
       <h3>Services</h3>
       <ul class="video-list">
-        <li v-for="service in services" v-bind:key="service.id">
-          <nuxt-link :to="`/tour/${service.slug}`"
+        <li class="video" v-for="service in services.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="service.id">
+          <nuxt-link :to="`/tour/${service.region}/${service.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${service.name}`"
@@ -59,9 +59,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.profile {
+.video {
   width: 9.7em;
-  // height: 10em;
+}
+.profile {
+  width: 100%;
   border-radius: 50%;
   background-color: $colour-light;
 

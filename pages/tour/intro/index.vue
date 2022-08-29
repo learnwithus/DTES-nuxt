@@ -5,24 +5,35 @@
       <div class="column">
         <h2>Welcome to the Tour</h2>
         <p>
-          The community of the DTES is multi-cultural, with many residents
+          People who uses substances (PWUS) reside in all communities. Many live
+          in the DTES, a community that is multi-cultural, with many residents
           connected to culturally diverse communities and histories, including
-          the Chinatown district, as well as the histories of Japanese residents
-          in Oppenheimer, prior to World War II and the devastation of the
+          Chinatown district, as well as the histories of Japanese residents in
+          Oppenheimer, prior to World War II and the devastation of the
           internment camps.
         </p>
         <p>
-          While the community is located on Coast Salish territories, the DTES
+          While the community is located in Coast Salish territories, the DTES
           has a higher proportion of Indigenous people than other communities
           within Vancouver, and includes Indigenous people from across North
           America. While recognized for poverty, homelessness, substance use,
-          the DTES also needs to be acknowledged for their multi-cultural,
-          inter-connected communities that care for each other.
+          and crime, the DTES also needs to be acknowledged for their
+          multicultural, inter-connected communities that care for each other.
         </p>
         <p>
-          The project provides a tour of some of the community-based services in
-          the DTES, and shares video interviews with community members who have
-          been impacted by stigma.
+          However, substance use spans beyond the DTES to the many surrounding
+          urban and rural coastal communities. In particular, substance use and
+          trauma affects Indigenous populations deeply due to historical and
+          ongoing acts of colonialism, criminalization and stigma. Indigenous
+          people who live in these communities especially have endured
+          discriminatory, racist, and colonial practices that have had a lasting
+          legacy, and continue to create barriers for them in their own
+          communities in the region.
+        </p>
+        <p>
+          This project provides a tour of some of the community-based services
+          in the region, and shares video interviews with community members who
+          have been impacted by stigma.
         </p>
       </div>
       <div class="column">
@@ -34,7 +45,8 @@
               alt="Mouse Pointer Icon"
             />
             Click on the spots on the map to visit the peer or service and
-            listen to their story. Watch a minimum of {{tourSpeakerRequirement}} videos before finishing.
+            listen to their story. Watch a minimum of
+            {{ tourVideoRequirement }} videos before finishing.
           </li>
           <li>
             <img
@@ -89,9 +101,7 @@ export default {
     this.$store.commit("beginTour");
   },
   computed: {
-    ...mapGetters([
-      "tourSpeakerRequirement",
-    ]),
+    ...mapGetters(["tourVideoRequirement"]),
   },
 };
 </script>

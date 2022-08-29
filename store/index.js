@@ -16,26 +16,35 @@ export const state = () => ({
     },
   },
   tour: {
-    speakers: [],
+    videos: {
+      dtes: [],
+      coastal: [],
+    },
     started: false,
-    speakerRequirement: 4 // How many videos is the user required to watch
+    videoRequirement: 8 // How many videos is the user required to watch
   },
   userProgress: {
-    speakers: [],
+    videos: [],
     tour: false,
   },
 });
 
 export const actions = {
   async nuxtServerInit({ commit, dispatch }, { $content }) {
-    const speakers = await $content("tour/speakers").fetch();
-    await commit("setSpeakers", speakers);
+    const dtes = await $content("tour/dtes/videos").fetch();
+    const coastal = await $content("tour/coastal/videos").fetch();
+
+    await commit("setVideos", { 
+      dtes: dtes.map(x => ({...x, region: 'dtes'})), 
+      coastal: coastal.map(x => ({...x, region: 'coastal'})), 
+    });
   },
 };
 
 export const mutations = {
-  setSpeakers(state, speakers) {
-    state.tour.speakers = speakers;
+  setVideos(state, { dtes, coastal }) {
+    state.tour.videos.dtes = dtes;
+    state.tour.videos.coastal = coastal;
   },
   overlayHeader(state) {
     state.header.overlay = true;
@@ -100,14 +109,14 @@ export const mutations = {
   beginTour(state) {
     state.tour.started = true;
   },
-  userWatchedSpeaker(state, speaker) {
-    if (!state.userProgress.speakers.find((x) => x === speaker)) {
-      state.userProgress.speakers.push(speaker);
+  userWatchedVideo(state, video) {
+    if (!state.userProgress.videos.find((x) => x === video)) {
+      state.userProgress.videos.push(video);
     }
   },
   resetUserProgress(state) {
     state.userProgress = {
-      speakers: [],
+      videos: [],
       tour: false,
     }
   }
@@ -120,25 +129,27 @@ export const getters = {
   getBackgroundDark: (state) => {
     return state.background.dark.current;
   },
-  speakers: (state) => {
-    return state.tour.speakers;
+  videos: (state) => {
+    return[...state.tour.videos.dtes, ...state.tour.videos.coastal];
   },
-  peers: (state) => {
-    return state.tour.speakers.filter((speaker) => speaker.type == "peer");
+  dtesVideos: (state) => state.tour.videos.dtes,
+  coastalVideos: (state) => state.tour.videos.coastal,
+  peers: (state, getters) => {
+    return getters.videos.filter((video) => video.type == "peer");
   },
-  services: (state) => {
-    return state.tour.speakers.filter((speaker) => speaker.type == "service");
+  services: (state, getters) => {
+    return getters.videos.filter((video) => video.type == "service");
   },
-  getSpeakerBySlug: (state) => (slug) => {
-    return state.tour.speakers.find((speaker) => speaker.slug === slug);
+  getVideoBySlug: (state, getters) => (slug) => {
+    return getters.videos.find((video) => video.slug === slug);
   },
   userProgress: (state) => {
     return state.userProgress;
   },
-  tourSpeakerRequirement: (state) => {
-    return state.tour.speakerRequirement;
+  tourVideoRequirement: (state) => {
+    return state.tour.videoRequirement;
   },
   tourComplete: (state) => {
-    return state.userProgress.speakers.length >= state.tour.speakerRequirement;
+    return state.userProgress.videos.length >= state.tour.videoRequirement;
   }
 };

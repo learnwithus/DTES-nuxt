@@ -1,9 +1,9 @@
 <template>
   <main id="landing-container">
     <div class="container" id="landing-content">
-      <img
+      <nuxt-picture
         id="landing-logo"
-        src="~assets/images/logo-large.png"
+        src="/assets/images/logo-large.png"
         alt="Resisting Stigma"
         :class="{ details: showDetails }"
       />
@@ -51,7 +51,7 @@
           v-tooltip="{
             content: 'Designed and developed by Learning Technologies',
             offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
+            classes: 'map-tooltip map-page-tooltip no-max-width',
           }"
         />
       </div>
@@ -96,11 +96,13 @@ export default {
   margin-bottom: 2em;
 }
 #landing-logo {
-  margin-top: 20%;
-  width: 100%;
-  transition: all 0.5s ease-in-out;
+  img {
+    margin-top: 20%;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
 
-  &.details {
+  &.details img {
     margin-top: 2em;
   }
 }

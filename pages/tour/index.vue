@@ -1,60 +1,19 @@
 <template>
-  <div class="container tour-map-page-container">
-    <p class="land-acknowledgement">
-      The filming and creation of this project took place on the unceded and
-      occupied Coast Salish territories of the xʷməθkʷəy̓əm (Musqueam),
-      Sḵwx̱wú7mesh (Squamish) and səl̓ilwətaɁɬ (Tsleil-Waututh) Nations in the
-      community of the Downtown Eastside (DTES) of Vancouver, BC.
+  <div class="container">
+    <h1 class="center-text pt-5">Select a Region</h1>
+    <p class="center-text pb-5">
+      You can explore both regions during your tour.  Try to watch 4 videos from each!
     </p>
-    <p class="tour-map-instruction">Select a location on the map</p>
-    <TourMap :interactive="true" @hover="onLocationHover" />
-    <img
-      src="~assets/images/legend.svg"
-      alt="Legend"
-      class="tour-map-page-legend"
-    />
-    <div id="map-page-bottom-ui" class="columns">
-      <div class="column is-one-fifth"></div>
-      <div class="column is-half location">{{ locationText }}</div>
-      <div class="column is-one-fifth">
-        <vs-button
-          v-if="!tourComplete"
-          id="tour-progress-btn"
-          size="xl"
-          flat
-          border
-          color="#fff"
-          v-tooltip="{
-            content: `Visit at least ${tourSpeakerRequirement} locations and watch \n the speakers there to complete the course`,
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
-          }"
-          >{{ videosWatchedCount }}/{{ tourSpeakerRequirement }}
-        </vs-button>
-        <vs-button
-          v-else
-          id="tour-progress-btn"
-          to="/tour/conclusion"
-          size="xl"
-          flat
-          border
-          color="#fff"
-          v-tooltip="{
-            content: 'You did it! Press this button to complete your journey',
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
-          }"
-          >Complete Tour
-        </vs-button>
-      </div>
-    </div>
-    <p class="center-text">
-      <small>
-        Map and videos for coastal and other community of care and services
-        coming soon.
-      </small>
-    </p>
-    <!-- <button @click="$store.commit('resetUserProgress')">Reset Progress</button> -->
+    <nav>
+      <nuxt-link to="/tour/dtes">
+        <TourMapDTES class="map" :simple="true" :interactive="false" />
+        <div class="title center-text">Downtown Eastside</div>
+      </nuxt-link>
+      <nuxt-link to="/tour/coastal">
+        <TourMapCoastal class="map" :simple="true" :interactive="false" />
+        <div class="title center-text">Coastal & Richmond</div>
+      </nuxt-link>
+    </nav>
   </div>
 </template>
 
@@ -65,16 +24,16 @@ export default {
   head() {
     return {
       title: "Resisting Stigma - Tour",
-      // Preload the speakers profile pictures and background images so the user doesn't have to wait when they click on them
+      // Preload the videos profile pictures and background images so the user doesn't have to wait when they click on them
       link: [
-        ...this.speakers.map((speaker) => ({
+        ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${speaker.profile}`),
+          href: require(`~/assets/tour/${video.profile}`),
           as: "image",
         })),
-        ...this.speakers.map((speaker) => ({
+        ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${speaker.background}`),
+          href: require(`~/assets/tour/${video.background}`),
           as: "image",
         })),
       ],
@@ -83,9 +42,7 @@ export default {
   async asyncData({ redirect, store, $content }) {
     store.commit("requestDarkBackground");
 
-    return {
-      locationText: "",
-    };
+    return {};
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -97,68 +54,77 @@ export default {
   computed: {
     ...mapGetters([
       "userProgress",
-      "tourSpeakerRequirement",
+      "tourVideoRequirement",
       "tourComplete",
-      "speakers",
+      "videos",
     ]),
     videosWatchedCount() {
-      return this.userProgress.speakers.length;
+      return this.userProgress.videos.length;
     },
   },
-  methods: {
-    onLocationHover(location) {
-      this.locationText = location;
-    },
-  },
+  methods: {},
 };
 </script>
 
-<style lang="scss">
-.land-acknowledgement {
-  padding: 1.5em;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  border-radius: 1em;
-  max-width: 45em;
-  margin: 0 auto;
-  font-size: 0.6em;
-  margin-top: 2em;
-  color: #ffffffa6;
+<style lang="scss" scoped>
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 
   @include breakpoint(phablet) {
-    font-size: 0.75em;
+    flex-direction: row;
+    gap: 10%;
   }
-}
-.tour-map-page-container {
-  margin-top: 2em;
-}
-.tour-map-instruction {
-  font-style: oblique;
-  text-align: center;
-  margin-bottom: 1em;
-}
-#map-page-bottom-ui {
-  // margin-top: 1em;
 
-  .location {
-    text-align: center;
+  a {
+    border-bottom: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    &:before {
-      content: "\00a0";
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:first-child {
+      width: 85%;
+      @include breakpoint(phablet) {
+        width: 65%;
+      }
+    }
+    &:last-child {
+      width: 70%;
+      @include breakpoint(phablet) {
+        width: 35%;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .map {
+        transform: scale(1.05);
+      }
+    }
+
+    .map {
+      transition: transform 175ms ease-out;
+      @include breakpoint(phablet) {
+        min-height: 250px;
+      }
+      @include breakpoint(tablet) {
+        min-height: 300px;
+      }
+      @include breakpoint(desktop) {
+        min-height: 350px;
+      }
+      @include breakpoint(desktophd) {
+        min-height: 400px;
+      }
     }
   }
 }
-.map-page-tooltip {
-  max-width: 250px;
-}
-#tour-progress-btn {
-  float: right;
-}
-.tour-map-page-legend {
-  width: 100%;
-  max-width: 17em;
-  margin: 0 auto;
-  display: block;
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 </style>

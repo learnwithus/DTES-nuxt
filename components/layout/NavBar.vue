@@ -20,7 +20,10 @@
           class="navbar-item opacity-show"
           :class="{ 'opacity-hide': !$store.state.header.logo }"
           @click.native="hamburgerOpen = false"
-          ><img src="~assets/images/logo-small.png" alt="Resisting Stigma"
+          ><nuxt-picture
+            src="/assets/images/logo-large.png"
+            alt="Resisting Stigma"
+            sizes="sm:350px"
         /></nuxt-link>
 
         <!-- Hamburger Menu -->
@@ -37,7 +40,12 @@
         </button>
       </div>
 
-      <div class="navbar-menu" :class="{ 'is-active': hamburgerOpen }" aria-label="menu" id="main-menu">
+      <div
+        class="navbar-menu"
+        :class="{ 'is-active': hamburgerOpen }"
+        aria-label="menu"
+        id="main-menu"
+      >
         <div class="navbar-end">
           <nuxt-link
             class="navbar-item"
@@ -64,9 +72,15 @@
                 >
                 <nuxt-link
                   class="navbar-item"
-                  to="/tour"
+                  to="/tour/dtes"
                   @click.native="hamburgerOpen = false"
-                  >Map</nuxt-link
+                  >DTES</nuxt-link
+                >
+                <nuxt-link
+                  class="navbar-item"
+                  to="/tour/coastal"
+                  @click.native="hamburgerOpen = false"
+                  >Coastal & <br> Richmond</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"
@@ -109,15 +123,21 @@ export default {
 <style lang="scss">
 header {
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
   height: $nav-height;
   min-height: $nav-height;
   position: sticky;
   top: 0;
 
+  @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   &.transparent {
     background-color: unset;
+    backdrop-filter: none;
   }
 
   .navbar-burger {
@@ -136,6 +156,8 @@ header {
   a.navbar-link {
     border: none;
     color: $nav-text-colour;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
 
     &:hover {
       color: $colour-primary-dark;
@@ -143,6 +165,11 @@ header {
         color: white;
       }
     }
+  }
+
+  #logo {
+    display: flex;
+    margin-top: 0.5em;
   }
 
   &.overlay {
@@ -171,12 +198,18 @@ header {
   .navbar-menu {
     z-index: 5;
     background-color: $colour-primary-dark;
+    text-transform: uppercase;
+
     @include breakpoint(phablet) {
       background-color: unset;
     }
   }
 
   .navbar-dropdown-wrapper {
+    .navbar-item {
+      text-transform: initial;
+      letter-spacing: initial;
+    }
     @include breakpoint(phablet) {
       left: 0;
       min-width: 100%;
@@ -186,5 +219,4 @@ header {
     }
   }
 }
-
 </style>

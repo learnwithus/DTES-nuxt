@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="speaker-intro-page">
-      <div class="container speaker-container">
-        <div class="speaker-info">
+    <div class="video-intro-page">
+      <div class="container video-container">
+        <div class="video-info">
           <img
             class="profile"
-            :src="require(`~/assets/tour/${speaker.profile}`)"
-            :alt="`An image of ${speaker.name}`"
+            :src="require(`~/assets/tour/${video.profile}`)"
+            :alt="`An image of ${video.name}`"
           />
-          <h3>{{ speaker.name }}</h3>
-          <div class="speaker-type">{{ speakerType }}</div>
-          <p>{{ speaker.bio }}</p>
+          <h3>{{ video.name }}</h3>
+          <div class="video-type">{{ videoType }}</div>
+          <p>{{ video.bio }}</p>
           <vs-button
-            :to="`/tour/${speaker.slug}/watch`"
+            :to="`/tour/${video.region}/${video.slug}/watch`"
             flat
             border
             color="#fff"
@@ -20,7 +20,7 @@
             >Watch</vs-button
           >
         </div>
-        <tour-minimap class="speaker-map" :location="speaker.slug" />
+        <tour-minimap :region="region" class="video-map" :location="video.slug" />
       </div>
     </div>
   </div>
@@ -35,25 +35,27 @@ export default {
       link: [
         {
           rel: "preload",
-          href: require(`~/assets/tour/${this.speaker.poster}`),
+          href: require(`~/assets/tour/${this.video.poster}`),
           as: "image",
         },
       ],
     };
   },
   async asyncData({ params, store }) {
-    const speaker = store.getters.getSpeakerBySlug(params.speaker);
+    const video = store.getters.getVideoBySlug(params.video);
+    const region = params.region;
 
-    store.commit("setBackgroundImage", `tour/${speaker.background}`);
+    store.commit("setBackgroundImage", `tour/${video.background}`);
 
     return {
-      speaker,
+      video,
+      region
     };
   },
   mounted() {},
   computed: {
-    speakerType() {
-      if (this.speaker.type.toLowerCase() == "peer") {
+    videoType() {
+      if (this.video.type.toLowerCase() == "peer") {
         return "Peer";
       } else return "Organization";
     },
@@ -63,7 +65,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.speaker-container {
+.video-container {
   align-items: flex-end;
   justify-content: space-between;
   min-height: calc(100% - 5em);
@@ -89,7 +91,7 @@ export default {
   }
 }
 
-.speaker-intro-page {
+.video-intro-page {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -99,7 +101,7 @@ export default {
   // }
 }
 
-.speaker-info {
+.video-info {
   align-self: start;
   color: white;
   background: rgba(0, 0, 0, 0.75);
@@ -110,9 +112,14 @@ export default {
   border-radius: 1em;
   margin-top: 7em;
 
+    @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
 }
 
-.speaker-type {
+.video-type {
   font-style: oblique;
 }
 
@@ -122,7 +129,7 @@ export default {
   padding: 0.5em;
 }
 
-.speaker-map {
+.video-map {
   margin-top: 4em;
 }
 </style>

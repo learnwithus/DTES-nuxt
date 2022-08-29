@@ -2,9 +2,9 @@
   <div class="column is-12">
 
 ## Purpose of the Project
-The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients from the DTES. Ultimately, we aim to reduce the toll of the overdose public health emergency.
+The goal of the project is to help decrease stigma in healthcare, enhance providers’ understanding of the community and build healthcare providers’ skills and confidence working with clients who use substances. Ultimately, we aim to reduce the toll of the toxic drug public health emergency.
 
-It provides a virtual tour of some of the community-based services in the DTES, and shares video interviews with community members who have been impacted by stigma. The objective of the course is to allow healthcare providers to better understand the lives of their patients, to provide culturally safe practice, and to increase access to care and quality of care for people who use substances.
+It provides a virtual tour of some of the community-based services in the DTES, Richmond, and Coastal communities within the Vancouver Coastal Health region, and shares video interviews with community members who have been impacted by stigma. The objective of the course is to allow healthcare providers to better understand the lives of their clients, to provide culturally safe practice, to increase access to care, and improve quality of care for people who use substances.
 
 <br>
 

@@ -1,8 +1,18 @@
 <template>
   <div class="tour-map">
     <div class="mini-map-container" @click="showMap = true">
-      <div v-if="$props.location" class="mini-map-location">{{ speaker.location }}</div>
+      <div v-if="$props.location" class="mini-map-location">
+        {{ video.location }}
+      </div>
       <dtes-map
+        v-if="region === 'dtes'"
+        :interactive="false"
+        :location="$props.location"
+        :simple="true"
+        class="mini-map"
+      />
+      <coastal-map
+        v-if="region === 'coastal'"
         :interactive="false"
         :location="$props.location"
         :simple="true"
@@ -18,8 +28,19 @@
         @click.self="showMap = false"
       >
         <button class="map-close-button" @click="showMap = false">x</button>
-        <div class="map-wrapper container" >
-          <dtes-map :interactive="true" :location="$props.location" @click-container="showMap = false"/>
+        <div class="map-wrapper container">
+          <dtes-map
+            v-if="region === 'dtes'"
+            :interactive="true"
+            :location="$props.location"
+            @click-container="showMap = false"
+          />
+          <coastal-map
+            v-else-if="region === 'coastal'"
+            :interactive="true"
+            :location="$props.location"
+            @click-container="showMap = false"
+          />
         </div>
       </div>
     </transition>
@@ -28,15 +49,21 @@
 
 <script>
 import { mapGetters } from "vuex";
-import DtesMap from "./TourMap";
+import DtesMap from "./TourMap/DTES";
+import CoastalMap from "./TourMap/Coastal";
 export default {
   components: {
     DtesMap,
+    CoastalMap,
   },
   props: {
     location: {
       type: String,
       required: false,
+    },
+    region: {
+      type: String,
+      required: true,
     },
   },
   data() {
@@ -45,9 +72,9 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["speakers"]),
-    speaker() {
-      return this.speakers.find((x) => x.slug == this.$props.location);
+    ...mapGetters(["videos"]),
+    video() {
+      return this.videos.find((x) => x.slug == this.$props.location);
     },
   },
 };
@@ -87,6 +114,11 @@ export default {
   padding: 1em;
   cursor: pointer;
   display: inline-block;
+
+  @supports (backdrop-filter: blur(8px)) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 }
 
 .mini-map-location {
@@ -100,7 +132,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-content: center;
   justify-content: center;

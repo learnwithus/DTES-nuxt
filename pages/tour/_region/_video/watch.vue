@@ -1,10 +1,10 @@
 <template>
   <main class="watch-page">
-    <tour-video :src="speaker.video" :hls="speaker.hls" :subtitles="speaker.subtitles" :poster="speaker.poster" @video-ended="onVideoEnded">
+    <tour-video :src="video.video" :hls="video.hls" :subtitles="video.subtitles" :poster="video.poster" @video-ended="onVideoEnded">
       <template #videoEndScreen>
-        <ul class="additional-info" v-if="speaker['additional-info']">
+        <ul class="additional-info" v-if="video['additional-info']">
           <li
-            v-for="(item, index) in speaker['additional-info']"
+            v-for="(item, index) in video['additional-info']"
             v-bind:key="index"
           >
             <h4>{{ item.title }}</h4>
@@ -12,16 +12,16 @@
           </li>
         </ul>
         <vs-button
-          to="/tour"
+          :to="`/tour`"
           flat
           border
           color="#fff"
-          class="back-to-map-button"
-          >Back to Map</vs-button
+          class="back-to-tour-button"
+          >Back to Tour</vs-button
         >
       </template>
       <template #videoPausedScreen>
-        <tour-minimap class="speaker-map" :location="speaker.slug" />
+        <tour-minimap class="video-map" :location="video.slug" :region="region" />
       </template>
     </tour-video>
   </main>
@@ -36,10 +36,12 @@ export default {
     };
   },
   async asyncData({ params, store }) {
-    const speaker = store.getters.getSpeakerBySlug(params.speaker);
+    const video = store.getters.getVideoBySlug(params.video);
+    const region = params.region;
 
     return {
-      speaker,
+      video,
+      region,
     };
   },
   mounted() {
@@ -53,7 +55,7 @@ export default {
   },
   methods: {
     onVideoEnded() {
-      this.$store.commit("userWatchedSpeaker", this.speaker.slug);
+      this.$store.commit("userWatchedVideo", this.video.slug);
     },
   },
 };
@@ -69,5 +71,9 @@ export default {
 .additional-info {
   list-style: none;
   text-align: left;
+}
+
+.back-to-tour-button {
+  margin: 2em auto 0 auto;
 }
 </style>

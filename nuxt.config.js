@@ -20,7 +20,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Learn about Vancouver's Downtown Eastside and how stigma affects its residence",
+          "Learn about communities across BC, including Vancouver's Downtown Eastside, and how stigma affects their residence",
       },
     ],
     link: [
@@ -78,14 +78,15 @@ export default {
    */
   buildModules: [
     "@nuxtjs/svg",
+    "@nuxt/content",
+    "@nuxtjs/style-resources",
+    '@nuxt/image',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxt/content",
-    "@nuxtjs/style-resources",
-    //"@nuxt/image",
+
   ],
   env: {
     // fullscreenLicenseKey: process.env.FULLSCREEN_KEY || 'OPEN-SOURCE-GPLV3-LICENSE'
@@ -121,9 +122,13 @@ export default {
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
-      const files = await $content('tour/speakers').only(['slug']).fetch()
+      const dtes = await $content('tour/dtes/videos').only(['slug']).fetch();
+      const coastal = await $content('tour/dtes/videos').only(['slug']).fetch();
 
-      return files.map(file => `/tour/${file.slug}/watch`)
+      const dtesFiles = dtes.map(file => `/tour/dtes/${file.slug}/watch`);
+      const coastalFiles = coastal.map(file => `/tour/coastal/${file.slug}/watch`);
+
+      return [...dtesFiles, ...coastalFiles];
     }
   }
 };
