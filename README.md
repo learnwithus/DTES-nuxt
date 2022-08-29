@@ -5,7 +5,7 @@ An internal VCH website designed to teach visitors about the DTES through:
 **[2] an interactive video tour**.
 
 Beta URL: https://dtes.netlify.app/
-Production URL: https://dtes.vchlearn.ca/
+Production URL: https://stigma.vchlearn.ca/
 
 ## Stack
 The DTES website is a statically generated site that uses Nuxt.js to generate static HTML which is hosted on our server.  
@@ -73,11 +73,13 @@ Tour content can be found in markdown files in the `~/content/learn/` folder.
 ```js
 content
 ├── tour
-│   ├── videos // Folder containing the videos (locations with videos)
-│   │   ├── person.md // Each location on the map / Video is a markdown file
-│   │   ├── anotion-person.md
-│   │   ├── a-place.md
-│   │   ├── another-place.md // The end-of-section feedback also has it's own file
+│   ├── region (dtes or coastal) // We have separted each region into their own folder
+│   │   ├── videos // Folder containing the videos (locations with videos)
+│   │   │   ├── person.md // Each location on the map / Video is a markdown file
+│   │   │   ├── anotion-person.md
+│   │   │   ├── a-place.md
+│   │   │   ├── another-place.md // The end-of-section feedback also has it's own file
+│   │   ├── land-aknowldegement.md // The land aknowledgement for that region
 │   ├── intro.md // Content displayed at the beginning of the tour
 │   ├── conclusion.md // Content dispaleyd when the user is finished the tour
 ```
