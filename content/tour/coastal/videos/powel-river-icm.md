@@ -1,8 +1,8 @@
 ---
 name: Intensive Case Management
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Zoe/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Zoe.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Trevor/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Trevor.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'powell-river-icm/profile.jpg'
 background: 'powell-river-icm/background.jpg'

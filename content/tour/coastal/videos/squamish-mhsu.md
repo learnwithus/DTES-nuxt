@@ -1,8 +1,8 @@
 ---
 name: Mental Health and Substance Use Clinic
 type: service
-hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan/master.m3u8'
-video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Bryan.mp4'
+hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Zoe/master.m3u8'
+video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Zoe.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'squamish-mhsu/background.jpg'
