@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <div class="v-plyr">
     <slot />
   </div>
 </template>
@@ -140,4 +140,8 @@ export default {
 $plyr-color-main: $colour-accent;
 
 @import "../../node_modules/plyr/src/sass/plyr.scss";
+
+.v-plyr {
+  --plyr-font-size-base: 1rem;
+}
 </style>
