@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Guy.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'guy/profile.jpg'
 background: 'guy/background.jpg'
+subtitles: 'guy/subs.vtt'
 bio: Guy is a Peer Clinical Advisor at the Provincial Overdose Response Center
 location: Alley behind Insite
 map:
