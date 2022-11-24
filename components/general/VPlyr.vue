@@ -142,6 +142,7 @@ $plyr-color-main: $colour-accent;
 @import "../../node_modules/plyr/src/sass/plyr.scss";
 
 .v-plyr {
-  --plyr-font-size-base: 1rem;
+  --plyr-font-size-large: 1.4rem;
+  --plyr-font-size-base: 1.25rem;
 }
 </style>
