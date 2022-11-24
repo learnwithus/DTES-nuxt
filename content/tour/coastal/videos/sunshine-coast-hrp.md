@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Brent.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'sunshine-coast-hrp/background.jpg'
+subtitles: 'sunshine-coast-hrp/subs.vtt'
 bio: Sunshine Coast Harm Reduction Program is a free, confidential and non-judgmental harm reduction service, with a particular focus on injection drug users and people who use crack cocaine, to reduce the spread of HIV and other communicable diseases. Other services offered are education and support access to testing and treatment for communicable diseases as well as referrals to health agencies for clients seeking drug detox, treatment or counseling.
 
 location: 821 Gibsons Way, Gibsons

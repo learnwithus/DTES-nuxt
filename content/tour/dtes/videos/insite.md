@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Insite.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'insite/profile.jpg'
 background: 'insite/background.jpg'
+subtitles: 'insite/subs.vtt'
 bio: Opened in 2003, Insite is the first legal supervised consumption site in North America. Hundreds and hundreds of thousands of injections have been done at Insite with thousands of overdoses, and zero fatalities. Staff at Insite are trained to recognize, respond and reverse overdose within minutes of a person injecting.
 location: 139 E Hastings St
 map:
