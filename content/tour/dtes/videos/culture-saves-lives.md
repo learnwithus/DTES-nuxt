@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/CultureSavesLives.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'culture-saves-lives/profile.jpg'
 background: 'guy/background.jpg'
+subtitles: 'culture-saves-lives/subs.vtt'
 bio: Culture Saves Lives is a program that addresses the need for cultural and spiritual care, reconnects or helps people to connect for the first time to traditional, spiritual and cultural practices.  Their work combines culture and harm reduction. This includes access to Elders and traditional medicines, peer support and links to housing, nutrition and healthcare.
 location: 1 E Hastings
 map:

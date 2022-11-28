@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Melissa.mp4'
 poster: 'melissa/poster.jpg'
 profile: 'melissa/profile.jpg'
 background: 'wahrs/background.jpg'
+subtitles: 'melissa/subs.vtt'
 bio: Melissa is a Cree woman from the Saddle Lake Nation, Alberta. She is a Knowledge Keeper, and works with the Western Aboriginal Harm Reduction Society.
 location: VANDU (380 E Hastings)
 map:

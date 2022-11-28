@@ -6,6 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/DrinkersLounge.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'drinkers-lounge/profile.jpg'
 background: 'drinkers-lounge/background.jpg'
+subtitles: 'drinkers-lounge/subs.vtt'
 bio: The Drinkers Lounge is an innovative and one-of-a-kind community managed alcohol program (MAP). The Lounge is a harm reduction-centered drop-in space for people who have severe alcohol use disorder, and offers alcohol substitution with beer and wine brewed by members of the Lounge.
 location: 111 Princess Ave
 map:

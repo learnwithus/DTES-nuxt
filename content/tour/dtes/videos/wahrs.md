@@ -4,7 +4,7 @@ type: service
 hls: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Tracy/master.m3u8'
 video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Tracy.mp4'
 poster: 'wahrs/poster.jpg'
-# subtitles: 'wahrs/subs.vtt'
+subtitles: 'wahrs/subs.vtt'
 profile: 'wahrs/profile.jpg'
 background: 'wahrs/background.jpg'
 bio: The Western Aboriginal Harm Reduction Society (WAHRS) is an organization of Indigenous people who are current and former users of illicit drugs and/or illicit alcohol.
