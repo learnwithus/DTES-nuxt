@@ -6,7 +6,7 @@ video: 'https://d2rsox40dv21dz.cloudfront.net/dtes/Ally.mp4'
 poster: 'shared/black-poster.jpg'
 profile: 'vch/profile.jpg'
 background: 'health-connections/background.jpg'
-subtitles: 'health-connections/subs.vtt'
+subtitles: 'north-shore-oot/subs.vtt'
 bio: The North Shore Overdose Outreach Team (OOT) provides connections for people residing in North and West Vancouver, who have recently experienced opioid overdose and/or are at high risk for opioid overdose to substance use care and support.
 location: HealthConnection Clinic
 map:
