@@ -3,79 +3,28 @@
     <dir class="container">
       <!-- Buttons -->
       <div class="button-wrapper">
-        <vs-button
-          v-if="button != 'start-module'"
-          flat
-          size="large"
-          dark
-          color="#ffffff"
-          @click="$emit('click-back')"
-          >Back</vs-button
-        >
-        <vs-button
-          flat
-          size="large"
-          border
-          @click="$emit('click-start-module')"
-          v-if="button == 'start-module'"
-          >Begin Module</vs-button
-        >
-        <vs-button
-          flat
-          size="large"
-          border
-          @click="$emit('click-submit')"
-          v-else-if="button == 'question-submit'"
-          >Submit</vs-button
-        >
-        <vs-button
-          flat
-          size="large"
-          :border="!progress.lastSectionQuestion"
-          :active="progress.lastSectionQuestion"
-          @click="$emit('click-next')"
-          v-else-if="button == 'question-next'"
-          >Next</vs-button
-        >
-        <vs-button
-          flat
-          size="large"
-          dark
-          border
-          :active="true"
-          v-else-if="
-            button == 'feedback-next-section' ||
-            button == 'feedback-next-feedback'
-          "
-          @click="$emit('click-next')"
-          class="submit"
-          >{{
-            button == "feedback-next-section" ? "Next Section" : "Next"
-          }}</vs-button
-        >
-        <vs-button
-          flat
-          size="large"
-          dark
-          border
-          :active="true"
-          v-else-if="button == 'start-tour'"
-          @click="$emit('click-start-tour')"
-          class="submit"
-          >Star Tour</vs-button
-        >
+        <vs-button v-if="button != 'start-module'" flat size="large" dark color="#ffffff"
+          @click="$emit('click-back')">Back</vs-button>
+        <vs-button flat size="large" border @click="$emit('click-start-module')" v-if="button == 'start-module'">Begin
+          Module</vs-button>
+        <vs-button flat size="large" border @click="$emit('click-submit')"
+          v-else-if="button == 'question-submit'">Submit</vs-button>
+        <vs-button flat size="large" :border="!progress.lastSectionQuestion" :active="progress.lastSectionQuestion"
+          @click="$emit('click-next')" v-else-if="button == 'question-next'">Next</vs-button>
+        <vs-button flat size="large" dark border :active="true" v-else-if="button == 'feedback-next-section' ||
+          button == 'feedback-next-feedback'
+          " @click="$emit('click-next')" class="submit">{{
+    button == "feedback-next-section" ? "Next Section" : "Next"
+  }}</vs-button>
+        <vs-button flat size="large" dark border :active="true" v-else-if="button == 'start-tour'"
+          @click="$emit('click-start-tour')" class="submit">Start Tour</vs-button>
       </div>
 
       <!-- Prgoress Dots -->
-      <div
-        class="learn-progress-wrapper is-hidden-mobile opacity-show"
-        :class="{ 'opacity-hide': !$props.progress.show }"
-      >
-        <progress-dots
-          :sections="progress.sectionCount"
-          :current-section="progress.currentSection"
-          :progress="progress.sectionProgress"
-        />
+      <div class="learn-progress-wrapper is-hidden-mobile opacity-show"
+        :class="{ 'opacity-hide': !$props.progress.show }">
+        <progress-dots :sections="progress.sectionCount" :current-section="progress.currentSection"
+          :progress="progress.sectionProgress" />
       </div>
       <div class="is-hidden-mobile"></div>
     </dir>
@@ -113,8 +62,8 @@ export default {
   from {
     opacity: 0;
   }
-  to {
-  }
+
+  to {}
 }
 
 .bottom-fixed-ui {
@@ -146,12 +95,10 @@ export default {
     height: 100%;
     opacity: 0;
     animation: fade-in-bottom-ui 0.3s linear; // Looks nicer when combined with page transition
-    background: linear-gradient(
-      0deg,
-      rgba($colour-primary, 1) 0%,
-      rgba($colour-primary, 0.75) 80%,
-      rgba($colour-primary, 0) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba($colour-primary, 1) 0%,
+        rgba($colour-primary, 0.75) 80%,
+        rgba($colour-primary, 0) 100%);
 
     .dark & {
       opacity: 1;
@@ -169,12 +116,10 @@ export default {
     opacity: 1;
     animation: fade-in-bottom-ui 0.3s linear; // Looks nicer when combined with page transition
     transition: opacity 200ms linear 250ms;
-    background: linear-gradient(
-      0deg,
-      rgba(white, 1) 0%,
-      rgba(white, 0.8) 80%,
-      rgba(white, 0) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba(white, 1) 0%,
+        rgba(white, 0.8) 80%,
+        rgba(white, 0) 100%);
 
     .dark & {
       opacity: 0;
@@ -197,7 +142,7 @@ export default {
     align-items: center;
     pointer-events: auto;
 
-    > * {
+    >* {
       flex-grow: 1;
       flex-basis: 0;
     }
