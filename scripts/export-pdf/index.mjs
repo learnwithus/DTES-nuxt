@@ -6,11 +6,7 @@ import { chromium } from "playwright";
 import { PDFDocument } from "pdf-lib";
 
 import { discoverRoutes, orderRoutes } from "./routes.mjs";
-import {
-  applyLearnState,
-  describeLearnStates,
-  resetLearnState,
-} from "./learn.mjs";
+import { walkLearn } from "./learn.mjs";
 import { preparePage, renderPdf, VIEWPORT } from "./render.mjs";
 import { serveStatic } from "./server.mjs";
 
@@ -63,20 +59,16 @@ async function main() {
   console.log(`\nWrote ${OUTPUT} (${sections.length} sections)`);
 }
 
-/** Expand the single /learn route into one capture per quiz screen. */
+/** Expand the single /learn route into one capture per module screen. */
 async function captureLearn(page, url) {
   await preparePage(page, url);
-  const states = await describeLearnStates(page);
   const captured = [];
 
-  for (const state of states) {
-    await applyLearnState(page, state);
-    captured.push({ label: state.label, bytes: await renderPdf(page) });
-    console.log(`  /learn → ${state.label}`);
-  }
+  await walkLearn(page, async (label) => {
+    captured.push({ label, bytes: await renderPdf(page) });
+    console.log(`  /learn → ${label}`);
+  });
 
-  // Stand the module back down so the beforeRouteLeave confirm() cannot fire.
-  await resetLearnState(page);
   return captured;
 }
 
