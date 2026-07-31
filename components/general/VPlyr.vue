@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import Plyr from "plyr";
+// Plyr touches `document` at module scope, so it is imported in mounted()
+// (client-only) to keep it out of the server render.
 import Hls from "hls.js";
 
 export default {
@@ -45,7 +46,9 @@ export default {
     };
   },
   computed: {},
-  mounted() {
+  async mounted() {
+    const Plyr = (await import("plyr")).default;
+
     // For more options see: https://github.com/sampotts/plyr/#options
     // captions.update is required for captions to work with hls.js
     const defaultOptions = {};
