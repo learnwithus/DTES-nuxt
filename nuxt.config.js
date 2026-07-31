@@ -109,6 +109,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    // plyr's dist bundle uses nullish coalescing, which webpack 4 can't parse
+    transpile: [/plyr[\\/]dist[\\/]/],
     extend(config, ctx) {
       config.module.rules.push({
         test: /\.(vtt|vtt)$/i,
