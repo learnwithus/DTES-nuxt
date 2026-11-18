@@ -2,7 +2,7 @@
   <div>
     <div class="container skinny pb-6">
       <h1 class="light-page-title">About</h1>
-      <nuxt-content :document="about" class="light-page-content"/>
+      <nuxt-content :document="about" class="light-page-content about-page-content"/>
     </div>
   </div>
 </template>

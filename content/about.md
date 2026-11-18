@@ -3,6 +3,7 @@
 
 ## Purpose of the Project
 The goal of the project is to:
+
 - Decrease stigma in healthcare
 - Enhance providers’ understanding of the community
 - Build healthcare providers’ skills and confidence working with clients who use substances
