@@ -1,10 +1,9 @@
 <template>
   <g>
-    <template v-for="(video, index) in videos">
+    <template v-for="video in videos" :key="video.slug">
       <!-- If it's a peer, draw a circle -->
       <ellipse
         v-if="video.type == 'peer' && video.slug != location"
-        v-bind:key="index"
         :cx="video.map.x"
         :cy="video.map.y"
         @mouseover="$emit('hover', video.location)"
@@ -12,7 +11,7 @@
         @click="
           $props.interactive
             ? $router.push({ path: generateVideoLink(video) })
-            : false
+            : undefined
         "
         v-tooltip="
           $props.interactive
@@ -21,10 +20,11 @@
                   name: video.name,
                   image: video.profile,
                 }),
-                offset: 20,
-                classes: 'map-tooltip',
+                distance: 20,
+                popperClass: 'map-tooltip',
+                html: true,
               }
-            : false
+            : undefined
         "
         class="video-map-dot"
         :class="{
@@ -36,7 +36,6 @@
       <!-- If it's a service, draw a diamond (rotated rect) -->
       <rect
         v-else-if="video.type == 'service' && video.slug != location"
-        v-bind:key="'service' + index"
         transform="rotate(45)"
         class="video-map-dot video-map-diamond"
         :class="{
@@ -51,7 +50,7 @@
         @click="
           $props.interactive
             ? $router.push({ path: generateVideoLink(video) })
-            : false
+            : undefined
         "
         v-tooltip="
           $props.interactive
@@ -60,23 +59,23 @@
                   name: video.name,
                   image: video.profile,
                 }),
-                offset: 20,
-                classes: 'map-tooltip',
+                distance: 20,
+                popperClass: 'map-tooltip',
+                html: true,
               }
-            : false
+            : undefined
         "
       />
       <!-- Pushpin if location matched video -->
       <g
         v-else-if="video.slug == location"
-        :key="'pushpin' + index"
         :transform="`translate(${video.map.x - 20} ${
           video.map.y - 25
         }) scale(0.5)`"
         @click="
           $props.interactive
             ? $router.push({ path: generateVideoLink(video) })
-            : false
+            : undefined
         "
         v-tooltip="
           $props.interactive
@@ -85,10 +84,11 @@
                   name: video.name,
                   image: video.profile,
                 }),
-                //offset: 20,
-                classes: 'map-tooltip',
+                //distance: 20,
+                popperClass: 'map-tooltip',
+                html: true,
               }
-            : false
+            : undefined
         "
       >
         <path
@@ -102,8 +102,6 @@
         />
       </g>
       <!-- Show checkmark if video is complete && the active location is NOT this location beacuse we display a pushin in that instance-->
-      =
-      <client-only :key="index">
         <path
           v-if="isVideoComplete(video.slug) && video.slug != location"
           :transform="`translate(${video.map.x - 6} ${
@@ -117,12 +115,12 @@
             pointer-events: none;
           "
         />
-      </client-only>
     </template>
   </g>
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 import { mapGetters } from "vuex";
 
 export default {
@@ -145,7 +143,7 @@ export default {
   methods: {
     generateTooltip({ name, image }) {
       return `
-        <img class="tooltip-image" src="${require(`~/assets/tour/${image}`)}" />
+        <img class="tooltip-image" src="${assetUrl(`tour/${image}`)}" />
         <div class="video-name">${name}</div>
       `;
     },

@@ -8,7 +8,7 @@
       <slot />
     </div>
     <img
-      src="~assets/images/legend.svg"
+      src="~/assets/images/legend.svg"
       alt="Legend"
       class="tour-map-page-legend"
     />
@@ -31,8 +31,8 @@
           :to="otherMap.url"
           v-tooltip="{
             content: `Switch to the ${otherMap.title} map`,
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
+            distance: 20,
+            popperClass: 'map-tooltip map-page-tooltip',
           }"
           >Switch to {{ otherMap.title }}
         </vs-button>
@@ -46,8 +46,8 @@
           color="#fff"
           v-tooltip="{
             content: `Visit at least ${tourVideoRequirement} locations and watch \n the videos there to complete the course`,
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
+            distance: 20,
+            popperClass: 'map-tooltip map-page-tooltip',
           }"
           >{{ videosWatchedCount }}/{{ tourVideoRequirement }}
         </vs-button>
@@ -61,8 +61,8 @@
           color="#fff"
           v-tooltip="{
             content: 'You did it! Press this button to complete your journey',
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip',
+            distance: 20,
+            popperClass: 'map-tooltip map-page-tooltip',
           }"
           >Complete Tour
         </vs-button>
@@ -78,11 +78,8 @@ export default {
   props: {
     region: String,
     title: String,
-    hoverLocation: null | String,
-    landAcknowledgement: Object,
-  },
-  async asyncData({ redirect, store, $content }) {
-    store.commit("requestDarkBackground");
+    hoverLocation: String,
+    landAcknowledgement: Array,
   },
   mounted() {
     // If the user hasn't been to the tour intro page yet, redirect them there first
@@ -176,7 +173,7 @@ export default {
 }
 
 .map-tooltip {
-  .tooltip-inner {
+  .v-popper__inner {
     max-width: 160px;
     text-align: center;
     padding: 1em;
@@ -195,7 +192,7 @@ export default {
     font-size: 0.9em;
   }
 
-  &.no-max-width .tooltip-inner {
+  &.no-max-width .v-popper__inner {
     max-width: unset;
   }
 }

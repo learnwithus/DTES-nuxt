@@ -19,7 +19,7 @@
         >
           Begin
         </vs-button>
-        <div v-if="showDetails" class="columns">
+        <div v-else class="columns">
           <div class="column is-three-fifths-desktop">
             <nuxt-content :document="content" />
             <vs-button
@@ -38,20 +38,20 @@
     <div id="landing-logos">
       <div class="container">
         <img
-          src="~assets/images/vch.svg"
+          src="~/assets/images/vch.svg"
           alt="Vancouver Coastal Health Logo"
           class="vch"
         />
         <img
-          src="~assets/images/lt-logo.svg"
+          src="~/assets/images/lt-logo.svg"
           alt="Learning Technologies Logo"
           @click="openLTSite()"
           style="cursor: pointer"
           class="lt"
           v-tooltip="{
             content: 'Designed and developed by Learning Technologies',
-            offset: 20,
-            classes: 'map-tooltip map-page-tooltip no-max-width',
+            distance: 20,
+            popperClass: 'map-tooltip map-page-tooltip no-max-width',
           }"
         />
       </div>
@@ -60,29 +60,24 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ store, $content }) {
-    store.commit("hideHeaderLogo");
-    store.commit("transparentHeader");
-    store.commit("requestDarkBackground");
-    store.commit("setBackgroundImage", `images/tourintrobg.jpg`);
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument } from "~/utils/course-content";
+export default defineCoursePage({
+  loadPage({ store, params }) {
 
-    const content = await $content("landing").fetch();
+    const content = courseDocument("landing");
 
     return {
       showDetails: false,
       content,
     };
   },
-  destroyed() {
-    this.$store.commit("defaultHeader");
-  },
   methods: {
     openLTSite() {
       window.open("https://vchdesign.ca");
     },
   },
-};
+});
 </script>
 
 <style lang="scss">

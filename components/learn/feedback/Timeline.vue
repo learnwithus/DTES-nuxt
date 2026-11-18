@@ -11,7 +11,7 @@
         >
           <div
             class="icon-wrapper"
-            v-html="require(`~/assets/images/icons/${section.icon}?raw`)"
+            v-html="rawIcon(section.icon)"
           />
           <!-- <div class="name">{{ section.name }}</div> -->
         </li>
@@ -123,6 +123,7 @@
 </template>
 
 <script>
+import { rawIcon } from "~/utils/asset-url";
 export default {
   data: () => ({
     sectionIndex: undefined,
@@ -146,6 +147,7 @@ export default {
     ],
   }),
   methods: {
+    rawIcon,
     setSection(index) {
       this.sectionIndex = index;
     },

@@ -12,7 +12,7 @@
           <div class="percentage">{{ section.perecentage }}%</div>
           <div class="right-section">
             <img
-              :src="require(`~/assets/images/icons/${section.icon}`)"
+              :src="assetUrl(`images/icons/${section.icon}`)"
               :alt="section.alt"
             />
             <p class="description is-hidden-mobile">
@@ -27,7 +27,7 @@
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
           <h3>
-            19% of people overdosed after leaving Emergency Departments either
+            19% of people experienced drug poisoning after leaving Emergency Departments either
             against medical advice
           </h3>
           <p>
@@ -39,7 +39,7 @@
         </div>
         <div v-else-if="sectionIndex == 1" key="1">
           <h3>
-            16% of people overdosed and had no engagement with medical care.
+            16% of people experienced drug poisoning and had no engagement with medical care.
           </h3>
           <p>
             This highlights a need for community-based / non-clinical strategies
@@ -68,7 +68,7 @@
         <div v-else key="3">
           <h3>
             Study: BC healthcare utilization patterns by people who experience
-            an overdose from illegal drugs.
+            a toxic drug poisoning from illegal drugs.
           </h3>
           <em>Click on each statistic to explore what the findings showed</em>
         </div>
@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 export default {
   data: () => ({
     sectionIndex: undefined,
@@ -87,14 +88,14 @@ export default {
         icon: "ambulance.svg",
         alt: "Ambulance Icon",
         description:
-          "of people overdosed after leaving Emergency Departments either against medical advice",
+          "of people experienced drug poisoning after leaving Emergency Departments either against medical advice",
       },
       {
         perecentage: 16,
         icon: "hospital.svg",
         alt: "Hospital Icon",
         description:
-          "of people overdosed and had no engagement with medical care",
+          "of people experienced drug poisoning and had no engagement with medical care",
       },
       {
         perecentage: 60,
@@ -106,6 +107,7 @@ export default {
     ],
   }),
   methods: {
+    assetUrl,
     setSection(index) {
       this.sectionIndex = index;
     },

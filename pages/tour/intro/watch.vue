@@ -25,15 +25,17 @@
 </template>
 
 <script>
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument } from "~/utils/course-content";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ params, $content }) {
-    const intro = await $content("tour/intro").fetch();
+  loadPage({ store, params }) {
+    const intro = courseDocument("tour/intro");
 
     return {
       intro,
@@ -42,7 +44,7 @@ export default {
   mounted() {
     this.$store.commit("overlayHeader");
   },
-  destroyed() {
+  beforeUnmount() {
     this.$store.commit("fixedHeader");
   },
   computed: {
@@ -51,7 +53,7 @@ export default {
   methods: {
     onVideoEnded() {},
   },
-};
+});
 </script>
 
 <style lang="scss">

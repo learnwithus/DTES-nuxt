@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 export default {
   name: "DynamicImage",
 
@@ -19,7 +20,7 @@ export default {
 
   computed: {
     dynamicImage() {
-      return require(`~/assets/${this.src}`);
+      return assetUrl(`${this.src}`);
     },
   },
 };

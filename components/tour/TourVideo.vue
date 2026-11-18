@@ -32,14 +32,14 @@
       id="video-wrapper"
       :hls="hls"
     >
-      <video :poster="require(`~/assets/tour/${poster}`)" playsinline="true">
+      <video :poster="assetUrl(`tour/${poster}`)" playsinline="true">
         <source :src="videoSource" type="video/mp4" size="720" />
 
         <track
           v-if="subtitles"
           kind="captions"
           label="English captions"
-          :src="require(`~/assets/tour/${subtitles}`).default"
+          :src="assetUrl(`tour/${subtitles}`)"
           srclang="en"
           default
         />
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 import { mapGetters } from "vuex";
 export default {
   props: ["src", "hls", "poster", "subtitles"],
@@ -86,7 +87,7 @@ export default {
       this.isTouchscreen = false;
     }
   },
-  destroyed() {
+  beforeUnmount() {
     this.$store.commit("fixedHeader");
   },
   computed: {
@@ -98,10 +99,11 @@ export default {
       const absoluteUrl = new RegExp("^(?:[a-z]+:)?//", "i");
       return absoluteUrl.test(this.$props.src)
         ? this.$props.src
-        : require(`~/assets/tour/${this.$props.src}`);
+        : assetUrl(`tour/${this.$props.src}`);
     },
   },
   methods: {
+    assetUrl,
     onVideoEnded() {
       this.videoEnded = true;
       this.$emit("video-ended");

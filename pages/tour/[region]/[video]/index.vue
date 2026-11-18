@@ -5,7 +5,7 @@
         <div class="video-info">
           <img
             class="profile"
-            :src="require(`~/assets/tour/${video.profile}`)"
+            :src="assetUrl(`tour/${video.profile}`)"
             :alt="`An image of ${video.name}`"
           />
           <h3>{{ video.name }}</h3>
@@ -27,25 +27,28 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
+import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
+  methods: { assetUrl },
   head() {
     return {
       title: "Resisting Stigma - Tour",
       link: [
         {
           rel: "preload",
-          href: require(`~/assets/tour/${this.video.poster}`),
+          href: assetUrl(`tour/${this.video.poster}`),
           as: "image",
         },
       ],
     };
   },
-  async asyncData({ params, store }) {
+  loadPage({ store, params }) {
     const video = store.getters.getVideoBySlug(params.video);
+    if (!video || video.region !== params.region) throw createError({ statusCode: 404, statusMessage: "Video not found" });
     const region = params.region;
 
-    store.commit("setBackgroundImage", `tour/${video.background}`);
 
     return {
       video,
@@ -61,7 +64,7 @@ export default {
     },
     ...mapGetters([]),
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

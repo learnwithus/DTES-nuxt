@@ -41,7 +41,7 @@
         <ul class="intro-tour-instructions">
           <li>
             <img
-              src="~assets/images/icons/click.svg"
+              src="~/assets/images/icons/click.svg"
               alt="Mouse Pointer Icon"
             />
             Click on the spots on the map to visit the peer or service and
@@ -50,14 +50,14 @@
           </li>
           <li>
             <img
-              src="~assets/images/icons/desktop.svg"
+              src="~/assets/images/icons/desktop.svg"
               alt="Desktop Computer Icon"
             />
             Best experienced on desktop.
           </li>
           <li>
             <img
-              src="~assets/images/icons/headphones.svg"
+              src="~/assets/images/icons/headphones.svg"
               alt="Headphones Icon"
             />
             Make sure sound is on.
@@ -73,25 +73,26 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument } from "~/utils/course-content";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Tour",
       link: [
         {
           rel: "preload",
-          href: require(`~/assets/tour/${this.intro.poster}`),
+          href: assetUrl(`tour/${this.intro.poster}`),
           as: "image",
         },
       ],
     };
   },
-  async asyncData({ $content, params, store }) {
-    store.commit("requestDarkBackground");
-    store.commit("setBackgroundImage", `images/tourintrobg.jpg`);
+  loadPage({ store, params }) {
 
-    const intro = await $content("tour/intro").fetch();
+    const intro = courseDocument("tour/intro");
 
     return {
       intro,
@@ -103,7 +104,7 @@ export default {
   computed: {
     ...mapGetters(["tourVideoRequirement"]),
   },
-};
+});
 </script>
 
 <style lang="scss">

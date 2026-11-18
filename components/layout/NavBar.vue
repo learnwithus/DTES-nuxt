@@ -19,7 +19,7 @@
           to="/"
           class="navbar-item opacity-show"
           :class="{ 'opacity-hide': !$store.state.header.logo }"
-          @click.native="hamburgerOpen = false"
+          @click="hamburgerOpen = false"
           ><nuxt-picture
             src="/assets/images/logo-large.png"
             alt="Resisting Stigma"
@@ -50,7 +50,7 @@
           <nuxt-link
             class="navbar-item"
             to="/learn"
-            @click.native="hamburgerOpen = false"
+            @click="hamburgerOpen = false"
             >Learn</nuxt-link
           >
 
@@ -58,7 +58,7 @@
             <nuxt-link
               class="navbar-link is-arrowless"
               to="/tour"
-              @click.native="hamburgerOpen = false"
+              @click="hamburgerOpen = false"
               >Tour</nuxt-link
             >
 
@@ -67,25 +67,25 @@
                 <nuxt-link
                   class="navbar-item"
                   to="/tour/intro"
-                  @click.native="hamburgerOpen = false"
+                  @click="hamburgerOpen = false"
                   >Intro</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"
                   to="/tour/dtes"
-                  @click.native="hamburgerOpen = false"
+                  @click="hamburgerOpen = false"
                   >DTES</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"
                   to="/tour/coastal"
-                  @click.native="hamburgerOpen = false"
+                  @click="hamburgerOpen = false"
                   >Coastal & <br> Richmond</nuxt-link
                 >
                 <nuxt-link
                   class="navbar-item"
                   to="/tour/videos"
-                  @click.native="hamburgerOpen = false"
+                  @click="hamburgerOpen = false"
                   >Videos</nuxt-link
                 >
               </div>
@@ -94,13 +94,13 @@
           <nuxt-link
             class="navbar-item"
             to="/about"
-            @click.native="hamburgerOpen = false"
+            @click="hamburgerOpen = false"
             >About</nuxt-link
           >
           <nuxt-link
             class="navbar-item"
             to="/resources"
-            @click.native="hamburgerOpen = false"
+            @click="hamburgerOpen = false"
             >Resources</nuxt-link
           >
         </div>

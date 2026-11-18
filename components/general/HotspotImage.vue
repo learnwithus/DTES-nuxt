@@ -1,26 +1,28 @@
 <template>
   <div class="hotspot-image-wrapper">
     <img :src="dynamicImage" :alt="alt" />
-    <v-popover
+    <VDropdown
       v-for="(hotspot, index) in hotspots"
       v-bind:key="index"
       :style="{ left: hotspot.x, top: hotspot.y }"
-      popoverClass="hotspot-image-theme"
+      popper-class="hotspot-image-theme"
       class="popover-hotspot"
-      trigger="hover focus"
-      offset="25"
+      :triggers="['hover', 'focus']"
+      :distance="4"
+      placement="bottom"
     >
       <!-- This will be the popover target (for the events and position) -->
-      <div class="hotspot"></div>
+      <button type="button" class="hotspot" :aria-label="hotspot.text"></button>
       <!-- This will be the content of the popover -->
-      <template slot="popover">
+      <template #popper>
         {{ hotspot.text }}
       </template>
-    </v-popover>
+    </VDropdown>
   </div>
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 export default {
   props: {
     src: {
@@ -39,7 +41,7 @@ export default {
   data: () => ({}),
   computed: {
     dynamicImage() {
-      return require(`~/assets/${this.src}`);
+      return assetUrl(`${this.src}`);
     },
   },
 };
@@ -48,7 +50,7 @@ export default {
 <style lang="scss">
 .popover-hotspot {
   position: absolute;
-  
+
 }
 .hotspot-image-wrapper {
   position: relative;
@@ -58,13 +60,18 @@ export default {
   }
 
   .hotspot {
+    box-sizing: content-box;
+    padding: 0;
+    display: block;
+    font: inherit;
+    margin-top: 1em;
     height: 0.75em;
     width: 0.75em;
     margin-left: -0.85em;
     border-radius: 50%;
     background: white;
     border: solid 0.5em $colour-accent;
-    position: absolute;
+    position: relative;
   }
 }
 .hotspot-image-theme{
@@ -73,8 +80,10 @@ export default {
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
   // padding: 1em;
 
-  .tooltip-inner.popover-inner {
+  .v-popper__inner {
     padding: 1em;
+    border-radius: 5px;
+    background: #f9f9f9;
   }
 }
 </style>

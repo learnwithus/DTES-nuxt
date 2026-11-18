@@ -10,7 +10,7 @@
           :class="{ active: sectionIndex == index }"
         >
           <img
-            :src="require(`~/assets/images/icons/${section.icon}`)"
+            :src="assetUrl(`images/icons/${section.icon}`)"
             :alt="section.alt"
           />
           <p class="name">{{ section.name }}</p>
@@ -21,7 +21,7 @@
     <div class="column">
       <transition name="verticle-slide-fade" mode="out-in">
         <div v-if="sectionIndex == 0" key="0">
-          <h3>Individual</h3>
+          <h3>Internal/Self</h3>
           <ul>
             <li>Self-reflection and further education</li>
             <li>
@@ -59,11 +59,7 @@
             <li>Inclusion of de-stigmatizing programs and services</li>
             <li>Providing outlets for feedback</li>
           </ul>
-          <a
-            href="http://www.bccdc.ca/resource-gallery/Documents/PEEP%20Best%20Practice%20Guidelines.pdf"
-            target="_blank"
-            >Source: PEEP Best Practice Guidelines</a
-          >
+
         </div>
         <div v-else-if="sectionIndex == 2" key="2">
           <h3>Societal</h3>
@@ -84,6 +80,7 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 export default {
   data: () => ({
     sectionIndex: undefined,
@@ -91,7 +88,7 @@ export default {
       {
         icon: "individual.svg",
         alt: "Person Icon",
-        name: "Individual",
+        name: "Internal/Self",
       },
       {
         icon: "community.svg",
@@ -106,6 +103,7 @@ export default {
     ],
   }),
   methods: {
+    assetUrl,
     setSection(index) {
       this.sectionIndex = index;
     },

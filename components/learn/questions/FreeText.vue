@@ -13,15 +13,15 @@
 
 <script>
 export default {
-  props: ["answers", "revealAnswer", "value"],
+  props: ["answers", "revealAnswer", "modelValue"],
   data() {
     return {
-      text: this.value ?? "",
+      text: this.modelValue ?? "",
     };
   },
   watch: {
     text(val) {
-      this.$emit("input", val);
+      this.$emit("update:modelValue", val);
     },
   },
 };

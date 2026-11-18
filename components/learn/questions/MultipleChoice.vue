@@ -8,21 +8,23 @@
       :class="{correct: revealAnswer && answer.correct, incorrect: revealAnswer && !answer.correct}"
       :disabled="revealAnswer"
       :val="index"
+      :name="groupName"
     >{{answer.answer}}</vs-radio>
   </div>
 </template>
 
 <script>
 export default {
-    props: [ "answers", "revealAnswer", "value"],
+    props: [ "answers", "revealAnswer", "modelValue"],
+    setup() { return { groupName: useId() }; },
     data(){
         return {
-            selectedAnswer: this.value
+            selectedAnswer: this.modelValue
         }
     },
     watch: {
       selectedAnswer(val){
-        this.$emit("input", val);
+        this.$emit("update:modelValue", val);
         
         if(this.selectedAnswer != undefined) this.$emit("user-answered");
       }

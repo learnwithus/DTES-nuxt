@@ -18,15 +18,17 @@
 </template>
 
 <script>
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument } from "~/utils/course-content";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ params,  $content }) {
-    const conclusion = await $content("tour/conclusion").fetch();
+  loadPage({ store, params }) {
+    const conclusion = courseDocument("tour/conclusion");
 
     return {
       conclusion,
@@ -35,7 +37,7 @@ export default {
   mounted() {
     this.$store.commit("overlayHeader");
   },
-  destroyed() {
+  beforeUnmount() {
     this.$store.commit("fixedHeader");
   },
   computed: {
@@ -46,7 +48,7 @@ export default {
 
     },
   },
-};
+});
 </script>
 
 <style lang="scss">

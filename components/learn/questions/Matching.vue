@@ -22,35 +22,23 @@
           :class="{ 'reveal-answer': revealAnswer }"
         >
           <!-- Drag / Drop UI for desktop -->
-          <drop
+          <div
             class="drop is-hidden-mobile"
             :class="{ incorrect: !isCorrectDefinition(index) }"
-            @drop="(definition, event) => handleDrop(definition, event, index)"
+            @dragover.prevent
+            @drop.prevent="handleDrop($event, index)"
             :data-id="index"
-            >{{ userAnswers[index] }}</drop
+            >{{ userAnswers[index] }}</div
           >
           <!-- Dropdown Select for mobile -->
-          <vs-select
-            placeholder="Select"
+          <match-select
             v-model="userAnswers[index]"
             class="is-hidden-tablet"
+            :label="term[0]"
+            :options="termDefinitions"
             :disabled="revealAnswer"
-            :state="
-              revealAnswer
-                ? isCorrectDefinition(index)
-                  ? 'success'
-                  : 'danger'
-                : ''
-            "
-          >
-            <vs-option
-              v-for="(definition, index) in termDefinitions"
-              :key="index"
-              :label="definition"
-              :value="definition"
-              >{{ definition }}</vs-option
-            >
-          </vs-select>
+            :state="revealAnswer ? (isCorrectDefinition(index) ? 'success' : 'danger') : ''"
+          />
         </div>
         <!-- Answers -->
         <div class="column is-4">
@@ -68,11 +56,11 @@
         v-for="(definition, index) in suffledDefinitions"
         v-bind:key="index"
       >
-        <drag
+        <div
           class="drag"
-          :transfer-data="definition"
+          @dragstart="$event.dataTransfer.setData('text/plain', definition)"
           :draggable="!revealAnswer"
-          >{{ definition }}</drag
+          >{{ definition }}</div
         >
       </div>
     </div>
@@ -80,18 +68,13 @@
 </template>
 
 <script>
-import { Drag, Drop } from "vue-drag-drop";
-import { shuffle } from "lodash";
+import shuffle from "lodash/shuffle.js";
 export default {
-  components: {
-    Drag,
-    Drop,
-  },
-  props: ["answers", "revealAnswer", "value"],
+  props: ["answers", "revealAnswer", "modelValue"],
   data() {
     return {
       selectedAnswer: 0,
-      userAnswers: this.value ?? new Array(this.$props.answers.length).fill(""),
+      userAnswers: this.modelValue ?? new Array(this.$props.answers.length).fill(""),
       suffledDefinitionsArray: undefined,
     };
   },
@@ -128,8 +111,9 @@ export default {
     },
   },
   methods: {
-    handleDrop(definition, event, index) {
-      this.$set(this.userAnswers, index, definition);
+    handleDrop(event, index) {
+      const definition = event.dataTransfer.getData("text/plain");
+      if (!this.revealAnswer && this.termDefinitions.includes(definition)) this.userAnswers[index] = definition;
     },
     isCorrectDefinition(index) {
       const definition = this.userAnswers[index];
@@ -137,8 +121,8 @@ export default {
     },
   },
   watch: {
-    userAnswers(val) {
-      this.$emit("input", val);
+    userAnswers: { deep: true, handler(val) {
+      this.$emit("update:modelValue", [...val]);
 
       if (
         this.userAnswers.filter((answer) => answer !== "").length ==
@@ -146,7 +130,7 @@ export default {
       ) {
         this.$emit("user-answered");
       }
-    },
+    } },
   },
 };
 </script>

@@ -9,7 +9,7 @@ export default function (flatQuestions) {
     const learnSections = flatQuestions.reduce((acc, obj) => {
         const property = obj["dir"]; // Sort all the quetsions into their parent directories (their sections)
 
-        acc[property] = acc[property] || {}; // Create new sub object if it doesn't already exist
+        acc[property] = acc[property] || { questions: [], feedback: [] }; // Create new sub object if it doesn't already exist
 
         // If the slug is feedback (for end-of-section feedback) add it to the feedback key,
         // If not, it must be a question so add it to the array of questions

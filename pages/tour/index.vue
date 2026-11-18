@@ -18,9 +18,11 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
+import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
 
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Tour",
@@ -28,19 +30,18 @@ export default {
       link: [
         ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${video.profile}`),
+          href: assetUrl(`tour/${video.profile}`),
           as: "image",
         })),
         ...this.videos.map((video) => ({
           rel: "preload",
-          href: require(`~/assets/tour/${video.background}`),
+          href: assetUrl(`tour/${video.background}`),
           as: "image",
         })),
       ],
     };
   },
-  async asyncData({ redirect, store, $content }) {
-    store.commit("requestDarkBackground");
+  loadPage({ store, params }) {
 
     return {};
   },
@@ -63,7 +64,7 @@ export default {
     },
   },
   methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>

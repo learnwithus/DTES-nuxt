@@ -8,20 +8,22 @@
 </template>
 
 <script>
-export default {
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument } from "~/utils/course-content";
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - About",
     };
   },
-  async asyncData({ $content, params, store }) {
-    const about = await $content("about").fetch();
+  loadPage({ store, params }) {
+    const about = courseDocument("about");
 
     return {
       about,
     };
   },
-};
+});
 </script>
 
 <style lang="scss">

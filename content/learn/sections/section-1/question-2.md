@@ -1,6 +1,10 @@
 ---
 question: Which of these situations shows stigma against substance use?
 type: multiple-choice
+video: https://d2rsox40dv21dz.cloudfront.net/dtes/StreetDrJill-StigmaIsDeadly.mp4
+videoHls: https://d2rsox40dv21dz.cloudfront.net/dtes/StreetDrJill-StigmaIsDeadly/master.m3u8
+videoPoster: https://d2rsox40dv21dz.cloudfront.net/dtes/StreetDrJill-StigmaIsDeadly/poster.jpg
+videoAttributionUrl: https://www.instagram.com/streetdrjill/reel/DTMByHNEmYE/
 answers:
   - answer: Doctor says to a patient who uses meth, “you’re lucky to have all your teeth left” and then tells the patient about how crazy people on meth are
     correct: false

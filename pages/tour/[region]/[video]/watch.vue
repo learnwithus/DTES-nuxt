@@ -28,15 +28,17 @@
 </template>
 
 <script>
+import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ params, store }) {
+  loadPage({ store, params }) {
     const video = store.getters.getVideoBySlug(params.video);
+    if (!video || video.region !== params.region) throw createError({ statusCode: 404, statusMessage: "Video not found" });
     const region = params.region;
 
     return {
@@ -47,7 +49,7 @@ export default {
   mounted() {
     this.$store.commit("overlayHeader");
   },
-  destroyed() {
+  beforeUnmount() {
     this.$store.commit("fixedHeader");
   },
   computed: {
@@ -58,7 +60,7 @@ export default {
       this.$store.commit("userWatchedVideo", this.video.slug);
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -4,12 +4,14 @@
     <div
       class="global-background-image"
       v-if="dynamicImage"
-      v-lazy:background-image="dynamicImage"
+      lazy="loaded"
+      :style="{ backgroundImage: `url(${dynamicImage})` }"
     ></div>
   </div>
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
 export default {
   name: "DynamicImage",
 
@@ -25,7 +27,7 @@ export default {
 
   computed: {
     dynamicImage() {
-      return this.src ? require(`~/assets/${this.src}`) : false;
+      return this.src ? assetUrl(`${this.src}`) : false;
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-fixed-ui">
-    <dir class="container">
+    <div class="container">
       <!-- Buttons -->
       <div class="button-wrapper">
         <vs-button v-if="button != 'start-module'" flat size="large" dark color="#ffffff"
@@ -27,7 +27,7 @@
           :progress="progress.sectionProgress" />
       </div>
       <div class="is-hidden-mobile"></div>
-    </dir>
+    </div>
   </div>
 </template>
 
@@ -149,6 +149,10 @@ export default {
   }
 
   .button-wrapper {
+    .vs-button.dark:not(.active) { color: #2c3e50; }
+    .vs-button:not(.bordered) { background: rgba(255, 255, 255, .15); }
+    .vs-button.bordered:hover, .vs-button.bordered:focus-visible { color: white; }
+    .vs-button.active:not(.bordered) { background: var(--button-color); }
     display: flex;
     justify-content: center;
 

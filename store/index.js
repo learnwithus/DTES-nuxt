@@ -6,14 +6,8 @@ export const state = () => ({
     logo: true,
   },
   background: {
-    image: {
-      current: null,
-      next: null,
-    },
-    dark: {
-      current: false,
-      next: false,
-    },
+    image: null,
+    dark: false,
   },
   tour: {
     videos: {
@@ -28,18 +22,6 @@ export const state = () => ({
     tour: false,
   },
 });
-
-export const actions = {
-  async nuxtServerInit({ commit, dispatch }, { $content }) {
-    const dtes = await $content("tour/dtes/videos").fetch();
-    const coastal = await $content("tour/coastal/videos").fetch();
-
-    await commit("setVideos", { 
-      dtes: dtes.map(x => ({...x, region: 'dtes'})), 
-      coastal: coastal.map(x => ({...x, region: 'coastal'})), 
-    });
-  },
-};
 
 export const mutations = {
   setVideos(state, { dtes, coastal }) {
@@ -59,26 +41,7 @@ export const mutations = {
     state.header.visible = false;
   },
   setBackgroundImage(state, value) {
-    // console.log("setting background to: " + value);
-    if (value !== state.background.image.next) {
-      state.background.image.next = value;
-
-      // If we're running on the server, set the actual background image as well
-      // because this must be the first pageload
-      if (process.server) {
-        state.background.image.current = state.background.image.next;
-      }
-    }
-  },
-  // Sets background image to the the new background image (Done in router plugin '~/plugins/backgroundImage.js')
-  updateBackgroundImage(state) {
-    state.background.image.current = state.background.image.next;
-  },
-  clearBackgroundImage(state) {
-    state.background.image.current = null;
-  },
-  clearDarkBackgroundRequest(state) {
-    state.background.dark.next = false;
+    state.background.image = value;
   },
   transparentHeader(state) {
     state.header.transparent = true;
@@ -90,21 +53,8 @@ export const mutations = {
   hideHeaderLogo(state) {
     state.header.logo = false;
   },
-  requestDarkBackground(state) {
-    state.background.dark.next = true;
-
-    // If we're running on the server, set the actual dark mode as well
-    // because this must be the first pageload
-    if (process.server) {
-      state.background.dark.current = state.background.dark.next;
-    }
-  },
-  // updateDarkBackground(state){
-  //     state.background.dark.current = state.background.dark.next;
-  // },
   setDarkBackground(state, value) {
-    // console.log("setting actual background dark state to: " + value);
-    state.background.dark.current = value ? true : false;
+    state.background.dark = value;
   },
   beginTour(state) {
     state.tour.started = true;
@@ -124,10 +74,10 @@ export const mutations = {
 
 export const getters = {
   getBackgroundImage: (state) => {
-    return state.background.image.current;
+    return state.background.image;
   },
   getBackgroundDark: (state) => {
-    return state.background.dark.current;
+    return state.background.dark;
   },
   videos: (state) => {
     return[...state.tour.videos.dtes, ...state.tour.videos.coastal];

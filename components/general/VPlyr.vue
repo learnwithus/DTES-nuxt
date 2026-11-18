@@ -6,8 +6,9 @@
 </template>
 
 <script>
-import Plyr from "plyr";
+
 import Hls from "hls.js";
+import { markRaw } from "vue";
 
 export default {
   name: "VuePlyr",
@@ -40,20 +41,24 @@ export default {
     }
 
     return {
-      player: {},
+      player: null,
+      hlsPlayer: null,
       opts: options,
     };
   },
   computed: {},
-  mounted() {
+  async mounted() {
+    const { default: Plyr } = await import("plyr/dist/plyr.mjs");
+    if (!this.$el?.isConnected) return;
+    const video = this.$el.querySelector("video");
+    if (!video) return;
     // For more options see: https://github.com/sampotts/plyr/#options
     // captions.update is required for captions to work with hls.js
-    const defaultOptions = {};
 
     if (Hls.isSupported() && this.$props.hls !== undefined) {
       // console.log("we have hls!");
       // For more Hls.js options, see https://github.com/dailymotion/hls.js
-      const hls = new Hls();
+      const hls = markRaw(new Hls());
       hls.loadSource(this.$props.hls);
       // console.log(hls);
 
@@ -85,50 +90,37 @@ export default {
         };
 
         // Initialize here
-        this.player = new Plyr(this.$el.firstChild, this.opts);
+        this.player = markRaw(new Plyr(video, this.opts));
 
         this.emit.forEach((element) => {
           this.player.on(element, this.emitPlayerEvent);
         });
       });
-      hls.attachMedia(this.$el.firstChild);
-      window.hls = hls;
+      hls.attachMedia(video);
+      this.hlsPlayer = hls;
     } else {
       console.info("HLS not supported");
       // default options with no quality update in case Hls is not supported
-      this.player = new Plyr(this.$el.firstChild, this.opts);
+      this.player = markRaw(new Plyr(video, this.opts));
 
       this.emit.forEach((element) => {
         this.player.on(element, this.emitPlayerEvent);
       });
     }
   },
-  beforeDestroy() {
-    window.hls = undefined;
-    // try {
-      
-    //   this.player.destroy();
-    // } catch (e) {
-    //   if (
-    //     !(
-    //       this.opts.hideYouTubeDOMError &&
-    //       e.message === "The YouTube player is not attached to the DOM."
-    //     )
-    //   ) {
-    //     // eslint-disable-next-line no-console
-    //     console.error(e);
-    //   }
-    // }
+  beforeUnmount() {
+    this.player?.destroy();
+    this.hlsPlayer?.destroy();
   },
   methods: {
     emitPlayerEvent(event) {
       this.$emit(event.type, event);
     },
     updateQuality(newQuality) {
-      window.hls.levels.forEach((level, levelIndex) => {
+      this.hlsPlayer.levels.forEach((level, levelIndex) => {
         if (level.height === newQuality) {
           // console.log("Found quality match with " + newQuality);
-          window.hls.currentLevel = levelIndex;
+          this.hlsPlayer.currentLevel = levelIndex;
         }
       });
     },

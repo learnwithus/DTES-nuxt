@@ -6,15 +6,12 @@
       <!-- Peers -->
       <h3>Peers</h3>
       <ul class="video-list">
-        <li class="video" v-for="peer in peers.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="peer.id">
+        <li class="video" v-for="peer in [...peers].sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="peer.id">
           <nuxt-link :to="`/tour/${peer.region}/${peer.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${peer.name}`"
-              v-lazy="{
-                src: require(`~/assets/tour/${peer.profile}`),
-                preLoad: 1,
-              }"
+              :src="assetUrl(`tour/${peer.profile}`)" loading="lazy"
             />
             <figcaption>{{ peer.name }}</figcaption>
           </nuxt-link>
@@ -23,15 +20,12 @@
       <!-- Services -->
       <h3>Services</h3>
       <ul class="video-list">
-        <li class="video" v-for="service in services.sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="service.id">
+        <li class="video" v-for="service in [...services].sort((a, b) => a.name.localeCompare(b.name))" v-bind:key="service.id">
           <nuxt-link :to="`/tour/${service.region}/${service.slug}`"
             ><img
               class="profile"
               :alt="`An image of ${service.name}`"
-              v-lazy="{
-                src: require(`~/assets/tour/${service.profile}`),
-                preLoad: 1,
-              }"
+              :src="assetUrl(`tour/${service.profile}`)" loading="lazy"
             />
             <figcaption>{{ service.name }}</figcaption>
           </nuxt-link>
@@ -42,20 +36,22 @@
 </template>
 
 <script>
+import { assetUrl } from "~/utils/asset-url";
+import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
-export default {
+export default defineCoursePage({
+  methods: { assetUrl },
   head() {
     return {
       title: "Resisting Stigma - Tour",
     };
   },
-  async asyncData({ $content, params, store }) {
-    store.commit("requestDarkBackground");
+  loadPage({ store, params }) {
   },
   computed: {
     ...mapGetters(["services", "peers"]),
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

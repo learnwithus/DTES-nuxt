@@ -6,11 +6,11 @@
       <!-- Section Number -->
       <transition name="slide-fade" mode="out-in">
         <learn-title
-          :key="currentQuestion ? currentQuestion.questionNumber : undefined"
+          :key="showVideoSlide ? 'video' : currentQuestion?.questionNumber"
           class="space-2 opacity-show"
           :class="{ 'opacity-hide': !moduleStarted }"
           v-if="!moduleComplete"
-          >{{ currentQuestion ? currentQuestion.questionNumber : 'Feedback' }} /</learn-title
+          >{{ showVideoSlide ? 'Video' : (currentQuestion?.questionNumber ?? 'Feedback') }} /</learn-title
         >
       </transition>
 
@@ -20,6 +20,20 @@
           v-if="!moduleStarted"
           :learningObjectives="learningObjectives"
         />
+        <div v-else-if="showVideoSlide" key="video" class="stigma-video">
+          <v-plyr :hls="currentQuestion.videoHls" class="stigma-video-player">
+            <video
+              :poster="currentQuestion.videoPoster"
+              aria-label="Street Dr Jill video about stigma"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source :src="currentQuestion.video" type="video/mp4" />
+            </video>
+          </v-plyr>
+          <p>Source: <a :href="currentQuestion.videoAttributionUrl" target="_blank" rel="noopener noreferrer">Street Dr Jill on Instagram</a></p>
+        </div>
         <!-- Question View -->
         <div
           class="question"
@@ -116,27 +130,22 @@
 </template>
 
 <script>
+import { defineCoursePage } from "~/utils/course-page";
+import { courseDocument, courseDocuments } from "~/utils/course-content";
 import formatQuestions from "~/helpers/formatLearnQuestions";
-export default {
+export default defineCoursePage({
   head() {
     return {
       title: "Resisting Stigma - Learn",
     };
   },
-  async asyncData(context) {
+  loadPage({ store, params }) {
     // Get content from flat files in ~/content/ folder
 
-    const finalPage = await context.$content("learn/final").fetch();
-    const learningObjectives = await context
-      .$content("learn/objectives")
-      .fetch();
+    const finalPage = courseDocument("learn/final");
+    const learningObjectives = courseDocument("learn/objectives");
 
-    const flatQuestions = await context
-      .$content("learn/sections", { deep: true })
-      .sortBy("dir")
-      .sortBy("slug")
-      // .only(["questions", "feedback", "body"])
-      .fetch();
+    const flatQuestions = courseDocuments("learn/sections");
 
     // Do some complex organizing of the data (check function for details)
     const formattedSections = formatQuestions(flatQuestions);
@@ -147,21 +156,13 @@ export default {
       finalPage: finalPage,
       learningObjectives: learningObjectives,
       moduleStarted: false,
+      videoSlidePassed: false,
       currentIndex: {
         section: 0,
         question: 0,
         feedback: 0,
       },
     };
-  },
-  mounted() {
-    this.currentIndex = { section: 0, question: 0, feedback: 0 };
-    this.moduleStarted = false;
-  },
-  beforeDestroy() {
-    // Reset
-    this.$data.currentIndex = { section: 0, question: 0, feedback: 0 };
-    this.$data.moduleStarted = false;
   },
   beforeRouteLeave(to, from, next) {
     if (!this.moduleComplete && this.moduleStarted) {
@@ -175,6 +176,13 @@ export default {
   methods: {
     // Progresses the user through the learning module
     nextScreen() {
+      if (this.showVideoSlide) {
+        this.videoSlidePassed = true;
+        window.scrollTo(0, 0);
+        return;
+      }
+      this.videoSlidePassed = false;
+
       // If feedback is being displayed...
       if (this.showFeedback) {
         // If the feedback being shown is the last feedback for that section, move on to the next section
@@ -194,10 +202,25 @@ export default {
     },
     // Go back to previous screen
     previousScreen() {
+      if (this.currentQuestion?.video && this.videoSlidePassed) {
+        this.videoSlidePassed = false;
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      // When stepping back from a later slide, return to the question first.
+      this.videoSlidePassed = true;
+
       // If feedback is being displayed...
       if (this.showFeedback) {
         if (this.currentIndex.feedback > 0) {
           this.currentIndex.feedback--;
+        } else if (this.currentSection.questions.length === 0) {
+          this.currentIndex = {
+            section: this.currentIndex.section - 1,
+            question: this.previousSection.questions.length,
+            feedback: this.previousSection.feedback.length - 1,
+          };
         } else {
           this.currentIndex.question--;
         }
@@ -206,6 +229,7 @@ export default {
       else {
         if (this.currentIndex.section == 0 && this.currentIndex.question == 0) {
           this.moduleStarted = false;
+          this.videoSlidePassed = false;
         } else if (this.currentIndex.question > 0) {
           this.currentIndex.question--;
         } else {
@@ -249,6 +273,9 @@ export default {
       });
       return this.currentSection?.feedback[this.currentIndex.feedback];
     },
+    showVideoSlide() {
+      return this.moduleStarted && !!this.currentQuestion?.video && !this.videoSlidePassed;
+    },
     showFeedback() {
       return (
         this.currentSection?.questions?.length <= this.currentIndex.question
@@ -284,13 +311,15 @@ export default {
         sectionCount: this.sections.length,
         currentSection: this.currentSectionNumber,
         sectionProgress: this.sectionProgress,
-        lastSectionQuestion: this.isLastQuestion,
+        lastSectionQuestion: !this.showVideoSlide && this.isLastQuestion,
       };
     },
     // Returns the type of button we should be displaying based on the current state of things
     uiButton() {
       if (!this.moduleStarted) {
         return "start-module";
+      } else if (this.showVideoSlide) {
+        return "question-next";
       } else if (!this.showAnswer && !this.showFeedback && !this.moduleComplete)
         return "question-submit";
       else if (this.showAnswer && !this.showFeedback && !this.moduleComplete)
@@ -309,10 +338,21 @@ export default {
       return this.userRequestedAnswer && this.userAnsweredQuestion;
     },
   },
-};
+});
 </script>
 
 <style scoped lang="scss">
+.stigma-video-player {
+  width: min(360px, 100%, 36svh);
+  margin-bottom: 0.5rem;
+}
+
+.stigma-video-player :deep(video) {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
 .learn-container {
   overflow: hidden;
   padding-top: 2em;

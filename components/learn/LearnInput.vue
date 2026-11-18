@@ -24,10 +24,10 @@
 
 <script>
 export default {
-  props: ["type", "answers", "revealAnswer", "value"],
+  props: ["type", "answers", "revealAnswer", "modelValue"],
   data() {
     return {
-      model: this.value,
+      model: this.modelValue,
     };
   },
   methods: {
@@ -37,7 +37,7 @@ export default {
   },
   watch: {
     model(val) {
-      this.$emit("input", val);
+      this.$emit("update:modelValue", val);
     },
   },
 };

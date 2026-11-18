@@ -16,12 +16,12 @@ pipeline {
         stage('Build') {
             // do the actual build
             steps {
-                nodejs(nodeJSInstallationName: 'Node 14') {
-                    sh 'npm install'
+                nodejs(nodeJSInstallationName: 'Node 24') {
+                    sh 'npm ci'
                     sh 'npm run generate'
                 }
                 // stash the data
-                dir('dist') {
+                dir('.output/public') {
                     stash name: "website", includes: "**/*"
                 }
             }
