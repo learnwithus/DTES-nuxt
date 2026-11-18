@@ -14,7 +14,8 @@ pipeline {
                         node --version
                         npm --version
                         npm ci
-                        npm run generate
+                        BETA_NOINDEX=true npm run generate
+                        grep -q 'name="robots" content="noindex, nofollow"' .output/public/index.html
                     '''
                 }
                 sh 'test -s .output/public/index.html'

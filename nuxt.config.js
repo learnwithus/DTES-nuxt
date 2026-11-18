@@ -2,6 +2,8 @@ import { addTemplate, updateTemplates } from '@nuxt/kit'
 import { compileContent } from './utils/compile-content.mjs'
 import { readdirSync } from 'node:fs'
 
+const betaNoIndex = process.env.BETA_NOINDEX === 'true'
+
 const tourRoutes = ['dtes', 'coastal'].flatMap(region =>
   readdirSync(new URL(`./content/tour/${region}/videos/`, import.meta.url))
     .filter(file => file.endsWith('.md'))
@@ -30,7 +32,10 @@ export default defineNuxtConfig({
     head: {
       title: 'Resisting Stigma',
       htmlAttrs: { lang: 'en' },
-      meta: [{ name: 'description', content: "Learn about communities across BC, including Vancouver's Downtown Eastside, and how stigma affects their residence" }],
+      meta: [
+        { name: 'description', content: "Learn about communities across BC, including Vancouver's Downtown Eastside, and how stigma affects their residence" },
+        ...(betaNoIndex ? [{ name: 'robots', content: 'noindex, nofollow' }] : [])
+      ],
       link: [
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
