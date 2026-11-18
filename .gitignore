@@ -90,3 +90,9 @@ sw.*
 *.swp
 
 .output/
+
+# Local course review materials
+/docs/meeting-notes/
+/output/
+/resisting-stigma.pdf
+/resisting-stigma compressed.pdf
