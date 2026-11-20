@@ -1,5 +1,5 @@
 <template>
-  <div class="bottom-fixed-ui">
+  <div class="bottom-fixed-ui" :class="{ accent }">
     <div class="container">
       <!-- Buttons -->
       <div class="button-wrapper">
@@ -21,10 +21,14 @@
       </div>
 
       <!-- Prgoress Dots -->
-      <div class="learn-progress-wrapper is-hidden-mobile opacity-show"
-        :class="{ 'opacity-hide': !$props.progress.show }">
+      <div class="learn-progress-wrapper is-hidden-mobile opacity-show" ref="progressWrapper"
+        :class="{ 'opacity-hide': !$props.progress.show }" :style="clipOffset">
         <progress-dots :sections="progress.sectionCount" :current-section="progress.currentSection"
           :progress="progress.sectionProgress" />
+        <!-- Same dots in their blue-background colours, clipped to the blue shape so the colours
+             change exactly along the edge as it sweeps across -->
+        <progress-dots class="on-blue progress-dots-blue" aria-hidden="true" :sections="progress.sectionCount"
+          :current-section="progress.currentSection" :progress="progress.sectionProgress" />
       </div>
       <div class="is-hidden-mobile"></div>
     </div>
@@ -34,6 +38,8 @@
 <script>
 export default {
   props: {
+    // True while the learn background is (or is sweeping to) all blue
+    accent: Boolean,
     button: {
       // 'question-submit' || 'question-next' || 'feedback-next-section' || 'feedback-next-feedback'
       type: String,
@@ -50,8 +56,30 @@ export default {
       //   }
     },
   },
+  data: () => ({ clipOffset: {} }),
   mounted() {
-    // console.log(this.$props.progress);
+    this.measureClip();
+    // Window resizes, plus width changes such as a scrollbar appearing on a long slide
+    window.addEventListener("resize", this.measureClip);
+    this.resizeObserver = new ResizeObserver(() => this.measureClip());
+    this.resizeObserver.observe(document.documentElement);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.measureClip);
+    this.resizeObserver?.disconnect();
+  },
+  methods: {
+    // The blue shape is drawn relative to the viewport (LearnBackground.vue); the clip is relative to
+    // the dots, so pass in the viewport size and where the dots sit within it.
+    measureClip() {
+      const rect = this.$refs.progressWrapper.getBoundingClientRect();
+      this.clipOffset = {
+        "--vw": `${document.documentElement.clientWidth}px`,
+        "--vh": `${window.innerHeight}px`,
+        "--x": `${rect.left}px`,
+        "--y": `${rect.top}px`,
+      };
+    },
   },
 };
 </script>
@@ -99,11 +127,6 @@ export default {
         rgba($colour-primary, 1) 0%,
         rgba($colour-primary, 0.75) 80%,
         rgba($colour-primary, 0) 100%);
-
-    .dark & {
-      opacity: 1;
-      transition: opacity 200ms linear 250ms;
-    }
   }
 
   &::after {
@@ -115,16 +138,22 @@ export default {
     height: 100%;
     opacity: 1;
     animation: fade-in-bottom-ui 0.3s linear; // Looks nicer when combined with page transition
-    transition: opacity 200ms linear 250ms;
+    // Wait for the blue sweep back to white (450ms in LearnBackground.vue) before fading in
+    transition: opacity 200ms linear 450ms;
     background: linear-gradient(0deg,
         rgba(white, 1) 0%,
         rgba(white, 0.8) 80%,
         rgba(white, 0) 100%);
+  }
 
-    .dark & {
-      opacity: 0;
-      transition: none;
-    }
+  // Follows the background sweep rather than the slide content, so the white fade never sits over blue
+  &.accent::before {
+    opacity: 1;
+    transition: opacity 200ms linear 250ms;
+  }
+  &.accent::after {
+    opacity: 0;
+    transition: none;
   }
 
   .dark & {
@@ -161,10 +190,55 @@ export default {
     }
   }
 
+  // Two copies of the dots share one grid cell: the normal colours clipped to the white side of the
+  // background's edge, and the blue-background colours (.on-blue) clipped to the blue side.
+  // The edge mirrors the clip-path polygons and timing in LearnBackground.vue. That layer is 120% of
+  // the viewport wide and shifted 20% left, so a point p% across it sits at (1.2p - 20)% of the
+  // viewport; --x/--y (set in measureClip) move each point into the dots' own coordinates.
   .learn-progress-wrapper {
+    position: relative;
+    // Above the ::before/::after fades; the clip-paths stop the dots' own z-index reaching them
+    z-index: 1;
+    display: grid;
     min-width: 300px;
     margin: 0 auto;
     transition: opacity linear 200ms;
+
+    --far-left: calc(var(--vw) * -0.3 - var(--x));
+    --far-right: calc(var(--vw) - var(--x));
+    --y-top: calc(0px - var(--y));
+    --y-bottom: calc(var(--vh) - var(--y));
+    // --top/--bottom: where the blue edge crosses the top and bottom of the viewport.
+    // Below the tablet breakpoint the blue shape is hidden off the right edge.
+    --top: var(--far-right);
+    --bottom: var(--far-right);
+
+    @include breakpoint(tablet) {
+      // Background sliver: 96% → 95.2%, 85% → 82% of the viewport
+      --top: calc(var(--vw) * 0.952 - var(--x));
+      --bottom: calc(var(--vw) * 0.82 - var(--x));
+    }
+
+    > .progress-bar {
+      grid-area: 1 / 1;
+      width: 100%;
+      transition: clip-path 450ms ease-in-out;
+    }
+  }
+
+  // White side of the edge
+  .learn-progress-wrapper > .progress-bar:not(.on-blue) {
+    clip-path: polygon(var(--far-left) var(--y-top), var(--top) var(--y-top), var(--bottom) var(--y-bottom), var(--far-left) var(--y-bottom));
+  }
+  // Blue side of the edge
+  .progress-dots-blue {
+    clip-path: polygon(var(--top) var(--y-top), var(--far-right) var(--y-top), var(--far-right) var(--y-bottom), var(--bottom) var(--y-bottom));
+  }
+
+  // Full blue: 11% → -6.8%, 0% → -20% of the viewport
+  &.accent .learn-progress-wrapper {
+    --top: calc(var(--vw) * -0.068 - var(--x));
+    --bottom: calc(var(--vw) * -0.2 - var(--x));
   }
 }
 </style>

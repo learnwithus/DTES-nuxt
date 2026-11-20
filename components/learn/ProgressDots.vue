@@ -46,8 +46,8 @@ export default {
     transform: translateY(-50%);
     transition: all 0.25s ease-out;
 
-    // Dark Mode Colours
-    .dark & {
+    // Colours on the blue background
+    .on-blue & {
       background-color: $colour-dark;
     }
   }
@@ -61,8 +61,8 @@ export default {
     background-color: $colour-accent;
     width: 0%;
 
-    // Dark Mode Colours
-    .dark & {
+    // Colours on the blue background
+    .on-blue & {
       background-color: $colour-light;
     }
   }
@@ -90,8 +90,8 @@ export default {
   position: relative;
   transition: all 0.25s ease-out;
 
-  // Dark Mode Colours
-  .dark & {
+  // Colours on the blue background
+  .on-blue & {
     background-color: $colour-dark;
     fill: $colour-dark;
   }
@@ -101,7 +101,7 @@ export default {
     fill: $colour-accent;
     background-color: $colour-accent;
 
-    .dark & {
+    .on-blue & {
       background-color: $colour-light;
     }
   }
@@ -111,7 +111,7 @@ export default {
     fill: $colour-light;
     background-color: $colour-accent;
 
-    .dark & {
+    .on-blue & {
       background-color: $colour-light;
     }
   }

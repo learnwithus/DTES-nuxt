@@ -11,7 +11,7 @@
             ><img
               class="profile"
               :alt="`An image of ${peer.name}`"
-              :src="assetUrl(`tour/${peer.profile}`)" loading="lazy"
+              v-bind="responsiveImage($img, `tour/${peer.profile}`, 'profile', '8em')" loading="lazy"
             />
             <figcaption>{{ peer.name }}</figcaption>
           </nuxt-link>
@@ -25,7 +25,7 @@
             ><img
               class="profile"
               :alt="`An image of ${service.name}`"
-              :src="assetUrl(`tour/${service.profile}`)" loading="lazy"
+              v-bind="responsiveImage($img, `tour/${service.profile}`, 'profile', '8em')" loading="lazy"
             />
             <figcaption>{{ service.name }}</figcaption>
           </nuxt-link>
@@ -36,11 +36,11 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { responsiveImage } from "~/utils/responsive-image";
 import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
 export default defineCoursePage({
-  methods: { assetUrl },
+  methods: { responsiveImage },
   head() {
     return {
       title: "Resisting Stigma - Tour",

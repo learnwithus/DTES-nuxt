@@ -1,9 +1,9 @@
 <template>
-  <div id="dtes-layout" :class="{dark: getBackgroundDark}">
+  <div id="dtes-layout" :class="{ dark: background.dark }">
     <nav-bar />
     <!-- Dynamic Image Background -->
     <transition name="fade" mode="out-in">
-      <background-image v-if="getBackgroundImage || getBackgroundDark" :src="getBackgroundImage" />
+      <background-image v-if="background.image || background.dark || background.black" :src="background.image" :black="background.black" />
     </transition>
     <!-- Page -->
     <div id="dtes-page"><slot /></div>
@@ -11,10 +11,23 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// Matches the page leave transition in assets/scss/transitions.scss
+const PAGE_LEAVE_MS = 200;
+
 export default {
-  computed: {
-    ...mapGetters(["getBackgroundImage", "getBackgroundDark"]),
+  data() {
+    return { background: { ...this.$store.state.background } };
+  },
+  watch: {
+    // The route middleware updates the background as soon as navigation starts.
+    // Apply it once the old page has faded out so the new background never shows behind it.
+    "$store.state.background": {
+      deep: true,
+      handler(background) {
+        clearTimeout(this.timer);
+        this.timer = setTimeout(() => (this.background = { ...background }), PAGE_LEAVE_MS);
+      },
+    },
   },
 };
 </script>

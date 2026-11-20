@@ -195,5 +195,23 @@ export default {
   &.no-max-width .v-popper__inner {
     max-width: unset;
   }
+
+  // Fade in and rise into place; floating-vue toggles these classes as the tooltip shows and hides
+  &.v-popper__popper--shown {
+    transition: opacity 250ms ease-out;
+  }
+  .v-popper__wrapper {
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  &.v-popper__popper--show-from .v-popper__wrapper,
+  &.v-popper__popper--hide-to .v-popper__wrapper {
+    transform: translateY(10px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-popper__wrapper {
+      transition: none;
+    }
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="hotspot-image-wrapper">
-    <img :src="dynamicImage" :alt="alt" />
+    <img v-bind="dynamicImage" :alt="alt" />
     <VDropdown
       v-for="(hotspot, index) in hotspots"
       v-bind:key="index"
@@ -8,7 +8,7 @@
       popper-class="hotspot-image-theme"
       class="popover-hotspot"
       :triggers="['hover', 'focus']"
-      :distance="4"
+      :distance="12"
       placement="bottom"
     >
       <!-- This will be the popover target (for the events and position) -->
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { responsiveImage } from "~/utils/responsive-image";
 export default {
   props: {
     src: {
@@ -41,7 +41,7 @@ export default {
   data: () => ({}),
   computed: {
     dynamicImage() {
-      return assetUrl(`${this.src}`);
+      return responsiveImage(this.$img, this.src, "content");
     },
   },
 };
@@ -50,7 +50,10 @@ export default {
 <style lang="scss">
 .popover-hotspot {
   position: absolute;
-
+  // The wrapper is the popover's reference box, so it must match the dot exactly for the
+  // arrow to point at its centre. Keeps the dot where the old margins placed it:
+  // centred on x, with its centre 1.875em below y.
+  transform: translate(-50%, calc(-50% + 1.875em));
 }
 .hotspot-image-wrapper {
   position: relative;
@@ -64,10 +67,8 @@ export default {
     padding: 0;
     display: block;
     font: inherit;
-    margin-top: 1em;
     height: 0.75em;
     width: 0.75em;
-    margin-left: -0.85em;
     border-radius: 50%;
     background: white;
     border: solid 0.5em $colour-accent;

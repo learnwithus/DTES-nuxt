@@ -1,7 +1,7 @@
 <template>
-  <main :class="{ dark: showFeedback || moduleComplete }">
+  <main :class="{ dark: darkContent }">
     <div class="container learn-container">
-      <learn-background :accent="showFeedback || moduleComplete" />
+      <learn-background :accent="darkSlide" />
 
       <!-- Section Number -->
       <transition name="slide-fade" mode="out-in">
@@ -14,25 +14,37 @@
         >
       </transition>
 
-      <transition name="slide-fade" mode="out-in">
+      <!-- Switch light/dark colours as the next slide enters, so the outgoing slide keeps its own -->
+      <transition name="slide-fade" mode="out-in" @before-enter="darkContent = darkSlide">
         <!-- Learning Objectives -->
         <learning-objectives
           v-if="!moduleStarted"
           :learningObjectives="learningObjectives"
         />
-        <div v-else-if="showVideoSlide" key="video" class="stigma-video">
-          <v-plyr :hls="currentQuestion.videoHls" class="stigma-video-player">
-            <video
-              :poster="currentQuestion.videoPoster"
-              aria-label="Street Dr Jill video about stigma"
-              controls
-              playsinline
-              preload="metadata"
-            >
-              <source :src="currentQuestion.video" type="video/mp4" />
-            </video>
-          </v-plyr>
-          <p>Source: <a :href="currentQuestion.videoAttributionUrl" target="_blank" rel="noopener noreferrer">Street Dr Jill on Instagram</a></p>
+        <div v-else-if="showVideoSlide" key="video" class="stigma-video columns">
+          <div class="column is-half">
+            <v-plyr :hls="currentQuestion.videoHls" class="stigma-video-player">
+              <video
+                :poster="currentQuestion.videoPoster"
+                aria-label="Street Dr Jill video about stigma"
+                controls
+                playsinline
+                preload="metadata"
+                @play="currentQuestion.videoPlayed = true"
+              >
+                <source :src="currentQuestion.video" type="video/mp4" />
+              </video>
+            </v-plyr>
+            <p>Source: <a :href="currentQuestion.videoAttributionUrl" target="_blank" rel="noopener noreferrer">Street Dr Jill on Instagram</a></p>
+          </div>
+          <!-- Shown when they try to move on without starting the video, like the unanswered-question reminder -->
+          <div class="column is-one-third-desktop is-full-mobile">
+            <transition name="fade">
+              <div v-if="currentQuestion.videoSkipAttempted && !currentQuestion.videoPlayed" class="answer-reminder">
+                Don't forget to play the video!
+              </div>
+            </transition>
+          </div>
         </div>
         <!-- Question View -->
         <div
@@ -117,6 +129,7 @@
 
       <!-- Bottom Fixed UI -->
       <bottom-ui
+        :accent="darkSlide"
         :progress="progressObject"
         :button="uiButton"
         @click-back="previousScreen()"
@@ -156,6 +169,7 @@ export default defineCoursePage({
       finalPage: finalPage,
       learningObjectives: learningObjectives,
       moduleStarted: false,
+      darkContent: false,
       videoSlidePassed: false,
       currentIndex: {
         section: 0,
@@ -177,6 +191,11 @@ export default defineCoursePage({
     // Progresses the user through the learning module
     nextScreen() {
       if (this.showVideoSlide) {
+        // The video must be started before moving on; otherwise remind them to play it
+        if (!this.currentQuestion.videoPlayed) {
+          this.currentQuestion.videoSkipAttempted = true;
+          return;
+        }
         this.videoSlidePassed = true;
         window.scrollTo(0, 0);
         return;
@@ -272,6 +291,9 @@ export default defineCoursePage({
           .currentSection?.feedback[this.currentIndex.feedback],
       });
       return this.currentSection?.feedback[this.currentIndex.feedback];
+    },
+    darkSlide() {
+      return this.showFeedback || this.moduleComplete;
     },
     showVideoSlide() {
       return this.moduleStarted && !!this.currentQuestion?.video && !this.videoSlidePassed;

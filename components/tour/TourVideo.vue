@@ -32,7 +32,7 @@
       id="video-wrapper"
       :hls="hls"
     >
-      <video :poster="assetUrl(`tour/${poster}`)" playsinline="true">
+      <video :poster="singleImage($img, `tour/${poster}`, 'poster')" playsinline="true">
         <source :src="videoSource" type="video/mp4" size="720" />
 
         <track
@@ -50,6 +50,7 @@
 
 <script>
 import { assetUrl } from "~/utils/asset-url";
+import { singleImage } from "~/utils/responsive-image";
 import { mapGetters } from "vuex";
 export default {
   props: ["src", "hls", "poster", "subtitles"],
@@ -104,6 +105,7 @@ export default {
   },
   methods: {
     assetUrl,
+    singleImage,
     onVideoEnded() {
       this.videoEnded = true;
       this.$emit("video-ended");

@@ -8,6 +8,7 @@ export const state = () => ({
   background: {
     image: null,
     dark: false,
+    black: false,
   },
   tour: {
     videos: {
@@ -55,6 +56,9 @@ export const mutations = {
   },
   setDarkBackground(state, value) {
     state.background.dark = value;
+  },
+  setBlackBackground(state, value) {
+    state.background.black = value;
   },
   beginTour(state) {
     state.tour.started = true;

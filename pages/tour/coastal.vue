@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { preloadImage } from "~/utils/responsive-image";
 import { defineCoursePage } from "~/utils/course-page";
 import { courseDocument } from "~/utils/course-content";
 import { mapGetters } from "vuex";
@@ -16,16 +16,8 @@ export default defineCoursePage({
       title: "Resisting Stigma - Tour",
       // Preload the videos profile pictures and background images so the user doesn't have to wait when they click on them
       link: [
-        ...this.coastalVideos.map((video) => ({
-          rel: "preload",
-          href: assetUrl(`tour/${video.profile}`),
-          as: "image",
-        })),
-        ...this.coastalVideos.map((video) => ({
-          rel: "preload",
-          href: assetUrl(`tour/${video.background}`),
-          as: "image",
-        })),
+        ...this.coastalVideos.map((video) => (preloadImage(this.$img, `tour/${video.profile}`, "profile"))),
+        ...this.coastalVideos.map((video) => (preloadImage(this.$img, `tour/${video.background}`, "background"))),
       ],
     };
   },

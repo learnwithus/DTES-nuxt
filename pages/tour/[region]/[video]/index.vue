@@ -5,7 +5,7 @@
         <div class="video-info">
           <img
             class="profile"
-            :src="assetUrl(`tour/${video.profile}`)"
+            v-bind="responsiveImage($img, `tour/${video.profile}`, 'profile')"
             :alt="`An image of ${video.name}`"
           />
           <h3>{{ video.name }}</h3>
@@ -27,18 +27,18 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { responsiveImage, singleImage } from "~/utils/responsive-image";
 import { defineCoursePage } from "~/utils/course-page";
 import { mapGetters } from "vuex";
 export default defineCoursePage({
-  methods: { assetUrl },
+  methods: { responsiveImage },
   head() {
     return {
       title: "Resisting Stigma - Tour",
       link: [
         {
           rel: "preload",
-          href: assetUrl(`tour/${this.video.poster}`),
+          href: singleImage(this.$img, `tour/${this.video.poster}`, "poster"),
           as: "image",
         },
       ],
@@ -120,6 +120,34 @@ export default defineCoursePage({
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+}
+
+// Ease the card and minimap in once the page appears, after the background starts crossfading
+.video-info,
+.video-map {
+  // `backwards`, not `both`: a transform left on .video-map after the animation would trap the
+  // minimap's position: fixed full-screen map overlay inside the minimap box.
+  animation: video-intro-rise 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+.video-info {
+  animation-delay: 150ms;
+}
+.video-map {
+  animation-delay: 300ms;
+}
+@keyframes video-intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .video-type {

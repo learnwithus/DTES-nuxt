@@ -1,4 +1,4 @@
-const files = import.meta.glob('/assets/**/*.{svg,png,jpg,jpeg,webp,vtt,mp4}', {
+const files = import.meta.glob('/assets/**/*.{svg,vtt,mp4}', {
   eager: true, query: '?url', import: 'default'
 })
 const icons = import.meta.glob('/assets/images/icons/*.svg', {

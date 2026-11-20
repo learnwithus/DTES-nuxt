@@ -1,9 +1,9 @@
 <template>
-  <img :src="dynamicImage" :alt="alt" class="markdown-image"/>
+  <img v-bind="dynamicImage" :alt="alt" class="markdown-image" loading="lazy" />
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { responsiveImage } from "~/utils/responsive-image";
 export default {
   name: "DynamicImage",
 
@@ -20,7 +20,7 @@ export default {
 
   computed: {
     dynamicImage() {
-      return assetUrl(`${this.src}`);
+      return responsiveImage(this.$img, this.src, "content");
     },
   },
 };

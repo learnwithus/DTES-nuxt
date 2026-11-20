@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { singleImage } from "~/utils/responsive-image";
 import { defineCoursePage } from "~/utils/course-page";
 import { courseDocument } from "~/utils/course-content";
 import { mapGetters } from "vuex";
@@ -84,7 +84,7 @@ export default defineCoursePage({
       link: [
         {
           rel: "preload",
-          href: assetUrl(`tour/${this.intro.poster}`),
+          href: singleImage(this.$img, `tour/${this.intro.poster}`, "poster"),
           as: "image",
         },
       ],

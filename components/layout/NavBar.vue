@@ -20,10 +20,11 @@
           class="navbar-item opacity-show"
           :class="{ 'opacity-hide': !$store.state.header.logo }"
           @click="hamburgerOpen = false"
-          ><nuxt-picture
-            src="/assets/images/logo-large.png"
+          ><responsive-picture
+            src="images/logo-large.png"
             alt="Resisting Stigma"
-            sizes="sm:350px"
+            preset="logo"
+            sizes="350px"
         /></nuxt-link>
 
         <!-- Hamburger Menu -->

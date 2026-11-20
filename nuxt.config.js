@@ -15,7 +15,9 @@ const tourRoutes = ['dtes', 'coastal'].flatMap(region =>
 
 export default defineNuxtConfig({
   srcDir: '.',
-  modules: [function courseContentModule(_options, nuxt) {
+  devServer: { port: 57163 },
+  // Local modules in ~/modules (responsive-images) are registered automatically
+  modules: ['@nuxt/image', function courseContentModule(_options, nuxt) {
     const template = addTemplate({
       filename: 'course-data.mjs',
       getContents: () => 'export default ' + JSON.stringify(compileContent(new URL('./content/', import.meta.url)))
@@ -26,6 +28,12 @@ export default defineNuxtConfig({
       }
     })
   }],
+  // Sizes, format and quality are chosen per use in utils/responsive-image.js
+  image: {
+    dir: 'assets',
+    // Exposes $img to components and course-page head()
+    inject: true
+  },
   compatibilityDate: '2026-11-17',
   css: ['~/assets/scss/_base.scss', 'floating-vue/dist/style.css'],
   app: {
@@ -65,5 +73,12 @@ export default defineNuxtConfig({
       }
     }
   },
-  nitro: { prerender: { crawlLinks: true, routes: [...tourRoutes, '/tour/intro/watch', '/tour/conclusion'] } }
+  // Heatley Clinic became Groundspring at Lily's; keep old links working
+  routeRules: {
+    '/tour/dtes/heatley': { redirect: '/tour/dtes/groundspring' },
+    '/tour/dtes/heatley/watch': { redirect: '/tour/dtes/groundspring/watch' }
+  },
+  nitro: {
+    prerender: { crawlLinks: true, routes: [...tourRoutes, '/tour/intro/watch', '/tour/conclusion', '/tour/dtes/heatley', '/tour/dtes/heatley/watch'] }
+  }
 })

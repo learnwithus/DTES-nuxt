@@ -1,11 +1,13 @@
 <template>
   <main id="landing-container">
     <div class="container" id="landing-content">
-      <nuxt-picture
+      <responsive-picture
         id="landing-logo"
-        src="/assets/images/logo-large.png"
+        src="images/logo-large.png"
+        preset="logo"
         alt="Resisting Stigma"
-        :class="{ details: showDetails }"
+        :class="{ details: showDetails, loaded: logoLoaded }"
+        @load="logoLoaded = true"
       />
       <transition name="fade" mode="out-in">
         <vs-button
@@ -69,6 +71,7 @@ export default defineCoursePage({
 
     return {
       showDetails: false,
+      logoLoaded: false,
       content,
     };
   },
@@ -91,6 +94,18 @@ export default defineCoursePage({
   margin-bottom: 2em;
 }
 #landing-logo {
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &.loaded {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
   img {
     margin-top: 20%;
     width: 100%;

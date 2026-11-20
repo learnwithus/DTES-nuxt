@@ -11,7 +11,7 @@ defineEmits(['update:modelValue'])
 </script>
 
 <style>
-.vs-radio { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.vs-radio { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .vs-radio input {
   appearance: none;
   flex: 0 0 20px;

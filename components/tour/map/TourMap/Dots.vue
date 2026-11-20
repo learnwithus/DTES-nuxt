@@ -120,7 +120,7 @@
 </template>
 
 <script>
-import { assetUrl } from "~/utils/asset-url";
+import { singleImage } from "~/utils/responsive-image";
 import { mapGetters } from "vuex";
 
 export default {
@@ -143,7 +143,7 @@ export default {
   methods: {
     generateTooltip({ name, image }) {
       return `
-        <img class="tooltip-image" src="${assetUrl(`tour/${image}`)}" />
+        <img class="tooltip-image" src="${singleImage(this.$img, `tour/${image}`, "tooltip")}" />
         <div class="video-name">${name}</div>
       `;
     },
