@@ -6,9 +6,14 @@
         class="global-background-image"
         v-if="shownSrc"
         :key="shownSrc"
+        ref="shown"
+        :class="{ waiting: !revealed, revealing }"
         v-bind="shownImage"
         alt=""
         fetchpriority="high"
+        @load="reveal"
+        @error="reveal"
+        @transitionend="revealing = false"
       />
     </transition>
     <!-- Loads the next background with the same srcset so the crossfade starts once it is ready -->
@@ -41,7 +46,15 @@ export default {
       // Rendered on the server and first paint so the initial background is not delayed
       shownSrc: this.src || null,
       pendingSrc: null,
+      // The first background stays hidden until it has loaded, then fades in instead of painting in pieces
+      revealed: false,
+      revealing: false,
     };
+  },
+
+  mounted() {
+    // A cached image can finish loading before hydration, when no load event reaches Vue
+    if (!this.shownSrc || this.$refs.shown?.complete) this.reveal();
   },
 
   watch: {
@@ -65,6 +78,11 @@ export default {
   },
 
   methods: {
+    reveal() {
+      if (this.revealed) return;
+      this.revealed = true;
+      this.revealing = !!this.shownSrc;
+    },
     // The loader is keyed by path, so a load event always belongs to the current pending image
     showPending() {
       if (!this.pendingSrc) return;
@@ -111,6 +129,14 @@ export default {
 
   .dark & {
     opacity: 0.125;
+  }
+
+  // First page load: hidden until loaded, then a slower fade than later changes
+  &.waiting {
+    opacity: 0;
+  }
+  &.revealing {
+    transition-duration: 1s;
   }
 }
 

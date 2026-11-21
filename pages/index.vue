@@ -10,17 +10,14 @@
         @load="logoLoaded = true"
       />
       <transition name="fade" mode="out-in">
-        <vs-button
-          @click="showDetails = true"
-          id="landing-begin"
-          size="xl"
-          flat
-          border
-          color="#fff"
-          v-if="!showDetails"
-        >
-          Begin
-        </vs-button>
+        <div v-if="!showDetails">
+          <!-- Hidden until the logo has loaded so it fades in with the logo rather than before it -->
+          <div class="landing-begin-reveal" :class="{ loaded: logoLoaded }">
+            <vs-button @click="showDetails = true" id="landing-begin" size="xl" flat border color="#fff">
+              Begin
+            </vs-button>
+          </div>
+        </div>
         <div v-else class="columns">
           <div class="column is-three-fifths-desktop">
             <nuxt-content :document="content" />
@@ -91,6 +88,12 @@ export default defineCoursePage({
 }
 #landing-content {
   flex: 1 0 auto;
+  // A flex item with auto side margins shrinks to fit its content, so without this the logo set the
+  // width before Begin and the wider details widened it after, making the logo grow as it moved up
+  width: 100%;
+  box-sizing: border-box;
+  // Keep the usual 1400px content width now the padding counts towards it
+  max-width: 1400px + $container-padding * 2;
   margin-bottom: 2em;
 }
 #landing-logo {
@@ -109,11 +112,25 @@ export default defineCoursePage({
   img {
     margin-top: 20%;
     width: 100%;
-    transition: all 0.5s ease-in-out;
+    transition: margin-top 0.5s ease-in-out;
   }
 
   &.details img {
     margin-top: 2em;
+  }
+}
+.landing-begin-reveal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out 0.4s, visibility 0s linear 0.4s;
+
+  &.loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 #landing-begin {
